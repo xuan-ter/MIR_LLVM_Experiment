@@ -1,0 +1,1105 @@
+{
+  "description": "LLVM Experiment Matrix",
+  "combinations": [
+    {
+      "name": "EXP_000_DEFAULT",
+      "description": "Default compiler settings (Optimizations Enabled)",
+      "llvm": {
+        "pass": "baseline",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_001_DISABLE_ALL",
+      "description": "Force DISABLE all 83 optimizations",
+      "llvm": {
+        "pass": "All",
+        "switches": [
+          "-disable-binop-extract-shuffle",
+          "-disable-expand-reductions",
+          "-disable-interleaved-load-combine",
+          "-disable-loop-idiom-vectorize-all",
+          "-disable-loop-idiom-vectorize-bytecmp",
+          "-disable-promote-alloca-to-vector",
+          "-disable-replace-with-vec-lib",
+          "-disable-vector-combine",
+          "-disable-advanced-peeling",
+          "-disable-lftr",
+          "-disable-licm-promotion",
+          "-disable-loop-level-heuristics",
+          "-disable-lsr",
+          "-disable-machine-licm",
+          "-disable-postra-machine-licm",
+          "-disable-preheader-prot",
+          "-disable-block-placement",
+          "-disable-branch-fold",
+          "-disable-cgp-branch-opts",
+          "-disable-cgp-select2branch",
+          "-disable-chr",
+          "-disable-early-ifcvt",
+          "-disable-early-taildup",
+          "-disable-ifcvt-diamond",
+          "-disable-ifcvt-forked-diamond",
+          "-disable-ifcvt-simple",
+          "-disable-ifcvt-simple-false",
+          "-disable-ifcvt-triangle",
+          "-disable-ifcvt-triangle-false",
+          "-disable-ifcvt-triangle-rev",
+          "-disable-tail-calls",
+          "-disable-tail-duplicate",
+          "-disable-cgp-ext-ld-promotion",
+          "-disable-cgp-store-extract",
+          "-disable-memop-opt",
+          "-disable-separate-const-offset-from-gep",
+          "-disable-adv-copy-opt",
+          "-disable-cgp-delete-phis",
+          "-disable-cleanups",
+          "-disable-constant-hoisting",
+          "-disable-copyprop",
+          "-disable-demotion",
+          "-disable-gep-const-evaluation",
+          "-disable-icp",
+          "-disable-machine-cse",
+          "-disable-machine-dce",
+          "-disable-machine-sink",
+          "-disable-mergeicmps",
+          "-disable-non-allocatable-phys-copy-opt",
+          "-disable-phi-elim-edge-splitting",
+          "-disable-postra-machine-sink",
+          "-disable-preinline",
+          "-disable-select-optimize",
+          "-disable-ssc",
+          "-disable-type-promotion",
+          "-disable-auto-upgrade-debug-info",
+          "-disable-bitcode-version-upgrade",
+          "-disable-cfi-fixup",
+          "-disable-cgdata-for-merging",
+          "-disable-global-outlining",
+          "-disable-last-run-tracking",
+          "-disable-layout-fsprofile-loader",
+          "-disable-nofree-inference",
+          "-disable-nounwind-inference",
+          "-disable-ondemand-mds-loading",
+          "-disable-ra-fsprofile-loader",
+          "-disable-sample-loader-inlining",
+          "-disable-thinlto-funcattrs",
+          "-disable-vp",
+          "-disable-whole-program-visibility",
+          "-disable-2addr-hack",
+          "-disable-cgp",
+          "-disable-cgp-gc-opts",
+          "-disable-complex-addr-modes",
+          "-disable-dfa-sched",
+          "-disable-i2p-p2i-opt",
+          "-disable-mr-partial-inlining",
+          "-disable-partial-inlining",
+          "-disable-partial-libcall-inlining",
+          "-disable-peephole",
+          "-disable-post-ra",
+          "-disable-spill-fusing",
+          "-disable-strictnode-mutation"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_001_disable-binop-extract-shuffle",
+      "description": "Default settings but DISABLE -disable-binop-extract-shuffle",
+      "llvm": {
+        "pass": "binop-extract-shuffle",
+        "switches": [
+          "-disable-binop-extract-shuffle"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_002_disable-expand-reductions",
+      "description": "Default settings but DISABLE -disable-expand-reductions",
+      "llvm": {
+        "pass": "expand-reductions",
+        "switches": [
+          "-disable-expand-reductions"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_003_disable-interleaved-load-combine",
+      "description": "Default settings but DISABLE -disable-interleaved-load-combine",
+      "llvm": {
+        "pass": "interleaved-load-combine",
+        "switches": [
+          "-disable-interleaved-load-combine"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_004_disable-loop-idiom-vectorize-all",
+      "description": "Default settings but DISABLE -disable-loop-idiom-vectorize-all",
+      "llvm": {
+        "pass": "loop-idiom-vectorize-all",
+        "switches": [
+          "-disable-loop-idiom-vectorize-all"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_005_disable-loop-idiom-vectorize-bytecmp",
+      "description": "Default settings but DISABLE -disable-loop-idiom-vectorize-bytecmp",
+      "llvm": {
+        "pass": "loop-idiom-vectorize-bytecmp",
+        "switches": [
+          "-disable-loop-idiom-vectorize-bytecmp"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_006_disable-promote-alloca-to-vector",
+      "description": "Default settings but DISABLE -disable-promote-alloca-to-vector",
+      "llvm": {
+        "pass": "promote-alloca-to-vector",
+        "switches": [
+          "-disable-promote-alloca-to-vector"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_007_disable-replace-with-vec-lib",
+      "description": "Default settings but DISABLE -disable-replace-with-vec-lib",
+      "llvm": {
+        "pass": "replace-with-vec-lib",
+        "switches": [
+          "-disable-replace-with-vec-lib"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_008_disable-vector-combine",
+      "description": "Default settings but DISABLE -disable-vector-combine",
+      "llvm": {
+        "pass": "vector-combine",
+        "switches": [
+          "-disable-vector-combine"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_009_disable-advanced-peeling",
+      "description": "Default settings but DISABLE -disable-advanced-peeling",
+      "llvm": {
+        "pass": "advanced-peeling",
+        "switches": [
+          "-disable-advanced-peeling"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_010_disable-lftr",
+      "description": "Default settings but DISABLE -disable-lftr",
+      "llvm": {
+        "pass": "lftr",
+        "switches": [
+          "-disable-lftr"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_011_disable-licm-promotion",
+      "description": "Default settings but DISABLE -disable-licm-promotion",
+      "llvm": {
+        "pass": "licm-promotion",
+        "switches": [
+          "-disable-licm-promotion"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_012_disable-loop-level-heuristics",
+      "description": "Default settings but DISABLE -disable-loop-level-heuristics",
+      "llvm": {
+        "pass": "loop-level-heuristics",
+        "switches": [
+          "-disable-loop-level-heuristics"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_013_disable-lsr",
+      "description": "Default settings but DISABLE -disable-lsr",
+      "llvm": {
+        "pass": "lsr",
+        "switches": [
+          "-disable-lsr"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_014_disable-machine-licm",
+      "description": "Default settings but DISABLE -disable-machine-licm",
+      "llvm": {
+        "pass": "machine-licm",
+        "switches": [
+          "-disable-machine-licm"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_015_disable-postra-machine-licm",
+      "description": "Default settings but DISABLE -disable-postra-machine-licm",
+      "llvm": {
+        "pass": "postra-machine-licm",
+        "switches": [
+          "-disable-postra-machine-licm"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_016_disable-preheader-prot",
+      "description": "Default settings but DISABLE -disable-preheader-prot",
+      "llvm": {
+        "pass": "preheader-prot",
+        "switches": [
+          "-disable-preheader-prot"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_017_disable-block-placement",
+      "description": "Default settings but DISABLE -disable-block-placement",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [
+          "-disable-block-placement"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_018_disable-branch-fold",
+      "description": "Default settings but DISABLE -disable-branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_019_disable-cgp-branch-opts",
+      "description": "Default settings but DISABLE -disable-cgp-branch-opts",
+      "llvm": {
+        "pass": "cgp-branch-opts",
+        "switches": [
+          "-disable-cgp-branch-opts"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_020_disable-cgp-select2branch",
+      "description": "Default settings but DISABLE -disable-cgp-select2branch",
+      "llvm": {
+        "pass": "cgp-select2branch",
+        "switches": [
+          "-disable-cgp-select2branch"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_021_disable-chr",
+      "description": "Default settings but DISABLE -disable-chr",
+      "llvm": {
+        "pass": "chr",
+        "switches": [
+          "-disable-chr"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_022_disable-early-ifcvt",
+      "description": "Default settings but DISABLE -disable-early-ifcvt",
+      "llvm": {
+        "pass": "early-ifcvt",
+        "switches": [
+          "-disable-early-ifcvt"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_023_disable-early-taildup",
+      "description": "Default settings but DISABLE -disable-early-taildup",
+      "llvm": {
+        "pass": "early-taildup",
+        "switches": [
+          "-disable-early-taildup"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_024_disable-ifcvt-diamond",
+      "description": "Default settings but DISABLE -disable-ifcvt-diamond",
+      "llvm": {
+        "pass": "ifcvt-diamond",
+        "switches": [
+          "-disable-ifcvt-diamond"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_025_disable-ifcvt-forked-diamond",
+      "description": "Default settings but DISABLE -disable-ifcvt-forked-diamond",
+      "llvm": {
+        "pass": "ifcvt-forked-diamond",
+        "switches": [
+          "-disable-ifcvt-forked-diamond"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_026_disable-ifcvt-simple",
+      "description": "Default settings but DISABLE -disable-ifcvt-simple",
+      "llvm": {
+        "pass": "ifcvt-simple",
+        "switches": [
+          "-disable-ifcvt-simple"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_027_disable-ifcvt-simple-false",
+      "description": "Default settings but DISABLE -disable-ifcvt-simple-false",
+      "llvm": {
+        "pass": "ifcvt-simple-false",
+        "switches": [
+          "-disable-ifcvt-simple-false"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_028_disable-ifcvt-triangle",
+      "description": "Default settings but DISABLE -disable-ifcvt-triangle",
+      "llvm": {
+        "pass": "ifcvt-triangle",
+        "switches": [
+          "-disable-ifcvt-triangle"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_029_disable-ifcvt-triangle-false",
+      "description": "Default settings but DISABLE -disable-ifcvt-triangle-false",
+      "llvm": {
+        "pass": "ifcvt-triangle-false",
+        "switches": [
+          "-disable-ifcvt-triangle-false"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_030_disable-ifcvt-triangle-rev",
+      "description": "Default settings but DISABLE -disable-ifcvt-triangle-rev",
+      "llvm": {
+        "pass": "ifcvt-triangle-rev",
+        "switches": [
+          "-disable-ifcvt-triangle-rev"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_031_disable-tail-calls",
+      "description": "Default settings but DISABLE -disable-tail-calls",
+      "llvm": {
+        "pass": "tail-calls",
+        "switches": [
+          "-disable-tail-calls"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_032_disable-tail-duplicate",
+      "description": "Default settings but DISABLE -disable-tail-duplicate",
+      "llvm": {
+        "pass": "tail-duplicate",
+        "switches": [
+          "-disable-tail-duplicate"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_033_disable-cgp-ext-ld-promotion",
+      "description": "Default settings but DISABLE -disable-cgp-ext-ld-promotion",
+      "llvm": {
+        "pass": "cgp-ext-ld-promotion",
+        "switches": [
+          "-disable-cgp-ext-ld-promotion"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_034_disable-cgp-store-extract",
+      "description": "Default settings but DISABLE -disable-cgp-store-extract",
+      "llvm": {
+        "pass": "cgp-store-extract",
+        "switches": [
+          "-disable-cgp-store-extract"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_035_disable-memop-opt",
+      "description": "Default settings but DISABLE -disable-memop-opt",
+      "llvm": {
+        "pass": "memop-opt",
+        "switches": [
+          "-disable-memop-opt"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_036_disable-separate-const-offset-from-gep",
+      "description": "Default settings but DISABLE -disable-separate-const-offset-from-gep",
+      "llvm": {
+        "pass": "separate-const-offset-from-gep",
+        "switches": [
+          "-disable-separate-const-offset-from-gep"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_037_disable-adv-copy-opt",
+      "description": "Default settings but DISABLE -disable-adv-copy-opt",
+      "llvm": {
+        "pass": "adv-copy-opt",
+        "switches": [
+          "-disable-adv-copy-opt"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_038_disable-cgp-delete-phis",
+      "description": "Default settings but DISABLE -disable-cgp-delete-phis",
+      "llvm": {
+        "pass": "cgp-delete-phis",
+        "switches": [
+          "-disable-cgp-delete-phis"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_039_disable-cleanups",
+      "description": "Default settings but DISABLE -disable-cleanups",
+      "llvm": {
+        "pass": "cleanups",
+        "switches": [
+          "-disable-cleanups"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_040_disable-constant-hoisting",
+      "description": "Default settings but DISABLE -disable-constant-hoisting",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [
+          "-disable-constant-hoisting"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_041_disable-copyprop",
+      "description": "Default settings but DISABLE -disable-copyprop",
+      "llvm": {
+        "pass": "copyprop",
+        "switches": [
+          "-disable-copyprop"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_042_disable-demotion",
+      "description": "Default settings but DISABLE -disable-demotion",
+      "llvm": {
+        "pass": "demotion",
+        "switches": [
+          "-disable-demotion"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_043_disable-gep-const-evaluation",
+      "description": "Default settings but DISABLE -disable-gep-const-evaluation",
+      "llvm": {
+        "pass": "gep-const-evaluation",
+        "switches": [
+          "-disable-gep-const-evaluation"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_044_disable-icp",
+      "description": "Default settings but DISABLE -disable-icp",
+      "llvm": {
+        "pass": "icp",
+        "switches": [
+          "-disable-icp"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_045_disable-machine-cse",
+      "description": "Default settings but DISABLE -disable-machine-cse",
+      "llvm": {
+        "pass": "machine-cse",
+        "switches": [
+          "-disable-machine-cse"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_046_disable-machine-dce",
+      "description": "Default settings but DISABLE -disable-machine-dce",
+      "llvm": {
+        "pass": "machine-dce",
+        "switches": [
+          "-disable-machine-dce"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_047_disable-machine-sink",
+      "description": "Default settings but DISABLE -disable-machine-sink",
+      "llvm": {
+        "pass": "machine-sink",
+        "switches": [
+          "-disable-machine-sink"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_048_disable-mergeicmps",
+      "description": "Default settings but DISABLE -disable-mergeicmps",
+      "llvm": {
+        "pass": "mergeicmps",
+        "switches": [
+          "-disable-mergeicmps"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_049_disable-non-allocatable-phys-copy-opt",
+      "description": "Default settings but DISABLE -disable-non-allocatable-phys-copy-opt",
+      "llvm": {
+        "pass": "non-allocatable-phys-copy-opt",
+        "switches": [
+          "-disable-non-allocatable-phys-copy-opt"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_050_disable-phi-elim-edge-splitting",
+      "description": "Default settings but DISABLE -disable-phi-elim-edge-splitting",
+      "llvm": {
+        "pass": "phi-elim-edge-splitting",
+        "switches": [
+          "-disable-phi-elim-edge-splitting"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_051_disable-postra-machine-sink",
+      "description": "Default settings but DISABLE -disable-postra-machine-sink",
+      "llvm": {
+        "pass": "postra-machine-sink",
+        "switches": [
+          "-disable-postra-machine-sink"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_052_disable-preinline",
+      "description": "Default settings but DISABLE -disable-preinline",
+      "llvm": {
+        "pass": "preinline",
+        "switches": [
+          "-disable-preinline"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_053_disable-select-optimize",
+      "description": "Default settings but DISABLE -disable-select-optimize",
+      "llvm": {
+        "pass": "select-optimize",
+        "switches": [
+          "-disable-select-optimize"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_054_disable-ssc",
+      "description": "Default settings but DISABLE -disable-ssc",
+      "llvm": {
+        "pass": "ssc",
+        "switches": [
+          "-disable-ssc"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_055_disable-type-promotion",
+      "description": "Default settings but DISABLE -disable-type-promotion",
+      "llvm": {
+        "pass": "type-promotion",
+        "switches": [
+          "-disable-type-promotion"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_056_disable-auto-upgrade-debug-info",
+      "description": "Default settings but DISABLE -disable-auto-upgrade-debug-info",
+      "llvm": {
+        "pass": "auto-upgrade-debug-info",
+        "switches": [
+          "-disable-auto-upgrade-debug-info"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_057_disable-bitcode-version-upgrade",
+      "description": "Default settings but DISABLE -disable-bitcode-version-upgrade",
+      "llvm": {
+        "pass": "bitcode-version-upgrade",
+        "switches": [
+          "-disable-bitcode-version-upgrade"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_058_disable-cfi-fixup",
+      "description": "Default settings but DISABLE -disable-cfi-fixup",
+      "llvm": {
+        "pass": "cfi-fixup",
+        "switches": [
+          "-disable-cfi-fixup"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_059_disable-cgdata-for-merging",
+      "description": "Default settings but DISABLE -disable-cgdata-for-merging",
+      "llvm": {
+        "pass": "cgdata-for-merging",
+        "switches": [
+          "-disable-cgdata-for-merging"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_060_disable-global-outlining",
+      "description": "Default settings but DISABLE -disable-global-outlining",
+      "llvm": {
+        "pass": "global-outlining",
+        "switches": [
+          "-disable-global-outlining"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_061_disable-last-run-tracking",
+      "description": "Default settings but DISABLE -disable-last-run-tracking",
+      "llvm": {
+        "pass": "last-run-tracking",
+        "switches": [
+          "-disable-last-run-tracking"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_062_disable-layout-fsprofile-loader",
+      "description": "Default settings but DISABLE -disable-layout-fsprofile-loader",
+      "llvm": {
+        "pass": "layout-fsprofile-loader",
+        "switches": [
+          "-disable-layout-fsprofile-loader"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_063_disable-nofree-inference",
+      "description": "Default settings but DISABLE -disable-nofree-inference",
+      "llvm": {
+        "pass": "nofree-inference",
+        "switches": [
+          "-disable-nofree-inference"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_064_disable-nounwind-inference",
+      "description": "Default settings but DISABLE -disable-nounwind-inference",
+      "llvm": {
+        "pass": "nounwind-inference",
+        "switches": [
+          "-disable-nounwind-inference"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_065_disable-ondemand-mds-loading",
+      "description": "Default settings but DISABLE -disable-ondemand-mds-loading",
+      "llvm": {
+        "pass": "ondemand-mds-loading",
+        "switches": [
+          "-disable-ondemand-mds-loading"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_066_disable-ra-fsprofile-loader",
+      "description": "Default settings but DISABLE -disable-ra-fsprofile-loader",
+      "llvm": {
+        "pass": "ra-fsprofile-loader",
+        "switches": [
+          "-disable-ra-fsprofile-loader"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_067_disable-sample-loader-inlining",
+      "description": "Default settings but DISABLE -disable-sample-loader-inlining",
+      "llvm": {
+        "pass": "sample-loader-inlining",
+        "switches": [
+          "-disable-sample-loader-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_068_disable-thinlto-funcattrs",
+      "description": "Default settings but DISABLE -disable-thinlto-funcattrs",
+      "llvm": {
+        "pass": "thinlto-funcattrs",
+        "switches": [
+          "-disable-thinlto-funcattrs"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_069_disable-vp",
+      "description": "Default settings but DISABLE -disable-vp",
+      "llvm": {
+        "pass": "vp",
+        "switches": [
+          "-disable-vp"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_070_disable-whole-program-visibility",
+      "description": "Default settings but DISABLE -disable-whole-program-visibility",
+      "llvm": {
+        "pass": "whole-program-visibility",
+        "switches": [
+          "-disable-whole-program-visibility"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_071_disable-2addr-hack",
+      "description": "Default settings but DISABLE -disable-2addr-hack",
+      "llvm": {
+        "pass": "2addr-hack",
+        "switches": [
+          "-disable-2addr-hack"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_072_disable-cgp",
+      "description": "Default settings but DISABLE -disable-cgp",
+      "llvm": {
+        "pass": "cgp",
+        "switches": [
+          "-disable-cgp"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_073_disable-cgp-gc-opts",
+      "description": "Default settings but DISABLE -disable-cgp-gc-opts",
+      "llvm": {
+        "pass": "cgp-gc-opts",
+        "switches": [
+          "-disable-cgp-gc-opts"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_074_disable-complex-addr-modes",
+      "description": "Default settings but DISABLE -disable-complex-addr-modes",
+      "llvm": {
+        "pass": "complex-addr-modes",
+        "switches": [
+          "-disable-complex-addr-modes"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_075_disable-dfa-sched",
+      "description": "Default settings but DISABLE -disable-dfa-sched",
+      "llvm": {
+        "pass": "dfa-sched",
+        "switches": [
+          "-disable-dfa-sched"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_076_disable-i2p-p2i-opt",
+      "description": "Default settings but DISABLE -disable-i2p-p2i-opt",
+      "llvm": {
+        "pass": "i2p-p2i-opt",
+        "switches": [
+          "-disable-i2p-p2i-opt"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_077_disable-mr-partial-inlining",
+      "description": "Default settings but DISABLE -disable-mr-partial-inlining",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [
+          "-disable-mr-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_078_disable-partial-inlining",
+      "description": "Default settings but DISABLE -disable-partial-inlining",
+      "llvm": {
+        "pass": "partial-inlining",
+        "switches": [
+          "-disable-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_079_disable-partial-libcall-inlining",
+      "description": "Default settings but DISABLE -disable-partial-libcall-inlining",
+      "llvm": {
+        "pass": "partial-libcall-inlining",
+        "switches": [
+          "-disable-partial-libcall-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_080_disable-peephole",
+      "description": "Default settings but DISABLE -disable-peephole",
+      "llvm": {
+        "pass": "peephole",
+        "switches": [
+          "-disable-peephole"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_081_disable-post-ra",
+      "description": "Default settings but DISABLE -disable-post-ra",
+      "llvm": {
+        "pass": "post-ra",
+        "switches": [
+          "-disable-post-ra"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_082_disable-spill-fusing",
+      "description": "Default settings but DISABLE -disable-spill-fusing",
+      "llvm": {
+        "pass": "spill-fusing",
+        "switches": [
+          "-disable-spill-fusing"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    },
+    {
+      "name": "EXP_ABL_083_disable-strictnode-mutation",
+      "description": "Default settings but DISABLE -disable-strictnode-mutation",
+      "llvm": {
+        "pass": "strictnode-mutation",
+        "switches": [
+          "-disable-strictnode-mutation"
+        ],
+        "parameters": {}
+      },
+      "mir": null
+    }
+  ]
+}

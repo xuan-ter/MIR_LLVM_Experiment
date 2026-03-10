@@ -1,0 +1,323 @@
+{
+  "source": "/mnt/fjx/Compiler_Experiment/serde_test/results_expanded/random_configs_20260302_173056/lasso_edges.csv",
+  "modules": [
+    {
+      "id": 1,
+      "mir": [
+        "DeadStoreElimination-final",
+        "GVN",
+        "InstSimplify-after-simplifycfg",
+        "JumpThreading",
+        "MatchBranchSimplification",
+        "ReferencePropagation",
+        "SingleUseConsts"
+      ],
+      "llvm": [
+        "adv-copy-opt",
+        "bitcode-version-upgrade",
+        "block-placement",
+        "branch-fold",
+        "cfi-fixup",
+        "cgp-store-extract",
+        "complex-addr-modes",
+        "gep-const-evaluation",
+        "loop-idiom-vectorize-all",
+        "mr-partial-inlining",
+        "partial-inlining",
+        "replace-with-vec-lib",
+        "select-optimize",
+        "spill-fusing"
+      ],
+      "edges": [
+        {
+          "mir": "InstSimplify-after-simplifycfg",
+          "llvm": "branch-fold",
+          "w": 0.00279793,
+          "sign": 1,
+          "freq": 1.0
+        },
+        {
+          "mir": "InstSimplify-after-simplifycfg",
+          "llvm": "mr-partial-inlining",
+          "w": 0.000411903,
+          "sign": 1,
+          "freq": 0.93
+        },
+        {
+          "mir": "GVN",
+          "llvm": "branch-fold",
+          "w": 0.00275539,
+          "sign": 1,
+          "freq": 1.0
+        },
+        {
+          "mir": "DeadStoreElimination-final",
+          "llvm": "branch-fold",
+          "w": 0.000531356,
+          "sign": 1,
+          "freq": 0.96
+        },
+        {
+          "mir": "SingleUseConsts",
+          "llvm": "branch-fold",
+          "w": 0.0002398,
+          "sign": 1,
+          "freq": 0.76
+        },
+        {
+          "mir": "GVN",
+          "llvm": "bitcode-version-upgrade",
+          "w": 0.00142414,
+          "sign": 1,
+          "freq": 1.0
+        },
+        {
+          "mir": "GVN",
+          "llvm": "block-placement",
+          "w": 0.00049117,
+          "sign": 1,
+          "freq": 0.92
+        },
+        {
+          "mir": "GVN",
+          "llvm": "spill-fusing",
+          "w": 0.000319835,
+          "sign": 1,
+          "freq": 0.88
+        },
+        {
+          "mir": "GVN",
+          "llvm": "replace-with-vec-lib",
+          "w": 0.000160472,
+          "sign": 1,
+          "freq": 0.62
+        },
+        {
+          "mir": "JumpThreading",
+          "llvm": "mr-partial-inlining",
+          "w": 0.000625227,
+          "sign": 1,
+          "freq": 0.98
+        },
+        {
+          "mir": "JumpThreading",
+          "llvm": "gep-const-evaluation",
+          "w": 0.000222501,
+          "sign": 1,
+          "freq": 0.76
+        },
+        {
+          "mir": "JumpThreading",
+          "llvm": "complex-addr-modes",
+          "w": 0.000151682,
+          "sign": 1,
+          "freq": 0.69
+        },
+        {
+          "mir": "JumpThreading",
+          "llvm": "partial-inlining",
+          "w": 0.000148974,
+          "sign": 1,
+          "freq": 0.66
+        },
+        {
+          "mir": "JumpThreading",
+          "llvm": "loop-idiom-vectorize-all",
+          "w": 0.000126392,
+          "sign": 1,
+          "freq": 0.64
+        },
+        {
+          "mir": "DeadStoreElimination-final",
+          "llvm": "select-optimize",
+          "w": 0.000255991,
+          "sign": 1,
+          "freq": 0.82
+        },
+        {
+          "mir": "DeadStoreElimination-final",
+          "llvm": "adv-copy-opt",
+          "w": 0.000261872,
+          "sign": 1,
+          "freq": 0.8
+        },
+        {
+          "mir": "ReferencePropagation",
+          "llvm": "block-placement",
+          "w": 0.000617304,
+          "sign": 1,
+          "freq": 0.95
+        },
+        {
+          "mir": "MatchBranchSimplification",
+          "llvm": "spill-fusing",
+          "w": 0.0002029,
+          "sign": 1,
+          "freq": 0.78
+        },
+        {
+          "mir": "SingleUseConsts",
+          "llvm": "cgp-store-extract",
+          "w": 0.000367661,
+          "sign": 1,
+          "freq": 0.87
+        },
+        {
+          "mir": "SingleUseConsts",
+          "llvm": "cfi-fixup",
+          "w": 0.000157248,
+          "sign": -1,
+          "freq": 0.64
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "mir": [
+        "Inline"
+      ],
+      "llvm": [
+        "cgp-select2branch",
+        "layout-fsprofile-loader",
+        "peephole"
+      ],
+      "edges": [
+        {
+          "mir": "Inline",
+          "llvm": "peephole",
+          "w": 0.00262894,
+          "sign": 1,
+          "freq": 1.0
+        },
+        {
+          "mir": "Inline",
+          "llvm": "layout-fsprofile-loader",
+          "w": 0.00015961,
+          "sign": 1,
+          "freq": 0.68
+        },
+        {
+          "mir": "Inline",
+          "llvm": "cgp-select2branch",
+          "w": 0.000283544,
+          "sign": 1,
+          "freq": 0.92
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "mir": [
+        "ImpossiblePredicates"
+      ],
+      "llvm": [
+        "partial-libcall-inlining"
+      ],
+      "edges": [
+        {
+          "mir": "ImpossiblePredicates",
+          "llvm": "partial-libcall-inlining",
+          "w": 0.00035401,
+          "sign": -1,
+          "freq": 0.96
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "mir": [
+        "DataflowConstProp",
+        "DeadStoreElimination-initial"
+      ],
+      "llvm": [
+        "cgp-branch-opts",
+        "constant-hoisting",
+        "ifcvt-simple"
+      ],
+      "edges": [
+        {
+          "mir": "DataflowConstProp",
+          "llvm": "ifcvt-simple",
+          "w": 0.000204006,
+          "sign": -1,
+          "freq": 0.78
+        },
+        {
+          "mir": "DeadStoreElimination-initial",
+          "llvm": "constant-hoisting",
+          "w": 0.000473103,
+          "sign": -1,
+          "freq": 0.94
+        },
+        {
+          "mir": "DataflowConstProp",
+          "llvm": "constant-hoisting",
+          "w": 0.000345185,
+          "sign": -1,
+          "freq": 0.92
+        },
+        {
+          "mir": "DeadStoreElimination-initial",
+          "llvm": "cgp-branch-opts",
+          "w": 0.000195028,
+          "sign": -1,
+          "freq": 0.77
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "mir": [
+        "CopyProp"
+      ],
+      "llvm": [
+        "strictnode-mutation"
+      ],
+      "edges": [
+        {
+          "mir": "CopyProp",
+          "llvm": "strictnode-mutation",
+          "w": 0.000221069,
+          "sign": -1,
+          "freq": 0.78
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "mir": [
+        "ForceInline"
+      ],
+      "llvm": [
+        "machine-licm"
+      ],
+      "edges": [
+        {
+          "mir": "ForceInline",
+          "llvm": "machine-licm",
+          "w": 0.000198055,
+          "sign": -1,
+          "freq": 0.66
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "mir": [
+        "ScalarReplacementOfAggregates"
+      ],
+      "llvm": [
+        "lsr"
+      ],
+      "edges": [
+        {
+          "mir": "ScalarReplacementOfAggregates",
+          "llvm": "lsr",
+          "w": 0.000138144,
+          "sign": -1,
+          "freq": 0.6
+        }
+      ]
+    }
+  ]
+}

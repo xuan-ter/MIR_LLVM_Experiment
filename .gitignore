@@ -1,0 +1,15 @@
+**/.git/
+**/__pycache__/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+
+**/target/
+**/target*/
+**/target-*/
+
+**/mir_llvm_hybrid_py/
+**/results_expanded/
+
+**/benchmark_data*.txt

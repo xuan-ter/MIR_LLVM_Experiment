@@ -16,3 +16,6 @@
 
 !iterator_pipeline_bench/mir_llvm_hybrid_py/
 !iterator_pipeline_bench/mir_llvm_hybrid_py/**
+
+!trait_test/mir_llvm_hybrid_py/
+!trait_test/mir_llvm_hybrid_py/**

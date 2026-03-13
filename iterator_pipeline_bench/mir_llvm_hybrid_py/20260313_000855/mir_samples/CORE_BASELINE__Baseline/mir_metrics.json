@@ -1,0 +1,14 @@
+{
+  "easy_case": {
+    "Kernel": "kernel_easy",
+    "MIRPath": "/mnt/MIR_LLVM_Experiment/iterator_pipeline_bench/mir_llvm_hybrid_py/20260313_000855/mir_samples/CORE_BASELINE__Baseline/iterator_pipeline_bench.kernel_easy.3-3-000.runtime-optimized.after.mir",
+    "MIR_BBCount": 6,
+    "MIR_LocalCount": 40
+  },
+  "mir_dependent_case": {
+    "Kernel": "kernel_mir_dependent",
+    "MIRPath": "/mnt/MIR_LLVM_Experiment/iterator_pipeline_bench/mir_llvm_hybrid_py/20260313_000855/mir_samples/CORE_BASELINE__Baseline/iterator_pipeline_bench.kernel_mir_dependent.3-3-000.runtime-optimized.after.mir",
+    "MIR_BBCount": 6,
+    "MIR_LocalCount": 45
+  }
+}

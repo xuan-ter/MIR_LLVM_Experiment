@@ -1,0 +1,15 @@
+// MIR for `main::{closure#4}` after SimplifyCfg-initial
+
+fn main::{closure#4}(_1: {closure@src/main.rs:68:54: 68:56}) -> u64 {
+    let mut _0: u64;
+    let mut _2: !;
+
+    bb0: {
+        StorageLive(_2);
+        _2 = usage() -> bb1;
+    }
+
+    bb1 (cleanup): {
+        resume;
+    }
+}

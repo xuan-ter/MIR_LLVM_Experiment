@@ -1,0 +1,99 @@
+// MIR for `kernel_mir_dependent::{closure#3}` after RemoveZsts
+
+fn kernel_mir_dependent::{closure#3}(_1: &mut {closure@src/lib.rs:53:18: 53:26}, _2: (u32, u32)) -> u32 {
+    debug alpha => (*((*_1).0: &u32));
+    debug beta => (*((*_1).1: &u32));
+    debug c => (*((*_1).2: &u32));
+    let mut _0: u32;
+    let _3: u32;
+    let _4: u32;
+    let mut _6: u32;
+    let mut _7: u32;
+    let mut _9: u32;
+    let mut _10: u32;
+    let mut _11: u32;
+    let mut _12: u32;
+    let mut _13: u32;
+    let mut _14: u32;
+    let mut _15: u32;
+    let mut _16: u32;
+    let mut _17: &u32;
+    let mut _18: &u32;
+    let mut _19: &u32;
+    let mut _20: u32;
+    scope 1 {
+        debug x => _3;
+        debug y => _4;
+        let _5: u32;
+        scope 2 {
+            debug t0 => _5;
+            let _8: u32;
+            scope 3 {
+                debug t1 => _8;
+                scope 6 (inlined core::num::<impl u32>::wrapping_add) {
+                }
+                scope 7 (inlined core::num::<impl u32>::wrapping_add) {
+                }
+                scope 8 (inlined core::num::<impl u32>::wrapping_add) {
+                }
+            }
+            scope 5 (inlined core::num::<impl u32>::wrapping_mul) {
+            }
+        }
+        scope 4 (inlined core::num::<impl u32>::wrapping_mul) {
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        _3 = copy (_2.0: u32);
+        StorageLive(_4);
+        _4 = copy (_2.1: u32);
+        StorageLive(_5);
+        StorageLive(_6);
+        _6 = copy _3;
+        StorageLive(_7);
+        _17 = copy ((*_1).0: &u32);
+        _7 = copy (*_17);
+        _5 = Mul(copy _6, copy _7);
+        StorageDead(_7);
+        StorageDead(_6);
+        StorageLive(_8);
+        StorageLive(_9);
+        _9 = copy _4;
+        StorageLive(_10);
+        _18 = copy ((*_1).1: &u32);
+        _10 = copy (*_18);
+        _8 = Mul(copy _9, copy _10);
+        StorageDead(_10);
+        StorageDead(_9);
+        StorageLive(_11);
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        _14 = copy _5;
+        StorageLive(_15);
+        _15 = copy _8;
+        _13 = Add(copy _14, copy _15);
+        StorageDead(_15);
+        StorageDead(_14);
+        StorageLive(_16);
+        _19 = copy ((*_1).2: &u32);
+        _16 = copy (*_19);
+        _12 = Add(copy _13, copy _16);
+        StorageDead(_16);
+        StorageDead(_13);
+        StorageLive(_20);
+        _20 = const 0_u32;
+        _11 = Add(copy _12, copy _20);
+        StorageDead(_20);
+        StorageDead(_12);
+        _0 = BitXor(move _11, const 0_u32);
+        StorageDead(_11);
+        StorageDead(_8);
+        StorageDead(_5);
+        StorageDead(_4);
+        StorageDead(_3);
+        return;
+    }
+}

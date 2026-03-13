@@ -1,0 +1,131 @@
+// MIR for `usage` before ReferencePropagation
+
+fn usage() -> ! {
+    let mut _0: !;
+    let _1: ();
+    let _2: ();
+    let mut _3: std::fmt::Arguments<'_>;
+    let _4: ();
+    let _5: ();
+    let mut _6: std::fmt::Arguments<'_>;
+    let _7: !;
+    let mut _8: &str;
+    let mut _17: &str;
+    scope 1 (inlined Arguments::<'_>::from_str) {
+        let mut _9: std::ptr::NonNull<u8>;
+        let mut _10: *const u8;
+        let mut _11: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+        let mut _12: usize;
+        let mut _13: usize;
+        let mut _14: usize;
+        scope 2 (inlined core::str::<impl str>::as_ptr) {
+            let mut _15: *const str;
+        }
+        scope 3 (inlined core::str::<impl str>::len) {
+            let _16: &[u8];
+            scope 4 (inlined core::str::<impl str>::as_bytes) {
+            }
+        }
+    }
+    scope 5 (inlined Arguments::<'_>::from_str) {
+        let mut _18: std::ptr::NonNull<u8>;
+        let mut _19: *const u8;
+        let mut _20: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+        let mut _21: usize;
+        let mut _22: usize;
+        let mut _23: usize;
+        scope 6 (inlined core::str::<impl str>::as_ptr) {
+            let mut _24: *const str;
+        }
+        scope 7 (inlined core::str::<impl str>::len) {
+            let _25: &[u8];
+            scope 8 (inlined core::str::<impl str>::as_bytes) {
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_8);
+        _8 = const "Usage:\n";
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_15);
+        _15 = &raw const (*_8);
+        _10 = copy _15 as *const u8 (PtrToPtr);
+        StorageDead(_15);
+        _9 = copy _10 as std::ptr::NonNull<u8> (Transmute);
+        StorageDead(_10);
+        StorageLive(_11);
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        StorageLive(_16);
+        _16 = copy _8 as &[u8] (Transmute);
+        _14 = PtrMetadata(copy _16);
+        StorageDead(_16);
+        _13 = Shl(move _14, const 1_i32);
+        StorageDead(_14);
+        _12 = BitOr(move _13, const 1_usize);
+        StorageDead(_13);
+        _11 = move _12 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        StorageDead(_12);
+        _3 = Arguments::<'_> { template: move _9, args: move _11 };
+        StorageDead(_11);
+        StorageDead(_9);
+        StorageDead(_8);
+        _2 = std::io::_eprint(move _3) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        StorageLive(_6);
+        StorageLive(_17);
+        _17 = const "  iterator_pipeline_bench --mode easy|mir-dependent --len <N> --iters <N> --seed <N>\n";
+        StorageLive(_18);
+        StorageLive(_19);
+        StorageLive(_24);
+        _24 = &raw const (*_17);
+        _19 = copy _24 as *const u8 (PtrToPtr);
+        StorageDead(_24);
+        _18 = copy _19 as std::ptr::NonNull<u8> (Transmute);
+        StorageDead(_19);
+        StorageLive(_20);
+        StorageLive(_21);
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_25);
+        _25 = copy _17 as &[u8] (Transmute);
+        _23 = PtrMetadata(copy _25);
+        StorageDead(_25);
+        _22 = Shl(move _23, const 1_i32);
+        StorageDead(_23);
+        _21 = BitOr(move _22, const 1_usize);
+        StorageDead(_22);
+        _20 = move _21 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        StorageDead(_21);
+        _6 = Arguments::<'_> { template: move _18, args: move _20 };
+        StorageDead(_20);
+        StorageDead(_18);
+        StorageDead(_17);
+        _5 = std::io::_eprint(move _6) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_6);
+        _7 = exit(const 2_i32) -> unwind continue;
+    }
+}
+
+alloc11 (size: 85, align: 1) {
+    0x00 │ 20 20 69 74 65 72 61 74 6f 72 5f 70 69 70 65 6c │   iterator_pipel
+    0x10 │ 69 6e 65 5f 62 65 6e 63 68 20 2d 2d 6d 6f 64 65 │ ine_bench --mode
+    0x20 │ 20 65 61 73 79 7c 6d 69 72 2d 64 65 70 65 6e 64 │  easy|mir-depend
+    0x30 │ 65 6e 74 20 2d 2d 6c 65 6e 20 3c 4e 3e 20 2d 2d │ ent --len <N> --
+    0x40 │ 69 74 65 72 73 20 3c 4e 3e 20 2d 2d 73 65 65 64 │ iters <N> --seed
+    0x50 │ 20 3c 4e 3e 0a                                  │  <N>.
+}
+
+alloc10 (size: 7, align: 1) {
+    55 73 61 67 65 3a 0a                            │ Usage:.
+}

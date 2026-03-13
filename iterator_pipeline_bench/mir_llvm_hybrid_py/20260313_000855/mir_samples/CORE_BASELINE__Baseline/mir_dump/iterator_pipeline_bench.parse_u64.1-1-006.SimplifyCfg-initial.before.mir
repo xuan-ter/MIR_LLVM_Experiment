@@ -1,0 +1,96 @@
+// MIR for `parse_u64` before SimplifyCfg-initial
+
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(2:16042 ~ core[28bf]::str::{impl#0}::parse), UserArgs { args: [u64], user_self_ty: None }), max_universe: U0, var_kinds: [] }, span: src/main.rs:35:11: 35:16, inferred_ty: for<'a> fn(&'a str) -> std::result::Result<u64, <u64 as std::str::FromStr>::Err> {core::str::<impl str>::parse::<u64>}
+|
+fn parse_u64(_1: &str) -> Option<u64> {
+    debug s => _1;
+    let mut _0: std::option::Option<u64>;
+    let mut _2: std::option::Option<&str>;
+    let mut _3: &str;
+    let mut _4: isize;
+    let mut _6: std::result::Result<u64, std::num::ParseIntError>;
+    let mut _7: &str;
+    let mut _8: std::result::Result<u64, std::num::ParseIntError>;
+    let mut _9: &str;
+    scope 1 {
+        debug hex => _5;
+        let _5: &str;
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &(*_1);
+        _2 = core::str::<impl str>::strip_prefix::<&str>(move _3, const "0x") -> [return: bb1, unwind: bb12];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        PlaceMention(_2);
+        _4 = discriminant(_2);
+        switchInt(move _4) -> [1: bb3, otherwise: bb2];
+    }
+
+    bb2: {
+        goto -> bb8;
+    }
+
+    bb3: {
+        falseEdge -> [real: bb5, imaginary: bb2];
+    }
+
+    bb4: {
+        goto -> bb2;
+    }
+
+    bb5: {
+        StorageLive(_5);
+        _5 = copy ((_2 as Some).0: &str);
+        StorageLive(_6);
+        StorageLive(_7);
+        _7 = &(*_5);
+        _6 = core::num::<impl u64>::from_str_radix(move _7, const 16_u32) -> [return: bb6, unwind: bb12];
+    }
+
+    bb6: {
+        StorageDead(_7);
+        _0 = Result::<u64, ParseIntError>::ok(move _6) -> [return: bb7, unwind: bb12];
+    }
+
+    bb7: {
+        StorageDead(_6);
+        StorageDead(_5);
+        goto -> bb11;
+    }
+
+    bb8: {
+        StorageLive(_8);
+        StorageLive(_9);
+        _9 = &(*_1);
+        _8 = core::str::<impl str>::parse::<u64>(move _9) -> [return: bb9, unwind: bb12];
+    }
+
+    bb9: {
+        StorageDead(_9);
+        _0 = Result::<u64, ParseIntError>::ok(move _8) -> [return: bb10, unwind: bb12];
+    }
+
+    bb10: {
+        StorageDead(_8);
+        goto -> bb11;
+    }
+
+    bb11: {
+        StorageDead(_2);
+        return;
+    }
+
+    bb12 (cleanup): {
+        resume;
+    }
+}
+
+alloc9 (size: 2, align: 1) {
+    30 78                                           │ 0x
+}

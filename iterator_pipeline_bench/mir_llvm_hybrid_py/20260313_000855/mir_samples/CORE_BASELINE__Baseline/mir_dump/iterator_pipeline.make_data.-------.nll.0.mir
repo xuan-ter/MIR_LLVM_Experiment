@@ -1,0 +1,222 @@
+// MIR for `make_data` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=6], bb1[0..=9], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=4], bb9[0..=8], bb10[0..=1], bb11[0..=8], bb12[0..=8], bb13[0..=2], bb14[0], bb15[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=6], bb1[0..=9], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=4], bb9[0..=8], bb10[0..=1], bb11[0..=8], bb12[0..=8], bb13[0..=2], bb14[0], bb15[0], '?1}
+| '?2 | U0 | {bb4[4..=6]}
+| '?3 | U0 | {bb4[5..=6]}
+| '?4 | U0 | {bb11[5..=8]}
+| '?5 | U0 | {bb4[6]}
+| '?6 | U0 | {bb4[5..=6]}
+| '?7 | U0 | {bb11[6..=8]}
+| '?8 | U0 | {bb4[6]}
+| '?9 | U0 | {bb11[8]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=6], bb1[0..=9], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=4], bb9[0..=8], bb10[0..=1], bb11[0..=8], bb12[0..=8], bb13[0..=2], bb14[0], bb15[0]}
+| '?1 live at {bb0[0..=6], bb1[0..=9], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=4], bb9[0..=8], bb10[0..=1], bb11[0..=8], bb12[0..=8], bb13[0..=2], bb14[0], bb15[0]}
+| '?2 live at {bb4[4]}
+| '?3 live at {bb4[5]}
+| '?4 live at {bb11[5]}
+| '?5 live at {bb4[6]}
+| '?6 live at {bb4[5]}
+| '?7 live at {bb11[6..=8]}
+| '?8 live at {bb4[6]}
+| '?9 live at {bb11[8]}
+| '?2: '?6 due to Boring at Single(bb4[4]) (benches/iterator_pipeline.rs:13:14: 13:20 (#14)
+| '?3: '?5 due to Boring at Single(bb4[5]) (benches/iterator_pipeline.rs:13:14: 13:20 (#14)
+| '?4: '?7 due to Boring at Single(bb11[5]) (benches/iterator_pipeline.rs:15:9: 15:12 (#0)
+| '?5: '?8 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::ops::Range<usize>]))) at Single(bb4[6]) (benches/iterator_pipeline.rs:13:14: 13:20 (#14)
+| '?6: '?3 due to Boring at Single(bb4[5]) (benches/iterator_pipeline.rs:13:14: 13:20 (#14)
+| '?7: '?9 due to CallArgument(Some(FnDef(DefId(3:9761 ~ alloc[b087]::vec::{impl#43}::push), [u32, std::alloc::Global]))) at Single(bb11[8]) (benches/iterator_pipeline.rs:15:9: 15:20 (#0)
+|
+| Borrows
+| bw0: issued at bb4[4] in '?2
+| bw1: issued at bb4[5] in '?3
+| bw2: issued at bb11[5] in '?4
+|
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(3:8524 ~ alloc[b087]::vec::{impl#0}::with_capacity), UserArgs { args: [^c_0], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(3:8521 ~ alloc[b087]::vec::{impl#0}), self_ty: std::vec::Vec<^c_1, ^c_2> }) }), max_universe: U0, var_kinds: [Ty { ui: U0, sub_root: 0 }, Ty { ui: U0, sub_root: 1 }, Ty { ui: U0, sub_root: 2 }] }, span: benches/iterator_pipeline.rs:12:19: 12:37, inferred_ty: fn(usize) -> std::vec::Vec<u32> {std::vec::Vec::<u32>::with_capacity}
+|
+fn make_data(_1: usize, _2: u32) -> Vec<u32> {
+    debug len => _1;                     // in scope 0 at benches/iterator_pipeline.rs:10:14: 10:17
+    debug seed => _2;                    // in scope 0 at benches/iterator_pipeline.rs:10:26: 10:30
+    let mut _0: std::vec::Vec<u32>;      // return place in scope 0 at benches/iterator_pipeline.rs:10:40: 10:48
+    let mut _3: u32;                     // in scope 0 at benches/iterator_pipeline.rs:11:9: 11:14
+    let mut _5: usize;                   // in scope 0 at benches/iterator_pipeline.rs:12:38: 12:41
+    let _6: ();                          // in scope 0 at benches/iterator_pipeline.rs:13:5: 16:6
+    let mut _7: std::ops::Range<usize>;  // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _8: std::ops::Range<usize>;  // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _9: usize;                   // in scope 0 at benches/iterator_pipeline.rs:13:17: 13:20
+    let mut _11: ();                     // in scope 0 at benches/iterator_pipeline.rs:10:1: 18:2
+    let _12: ();                         // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _13: std::option::Option<usize>; // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _14: &mut std::ops::Range<usize>; // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _15: &mut std::ops::Range<usize>; // in scope 0 at benches/iterator_pipeline.rs:13:14: 13:20
+    let mut _16: isize;                  // in scope 0 at benches/iterator_pipeline.rs:13:5: 16:6
+    let mut _17: !;                      // in scope 0 at benches/iterator_pipeline.rs:13:5: 16:6
+    let mut _18: u32;                    // in scope 0 at benches/iterator_pipeline.rs:14:13: 14:61
+    let mut _19: u32;                    // in scope 0 at benches/iterator_pipeline.rs:14:13: 14:36
+    let mut _20: u32;                    // in scope 0 at benches/iterator_pipeline.rs:14:13: 14:14
+    let _21: ();                         // in scope 0 at benches/iterator_pipeline.rs:15:9: 15:20
+    let mut _22: &mut std::vec::Vec<u32>; // in scope 0 at benches/iterator_pipeline.rs:15:9: 15:12
+    let mut _23: u32;                    // in scope 0 at benches/iterator_pipeline.rs:15:18: 15:19
+    scope 1 {
+        debug x => _3;                   // in scope 1 at benches/iterator_pipeline.rs:11:9: 11:14
+        let mut _4: std::vec::Vec<u32>;  // in scope 1 at benches/iterator_pipeline.rs:12:9: 12:16
+        scope 2 {
+            debug out => _4;             // in scope 2 at benches/iterator_pipeline.rs:12:9: 12:16
+            let mut _10: std::ops::Range<usize>; // in scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+            scope 3 {
+                debug iter => _10;       // in scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at benches/iterator_pipeline.rs:11:9: 11:14
+        _3 = copy _2;                    // scope 0 at benches/iterator_pipeline.rs:11:17: 11:21
+        FakeRead(ForLet(None), _3);      // scope 0 at benches/iterator_pipeline.rs:11:9: 11:14
+        StorageLive(_4);                 // scope 1 at benches/iterator_pipeline.rs:12:9: 12:16
+        StorageLive(_5);                 // scope 1 at benches/iterator_pipeline.rs:12:38: 12:41
+        _5 = copy _1;                    // scope 1 at benches/iterator_pipeline.rs:12:38: 12:41
+        _4 = Vec::<u32>::with_capacity(move _5) -> [return: bb1, unwind: bb15]; // scope 1 at benches/iterator_pipeline.rs:12:19: 12:42
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:12:19: 12:37
+                                         // + user_ty: UserType(0)
+                                         // + const_: Const { ty: fn(usize) -> Vec<u32> {Vec::<u32>::with_capacity}, val: Value(Vec::<u32>::with_capacity) }
+    }
+
+    bb1: {
+        StorageDead(_5);                 // scope 1 at benches/iterator_pipeline.rs:12:41: 12:42
+        FakeRead(ForLet(None), _4);      // scope 1 at benches/iterator_pipeline.rs:12:9: 12:16
+        StorageLive(_6);                 // scope 2 at benches/iterator_pipeline.rs:13:5: 16:6
+        StorageLive(_7);                 // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_8);                 // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_9);                 // scope 2 at benches/iterator_pipeline.rs:13:17: 13:20
+        _9 = copy _1;                    // scope 2 at benches/iterator_pipeline.rs:13:17: 13:20
+        _8 = std::ops::Range::<usize> { start: const 0_usize, end: move _9 }; // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageDead(_9);                 // scope 2 at benches/iterator_pipeline.rs:13:19: 13:20
+        _7 = <std::ops::Range<usize> as IntoIterator>::into_iter(move _8) -> [return: bb2, unwind: bb14]; // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:13:14: 13:20
+                                         // + const_: Const { ty: fn(std::ops::Range<usize>) -> <std::ops::Range<usize> as IntoIterator>::IntoIter {<std::ops::Range<usize> as IntoIterator>::into_iter}, val: Value(<std::ops::Range<usize> as IntoIterator>::into_iter) }
+    }
+
+    bb2: {
+        StorageDead(_8);                 // scope 2 at benches/iterator_pipeline.rs:13:19: 13:20
+        PlaceMention(_7);                // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_10);                // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        _10 = move _7;                   // scope 2 at benches/iterator_pipeline.rs:13:14: 13:20
+        goto -> bb3;                     // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb14]; // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+    }
+
+    bb4: {
+        StorageLive(_12);                // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_13);                // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_14);                // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        StorageLive(_15);                // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        _15 = &mut _10;                  // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        _14 = &mut (*_15);               // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        _13 = <std::ops::Range<usize> as Iterator>::next(move _14) -> [return: bb5, unwind: bb14]; // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:13:14: 13:20
+                                         // + const_: Const { ty: for<'a> fn(&'a mut std::ops::Range<usize>) -> Option<<std::ops::Range<usize> as Iterator>::Item> {<std::ops::Range<usize> as Iterator>::next}, val: Value(<std::ops::Range<usize> as Iterator>::next) }
+    }
+
+    bb5: {
+        StorageDead(_14);                // scope 3 at benches/iterator_pipeline.rs:13:19: 13:20
+        PlaceMention(_13);               // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        _16 = discriminant(_13);         // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        switchInt(move _16) -> [0: bb7, 1: bb8, otherwise: bb6]; // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+    }
+
+    bb6: {
+        FakeRead(ForMatchedPlace(None), _13); // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+        unreachable;                     // scope 3 at benches/iterator_pipeline.rs:13:14: 13:20
+    }
+
+    bb7: {
+        falseEdge -> [real: bb9, imaginary: bb8]; // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+    }
+
+    bb8: {
+        StorageLive(_18);                // scope 3 at benches/iterator_pipeline.rs:14:13: 14:61
+        StorageLive(_19);                // scope 3 at benches/iterator_pipeline.rs:14:13: 14:36
+        StorageLive(_20);                // scope 3 at benches/iterator_pipeline.rs:14:13: 14:14
+        _20 = copy _3;                   // scope 3 at benches/iterator_pipeline.rs:14:13: 14:14
+        _19 = core::num::<impl u32>::wrapping_mul(move _20, const 1664525_u32) -> [return: bb10, unwind: bb14]; // scope 3 at benches/iterator_pipeline.rs:14:13: 14:36
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:14:15: 14:27
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb9: {
+        _6 = const ();                   // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+        StorageDead(_15);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_13);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_12);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_10);                // scope 2 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_7);                 // scope 2 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_6);                 // scope 2 at benches/iterator_pipeline.rs:16:5: 16:6
+        _0 = move _4;                    // scope 2 at benches/iterator_pipeline.rs:17:5: 17:8
+        drop(_4) -> [return: bb13, unwind: bb15]; // scope 1 at benches/iterator_pipeline.rs:18:1: 18:2
+    }
+
+    bb10: {
+        StorageDead(_20);                // scope 3 at benches/iterator_pipeline.rs:14:35: 14:36
+        _18 = core::num::<impl u32>::wrapping_add(move _19, const 1013904223_u32) -> [return: bb11, unwind: bb14]; // scope 3 at benches/iterator_pipeline.rs:14:13: 14:61
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:14:37: 14:49
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_add}, val: Value(core::num::<impl u32>::wrapping_add) }
+    }
+
+    bb11: {
+        StorageDead(_19);                // scope 3 at benches/iterator_pipeline.rs:14:60: 14:61
+        _3 = move _18;                   // scope 3 at benches/iterator_pipeline.rs:14:9: 14:61
+        StorageDead(_18);                // scope 3 at benches/iterator_pipeline.rs:14:60: 14:61
+        StorageLive(_21);                // scope 3 at benches/iterator_pipeline.rs:15:9: 15:20
+        StorageLive(_22);                // scope 3 at benches/iterator_pipeline.rs:15:9: 15:12
+        _22 = &mut _4;                   // scope 3 at benches/iterator_pipeline.rs:15:9: 15:12
+        StorageLive(_23);                // scope 3 at benches/iterator_pipeline.rs:15:18: 15:19
+        _23 = copy _3;                   // scope 3 at benches/iterator_pipeline.rs:15:18: 15:19
+        _21 = Vec::<u32>::push(move _22, move _23) -> [return: bb12, unwind: bb14]; // scope 3 at benches/iterator_pipeline.rs:15:9: 15:20
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:15:13: 15:17
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Vec<u32>, u32) {Vec::<u32>::push}, val: Value(Vec::<u32>::push) }
+    }
+
+    bb12: {
+        StorageDead(_23);                // scope 3 at benches/iterator_pipeline.rs:15:19: 15:20
+        StorageDead(_22);                // scope 3 at benches/iterator_pipeline.rs:15:19: 15:20
+        StorageDead(_21);                // scope 3 at benches/iterator_pipeline.rs:15:20: 15:21
+        _12 = const ();                  // scope 3 at benches/iterator_pipeline.rs:13:21: 16:6
+        StorageDead(_15);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_13);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        StorageDead(_12);                // scope 3 at benches/iterator_pipeline.rs:16:5: 16:6
+        _11 = const ();                  // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+        goto -> bb3;                     // scope 3 at benches/iterator_pipeline.rs:13:5: 16:6
+    }
+
+    bb13: {
+        StorageDead(_4);                 // scope 1 at benches/iterator_pipeline.rs:18:1: 18:2
+        StorageDead(_3);                 // scope 0 at benches/iterator_pipeline.rs:18:1: 18:2
+        return;                          // scope 0 at benches/iterator_pipeline.rs:18:2: 18:2
+    }
+
+    bb14 (cleanup): {
+        drop(_4) -> [return: bb15, unwind terminate(cleanup)]; // scope 1 at benches/iterator_pipeline.rs:18:1: 18:2
+    }
+
+    bb15 (cleanup): {
+        resume;                          // scope 0 at benches/iterator_pipeline.rs:10:1: 18:2
+    }
+}

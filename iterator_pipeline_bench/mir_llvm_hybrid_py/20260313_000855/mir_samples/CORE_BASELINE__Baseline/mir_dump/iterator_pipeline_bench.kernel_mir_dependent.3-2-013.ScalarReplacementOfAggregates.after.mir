@@ -1,0 +1,467 @@
+// MIR for `kernel_mir_dependent` after ScalarReplacementOfAggregates
+
+fn kernel_mir_dependent(_1: &[u32], _2: &[u32], _3: u32, _4: u32, _5: u32, _6: u32) -> u64 {
+    debug a => _1;
+    debug b => _2;
+    debug rounds => _3;
+    debug alpha => _4;
+    debug beta => _5;
+    debug c => _6;
+    let mut _0: u64;
+    let mut _7: u64;
+    let _8: ();
+    let mut _9: std::ops::Range<u32>;
+    let mut _10: std::ops::Range<u32>;
+    let mut _11: u32;
+    let mut _13: ();
+    let _14: ();
+    let mut _15: std::option::Option<u32>;
+    let mut _16: &mut std::ops::Range<u32>;
+    let mut _17: &mut std::ops::Range<u32>;
+    let mut _18: isize;
+    let mut _19: !;
+    let mut _21: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}>;
+    let mut _22: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>;
+    let mut _23: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>;
+    let mut _24: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>;
+    let mut _25: std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>;
+    let mut _26: std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>;
+    let mut _27: std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>;
+    let mut _28: std::slice::Iter<'_, u32>;
+    let mut _29: &[u32];
+    let mut _30: std::slice::Iter<'_, u32>;
+    let mut _31: &[u32];
+    let mut _32: {closure@src/lib.rs:48:18: 48:28};
+    let mut _33: {closure@src/lib.rs:49:18: 49:21};
+    let mut _34: {closure@src/lib.rs:50:18: 50:21};
+    let mut _35: {closure@src/lib.rs:53:18: 53:26};
+    let mut _36: &u32;
+    let mut _37: &u32;
+    let mut _38: &u32;
+    let mut _39: {closure@src/lib.rs:58:25: 58:33};
+    let mut _40: u64;
+    let mut _41: u64;
+    let mut _42: u64;
+    let mut _43: u32;
+    let mut _51: u32;
+    let mut _52: usize;
+    let mut _73: fn((u32, u32)) -> (u32, u32) {step_pack_unpack};
+    let mut _74: fn((u32, u32)) -> (u32, u32) {step_xor_zero};
+    let mut _75: u32;
+    let mut _81: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>;
+    let mut _82: {closure@src/lib.rs:53:18: 53:26};
+    let mut _83: u32;
+    let mut _84: u32;
+    let mut _85: u32;
+    let mut _86: u32;
+    scope 1 {
+        debug sum => _7;
+        let mut _12: std::ops::Range<u32>;
+        let mut _79: u32;
+        let mut _80: u32;
+        scope 2 {
+            debug ((iter: std::ops::Range<u32>).0: u32) => _79;
+            debug ((iter: std::ops::Range<u32>).1: u32) => _80;
+            let _20: u32;
+            scope 3 {
+                debug s => _20;
+                scope 51 (inlined core::num::<impl u64>::wrapping_add) {
+                }
+            }
+            scope 5 (inlined iter::range::<impl Iterator for std::ops::Range<u32>>::next) {
+                scope 6 (inlined <std::ops::Range<u32> as iter::range::RangeIteratorImpl>::spec_next) {
+                    let mut _44: bool;
+                    let mut _45: &u32;
+                    let mut _46: &u32;
+                    let _47: u32;
+                    let mut _48: u32;
+                    scope 7 {
+                        scope 9 (inlined <u32 as Step>::forward_unchecked) {
+                            let mut _53: u32;
+                            scope 10 (inlined #[track_caller] core::num::<impl u32>::unchecked_add) {
+                                let _54: ();
+                                scope 11 (inlined core::ub_checks::check_language_ub) {
+                                    scope 12 (inlined core::ub_checks::check_language_ub::runtime) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    scope 8 (inlined std::cmp::impls::<impl PartialOrd for u32>::lt) {
+                        let mut _49: u32;
+                        let mut _50: u32;
+                    }
+                }
+            }
+            scope 13 (inlined core::slice::<impl [u32]>::iter) {
+                scope 14 (inlined std::slice::Iter::<'_, u32>::new) {
+                    let _55: usize;
+                    let mut _57: std::ptr::NonNull<[u32]>;
+                    let mut _59: *mut u32;
+                    let mut _60: *mut u32;
+                    scope 15 {
+                        let _56: std::ptr::NonNull<u32>;
+                        scope 16 {
+                            let _58: *const u32;
+                            scope 17 {
+                            }
+                            scope 21 (inlined std::ptr::without_provenance::<u32>) {
+                                scope 22 (inlined without_provenance_mut::<u32>) {
+                                }
+                            }
+                            scope 23 (inlined NonNull::<u32>::as_ptr) {
+                            }
+                            scope 24 (inlined #[track_caller] std::ptr::mut_ptr::<impl *mut u32>::add) {
+                            }
+                        }
+                        scope 18 (inlined NonNull::<[u32]>::from_ref) {
+                            let mut _61: *const [u32];
+                        }
+                        scope 19 (inlined NonNull::<[u32]>::cast::<u32>) {
+                            let mut _62: *mut u32;
+                            let mut _63: *mut [u32];
+                            scope 20 (inlined NonNull::<[u32]>::as_ptr) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 25 (inlined core::slice::<impl [u32]>::iter) {
+                scope 26 (inlined std::slice::Iter::<'_, u32>::new) {
+                    let _64: usize;
+                    let mut _66: std::ptr::NonNull<[u32]>;
+                    let mut _68: *mut u32;
+                    let mut _69: *mut u32;
+                    scope 27 {
+                        let _65: std::ptr::NonNull<u32>;
+                        scope 28 {
+                            let _67: *const u32;
+                            scope 29 {
+                            }
+                            scope 33 (inlined std::ptr::without_provenance::<u32>) {
+                                scope 34 (inlined without_provenance_mut::<u32>) {
+                                }
+                            }
+                            scope 35 (inlined NonNull::<u32>::as_ptr) {
+                            }
+                            scope 36 (inlined #[track_caller] std::ptr::mut_ptr::<impl *mut u32>::add) {
+                            }
+                        }
+                        scope 30 (inlined NonNull::<[u32]>::from_ref) {
+                            let mut _70: *const [u32];
+                        }
+                        scope 31 (inlined NonNull::<[u32]>::cast::<u32>) {
+                            let mut _71: *mut u32;
+                            let mut _72: *mut [u32];
+                            scope 32 (inlined NonNull::<[u32]>::as_ptr) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 37 (inlined <Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:48:18: 48:28}>) {
+                scope 38 (inlined Map::<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>::new) {
+                }
+            }
+            scope 39 (inlined <Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:49:18: 49:21}>) {
+                scope 40 (inlined Map::<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>::new) {
+                }
+            }
+            scope 41 (inlined <Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:50:18: 50:21}>) {
+                scope 42 (inlined Map::<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>::new) {
+                }
+            }
+            scope 43 (inlined <Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>) {
+                scope 44 (inlined Map::<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>::new) {
+                }
+            }
+            scope 45 (inlined <Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_xor_zero}>) {
+                scope 46 (inlined Map::<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>::new) {
+                }
+            }
+            scope 47 (inlined <Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> as Iterator>::map::<u32, {closure@src/lib.rs:53:18: 53:26}>) {
+                scope 48 (inlined Map::<Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}>::new) {
+                }
+            }
+            scope 49 (inlined <Map<Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}> as Iterator>::fold::<u32, {closure@src/lib.rs:58:25: 58:33}>) {
+                let mut _76: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>;
+                let mut _77: {closure@std::iter::adapters::map::map_fold<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>::{closure#0}};
+                let mut _78: {closure@src/lib.rs:53:18: 53:26};
+                scope 50 (inlined iter::adapters::map::map_fold::<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>) {
+                }
+            }
+        }
+        scope 4 (inlined <std::ops::Range<u32> as IntoIterator>::into_iter) {
+        }
+    }
+
+    bb0: {
+        StorageLive(_7);
+        _7 = const 0_u64;
+        StorageLive(_83);
+        StorageLive(_84);
+        nop;
+        StorageLive(_85);
+        StorageLive(_86);
+        nop;
+        StorageLive(_11);
+        _11 = copy _3;
+        _85 = const 0_u32;
+        _86 = move _11;
+        nop;
+        StorageDead(_11);
+        _83 = move _85;
+        _84 = move _86;
+        nop;
+        StorageDead(_85);
+        StorageDead(_86);
+        nop;
+        StorageLive(_79);
+        StorageLive(_80);
+        nop;
+        _79 = move _83;
+        _80 = move _84;
+        nop;
+        goto -> bb1;
+    }
+
+    bb1: {
+        StorageLive(_15);
+        StorageLive(_47);
+        StorageLive(_44);
+        StorageLive(_49);
+        _49 = copy _79;
+        StorageLive(_50);
+        _50 = copy _80;
+        _44 = Lt(move _49, move _50);
+        StorageDead(_50);
+        StorageDead(_49);
+        switchInt(move _44) -> [0: bb7, otherwise: bb6];
+    }
+
+    bb2: {
+        unreachable;
+    }
+
+    bb3: {
+        StorageLive(_20);
+        StorageLive(_81);
+        StorageLive(_82);
+        nop;
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_24);
+        StorageLive(_25);
+        StorageLive(_26);
+        StorageLive(_27);
+        StorageLive(_28);
+        StorageLive(_29);
+        _29 = copy _1;
+        StorageLive(_55);
+        StorageLive(_56);
+        StorageLive(_58);
+        _55 = PtrMetadata(copy _29);
+        StorageLive(_57);
+        StorageLive(_61);
+        _61 = &raw const (*_1);
+        _57 = copy _61 as std::ptr::NonNull<[u32]> (Transmute);
+        StorageDead(_61);
+        StorageLive(_62);
+        StorageLive(_63);
+        _63 = copy _57 as *mut [u32] (Transmute);
+        _62 = copy _63 as *mut u32 (PtrToPtr);
+        StorageDead(_63);
+        _56 = copy _62 as std::ptr::NonNull<u32> (Transmute);
+        StorageDead(_62);
+        StorageDead(_57);
+        goto -> bb12;
+    }
+
+    bb4: {
+        StorageDead(_15);
+        StorageDead(_79);
+        StorageDead(_80);
+        nop;
+        StorageDead(_83);
+        StorageDead(_84);
+        nop;
+        _0 = copy _7;
+        StorageDead(_7);
+        return;
+    }
+
+    bb5: {
+        StorageDead(_30);
+        StorageDead(_28);
+        _26 = Map::<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}> { iter: copy _27, f: const ZeroSized: {closure@src/lib.rs:48:18: 48:28} };
+        StorageDead(_27);
+        _25 = Map::<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}> { iter: copy _26, f: const ZeroSized: {closure@src/lib.rs:49:18: 49:21} };
+        StorageDead(_26);
+        _24 = Map::<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}> { iter: copy _25, f: const ZeroSized: {closure@src/lib.rs:50:18: 50:21} };
+        StorageDead(_25);
+        _23 = Map::<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}> { iter: copy _24, f: step_pack_unpack };
+        StorageDead(_24);
+        _22 = Map::<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> { iter: copy _23, f: step_xor_zero };
+        StorageDead(_23);
+        StorageLive(_35);
+        StorageLive(_36);
+        _36 = &_4;
+        StorageLive(_37);
+        _37 = &_5;
+        StorageLive(_38);
+        _38 = &_6;
+        _35 = {closure@src/lib.rs:53:18: 53:26} { alpha: copy _36, beta: copy _37, c: copy _38 };
+        StorageDead(_38);
+        StorageDead(_37);
+        StorageDead(_36);
+        _81 = copy _22;
+        _82 = copy _35;
+        nop;
+        StorageDead(_35);
+        StorageDead(_22);
+        StorageLive(_75);
+        _75 = const 0_u32;
+        StorageLive(_76);
+        _76 = move _81;
+        StorageLive(_77);
+        StorageLive(_78);
+        _78 = move _82;
+        _77 = {closure@/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/core/src/iter/adapters/map.rs:88:5: 88:20} { 0: const ZeroSized: {closure@src/lib.rs:58:25: 58:33}, 1: move _78 };
+        StorageDead(_78);
+        _20 = <Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> as Iterator>::fold::<u32, {closure@iter::adapters::map::map_fold<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>::{closure#0}}>(move _76, move _75, move _77) -> [return: bb17, unwind continue];
+    }
+
+    bb6: {
+        _47 = copy _79;
+        StorageLive(_48);
+        StorageLive(_51);
+        _51 = copy _47;
+        StorageLive(_52);
+        _52 = const 1_usize;
+        StorageLive(_53);
+        _53 = copy _52 as u32 (IntToInt);
+        goto -> bb10;
+    }
+
+    bb7: {
+        _15 = Option::<u32>::None;
+        goto -> bb8;
+    }
+
+    bb8: {
+        StorageDead(_44);
+        StorageDead(_47);
+        _18 = discriminant(_15);
+        switchInt(move _18) -> [0: bb4, 1: bb3, otherwise: bb2];
+    }
+
+    bb9: {
+        _54 = core::num::<impl u32>::unchecked_add::precondition_check(copy _51, copy _53) -> [return: bb10, unwind unreachable];
+    }
+
+    bb10: {
+        _48 = AddUnchecked(copy _51, copy _53);
+        StorageDead(_53);
+        StorageDead(_52);
+        StorageDead(_51);
+        _79 = move _48;
+        StorageDead(_48);
+        _15 = Option::<u32>::Some(copy _47);
+        goto -> bb8;
+    }
+
+    bb11: {
+        _58 = copy _55 as *const u32 (Transmute);
+        goto -> bb13;
+    }
+
+    bb12: {
+        StorageLive(_59);
+        StorageLive(_60);
+        _60 = copy _56 as *mut u32 (Transmute);
+        _59 = Offset(copy _60, copy _55);
+        StorageDead(_60);
+        _58 = copy _59 as *const u32 (PtrToPtr);
+        StorageDead(_59);
+        goto -> bb13;
+    }
+
+    bb13: {
+        _28 = std::slice::Iter::<'_, u32> { ptr: copy _56, end_or_len: copy _58, _marker: const PhantomData::<&u32> };
+        StorageDead(_58);
+        StorageDead(_56);
+        StorageDead(_55);
+        StorageDead(_29);
+        StorageLive(_30);
+        StorageLive(_31);
+        _31 = copy _2;
+        StorageLive(_64);
+        StorageLive(_65);
+        StorageLive(_67);
+        _64 = PtrMetadata(copy _31);
+        StorageLive(_66);
+        StorageLive(_70);
+        _70 = &raw const (*_2);
+        _66 = copy _70 as std::ptr::NonNull<[u32]> (Transmute);
+        StorageDead(_70);
+        StorageLive(_71);
+        StorageLive(_72);
+        _72 = copy _66 as *mut [u32] (Transmute);
+        _71 = copy _72 as *mut u32 (PtrToPtr);
+        StorageDead(_72);
+        _65 = copy _71 as std::ptr::NonNull<u32> (Transmute);
+        StorageDead(_71);
+        StorageDead(_66);
+        goto -> bb15;
+    }
+
+    bb14: {
+        _67 = copy _64 as *const u32 (Transmute);
+        goto -> bb16;
+    }
+
+    bb15: {
+        StorageLive(_68);
+        StorageLive(_69);
+        _69 = copy _65 as *mut u32 (Transmute);
+        _68 = Offset(copy _69, copy _64);
+        StorageDead(_69);
+        _67 = copy _68 as *const u32 (PtrToPtr);
+        StorageDead(_68);
+        goto -> bb16;
+    }
+
+    bb16: {
+        _30 = std::slice::Iter::<'_, u32> { ptr: copy _65, end_or_len: copy _67, _marker: const PhantomData::<&u32> };
+        StorageDead(_67);
+        StorageDead(_65);
+        StorageDead(_64);
+        StorageDead(_31);
+        _27 = <std::slice::Iter<'_, u32> as Iterator>::zip::<std::slice::Iter<'_, u32>>(move _28, move _30) -> [return: bb5, unwind continue];
+    }
+
+    bb17: {
+        StorageDead(_77);
+        StorageDead(_76);
+        StorageDead(_75);
+        StorageDead(_81);
+        StorageDead(_82);
+        nop;
+        StorageLive(_40);
+        StorageLive(_41);
+        _41 = copy _7;
+        StorageLive(_42);
+        StorageLive(_43);
+        _43 = copy _20;
+        _42 = move _43 as u64 (IntToInt);
+        StorageDead(_43);
+        _40 = Add(copy _41, copy _42);
+        StorageDead(_42);
+        StorageDead(_41);
+        _7 = move _40;
+        StorageDead(_40);
+        StorageDead(_20);
+        StorageDead(_15);
+        goto -> bb1;
+    }
+}

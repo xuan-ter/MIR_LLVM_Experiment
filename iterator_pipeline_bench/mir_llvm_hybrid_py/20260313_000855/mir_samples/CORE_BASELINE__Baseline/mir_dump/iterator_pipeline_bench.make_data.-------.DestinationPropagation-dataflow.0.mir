@@ -1,0 +1,382 @@
+// MIR for `make_data` 0 DestinationPropagation-dataflow
+
+fn make_data(_1: usize, _2: u32) -> Vec<u32> {
+    debug len => _1;
+    debug seed => _2;
+    let mut _0: std::vec::Vec<u32>;
+    let mut _3: u32;
+    let mut _5: std::option::Option<usize>;
+    let mut _6: isize;
+    let mut _7: u32;
+    let mut _8: u32;
+    let mut _9: u32;
+    let mut _10: &mut std::vec::Vec<u32>;
+    let mut _11: u32;
+    let mut _28: usize;
+    let mut _29: usize;
+    scope 1 {
+        debug x => _3;
+        let mut _4: std::vec::Vec<u32>;
+        scope 2 {
+            debug out => _4;
+            let mut _32: usize;
+            let mut _33: usize;
+            scope 3 {
+                debug ((iter: std::ops::Range<usize>).0: usize) => _32;
+                debug ((iter: std::ops::Range<usize>).1: usize) => _1;
+                scope 19 (inlined iter::range::<impl Iterator for std::ops::Range<usize>>::next) {
+                    scope 20 (inlined <std::ops::Range<usize> as iter::range::RangeIteratorImpl>::spec_next) {
+                        let mut _24: bool;
+                        let _25: usize;
+                        let mut _26: usize;
+                        scope 21 {
+                            scope 23 (inlined <usize as Step>::forward_unchecked) {
+                                scope 24 (inlined #[track_caller] core::num::<impl usize>::unchecked_add) {
+                                    let _30: ();
+                                    scope 25 (inlined core::ub_checks::check_language_ub) {
+                                        scope 26 (inlined core::ub_checks::check_language_ub::runtime) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 22 (inlined std::cmp::impls::<impl PartialOrd for usize>::lt) {
+                            let mut _27: usize;
+                        }
+                    }
+                }
+                scope 27 (inlined core::num::<impl u32>::wrapping_mul) {
+                }
+                scope 28 (inlined core::num::<impl u32>::wrapping_add) {
+                }
+                scope 29 (inlined Vec::<u32>::push) {
+                    let mut _31: &mut u32;
+                    scope 30 {
+                    }
+                }
+            }
+            scope 18 (inlined <std::ops::Range<usize> as IntoIterator>::into_iter) {
+            }
+        }
+        scope 4 (inlined Vec::<u32>::with_capacity) {
+            scope 5 (inlined Vec::<u32>::with_capacity_in) {
+                let mut _12: alloc::raw_vec::RawVec<u32>;
+                scope 6 (inlined alloc::raw_vec::RawVec::<u32>::with_capacity_in) {
+                    let mut _13: alloc::raw_vec::RawVecInner;
+                    scope 7 (inlined alloc::raw_vec::RawVecInner::with_capacity_in) {
+                        let mut _14: std::result::Result<alloc::raw_vec::RawVecInner, std::collections::TryReserveError>;
+                        let mut _15: isize;
+                        let mut _16: bool;
+                        let mut _17: bool;
+                        let _18: std::collections::TryReserveError;
+                        let mut _19: !;
+                        scope 8 {
+                            scope 10 (inlined alloc::raw_vec::RawVecInner::needs_to_grow) {
+                                let mut _20: usize;
+                                let mut _21: usize;
+                                scope 11 (inlined Layout::size) {
+                                }
+                                scope 12 (inlined alloc::raw_vec::RawVecInner::capacity) {
+                                    let mut _22: core::num::niche_types::UsizeNoHighBit;
+                                    scope 13 (inlined core::num::niche_types::UsizeNoHighBit::as_inner) {
+                                    }
+                                }
+                                scope 14 (inlined core::num::<impl usize>::wrapping_sub) {
+                                }
+                            }
+                            scope 15 (inlined #[track_caller] assert_unchecked) {
+                                let _23: ();
+                                scope 16 (inlined core::ub_checks::check_language_ub) {
+                                    scope 17 (inlined core::ub_checks::check_language_ub::runtime) {
+                                    }
+                                }
+                            }
+                        }
+                        scope 9 {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        // before: TwoStepIndex(161) => [_2]
+        StorageLive(_3);
+        // after: TwoStepIndex(160) => [_2]
+        // before: TwoStepIndex(159) => [_2]
+        _3 = copy _2;
+        // after: TwoStepIndex(158) => [_3]
+        // before: TwoStepIndex(157) => [_3]
+        StorageLive(_4);
+        // after: TwoStepIndex(156) => [_3]
+        // before: TwoStepIndex(155) => [_3]
+        StorageLive(_12);
+        // after: TwoStepIndex(154) => [_3]
+        // before: TwoStepIndex(153) => [_3]
+        StorageLive(_13);
+        // after: TwoStepIndex(152) => [_3]
+        // before: TwoStepIndex(151) => [_3]
+        StorageLive(_15);
+        // after: TwoStepIndex(150) => [_3]
+        // before: TwoStepIndex(149) => [_3]
+        StorageLive(_18);
+        // after: TwoStepIndex(148) => [_3]
+        // before: TwoStepIndex(147) => [_3]
+        StorageLive(_14);
+        // after: TwoStepIndex(146) => [_3]
+        // before: TwoStepIndex(145) => [_3]
+        _14 = alloc::raw_vec::RawVecInner::try_allocate_in(copy _1, const alloc::raw_vec::AllocInit::Uninitialized, const std::alloc::Global, const Layout {{ size: 4_usize, align: std::ptr::Alignment {{ _inner_repr_trick: std::ptr::alignment::AlignmentEnum::_Align1Shl2 }} }}) -> [return: bb5, unwind continue];
+        // after: TwoStepIndex(144) => [_3]
+    }
+
+    bb1: {
+        // before: TwoStepIndex(143) => [_3, _32]
+        StorageLive(_24);
+        // after: TwoStepIndex(142) => [_3, _32]
+        // before: TwoStepIndex(141) => [_3, _32]
+        StorageLive(_27);
+        // after: TwoStepIndex(140) => [_3, _32]
+        // before: TwoStepIndex(139) => [_3, _32]
+        _27 = copy _32;
+        // after: TwoStepIndex(138) => [_3, _27, _32]
+        // before: TwoStepIndex(137) => [_3, _27, _32]
+        _24 = Lt(move _27, copy _1);
+        // after: TwoStepIndex(136) => [_3, _27, _32]
+        // before: TwoStepIndex(135) => [_3, _32]
+        StorageDead(_27);
+        // after: TwoStepIndex(134) => [_3, _32]
+        // before: TwoStepIndex(133) => [_3, _32]
+        switchInt(move _24) -> [0: bb9, otherwise: bb8];
+        // after: TwoStepIndex(132) => [_3, _32]
+    }
+
+    bb2: {
+        // before: TwoStepIndex(131) => []
+        unreachable;
+        // after: TwoStepIndex(130) => []
+    }
+
+    bb3 (cleanup): {
+        // before: TwoStepIndex(129) => []
+        drop(_4) -> [return: bb4, unwind terminate(cleanup)];
+        // after: TwoStepIndex(128) => []
+    }
+
+    bb4 (cleanup): {
+        // before: TwoStepIndex(127) => []
+        resume;
+        // after: TwoStepIndex(126) => []
+    }
+
+    bb5: {
+        // before: TwoStepIndex(125) => [_3]
+        _15 = discriminant(_14);
+        // after: TwoStepIndex(124) => [_3]
+        // before: TwoStepIndex(123) => [_3]
+        switchInt(move _15) -> [0: bb7, 1: bb6, otherwise: bb2];
+        // after: TwoStepIndex(122) => [_3]
+    }
+
+    bb6: {
+        // before: TwoStepIndex(121) => []
+        _18 = move ((_14 as Err).0: std::collections::TryReserveError);
+        // after: TwoStepIndex(120) => []
+        // before: TwoStepIndex(119) => []
+        _19 = alloc::raw_vec::handle_error(move _18) -> unwind continue;
+        // after: TwoStepIndex(118) => []
+    }
+
+    bb7: {
+        // before: TwoStepIndex(117) => [_3]
+        _13 = move ((_14 as Ok).0: alloc::raw_vec::RawVecInner);
+        // after: TwoStepIndex(116) => [_3]
+        // before: TwoStepIndex(115) => [_3]
+        StorageLive(_16);
+        // after: TwoStepIndex(114) => [_3]
+        // before: TwoStepIndex(113) => [_3]
+        StorageLive(_17);
+        // after: TwoStepIndex(112) => [_3]
+        // before: TwoStepIndex(111) => [_3]
+        StorageLive(_20);
+        // after: TwoStepIndex(110) => [_3]
+        // before: TwoStepIndex(109) => [_3]
+        StorageLive(_21);
+        // after: TwoStepIndex(108) => [_3]
+        // before: TwoStepIndex(107) => [_3]
+        StorageLive(_22);
+        // after: TwoStepIndex(106) => [_3]
+        // before: TwoStepIndex(105) => [_3]
+        _22 = copy (_13.1: core::num::niche_types::UsizeNoHighBit);
+        // after: TwoStepIndex(104) => [_3]
+        // before: TwoStepIndex(103) => [_3]
+        _21 = copy _22 as usize (Transmute);
+        // after: TwoStepIndex(102) => [_3]
+        // before: TwoStepIndex(101) => [_3]
+        StorageDead(_22);
+        // after: TwoStepIndex(100) => [_3]
+        // before: TwoStepIndex(99) => [_3]
+        _20 = Sub(copy _21, const 0_usize);
+        // after: TwoStepIndex(98) => [_3]
+        // before: TwoStepIndex(97) => [_3]
+        StorageDead(_21);
+        // after: TwoStepIndex(96) => [_3]
+        // before: TwoStepIndex(95) => [_3]
+        _17 = Gt(copy _1, move _20);
+        // after: TwoStepIndex(94) => [_3]
+        // before: TwoStepIndex(93) => [_3]
+        StorageDead(_20);
+        // after: TwoStepIndex(92) => [_3]
+        // before: TwoStepIndex(91) => [_3]
+        _16 = Not(move _17);
+        // after: TwoStepIndex(90) => [_3]
+        // before: TwoStepIndex(89) => [_3]
+        StorageDead(_17);
+        // after: TwoStepIndex(88) => [_3]
+        // before: TwoStepIndex(87) => [_3]
+        assume(copy _16);
+        // after: TwoStepIndex(86) => [_3]
+        // before: TwoStepIndex(85) => [_3]
+        StorageDead(_16);
+        // after: TwoStepIndex(84) => [_3]
+        // before: TwoStepIndex(83) => [_3]
+        StorageDead(_14);
+        // after: TwoStepIndex(82) => [_3]
+        // before: TwoStepIndex(81) => [_3]
+        StorageDead(_18);
+        // after: TwoStepIndex(80) => [_3]
+        // before: TwoStepIndex(79) => [_3]
+        StorageDead(_15);
+        // after: TwoStepIndex(78) => [_3]
+        // before: TwoStepIndex(77) => [_3]
+        _12 = alloc::raw_vec::RawVec::<u32> { inner: move _13, _marker: const PhantomData::<u32> };
+        // after: TwoStepIndex(76) => [_3]
+        // before: TwoStepIndex(75) => [_3]
+        StorageDead(_13);
+        // after: TwoStepIndex(74) => [_3]
+        // before: TwoStepIndex(73) => [_3]
+        _4 = Vec::<u32> { buf: move _12, len: const 0_usize };
+        // after: TwoStepIndex(72) => [_3]
+        // before: TwoStepIndex(71) => [_3]
+        StorageDead(_12);
+        // after: TwoStepIndex(70) => [_3]
+        // before: TwoStepIndex(69) => [_3]
+        StorageLive(_32);
+        // after: TwoStepIndex(68) => [_3]
+        // before: TwoStepIndex(67) => [_3]
+        _32 = const 0_usize;
+        // after: TwoStepIndex(66) => [_3, _32]
+        // before: TwoStepIndex(65) => [_3, _32]
+        goto -> bb1;
+        // after: TwoStepIndex(64) => [_3, _32]
+    }
+
+    bb8: {
+        // before: TwoStepIndex(63) => [_3, _32]
+        _25 = copy _32;
+        // after: TwoStepIndex(62) => [_3, _25]
+        // before: TwoStepIndex(61) => [_3, _25]
+        StorageLive(_26);
+        // after: TwoStepIndex(60) => [_3, _25]
+        // before: TwoStepIndex(59) => [_3, _25]
+        _26 = AddUnchecked(copy _25, const 1_usize);
+        // after: TwoStepIndex(58) => [_3, _25, _26]
+        // before: TwoStepIndex(57) => [_3, _26]
+        _32 = move _26;
+        // after: TwoStepIndex(56) => [_3, _32]
+        // before: TwoStepIndex(55) => [_3, _32]
+        StorageDead(_26);
+        // after: TwoStepIndex(54) => [_3, _32]
+        // before: TwoStepIndex(53) => [_3, _32]
+        StorageDead(_24);
+        // after: TwoStepIndex(52) => [_3, _32]
+        // before: TwoStepIndex(51) => [_3, _32]
+        StorageLive(_7);
+        // after: TwoStepIndex(50) => [_3, _32]
+        // before: TwoStepIndex(49) => [_3, _32]
+        StorageLive(_8);
+        // after: TwoStepIndex(48) => [_3, _32]
+        // before: TwoStepIndex(47) => [_3, _32]
+        StorageLive(_9);
+        // after: TwoStepIndex(46) => [_3, _32]
+        // before: TwoStepIndex(45) => [_3, _32]
+        _9 = copy _3;
+        // after: TwoStepIndex(44) => [_32, _9]
+        // before: TwoStepIndex(43) => [_32, _9]
+        _8 = Mul(copy _9, const 1664525_u32);
+        // after: TwoStepIndex(42) => [_32, _9]
+        // before: TwoStepIndex(41) => [_32]
+        StorageDead(_9);
+        // after: TwoStepIndex(40) => [_32]
+        // before: TwoStepIndex(39) => [_32]
+        _7 = Add(copy _8, const 1013904223_u32);
+        // after: TwoStepIndex(38) => [_32, _7]
+        // before: TwoStepIndex(37) => [_32, _7]
+        StorageDead(_8);
+        // after: TwoStepIndex(36) => [_32, _7]
+        // before: TwoStepIndex(35) => [_32, _7]
+        _3 = move _7;
+        // after: TwoStepIndex(34) => [_3, _32]
+        // before: TwoStepIndex(33) => [_3, _32]
+        StorageDead(_7);
+        // after: TwoStepIndex(32) => [_3, _32]
+        // before: TwoStepIndex(31) => [_3, _32]
+        StorageLive(_10);
+        // after: TwoStepIndex(30) => [_3, _32]
+        // before: TwoStepIndex(29) => [_3, _32]
+        _10 = &mut _4;
+        // after: TwoStepIndex(28) => [_3, _32]
+        // before: TwoStepIndex(27) => [_3, _32]
+        StorageLive(_11);
+        // after: TwoStepIndex(26) => [_3, _32]
+        // before: TwoStepIndex(25) => [_3, _32]
+        _11 = copy _3;
+        // after: TwoStepIndex(24) => [_3, _32, _11]
+        // before: TwoStepIndex(23) => [_3, _32, _11]
+        StorageLive(_31);
+        // after: TwoStepIndex(22) => [_3, _32, _11]
+        // before: TwoStepIndex(21) => [_3, _32, _11]
+        _31 = Vec::<u32>::push_mut(move _10, move _11) -> [return: bb10, unwind: bb3];
+        // after: TwoStepIndex(20) => [_3, _32, _11]
+    }
+
+    bb9: {
+        // before: TwoStepIndex(19) => []
+        StorageDead(_24);
+        // after: TwoStepIndex(18) => []
+        // before: TwoStepIndex(17) => []
+        StorageDead(_32);
+        // after: TwoStepIndex(16) => []
+        // before: TwoStepIndex(15) => []
+        _0 = move _4;
+        // after: TwoStepIndex(14) => []
+        // before: TwoStepIndex(13) => []
+        StorageDead(_4);
+        // after: TwoStepIndex(12) => []
+        // before: TwoStepIndex(11) => []
+        StorageDead(_3);
+        // after: TwoStepIndex(10) => []
+        // before: TwoStepIndex(9) => []
+        return;
+        // after: TwoStepIndex(8) => []
+    }
+
+    bb10: {
+        // before: TwoStepIndex(7) => [_3, _32]
+        StorageDead(_31);
+        // after: TwoStepIndex(6) => [_3, _32]
+        // before: TwoStepIndex(5) => [_3, _32]
+        StorageDead(_11);
+        // after: TwoStepIndex(4) => [_3, _32]
+        // before: TwoStepIndex(3) => [_3, _32]
+        StorageDead(_10);
+        // after: TwoStepIndex(2) => [_3, _32]
+        // before: TwoStepIndex(1) => [_3, _32]
+        goto -> bb1;
+        // after: TwoStepIndex(0) => [_3, _32]
+    }
+}
+
+alloc128 (size: 16, align: 8) {
+    04 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00 │ ................
+}

@@ -1,0 +1,10 @@
+{
+  "easy_case": {
+    "LLVMIR_Vectorized": "1",
+    "LLVMIR_VectorWidth": 0
+  },
+  "mir_dependent_case": {
+    "LLVMIR_Vectorized": "1",
+    "LLVMIR_VectorWidth": 0
+  }
+}

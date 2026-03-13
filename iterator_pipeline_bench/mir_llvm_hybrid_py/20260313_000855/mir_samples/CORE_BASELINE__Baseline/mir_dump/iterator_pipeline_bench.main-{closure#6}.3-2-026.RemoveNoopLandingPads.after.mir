@@ -1,0 +1,10 @@
+// MIR for `main::{closure#6}` after RemoveNoopLandingPads
+
+fn main::{closure#6}(_1: {closure@src/main.rs:72:52: 72:54}) -> String {
+    let mut _0: std::string::String;
+    let mut _2: !;
+
+    bb0: {
+        _2 = usage() -> unwind continue;
+    }
+}

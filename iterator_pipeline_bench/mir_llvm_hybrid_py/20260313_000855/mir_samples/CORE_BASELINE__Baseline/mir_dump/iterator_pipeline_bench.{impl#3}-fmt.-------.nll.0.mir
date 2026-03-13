@@ -1,0 +1,164 @@
+// MIR for `<impl at src/main.rs:16:23: 16:28>::fmt` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?4, '?1, '?2, '?3]
+| '?1 | Local | ['?4, '?1]
+| '?2 | Local | ['?4, '?2]
+| '?3 | Local | ['?4, '?2, '?3]
+| '?4 | Local | ['?4]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?0, '?1, '?2, '?3, '?4}
+| '?1 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?1}
+| '?2 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?2}
+| '?3 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?4 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?4}
+| '?5 | U0 | {bb0[1..=5], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0]}
+| '?6 | U0 | {bb3[1..=4], bb4[3..=4], bb5[0]}
+| '?7 | U0 | {bb3[2..=4], bb4[3..=4], bb5[0]}
+| '?8 | U0 | {bb3[3..=4], bb4[1..=4], bb5[0]}
+| '?9 | U0 | {bb3[3..=4], bb4[2..=4], bb5[0]}
+| '?10 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?11 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?1}
+| '?12 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?2}
+| '?13 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?14 | U0 | {bb0[2..=5], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0]}
+| '?15 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?16 | U0 | {bb3[3..=4], bb4[3..=4], bb5[0]}
+| '?17 | U0 | {bb3[3..=4], bb4[2..=4], bb5[0]}
+| '?18 | U0 | {bb3[2..=4], bb4[3..=4], bb5[0]}
+| '?19 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?20 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?21 | U0 | {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0], '?3}
+| '?22 | U0 | {bb5[0]}
+| '?23 | U0 | {bb5[0]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0]}
+| '?1 live at {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0]}
+| '?2 live at {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0]}
+| '?3 live at {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0]}
+| '?4 live at {bb0[0..=5], bb1[0..=1], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0], bb6[0..=2], bb7[0]}
+| '?5 live at {bb0[1]}
+| '?6 live at {bb3[1]}
+| '?7 live at {bb3[2]}
+| '?8 live at {bb4[1]}
+| '?9 live at {bb4[2]}
+| '?10 live at {bb5[0]}
+| '?14 live at {bb0[2..=5], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0]}
+| '?15 live at {bb0[2..=5], bb2[0], bb3[0..=4], bb4[0..=4], bb5[0]}
+| '?16 live at {bb3[3..=4], bb4[3..=4], bb5[0]}
+| '?17 live at {bb4[2]}
+| '?18 live at {bb3[2]}
+| '?22 live at {bb5[0]}
+| '?23 live at {bb5[0]}
+| '?1: '?11 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?2: '?12 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?3: '?13 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?5: '?14 due to Boring at Single(bb0[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?6: '?18 due to Boring at Single(bb3[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?7: '?16 due to Boring at Single(bb3[2]) (src/main.rs:16:23: 16:28 (#7)
+| '?8: '?17 due to Boring at Single(bb4[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?9: '?16 due to Boring at Single(bb4[2]) (src/main.rs:16:23: 16:28 (#7)
+| '?10: '?15 due to CallArgument(Some(FnDef(DefId(2:12732 ~ core[28bf]::fmt::{impl#12}::write_str), ['{erased}]))) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?10: '?19 due to TypeAnnotation(GenericArg) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?10: '?22 due to BoringNoLocation at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?11: '?1 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?12: '?2 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?12: '?5 due to Boring at Single(bb0[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?13: '?3 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?13: '?15 due to Boring at Single(bb0[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?14: '?22 due to CallArgument(Some(FnDef(DefId(2:12732 ~ core[28bf]::fmt::{impl#12}::write_str), ['{erased}]))) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?15: '?10 due to CallArgument(Some(FnDef(DefId(2:12732 ~ core[28bf]::fmt::{impl#12}::write_str), ['{erased}]))) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?15: '?13 due to Boring at Single(bb0[1]) (src/main.rs:16:23: 16:28 (#7)
+| '?16: '?23 due to CallArgument(Some(FnDef(DefId(2:12732 ~ core[28bf]::fmt::{impl#12}::write_str), ['{erased}]))) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?17: '?9 due to Boring at Single(bb4[2]) (src/main.rs:16:23: 16:28 (#7)
+| '?18: '?7 due to Boring at Single(bb3[2]) (src/main.rs:16:23: 16:28 (#7)
+| '?19: '?10 due to TypeAnnotation(GenericArg) at Single(bb5[0]) (src/main.rs:16:23: 16:28 (#7)
+| '?19: '?21 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?20: '?21 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?21: '?19 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+| '?21: '?20 due to BoringNoLocation at All(src/main.rs:16:23: 16:28) (src/main.rs:16:23: 16:28 (#7)
+|
+| Borrows
+| bw0: issued at bb0[1] in '?5
+|
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(2:12732 ~ core[28bf]::fmt::{impl#12}::write_str), UserArgs { args: ['^c_0], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12717 ~ core[28bf]::fmt::{impl#12}), self_ty: std::fmt::Formatter<'^c_1> }) }), max_universe: U0, var_kinds: [Region(U0), Region(U0)] }, span: src/main.rs:16:23: 16:28, inferred_ty: for<'a, 'b> fn(&'a mut std::fmt::Formatter<'_>, &'b str) -> std::result::Result<(), std::fmt::Error> {std::fmt::Formatter::<'_>::write_str}
+|
+fn <impl at src/main.rs:16:23: 16:28>::fmt(_1: &Mode, _2: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
+    debug self => _1;                    // in scope 0 at src/main.rs:16:23: 16:28
+    debug f => _2;                       // in scope 0 at src/main.rs:16:23: 16:28
+    let mut _0: std::result::Result<(), std::fmt::Error>; // return place in scope 0 at src/main.rs:16:23: 16:28
+    let mut _3: &mut std::fmt::Formatter<'_>; // in scope 0 at src/main.rs:16:23: 16:28
+    let mut _4: &str;                    // in scope 0 at src/main.rs:16:23: 16:28
+    let mut _5: isize;                   // in scope 0 at src/main.rs:16:23: 16:28
+    let _6: &str;                        // in scope 0 at src/main.rs:16:23: 16:28
+    let _7: &str;                        // in scope 0 at src/main.rs:16:23: 16:28
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/main.rs:16:23: 16:28
+        _3 = &mut (*_2);                 // scope 0 at src/main.rs:16:23: 16:28
+        StorageLive(_4);                 // scope 0 at src/main.rs:16:23: 16:28
+        PlaceMention(_1);                // scope 0 at src/main.rs:16:23: 16:28
+        _5 = discriminant((*_1));        // scope 0 at src/main.rs:16:23: 16:28
+        switchInt(move _5) -> [0: bb2, 1: bb3, otherwise: bb1]; // scope 0 at src/main.rs:16:23: 16:28
+    }
+
+    bb1: {
+        FakeRead(ForMatchedPlace(None), _1); // scope 0 at src/main.rs:16:23: 16:28
+        unreachable;                     // scope 0 at src/main.rs:16:23: 16:28
+    }
+
+    bb2: {
+        falseEdge -> [real: bb4, imaginary: bb3]; // scope 0 at src/main.rs:16:23: 16:28
+    }
+
+    bb3: {
+        StorageLive(_7);                 // scope 0 at src/main.rs:16:23: 16:28
+        _7 = const "MirDependent";       // scope 0 at src/main.rs:16:23: 16:28
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:23: 16:28
+                                         // + const_: Const { ty: &str, val: Value("MirDependent") }
+        _4 = &(*_7);                     // scope 0 at src/main.rs:16:23: 16:28
+        StorageDead(_7);                 // scope 0 at src/main.rs:16:27: 16:28
+        goto -> bb5;                     // scope 0 at src/main.rs:16:27: 16:28
+    }
+
+    bb4: {
+        StorageLive(_6);                 // scope 0 at src/main.rs:16:23: 16:28
+        _6 = const "Easy";               // scope 0 at src/main.rs:16:23: 16:28
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:23: 16:28
+                                         // + const_: Const { ty: &str, val: Value("Easy") }
+        _4 = &(*_6);                     // scope 0 at src/main.rs:16:23: 16:28
+        StorageDead(_6);                 // scope 0 at src/main.rs:16:27: 16:28
+        goto -> bb5;                     // scope 0 at src/main.rs:16:27: 16:28
+    }
+
+    bb5: {
+        _0 = Formatter::<'_>::write_str(move _3, move _4) -> [return: bb6, unwind: bb7]; // scope 0 at src/main.rs:16:23: 16:28
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:23: 16:28
+                                         // + user_ty: UserType(0)
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a mut Formatter<'_>, &'b str) -> Result<(), std::fmt::Error> {Formatter::<'_>::write_str}, val: Value(Formatter::<'_>::write_str) }
+    }
+
+    bb6: {
+        StorageDead(_4);                 // scope 0 at src/main.rs:16:27: 16:28
+        StorageDead(_3);                 // scope 0 at src/main.rs:16:27: 16:28
+        return;                          // scope 0 at src/main.rs:16:28: 16:28
+    }
+
+    bb7 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:16:23: 16:28
+    }
+}
+
+alloc5 (size: 12, align: 1) {
+    4d 69 72 44 65 70 65 6e 64 65 6e 74             │ MirDependent
+}
+
+alloc4 (size: 4, align: 1) {
+    45 61 73 79                                     │ Easy
+}

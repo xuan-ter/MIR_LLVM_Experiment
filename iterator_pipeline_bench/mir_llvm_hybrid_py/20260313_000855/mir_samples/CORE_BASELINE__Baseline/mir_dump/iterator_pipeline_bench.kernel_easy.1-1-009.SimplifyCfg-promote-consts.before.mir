@@ -1,0 +1,199 @@
+// MIR for `kernel_easy` before SimplifyCfg-promote-consts
+
+| User Type Annotations
+| 0: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/lib.rs:2:18: 2:21, inferred_ty: u64
+| 1: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/lib.rs:2:18: 2:21, inferred_ty: u64
+| 2: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/lib.rs:4:16: 4:19, inferred_ty: u32
+| 3: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/lib.rs:4:16: 4:19, inferred_ty: u32
+|
+fn kernel_easy(_1: &[u32], _2: &[u32], _3: u32, _4: u32, _5: u32, _6: u32) -> u64 {
+    debug a => _1;
+    debug b => _2;
+    debug rounds => _3;
+    debug alpha => _4;
+    debug beta => _5;
+    debug c => _6;
+    let mut _0: u64;
+    let mut _7: u64 as UserTypeProjection { base: UserType(0), projs: [] };
+    let _8: ();
+    let mut _9: std::ops::Range<u32>;
+    let mut _10: std::ops::Range<u32>;
+    let mut _11: u32;
+    let mut _13: ();
+    let _14: ();
+    let mut _15: std::option::Option<u32>;
+    let mut _16: &mut std::ops::Range<u32>;
+    let mut _17: &mut std::ops::Range<u32>;
+    let mut _18: isize;
+    let mut _19: !;
+    let mut _21: std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:7:18: 7:28}>;
+    let mut _22: std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>;
+    let mut _23: std::slice::Iter<'_, u32>;
+    let mut _24: &[u32];
+    let mut _25: std::slice::Iter<'_, u32>;
+    let mut _26: &[u32];
+    let mut _27: {closure@src/lib.rs:7:18: 7:28};
+    let mut _28: &u32;
+    let mut _29: &u32;
+    let mut _30: &u32;
+    let mut _31: u64;
+    let mut _32: u64;
+    let mut _33: u64;
+    let mut _34: u32;
+    scope 1 {
+        debug sum => _7;
+        let mut _12: std::ops::Range<u32>;
+        scope 2 {
+            debug iter => _12;
+            let _20: u32 as UserTypeProjection { base: UserType(2), projs: [] };
+            scope 3 {
+                debug s => _20;
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_7);
+        _7 = const 0_u64;
+        FakeRead(ForLet(None), _7);
+        AscribeUserType(_7, o, UserTypeProjection { base: UserType(1), projs: [] });
+        StorageLive(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_11);
+        _11 = copy _3;
+        _10 = std::ops::Range::<u32> { start: const 0_u32, end: move _11 };
+        StorageDead(_11);
+        _9 = <std::ops::Range<u32> as IntoIterator>::into_iter(move _10) -> [return: bb1, unwind: bb15];
+    }
+
+    bb1: {
+        StorageDead(_10);
+        PlaceMention(_9);
+        StorageLive(_12);
+        _12 = move _9;
+        goto -> bb2;
+    }
+
+    bb2: {
+        falseUnwind -> [real: bb3, unwind: bb15];
+    }
+
+    bb3: {
+        StorageLive(_14);
+        StorageLive(_15);
+        StorageLive(_16);
+        StorageLive(_17);
+        _17 = &mut _12;
+        _16 = &mut (*_17);
+        _15 = <std::ops::Range<u32> as Iterator>::next(move _16) -> [return: bb4, unwind: bb15];
+    }
+
+    bb4: {
+        StorageDead(_16);
+        PlaceMention(_15);
+        _18 = discriminant(_15);
+        switchInt(move _18) -> [0: bb6, 1: bb7, otherwise: bb5];
+    }
+
+    bb5: {
+        FakeRead(ForMatchedPlace(None), _15);
+        unreachable;
+    }
+
+    bb6: {
+        falseEdge -> [real: bb8, imaginary: bb7];
+    }
+
+    bb7: {
+        StorageLive(_20);
+        StorageLive(_21);
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_24);
+        _24 = &(*_1);
+        _23 = core::slice::<impl [u32]>::iter(move _24) -> [return: bb9, unwind: bb15];
+    }
+
+    bb8: {
+        _8 = const ();
+        StorageDead(_17);
+        StorageDead(_15);
+        StorageDead(_14);
+        StorageDead(_12);
+        StorageDead(_9);
+        StorageDead(_8);
+        _0 = copy _7;
+        StorageDead(_7);
+        return;
+    }
+
+    bb9: {
+        StorageDead(_24);
+        StorageLive(_25);
+        StorageLive(_26);
+        _26 = &(*_2);
+        _25 = core::slice::<impl [u32]>::iter(move _26) -> [return: bb10, unwind: bb15];
+    }
+
+    bb10: {
+        StorageDead(_26);
+        _22 = <std::slice::Iter<'_, u32> as Iterator>::zip::<std::slice::Iter<'_, u32>>(move _23, move _25) -> [return: bb11, unwind: bb15];
+    }
+
+    bb11: {
+        StorageDead(_25);
+        StorageDead(_23);
+        StorageLive(_27);
+        StorageLive(_28);
+        _28 = &_4;
+        StorageLive(_29);
+        _29 = &_5;
+        StorageLive(_30);
+        _30 = &_6;
+        _27 = {closure@src/lib.rs:7:18: 7:28} { alpha: move _28, beta: move _29, c: move _30 };
+        StorageDead(_30);
+        StorageDead(_29);
+        StorageDead(_28);
+        _21 = <Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>> as Iterator>::map::<u32, {closure@src/lib.rs:7:18: 7:28}>(move _22, move _27) -> [return: bb12, unwind: bb15];
+    }
+
+    bb12: {
+        StorageDead(_27);
+        StorageDead(_22);
+        _20 = <Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:7:18: 7:28}> as Iterator>::sum::<u32>(move _21) -> [return: bb13, unwind: bb15];
+    }
+
+    bb13: {
+        StorageDead(_21);
+        FakeRead(ForLet(None), _20);
+        AscribeUserType(_20, o, UserTypeProjection { base: UserType(3), projs: [] });
+        StorageLive(_31);
+        StorageLive(_32);
+        _32 = copy _7;
+        StorageLive(_33);
+        StorageLive(_34);
+        _34 = copy _20;
+        _33 = move _34 as u64 (IntToInt);
+        StorageDead(_34);
+        _31 = core::num::<impl u64>::wrapping_add(move _32, move _33) -> [return: bb14, unwind: bb15];
+    }
+
+    bb14: {
+        StorageDead(_33);
+        StorageDead(_32);
+        _7 = move _31;
+        StorageDead(_31);
+        _14 = const ();
+        StorageDead(_20);
+        StorageDead(_17);
+        StorageDead(_15);
+        StorageDead(_14);
+        _13 = const ();
+        goto -> bb2;
+    }
+
+    bb15 (cleanup): {
+        resume;
+    }
+}

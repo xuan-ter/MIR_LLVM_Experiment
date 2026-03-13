@@ -1,0 +1,327 @@
+// MIR for `parse_mode` after RemoveZsts
+
+fn parse_mode(_1: &str) -> Option<Mode> {
+    debug s => _1;
+    let mut _0: std::option::Option<Mode>;
+    let mut _2: &str;
+    let mut _3: bool;
+    let mut _4: &str;
+    let mut _5: bool;
+    let mut _6: &str;
+    let mut _7: bool;
+    let mut _8: Mode;
+    let mut _9: Mode;
+    let mut _10: Mode;
+    let mut _11: &str;
+    let mut _12: &str;
+    let mut _25: &str;
+    let mut _26: &str;
+    let mut _39: &str;
+    let mut _40: &str;
+    scope 1 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+        let mut _13: &&[u8];
+        let _14: &[u8];
+        let mut _15: &&[u8];
+        let _16: &[u8];
+        scope 2 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 3 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 4 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+            scope 5 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                let _17: usize;
+                let mut _18: bool;
+                let mut _19: usize;
+                let mut _20: *const u8;
+                let mut _21: *const u8;
+                scope 6 {
+                    scope 7 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _22: *const [u8];
+                    }
+                    scope 8 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _23: *const [u8];
+                    }
+                    scope 9 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                        let mut _24: i32;
+                        scope 10 {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 11 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+        let mut _27: &&[u8];
+        let _28: &[u8];
+        let mut _29: &&[u8];
+        let _30: &[u8];
+        scope 12 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 13 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 14 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+            scope 15 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                let _31: usize;
+                let mut _32: bool;
+                let mut _33: usize;
+                let mut _34: *const u8;
+                let mut _35: *const u8;
+                scope 16 {
+                    scope 17 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _36: *const [u8];
+                    }
+                    scope 18 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _37: *const [u8];
+                    }
+                    scope 19 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                        let mut _38: i32;
+                        scope 20 {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 21 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+        let mut _41: &&[u8];
+        let _42: &[u8];
+        let mut _43: &&[u8];
+        let _44: &[u8];
+        scope 22 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 23 (inlined core::str::<impl str>::as_bytes) {
+        }
+        scope 24 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+            scope 25 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                let _45: usize;
+                let mut _46: bool;
+                let mut _47: usize;
+                let mut _48: *const u8;
+                let mut _49: *const u8;
+                scope 26 {
+                    scope 27 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _50: *const [u8];
+                    }
+                    scope 28 (inlined core::slice::<impl [u8]>::as_ptr) {
+                        let mut _51: *const [u8];
+                    }
+                    scope 29 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                        let mut _52: i32;
+                        scope 30 {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _6 = copy _1;
+        StorageLive(_11);
+        _11 = copy _6;
+        StorageLive(_12);
+        _12 = const "easy";
+        StorageLive(_14);
+        StorageLive(_16);
+        StorageLive(_17);
+        StorageLive(_20);
+        StorageLive(_21);
+        _14 = copy _11 as &[u8] (Transmute);
+        _16 = copy _12 as &[u8] (Transmute);
+        _17 = PtrMetadata(copy _14);
+        StorageLive(_18);
+        StorageLive(_19);
+        _19 = PtrMetadata(copy _16);
+        _18 = Eq(copy _17, move _19);
+        switchInt(move _18) -> [0: bb9, otherwise: bb8];
+    }
+
+    bb1: {
+        _0 = Option::<Mode>::None;
+        goto -> bb7;
+    }
+
+    bb2: {
+        StorageLive(_8);
+        _8 = Mode::Easy;
+        _0 = Option::<Mode>::Some(move _8);
+        StorageDead(_8);
+        goto -> bb7;
+    }
+
+    bb3: {
+        _4 = copy _1;
+        StorageLive(_25);
+        _25 = copy _4;
+        StorageLive(_26);
+        _26 = const "mir-dependent";
+        StorageLive(_28);
+        StorageLive(_30);
+        StorageLive(_31);
+        StorageLive(_34);
+        StorageLive(_35);
+        _28 = copy _25 as &[u8] (Transmute);
+        _30 = copy _26 as &[u8] (Transmute);
+        _31 = PtrMetadata(copy _28);
+        StorageLive(_32);
+        StorageLive(_33);
+        _33 = PtrMetadata(copy _30);
+        _32 = Eq(copy _31, move _33);
+        switchInt(move _32) -> [0: bb13, otherwise: bb12];
+    }
+
+    bb4: {
+        StorageLive(_9);
+        _9 = Mode::MirDependent;
+        _0 = Option::<Mode>::Some(move _9);
+        StorageDead(_9);
+        goto -> bb7;
+    }
+
+    bb5: {
+        _2 = copy _1;
+        StorageLive(_39);
+        _39 = copy _2;
+        StorageLive(_40);
+        _40 = const "mir_dependent";
+        StorageLive(_42);
+        StorageLive(_44);
+        StorageLive(_45);
+        StorageLive(_48);
+        StorageLive(_49);
+        _42 = copy _39 as &[u8] (Transmute);
+        _44 = copy _40 as &[u8] (Transmute);
+        _45 = PtrMetadata(copy _42);
+        StorageLive(_46);
+        StorageLive(_47);
+        _47 = PtrMetadata(copy _44);
+        _46 = Eq(copy _45, move _47);
+        switchInt(move _46) -> [0: bb17, otherwise: bb16];
+    }
+
+    bb6: {
+        StorageLive(_10);
+        _10 = Mode::MirDependent;
+        _0 = Option::<Mode>::Some(move _10);
+        StorageDead(_10);
+        goto -> bb7;
+    }
+
+    bb7: {
+        return;
+    }
+
+    bb8: {
+        StorageDead(_19);
+        StorageLive(_22);
+        _22 = &raw const (*_14);
+        _20 = copy _22 as *const u8 (PtrToPtr);
+        StorageDead(_22);
+        StorageLive(_23);
+        _23 = &raw const (*_16);
+        _21 = copy _23 as *const u8 (PtrToPtr);
+        StorageDead(_23);
+        StorageLive(_24);
+        _24 = compare_bytes(move _20, move _21, move _17) -> [return: bb11, unwind unreachable];
+    }
+
+    bb9: {
+        StorageDead(_19);
+        _7 = const false;
+        goto -> bb10;
+    }
+
+    bb10: {
+        StorageDead(_18);
+        StorageDead(_21);
+        StorageDead(_20);
+        StorageDead(_17);
+        StorageDead(_16);
+        StorageDead(_14);
+        StorageDead(_12);
+        StorageDead(_11);
+        switchInt(move _7) -> [0: bb3, otherwise: bb2];
+    }
+
+    bb11: {
+        _7 = Eq(move _24, const 0_i32);
+        StorageDead(_24);
+        goto -> bb10;
+    }
+
+    bb12: {
+        StorageDead(_33);
+        StorageLive(_36);
+        _36 = &raw const (*_28);
+        _34 = copy _36 as *const u8 (PtrToPtr);
+        StorageDead(_36);
+        StorageLive(_37);
+        _37 = &raw const (*_30);
+        _35 = copy _37 as *const u8 (PtrToPtr);
+        StorageDead(_37);
+        StorageLive(_38);
+        _38 = compare_bytes(move _34, move _35, move _31) -> [return: bb15, unwind unreachable];
+    }
+
+    bb13: {
+        StorageDead(_33);
+        _5 = const false;
+        goto -> bb14;
+    }
+
+    bb14: {
+        StorageDead(_32);
+        StorageDead(_35);
+        StorageDead(_34);
+        StorageDead(_31);
+        StorageDead(_30);
+        StorageDead(_28);
+        StorageDead(_26);
+        StorageDead(_25);
+        switchInt(move _5) -> [0: bb5, otherwise: bb4];
+    }
+
+    bb15: {
+        _5 = Eq(move _38, const 0_i32);
+        StorageDead(_38);
+        goto -> bb14;
+    }
+
+    bb16: {
+        StorageDead(_47);
+        StorageLive(_50);
+        _50 = &raw const (*_42);
+        _48 = copy _50 as *const u8 (PtrToPtr);
+        StorageDead(_50);
+        StorageLive(_51);
+        _51 = &raw const (*_44);
+        _49 = copy _51 as *const u8 (PtrToPtr);
+        StorageDead(_51);
+        StorageLive(_52);
+        _52 = compare_bytes(move _48, move _49, move _45) -> [return: bb19, unwind unreachable];
+    }
+
+    bb17: {
+        StorageDead(_47);
+        _3 = const false;
+        goto -> bb18;
+    }
+
+    bb18: {
+        StorageDead(_46);
+        StorageDead(_49);
+        StorageDead(_48);
+        StorageDead(_45);
+        StorageDead(_44);
+        StorageDead(_42);
+        StorageDead(_40);
+        StorageDead(_39);
+        switchInt(move _3) -> [0: bb1, otherwise: bb6];
+    }
+
+    bb19: {
+        _3 = Eq(move _52, const 0_i32);
+        StorageDead(_52);
+        goto -> bb18;
+    }
+}

@@ -1,0 +1,2264 @@
+// MIR for `main` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=18], bb1[0], bb2[0..=3], bb3[0], bb4[0..=3], bb5[0..=3], bb6[0], bb7[0..=5], bb8[0..=3], bb9[0..=1], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb19[0], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0], bb25[0], bb26[0..=1], bb27[0..=4], bb28[0..=4], bb29[0..=4], bb30[0..=4], bb31[0..=3], bb32[0..=10], bb33[0..=2], bb34[0..=8], bb35[0], bb36[0..=2], bb37[0..=3], bb38[0..=1], bb39[0..=3], bb40[0..=12], bb41[0..=2], bb42[0..=3], bb43[0..=13], bb44[0..=1], bb45[0..=3], bb46[0..=11], bb47[0..=2], bb48[0..=3], bb49[0..=9], bb50[0..=3], bb51[0..=6], bb52[0..=1], bb53[0..=3], bb54[0..=11], bb55[0..=2], bb56[0..=3], bb57[0..=9], bb58[0..=3], bb59[0..=6], bb60[0..=1], bb61[0..=1], bb62[0..=3], bb63[0..=1], bb64[0..=1], bb65[0..=7], bb66[0..=11], bb67[0..=11], bb68[0..=9], bb69[0..=7], bb70[0..=3], bb71[0..=5], bb72[0..=3], bb73[0..=4], bb74[0..=1], bb75[0], bb76[0..=6], bb77[0..=6], bb78[0..=8], bb79[0..=10], bb80[0..=10], bb81[0..=8], bb82[0..=10], bb83[0..=10], bb84[0..=4], bb85[0..=5], bb86[0..=7], bb87[0..=2], bb88[0..=5], bb89[0..=11], bb90[0..=25], bb91[0..=2], bb92[0..=11], bb93[0..=5], bb94[0..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4], bb102[0..=17], bb103[0..=1], bb104[0..=2], bb105[0..=5], bb106[0], bb107[0], bb108[0], bb109[0], bb110[0], bb111[0], bb112[0], bb113[0], bb114[0], bb115[0], bb116[0], bb117[0], bb118[0], bb119[0], bb120[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=18], bb1[0], bb2[0..=3], bb3[0], bb4[0..=3], bb5[0..=3], bb6[0], bb7[0..=5], bb8[0..=3], bb9[0..=1], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb19[0], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0], bb25[0], bb26[0..=1], bb27[0..=4], bb28[0..=4], bb29[0..=4], bb30[0..=4], bb31[0..=3], bb32[0..=10], bb33[0..=2], bb34[0..=8], bb35[0], bb36[0..=2], bb37[0..=3], bb38[0..=1], bb39[0..=3], bb40[0..=12], bb41[0..=2], bb42[0..=3], bb43[0..=13], bb44[0..=1], bb45[0..=3], bb46[0..=11], bb47[0..=2], bb48[0..=3], bb49[0..=9], bb50[0..=3], bb51[0..=6], bb52[0..=1], bb53[0..=3], bb54[0..=11], bb55[0..=2], bb56[0..=3], bb57[0..=9], bb58[0..=3], bb59[0..=6], bb60[0..=1], bb61[0..=1], bb62[0..=3], bb63[0..=1], bb64[0..=1], bb65[0..=7], bb66[0..=11], bb67[0..=11], bb68[0..=9], bb69[0..=7], bb70[0..=3], bb71[0..=5], bb72[0..=3], bb73[0..=4], bb74[0..=1], bb75[0], bb76[0..=6], bb77[0..=6], bb78[0..=8], bb79[0..=10], bb80[0..=10], bb81[0..=8], bb82[0..=10], bb83[0..=10], bb84[0..=4], bb85[0..=5], bb86[0..=7], bb87[0..=2], bb88[0..=5], bb89[0..=11], bb90[0..=25], bb91[0..=2], bb92[0..=11], bb93[0..=5], bb94[0..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4], bb102[0..=17], bb103[0..=1], bb104[0..=2], bb105[0..=5], bb106[0], bb107[0], bb108[0], bb109[0], bb110[0], bb111[0], bb112[0], bb113[0], bb114[0], bb115[0], bb116[0], bb117[0], bb118[0], bb119[0], bb120[0], '?1}
+| '?2 | U0 | {bb4[2..=3]}
+| '?3 | U0 | {bb7[4..=5], bb8[0..=3], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0]}
+| '?4 | U0 | {bb8[2..=3]}
+| '?5 | U0 | {}
+| '?6 | U0 | {bb8[3]}
+| '?7 | U0 | {bb11[0..=1]}
+| '?8 | U0 | {}
+| '?9 | U0 | {bb11[1]}
+| '?10 | U0 | {bb13[0..=1]}
+| '?11 | U0 | {}
+| '?12 | U0 | {bb13[1]}
+| '?13 | U0 | {bb15[0..=1]}
+| '?14 | U0 | {}
+| '?15 | U0 | {bb15[1]}
+| '?16 | U0 | {bb17[0..=1]}
+| '?17 | U0 | {}
+| '?18 | U0 | {bb17[1]}
+| '?19 | U0 | {bb18[0..=1]}
+| '?20 | U0 | {}
+| '?21 | U0 | {bb18[1]}
+| '?22 | U0 | {bb27[3..=4]}
+| '?23 | U0 | {bb28[3..=4]}
+| '?24 | U0 | {bb29[3..=4]}
+| '?25 | U0 | {bb30[3..=4]}
+| '?26 | U0 | {bb32[8..=10], bb33[0..=2]}
+| '?27 | U0 | {bb32[9..=10], bb33[0..=2]}
+| '?28 | U0 | {bb33[0..=2]}
+| '?29 | U0 | {bb34[7..=8]}
+| '?30 | U0 | {bb40[10..=12], bb41[0..=2]}
+| '?31 | U0 | {bb40[11..=12], bb41[0..=2]}
+| '?32 | U0 | {bb41[0..=2]}
+| '?33 | U0 | {bb46[9..=11], bb47[0..=2]}
+| '?34 | U0 | {bb46[10..=11], bb47[0..=2]}
+| '?35 | U0 | {bb47[0..=2]}
+| '?36 | U0 | {bb54[9..=11], bb55[0..=2]}
+| '?37 | U0 | {bb54[10..=11], bb55[0..=2]}
+| '?38 | U0 | {bb55[0..=2]}
+| '?39 | U0 | {bb76[4..=6], bb81[0..=8], bb82[0..=10]}
+| '?40 | U0 | {bb76[5..=6], bb81[0..=8], bb82[0..=10]}
+| '?41 | U0 | {bb77[4..=6], bb78[0..=8], bb79[0..=10]}
+| '?42 | U0 | {bb77[5..=6], bb78[0..=8], bb79[0..=10]}
+| '?43 | U0 | {bb78[0..=8], bb79[0..=10]}
+| '?44 | U0 | {bb78[6..=8], bb79[0..=10]}
+| '?45 | U0 | {bb78[7..=8], bb79[0..=10]}
+| '?46 | U0 | {bb79[0..=10]}
+| '?47 | U0 | {bb81[0..=8], bb82[0..=10]}
+| '?48 | U0 | {bb81[6..=8], bb82[0..=10]}
+| '?49 | U0 | {bb81[7..=8], bb82[0..=10]}
+| '?50 | U0 | {bb82[0..=10]}
+| '?51 | U0 | {bb84[3..=4]}
+| '?52 | U0 | {bb85[4..=5]}
+| '?53 | U0 | {bb88[4..=5]}
+| '?54 | U0 | {bb94[7..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?55 | U0 | {bb94[9..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?56 | U0 | {bb94[11..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?57 | U0 | {bb94[13..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?58 | U0 | {bb94[15..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?59 | U0 | {bb94[17..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?60 | U0 | {bb94[29..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?61 | U0 | {bb94[29..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?62 | U0 | {bb94[30]}
+| '?63 | U0 | {bb95[3..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?64 | U0 | {bb95[3..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?65 | U0 | {bb95[4]}
+| '?66 | U0 | {bb96[3..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?67 | U0 | {bb96[3..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?68 | U0 | {bb96[4]}
+| '?69 | U0 | {bb97[3..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?70 | U0 | {bb97[3..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?71 | U0 | {bb97[4]}
+| '?72 | U0 | {bb98[3..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?73 | U0 | {bb98[3..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?74 | U0 | {bb98[4]}
+| '?75 | U0 | {bb99[3..=4], bb100[0..=17], bb101[0..=4]}
+| '?76 | U0 | {bb99[3..=4], bb100[0..=17], bb101[0..=4]}
+| '?77 | U0 | {bb99[4]}
+| '?78 | U0 | {bb100[1..=17], bb101[0..=4]}
+| '?79 | U0 | {bb100[11..=17], bb101[0..=4]}
+| '?80 | U0 | {bb100[12..=17], bb101[0..=4]}
+| '?81 | U0 | {bb100[15..=17], bb101[0..=4]}
+| '?82 | U0 | {bb100[16..=17], bb101[0..=4]}
+| '?83 | U0 | {bb100[17], bb101[0..=4]}
+| '?84 | U0 | {bb4[3]}
+| '?85 | U0 | {bb8[0..=3], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0]}
+| '?86 | U0 | {bb7[5], bb8[0..=3], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0]}
+| '?87 | U0 | {bb18[1]}
+| '?88 | U0 | {bb17[1]}
+| '?89 | U0 | {bb15[1]}
+| '?90 | U0 | {bb13[1]}
+| '?91 | U0 | {bb11[1]}
+| '?92 | U0 | {bb8[3]}
+| '?93 | U0 | {bb30[4]}
+| '?94 | U0 | {bb33[1..=2]}
+| '?95 | U0 | {bb33[0..=2]}
+| '?96 | U0 | {bb32[10], bb33[0..=2]}
+| '?97 | U0 | {bb32[9..=10], bb33[0..=2]}
+| '?98 | U0 | {bb34[8]}
+| '?99 | U0 | {bb29[4]}
+| '?100 | U0 | {bb41[1..=2]}
+| '?101 | U0 | {bb41[0..=2]}
+| '?102 | U0 | {bb40[12], bb41[0..=2]}
+| '?103 | U0 | {bb40[11..=12], bb41[0..=2]}
+| '?104 | U0 | {bb28[4]}
+| '?105 | U0 | {bb47[1..=2]}
+| '?106 | U0 | {bb47[0..=2]}
+| '?107 | U0 | {bb46[11], bb47[0..=2]}
+| '?108 | U0 | {bb46[10..=11], bb47[0..=2]}
+| '?109 | U0 | {bb27[4]}
+| '?110 | U0 | {bb55[1..=2]}
+| '?111 | U0 | {bb55[0..=2]}
+| '?112 | U0 | {bb54[11], bb55[0..=2]}
+| '?113 | U0 | {bb54[10..=11], bb55[0..=2]}
+| '?114 | U0 | {bb78[1..=8], bb79[0..=10]}
+| '?115 | U0 | {bb78[0..=8], bb79[0..=10]}
+| '?116 | U0 | {bb77[6], bb78[0..=8], bb79[0..=10]}
+| '?117 | U0 | {bb77[5..=6], bb78[0..=8], bb79[0..=10]}
+| '?118 | U0 | {bb79[1..=10]}
+| '?119 | U0 | {bb79[0..=10]}
+| '?120 | U0 | {bb78[8], bb79[0..=10]}
+| '?121 | U0 | {bb78[7..=8], bb79[0..=10]}
+| '?122 | U0 | {bb81[1..=8], bb82[0..=10]}
+| '?123 | U0 | {bb81[0..=8], bb82[0..=10]}
+| '?124 | U0 | {bb76[6], bb81[0..=8], bb82[0..=10]}
+| '?125 | U0 | {bb76[5..=6], bb81[0..=8], bb82[0..=10]}
+| '?126 | U0 | {bb82[1..=10]}
+| '?127 | U0 | {bb82[0..=10]}
+| '?128 | U0 | {bb81[8], bb82[0..=10]}
+| '?129 | U0 | {bb81[7..=8], bb82[0..=10]}
+| '?130 | U0 | {bb84[4]}
+| '?131 | U0 | {bb85[5]}
+| '?132 | U0 | {bb88[5]}
+| '?133 | U0 | {bb101[0..=4]}
+| '?134 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?135 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?136 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?137 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?138 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?139 | U0 | {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?140 | U0 | {bb94[8..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?141 | U0 | {bb94[10..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?142 | U0 | {bb94[12..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?143 | U0 | {bb94[14..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?144 | U0 | {bb94[16..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?145 | U0 | {bb94[18..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?146 | U0 | {bb100[2..=17], bb101[0..=4]}
+| '?147 | U0 | {bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?148 | U0 | {bb94[30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?149 | U0 | {bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?150 | U0 | {bb95[4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?151 | U0 | {bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?152 | U0 | {bb96[4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?153 | U0 | {bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?154 | U0 | {bb97[4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?155 | U0 | {bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?156 | U0 | {bb98[4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?157 | U0 | {bb100[0..=17], bb101[0..=4]}
+| '?158 | U0 | {bb99[4], bb100[0..=17], bb101[0..=4]}
+| '?159 | U0 | {bb100[13..=17], bb101[0..=4]}
+| '?160 | U0 | {bb100[12..=17], bb101[0..=4]}
+| '?161 | U0 | {bb100[17], bb101[0..=4]}
+| '?162 | U0 | {bb100[17], bb101[0..=4]}
+| '?163 | U0 | {bb100[16..=17], bb101[0..=4]}
+| '?164 | U0 | {bb100[16..=17], bb101[0..=4]}
+| '?165 | U0 | {bb94[30]}
+| '?166 | U0 | {bb95[4]}
+| '?167 | U0 | {bb96[4]}
+| '?168 | U0 | {bb97[4]}
+| '?169 | U0 | {bb98[4]}
+| '?170 | U0 | {bb99[4]}
+| '?171 | U0 | {bb100[17], bb101[0..=4]}
+| '?172 | U0 | {bb94[30]}
+| '?173 | U0 | {bb94[30]}
+| '?174 | U0 | {bb95[4]}
+| '?175 | U0 | {bb95[4]}
+| '?176 | U0 | {bb96[4]}
+| '?177 | U0 | {bb96[4]}
+| '?178 | U0 | {bb97[4]}
+| '?179 | U0 | {bb97[4]}
+| '?180 | U0 | {bb98[4]}
+| '?181 | U0 | {bb98[4]}
+| '?182 | U0 | {bb99[4]}
+| '?183 | U0 | {bb99[4]}
+| '?184 | U0 | {bb100[17], bb101[0..=4]}
+| '?185 | U0 | {bb100[17], bb101[0..=4]}
+| '?186 | U0 | {bb4[3]}
+| '?187 | U0 | {bb7[5], bb8[0..=3], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0]}
+| '?188 | U0 | {bb8[3]}
+| '?189 | U0 | {bb8[3]}
+| '?190 | U0 | {bb11[1]}
+| '?191 | U0 | {bb11[1]}
+| '?192 | U0 | {bb13[1]}
+| '?193 | U0 | {bb13[1]}
+| '?194 | U0 | {bb15[1]}
+| '?195 | U0 | {bb15[1]}
+| '?196 | U0 | {bb17[1]}
+| '?197 | U0 | {bb17[1]}
+| '?198 | U0 | {bb18[1]}
+| '?199 | U0 | {bb18[1]}
+| '?200 | U0 | {bb27[4]}
+| '?201 | U0 | {bb28[4]}
+| '?202 | U0 | {bb29[4]}
+| '?203 | U0 | {bb30[4]}
+| '?204 | U0 | {bb32[10], bb33[0..=2]}
+| '?205 | U0 | {bb33[2]}
+| '?206 | U0 | {bb34[8]}
+| '?207 | U0 | {bb40[12], bb41[0..=2]}
+| '?208 | U0 | {bb41[2]}
+| '?209 | U0 | {bb46[11], bb47[0..=2]}
+| '?210 | U0 | {bb47[2]}
+| '?211 | U0 | {bb54[11], bb55[0..=2]}
+| '?212 | U0 | {bb55[2]}
+| '?213 | U0 | {bb76[6], bb81[0..=8], bb82[0..=10]}
+| '?214 | U0 | {bb77[6], bb78[0..=8], bb79[0..=10]}
+| '?215 | U0 | {bb78[8], bb79[0..=10]}
+| '?216 | U0 | {bb79[10]}
+| '?217 | U0 | {bb79[10]}
+| '?218 | U0 | {bb81[8], bb82[0..=10]}
+| '?219 | U0 | {bb82[10]}
+| '?220 | U0 | {bb82[10]}
+| '?221 | U0 | {bb84[4]}
+| '?222 | U0 | {bb85[5]}
+| '?223 | U0 | {bb88[5]}
+| '?224 | U0 | {bb94[30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?225 | U0 | {bb95[4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?226 | U0 | {bb96[4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?227 | U0 | {bb97[4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?228 | U0 | {bb98[4], bb99[0..=4], bb100[0..=17], bb101[0..=4]}
+| '?229 | U0 | {bb99[4], bb100[0..=17], bb101[0..=4]}
+| '?230 | U0 | {bb101[4]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=18], bb1[0], bb2[0..=3], bb3[0], bb4[0..=3], bb5[0..=3], bb6[0], bb7[0..=5], bb8[0..=3], bb9[0..=1], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb19[0], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0], bb25[0], bb26[0..=1], bb27[0..=4], bb28[0..=4], bb29[0..=4], bb30[0..=4], bb31[0..=3], bb32[0..=10], bb33[0..=2], bb34[0..=8], bb35[0], bb36[0..=2], bb37[0..=3], bb38[0..=1], bb39[0..=3], bb40[0..=12], bb41[0..=2], bb42[0..=3], bb43[0..=13], bb44[0..=1], bb45[0..=3], bb46[0..=11], bb47[0..=2], bb48[0..=3], bb49[0..=9], bb50[0..=3], bb51[0..=6], bb52[0..=1], bb53[0..=3], bb54[0..=11], bb55[0..=2], bb56[0..=3], bb57[0..=9], bb58[0..=3], bb59[0..=6], bb60[0..=1], bb61[0..=1], bb62[0..=3], bb63[0..=1], bb64[0..=1], bb65[0..=7], bb66[0..=11], bb67[0..=11], bb68[0..=9], bb69[0..=7], bb70[0..=3], bb71[0..=5], bb72[0..=3], bb73[0..=4], bb74[0..=1], bb75[0], bb76[0..=6], bb77[0..=6], bb78[0..=8], bb79[0..=10], bb80[0..=10], bb81[0..=8], bb82[0..=10], bb83[0..=10], bb84[0..=4], bb85[0..=5], bb86[0..=7], bb87[0..=2], bb88[0..=5], bb89[0..=11], bb90[0..=25], bb91[0..=2], bb92[0..=11], bb93[0..=5], bb94[0..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4], bb102[0..=17], bb103[0..=1], bb104[0..=2], bb105[0..=5], bb106[0], bb107[0], bb108[0], bb109[0], bb110[0], bb111[0], bb112[0], bb113[0], bb114[0], bb115[0], bb116[0], bb117[0], bb118[0], bb119[0], bb120[0]}
+| '?1 live at {bb0[0..=18], bb1[0], bb2[0..=3], bb3[0], bb4[0..=3], bb5[0..=3], bb6[0], bb7[0..=5], bb8[0..=3], bb9[0..=1], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0..=1], bb19[0], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0], bb25[0], bb26[0..=1], bb27[0..=4], bb28[0..=4], bb29[0..=4], bb30[0..=4], bb31[0..=3], bb32[0..=10], bb33[0..=2], bb34[0..=8], bb35[0], bb36[0..=2], bb37[0..=3], bb38[0..=1], bb39[0..=3], bb40[0..=12], bb41[0..=2], bb42[0..=3], bb43[0..=13], bb44[0..=1], bb45[0..=3], bb46[0..=11], bb47[0..=2], bb48[0..=3], bb49[0..=9], bb50[0..=3], bb51[0..=6], bb52[0..=1], bb53[0..=3], bb54[0..=11], bb55[0..=2], bb56[0..=3], bb57[0..=9], bb58[0..=3], bb59[0..=6], bb60[0..=1], bb61[0..=1], bb62[0..=3], bb63[0..=1], bb64[0..=1], bb65[0..=7], bb66[0..=11], bb67[0..=11], bb68[0..=9], bb69[0..=7], bb70[0..=3], bb71[0..=5], bb72[0..=3], bb73[0..=4], bb74[0..=1], bb75[0], bb76[0..=6], bb77[0..=6], bb78[0..=8], bb79[0..=10], bb80[0..=10], bb81[0..=8], bb82[0..=10], bb83[0..=10], bb84[0..=4], bb85[0..=5], bb86[0..=7], bb87[0..=2], bb88[0..=5], bb89[0..=11], bb90[0..=25], bb91[0..=2], bb92[0..=11], bb93[0..=5], bb94[0..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=17], bb101[0..=4], bb102[0..=17], bb103[0..=1], bb104[0..=2], bb105[0..=5], bb106[0], bb107[0], bb108[0], bb109[0], bb110[0], bb111[0], bb112[0], bb113[0], bb114[0], bb115[0], bb116[0], bb117[0], bb118[0], bb119[0], bb120[0]}
+| '?2 live at {bb4[2]}
+| '?3 live at {bb7[4]}
+| '?4 live at {bb8[2]}
+| '?6 live at {bb8[3]}
+| '?7 live at {bb11[0]}
+| '?9 live at {bb11[1]}
+| '?10 live at {bb13[0]}
+| '?12 live at {bb13[1]}
+| '?13 live at {bb15[0]}
+| '?15 live at {bb15[1]}
+| '?16 live at {bb17[0]}
+| '?18 live at {bb17[1]}
+| '?19 live at {bb18[0]}
+| '?21 live at {bb18[1]}
+| '?22 live at {bb27[3]}
+| '?23 live at {bb28[3]}
+| '?24 live at {bb29[3]}
+| '?25 live at {bb30[3]}
+| '?26 live at {bb32[8]}
+| '?27 live at {bb32[9]}
+| '?28 live at {bb33[0]}
+| '?29 live at {bb34[7]}
+| '?30 live at {bb40[10]}
+| '?31 live at {bb40[11]}
+| '?32 live at {bb41[0]}
+| '?33 live at {bb46[9]}
+| '?34 live at {bb46[10]}
+| '?35 live at {bb47[0]}
+| '?36 live at {bb54[9]}
+| '?37 live at {bb54[10]}
+| '?38 live at {bb55[0]}
+| '?39 live at {bb76[4]}
+| '?40 live at {bb76[5]}
+| '?41 live at {bb77[4]}
+| '?42 live at {bb77[5]}
+| '?43 live at {bb78[0]}
+| '?44 live at {bb78[6]}
+| '?45 live at {bb78[7]}
+| '?46 live at {bb79[0]}
+| '?47 live at {bb81[0]}
+| '?48 live at {bb81[6]}
+| '?49 live at {bb81[7]}
+| '?50 live at {bb82[0]}
+| '?51 live at {bb84[3]}
+| '?52 live at {bb85[4]}
+| '?53 live at {bb88[4]}
+| '?54 live at {bb94[7]}
+| '?55 live at {bb94[9]}
+| '?56 live at {bb94[11]}
+| '?57 live at {bb94[13]}
+| '?58 live at {bb94[15]}
+| '?59 live at {bb94[17]}
+| '?60 live at {bb94[29]}
+| '?61 live at {bb94[29]}
+| '?62 live at {bb94[30]}
+| '?63 live at {bb95[3]}
+| '?64 live at {bb95[3]}
+| '?65 live at {bb95[4]}
+| '?66 live at {bb96[3]}
+| '?67 live at {bb96[3]}
+| '?68 live at {bb96[4]}
+| '?69 live at {bb97[3]}
+| '?70 live at {bb97[3]}
+| '?71 live at {bb97[4]}
+| '?72 live at {bb98[3]}
+| '?73 live at {bb98[3]}
+| '?74 live at {bb98[4]}
+| '?75 live at {bb99[3]}
+| '?76 live at {bb99[3]}
+| '?77 live at {bb99[4]}
+| '?78 live at {bb100[1]}
+| '?79 live at {bb100[11]}
+| '?80 live at {bb100[12]}
+| '?81 live at {bb100[15]}
+| '?82 live at {bb100[16]}
+| '?83 live at {bb100[17]}
+| '?84 live at {bb4[3]}
+| '?85 live at {bb8[0..=3], bb10[0], bb11[0..=1], bb12[0], bb13[0..=1], bb14[0], bb15[0..=1], bb16[0], bb17[0..=1], bb18[0], bb20[0], bb21[0], bb22[0], bb23[0], bb24[0]}
+| '?86 live at {bb7[5]}
+| '?87 live at {bb18[1]}
+| '?88 live at {bb17[1]}
+| '?89 live at {bb15[1]}
+| '?90 live at {bb13[1]}
+| '?91 live at {bb11[1]}
+| '?92 live at {bb8[3]}
+| '?93 live at {bb30[4]}
+| '?94 live at {bb33[1..=2]}
+| '?95 live at {bb33[0]}
+| '?96 live at {bb32[10]}
+| '?97 live at {bb32[9]}
+| '?98 live at {bb34[8]}
+| '?99 live at {bb29[4]}
+| '?100 live at {bb41[1..=2]}
+| '?101 live at {bb41[0]}
+| '?102 live at {bb40[12]}
+| '?103 live at {bb40[11]}
+| '?104 live at {bb28[4]}
+| '?105 live at {bb47[1..=2]}
+| '?106 live at {bb47[0]}
+| '?107 live at {bb46[11]}
+| '?108 live at {bb46[10]}
+| '?109 live at {bb27[4]}
+| '?110 live at {bb55[1..=2]}
+| '?111 live at {bb55[0]}
+| '?112 live at {bb54[11]}
+| '?113 live at {bb54[10]}
+| '?114 live at {bb78[1..=8], bb79[0..=10]}
+| '?115 live at {bb78[0]}
+| '?116 live at {bb77[6]}
+| '?117 live at {bb77[5]}
+| '?118 live at {bb79[1..=10]}
+| '?119 live at {bb79[0]}
+| '?120 live at {bb78[8]}
+| '?121 live at {bb78[7]}
+| '?122 live at {bb81[1..=8], bb82[0..=10]}
+| '?123 live at {bb81[0]}
+| '?124 live at {bb76[6]}
+| '?125 live at {bb76[5]}
+| '?126 live at {bb82[1..=10]}
+| '?127 live at {bb82[0]}
+| '?128 live at {bb81[8]}
+| '?129 live at {bb81[7]}
+| '?130 live at {bb84[4]}
+| '?131 live at {bb85[5]}
+| '?132 live at {bb88[5]}
+| '?133 live at {bb101[0..=4]}
+| '?134 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?135 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?136 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?137 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?138 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?139 live at {bb94[19..=30], bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=3]}
+| '?140 live at {bb94[8..=18]}
+| '?141 live at {bb94[10..=18]}
+| '?142 live at {bb94[12..=18]}
+| '?143 live at {bb94[14..=18]}
+| '?144 live at {bb94[16..=18]}
+| '?145 live at {bb94[18]}
+| '?146 live at {bb100[2..=15]}
+| '?147 live at {bb95[0..=4], bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=1]}
+| '?148 live at {bb94[30]}
+| '?149 live at {bb96[0..=4], bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=1]}
+| '?150 live at {bb95[4]}
+| '?151 live at {bb97[0..=4], bb98[0..=4], bb99[0..=4], bb100[0..=1]}
+| '?152 live at {bb96[4]}
+| '?153 live at {bb98[0..=4], bb99[0..=4], bb100[0..=1]}
+| '?154 live at {bb97[4]}
+| '?155 live at {bb99[0..=4], bb100[0..=1]}
+| '?156 live at {bb98[4]}
+| '?157 live at {bb100[0..=1]}
+| '?158 live at {bb99[4]}
+| '?159 live at {bb100[13..=17]}
+| '?160 live at {bb100[12]}
+| '?161 live at {bb100[17]}
+| '?162 live at {bb100[17]}
+| '?163 live at {bb100[16]}
+| '?164 live at {bb100[16]}
+| '?186 live at {bb4[3]}
+| '?187 live at {bb7[5]}
+| '?188 live at {bb8[3]}
+| '?189 live at {bb8[3]}
+| '?190 live at {bb11[1]}
+| '?191 live at {bb11[1]}
+| '?192 live at {bb13[1]}
+| '?193 live at {bb13[1]}
+| '?194 live at {bb15[1]}
+| '?195 live at {bb15[1]}
+| '?196 live at {bb17[1]}
+| '?197 live at {bb17[1]}
+| '?198 live at {bb18[1]}
+| '?199 live at {bb18[1]}
+| '?200 live at {bb27[4]}
+| '?201 live at {bb28[4]}
+| '?202 live at {bb29[4]}
+| '?203 live at {bb30[4]}
+| '?204 live at {bb32[10]}
+| '?205 live at {bb33[2]}
+| '?206 live at {bb34[8]}
+| '?207 live at {bb40[12]}
+| '?208 live at {bb41[2]}
+| '?209 live at {bb46[11]}
+| '?210 live at {bb47[2]}
+| '?211 live at {bb54[11]}
+| '?212 live at {bb55[2]}
+| '?213 live at {bb76[6]}
+| '?214 live at {bb77[6]}
+| '?215 live at {bb78[8]}
+| '?216 live at {bb79[10]}
+| '?217 live at {bb79[10]}
+| '?218 live at {bb81[8]}
+| '?219 live at {bb82[10]}
+| '?220 live at {bb82[10]}
+| '?221 live at {bb84[4]}
+| '?222 live at {bb85[5]}
+| '?223 live at {bb88[5]}
+| '?224 live at {bb94[30]}
+| '?225 live at {bb95[4]}
+| '?226 live at {bb96[4]}
+| '?227 live at {bb97[4]}
+| '?228 live at {bb98[4]}
+| '?229 live at {bb99[4]}
+| '?230 live at {bb101[4]}
+| '?2: '?84 due to Boring at Single(bb4[2]) (src/main.rs:52:25: 52:29 (#0)
+| '?3: '?86 due to Boring at Single(bb7[4]) (src/main.rs:53:15: 53:16 (#0)
+| '?4: '?92 due to Boring at Single(bb8[2]) (src/main.rs:54:13: 54:21 (#0)
+| '?6: '?189 due to Boring at Single(bb8[3]) (src/main.rs:54:13: 54:21 (#0)
+| '?7: '?91 due to Boring at Single(bb11[0]) (src/main.rs:61:13: 61:20 (#0)
+| '?9: '?191 due to Boring at Single(bb11[1]) (src/main.rs:61:13: 61:20 (#0)
+| '?10: '?90 due to Boring at Single(bb13[0]) (src/main.rs:66:13: 66:22 (#0)
+| '?12: '?193 due to Boring at Single(bb13[1]) (src/main.rs:66:13: 66:22 (#0)
+| '?13: '?89 due to Boring at Single(bb15[0]) (src/main.rs:71:13: 71:21 (#0)
+| '?15: '?195 due to Boring at Single(bb15[1]) (src/main.rs:71:13: 71:21 (#0)
+| '?16: '?88 due to Boring at Single(bb17[0]) (src/main.rs:76:13: 76:17 (#0)
+| '?18: '?197 due to Boring at Single(bb17[1]) (src/main.rs:76:13: 76:17 (#0)
+| '?19: '?87 due to Boring at Single(bb18[0]) (src/main.rs:76:20: 76:28 (#0)
+| '?21: '?199 due to Boring at Single(bb18[1]) (src/main.rs:76:20: 76:28 (#0)
+| '?22: '?109 due to Boring at Single(bb27[3]) (src/main.rs:72:25: 72:29 (#0)
+| '?23: '?104 due to Boring at Single(bb28[3]) (src/main.rs:67:25: 67:29 (#0)
+| '?24: '?99 due to Boring at Single(bb29[3]) (src/main.rs:62:25: 62:29 (#0)
+| '?25: '?93 due to Boring at Single(bb30[3]) (src/main.rs:55:25: 55:29 (#0)
+| '?26: '?97 due to Boring at Single(bb32[8]) (src/main.rs:56:35: 56:37 (#0)
+| '?27: '?96 due to Boring at Single(bb32[9]) (src/main.rs:56:35: 56:37 (#0)
+| '?28: '?94 due to Boring at Single(bb33[0]) (src/main.rs:56:35: 56:37 (#0)
+| '?29: '?98 due to Boring at Single(bb34[7]) (src/main.rs:57:20: 57:24 (#0)
+| '?30: '?103 due to Boring at Single(bb40[10]) (src/main.rs:63:35: 63:37 (#0)
+| '?31: '?102 due to Boring at Single(bb40[11]) (src/main.rs:63:35: 63:37 (#0)
+| '?32: '?100 due to Boring at Single(bb41[0]) (src/main.rs:63:35: 63:37 (#0)
+| '?33: '?108 due to Boring at Single(bb46[9]) (src/main.rs:68:35: 68:37 (#0)
+| '?34: '?107 due to Boring at Single(bb46[10]) (src/main.rs:68:35: 68:37 (#0)
+| '?35: '?105 due to Boring at Single(bb47[0]) (src/main.rs:68:35: 68:37 (#0)
+| '?36: '?113 due to Boring at Single(bb54[9]) (src/main.rs:73:35: 73:37 (#0)
+| '?37: '?112 due to Boring at Single(bb54[10]) (src/main.rs:73:35: 73:37 (#0)
+| '?38: '?110 due to Boring at Single(bb55[0]) (src/main.rs:73:35: 73:37 (#0)
+| '?39: '?125 due to Boring at Single(bb76[4]) (src/main.rs:93:52: 93:54 (#0)
+| '?40: '?124 due to Boring at Single(bb76[5]) (src/main.rs:93:52: 93:54 (#0)
+| '?41: '?117 due to Boring at Single(bb77[4]) (src/main.rs:92:35: 92:37 (#0)
+| '?42: '?116 due to Boring at Single(bb77[5]) (src/main.rs:92:35: 92:37 (#0)
+| '?43: '?114 due to Boring at Single(bb78[0]) (src/main.rs:92:35: 92:37 (#0)
+| '?44: '?121 due to Boring at Single(bb78[6]) (src/main.rs:92:39: 92:41 (#0)
+| '?45: '?120 due to Boring at Single(bb78[7]) (src/main.rs:92:39: 92:41 (#0)
+| '?46: '?118 due to Boring at Single(bb79[0]) (src/main.rs:92:39: 92:41 (#0)
+| '?47: '?122 due to Boring at Single(bb81[0]) (src/main.rs:93:52: 93:54 (#0)
+| '?48: '?129 due to Boring at Single(bb81[6]) (src/main.rs:93:56: 93:58 (#0)
+| '?49: '?128 due to Boring at Single(bb81[7]) (src/main.rs:93:56: 93:58 (#0)
+| '?50: '?126 due to Boring at Single(bb82[0]) (src/main.rs:93:56: 93:58 (#0)
+| '?51: '?130 due to Boring at Single(bb84[3]) (src/main.rs:95:19: 95:24 (#0)
+| '?52: '?131 due to Boring at Single(bb85[4]) (src/main.rs:97:16: 97:23 (#0)
+| '?53: '?132 due to Boring at Single(bb88[4]) (src/main.rs:101:9: 101:16 (#0)
+| '?54: '?140 due to Boring at Single(bb94[7]) (src/main.rs:110:9: 110:13 (#30)
+| '?55: '?141 due to Boring at Single(bb94[9]) (src/main.rs:110:15: 110:18 (#30)
+| '?56: '?142 due to Boring at Single(bb94[11]) (src/main.rs:110:20: 110:25 (#30)
+| '?57: '?143 due to Boring at Single(bb94[13]) (src/main.rs:110:27: 110:38 (#30)
+| '?58: '?144 due to Boring at Single(bb94[15]) (src/main.rs:110:40: 110:44 (#30)
+| '?59: '?145 due to Boring at Single(bb94[17]) (src/main.rs:110:46: 110:49 (#30)
+| '?60: '?148 due to Boring at Single(bb94[29]) (src/main.rs:110:9: 110:13 (#30)
+| '?61: '?60 due to Boring at Single(bb94[29]) (src/main.rs:110:9: 110:13 (#30)
+| '?62: '?165 due to TypeAnnotation(GenericArg) at Single(bb94[30]) (src/main.rs:109:22: 109:26 (#30)
+| '?63: '?150 due to Boring at Single(bb95[3]) (src/main.rs:110:15: 110:18 (#30)
+| '?64: '?63 due to Boring at Single(bb95[3]) (src/main.rs:110:15: 110:18 (#30)
+| '?65: '?166 due to TypeAnnotation(GenericArg) at Single(bb95[4]) (src/main.rs:109:31: 109:33 (#30)
+| '?66: '?152 due to Boring at Single(bb96[3]) (src/main.rs:110:20: 110:25 (#30)
+| '?67: '?66 due to Boring at Single(bb96[3]) (src/main.rs:110:20: 110:25 (#30)
+| '?68: '?167 due to TypeAnnotation(GenericArg) at Single(bb96[4]) (src/main.rs:109:40: 109:42 (#30)
+| '?69: '?154 due to Boring at Single(bb97[3]) (src/main.rs:110:27: 110:38 (#30)
+| '?70: '?69 due to Boring at Single(bb97[3]) (src/main.rs:110:27: 110:38 (#30)
+| '?71: '?168 due to TypeAnnotation(GenericArg) at Single(bb97[4]) (src/main.rs:109:55: 109:60 (#30)
+| '?72: '?156 due to Boring at Single(bb98[3]) (src/main.rs:110:40: 110:44 (#30)
+| '?73: '?72 due to Boring at Single(bb98[3]) (src/main.rs:110:40: 110:44 (#30)
+| '?74: '?169 due to TypeAnnotation(GenericArg) at Single(bb98[4]) (src/main.rs:109:66: 109:71 (#30)
+| '?75: '?158 due to Boring at Single(bb99[3]) (src/main.rs:110:46: 110:49 (#30)
+| '?76: '?75 due to Boring at Single(bb99[3]) (src/main.rs:110:46: 110:49 (#30)
+| '?77: '?170 due to TypeAnnotation(GenericArg) at Single(bb99[4]) (src/main.rs:109:76: 109:78 (#30)
+| '?78: '?146 due to Assignment at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?79: '?160 due to Boring at Single(bb100[11]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?80: '?159 due to Boring at Single(bb100[12]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?81: '?163 due to Boring at Single(bb100[15]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?82: '?161 due to Boring at Single(bb100[16]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?83: '?133 due to Boring at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?83: '?171 due to TypeAnnotation(GenericArg) at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?84: '?186 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::iter::Skip<std::env::Args>]))) at Single(bb4[3]) (src/main.rs:52:25: 52:36 (#0)
+| '?85: '?4 due to Boring at Single(bb8[2]) (src/main.rs:54:13: 54:21 (#0)
+| '?85: '?7 due to Boring at Single(bb11[0]) (src/main.rs:61:13: 61:20 (#0)
+| '?85: '?10 due to Boring at Single(bb13[0]) (src/main.rs:66:13: 66:22 (#0)
+| '?85: '?13 due to Boring at Single(bb15[0]) (src/main.rs:71:13: 71:21 (#0)
+| '?85: '?16 due to Boring at Single(bb17[0]) (src/main.rs:76:13: 76:17 (#0)
+| '?85: '?19 due to Boring at Single(bb18[0]) (src/main.rs:76:20: 76:28 (#0)
+| '?86: '?187 due to CallArgument(Some(FnDef(DefId(3:6757 ~ alloc[b087]::string::{impl#0}::as_str), []))) at Single(bb7[5]) (src/main.rs:53:15: 53:25 (#0)
+| '?87: '?198 due to Boring at Single(bb18[1]) (src/main.rs:76:20: 76:28 (#0)
+| '?88: '?196 due to Boring at Single(bb17[1]) (src/main.rs:76:13: 76:17 (#0)
+| '?89: '?194 due to Boring at Single(bb15[1]) (src/main.rs:71:13: 71:21 (#0)
+| '?90: '?192 due to Boring at Single(bb13[1]) (src/main.rs:66:13: 66:22 (#0)
+| '?91: '?190 due to Boring at Single(bb11[1]) (src/main.rs:61:13: 61:20 (#0)
+| '?92: '?188 due to Boring at Single(bb8[3]) (src/main.rs:54:13: 54:21 (#0)
+| '?93: '?203 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::iter::Skip<std::env::Args>]))) at Single(bb30[4]) (src/main.rs:55:25: 55:36 (#0)
+| '?94: '?205 due to CallArgument(Some(FnDef(DefId(0:9 ~ iterator_pipeline_bench[bbf6]::parse_mode), []))) at Single(bb33[2]) (src/main.rs:56:24: 56:38 (#0)
+| '?95: '?28 due to Boring at Single(bb33[0]) (src/main.rs:56:35: 56:37 (#0)
+| '?96: '?204 due to Boring at Single(bb32[10]) (src/main.rs:56:35: 56:37 (#0)
+| '?97: '?27 due to Boring at Single(bb32[9]) (src/main.rs:56:35: 56:37 (#0)
+| '?98: '?206 due to CallArgument(Some(FnDef(DefId(2:10776 ~ core[28bf]::option::{impl#0}::is_none), [Mode]))) at Single(bb34[8]) (src/main.rs:57:20: 57:34 (#0)
+| '?99: '?202 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::iter::Skip<std::env::Args>]))) at Single(bb29[4]) (src/main.rs:62:25: 62:36 (#0)
+| '?100: '?208 due to CallArgument(Some(FnDef(DefId(0:10 ~ iterator_pipeline_bench[bbf6]::parse_u64), []))) at Single(bb41[2]) (src/main.rs:63:25: 63:38 (#0)
+| '?101: '?32 due to Boring at Single(bb41[0]) (src/main.rs:63:35: 63:37 (#0)
+| '?102: '?207 due to Boring at Single(bb40[12]) (src/main.rs:63:35: 63:37 (#0)
+| '?103: '?31 due to Boring at Single(bb40[11]) (src/main.rs:63:35: 63:37 (#0)
+| '?104: '?201 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::iter::Skip<std::env::Args>]))) at Single(bb28[4]) (src/main.rs:67:25: 67:36 (#0)
+| '?105: '?210 due to CallArgument(Some(FnDef(DefId(0:10 ~ iterator_pipeline_bench[bbf6]::parse_u64), []))) at Single(bb47[2]) (src/main.rs:68:25: 68:38 (#0)
+| '?106: '?35 due to Boring at Single(bb47[0]) (src/main.rs:68:35: 68:37 (#0)
+| '?107: '?209 due to Boring at Single(bb46[11]) (src/main.rs:68:35: 68:37 (#0)
+| '?108: '?34 due to Boring at Single(bb46[10]) (src/main.rs:68:35: 68:37 (#0)
+| '?109: '?200 due to CallArgument(Some(FnDef(DefId(2:9966 ~ core[28bf]::iter::traits::iterator::Iterator::next), [std::iter::Skip<std::env::Args>]))) at Single(bb27[4]) (src/main.rs:72:25: 72:36 (#0)
+| '?110: '?212 due to CallArgument(Some(FnDef(DefId(0:10 ~ iterator_pipeline_bench[bbf6]::parse_u64), []))) at Single(bb55[2]) (src/main.rs:73:25: 73:38 (#0)
+| '?111: '?38 due to Boring at Single(bb55[0]) (src/main.rs:73:35: 73:37 (#0)
+| '?112: '?211 due to Boring at Single(bb54[11]) (src/main.rs:73:35: 73:37 (#0)
+| '?113: '?37 due to Boring at Single(bb54[10]) (src/main.rs:73:35: 73:37 (#0)
+| '?114: '?216 due to CallArgument(Some(FnDef(DefId(20:3 ~ iterator_pipeline_bench[25c7]::kernel_easy), []))) at Single(bb79[10]) (src/main.rs:92:23: 92:65 (#0)
+| '?115: '?43 due to Boring at Single(bb78[0]) (src/main.rs:92:35: 92:37 (#0)
+| '?116: '?214 due to Boring at Single(bb77[6]) (src/main.rs:92:35: 92:37 (#0)
+| '?117: '?42 due to Boring at Single(bb77[5]) (src/main.rs:92:35: 92:37 (#0)
+| '?118: '?217 due to CallArgument(Some(FnDef(DefId(20:3 ~ iterator_pipeline_bench[25c7]::kernel_easy), []))) at Single(bb79[10]) (src/main.rs:92:23: 92:65 (#0)
+| '?119: '?46 due to Boring at Single(bb79[0]) (src/main.rs:92:39: 92:41 (#0)
+| '?120: '?215 due to Boring at Single(bb78[8]) (src/main.rs:92:39: 92:41 (#0)
+| '?121: '?45 due to Boring at Single(bb78[7]) (src/main.rs:92:39: 92:41 (#0)
+| '?122: '?219 due to CallArgument(Some(FnDef(DefId(20:9 ~ iterator_pipeline_bench[25c7]::kernel_mir_dependent), []))) at Single(bb82[10]) (src/main.rs:93:31: 93:82 (#0)
+| '?123: '?47 due to Boring at Single(bb81[0]) (src/main.rs:93:52: 93:54 (#0)
+| '?124: '?213 due to Boring at Single(bb76[6]) (src/main.rs:93:52: 93:54 (#0)
+| '?125: '?40 due to Boring at Single(bb76[5]) (src/main.rs:93:52: 93:54 (#0)
+| '?126: '?220 due to CallArgument(Some(FnDef(DefId(20:9 ~ iterator_pipeline_bench[25c7]::kernel_mir_dependent), []))) at Single(bb82[10]) (src/main.rs:93:31: 93:82 (#0)
+| '?127: '?50 due to Boring at Single(bb82[0]) (src/main.rs:93:56: 93:58 (#0)
+| '?128: '?218 due to Boring at Single(bb81[8]) (src/main.rs:93:56: 93:58 (#0)
+| '?129: '?49 due to Boring at Single(bb81[7]) (src/main.rs:93:56: 93:58 (#0)
+| '?130: '?221 due to CallArgument(Some(FnDef(DefId(1:8340 ~ std[51bd]::time::{impl#0}::elapsed), []))) at Single(bb84[4]) (src/main.rs:95:19: 95:34 (#0)
+| '?131: '?222 due to CallArgument(Some(FnDef(DefId(2:16123 ~ core[28bf]::time::{impl#0}::as_secs_f64), []))) at Single(bb85[5]) (src/main.rs:97:16: 97:37 (#0)
+| '?132: '?223 due to CallArgument(Some(FnDef(DefId(2:16114 ~ core[28bf]::time::{impl#0}::as_nanos), []))) at Single(bb88[5]) (src/main.rs:101:9: 101:27 (#0)
+| '?133: '?230 due to CallArgument(Some(FnDef(DefId(1:4054 ~ std[51bd]::io::stdio::_print), []))) at Single(bb101[4]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:9: 143:62 (#14)
+| '?134: '?61 due to Boring at Single(bb94[29]) (src/main.rs:110:9: 110:13 (#30)
+| '?135: '?64 due to Boring at Single(bb95[3]) (src/main.rs:110:15: 110:18 (#30)
+| '?136: '?67 due to Boring at Single(bb96[3]) (src/main.rs:110:20: 110:25 (#30)
+| '?137: '?70 due to Boring at Single(bb97[3]) (src/main.rs:110:27: 110:38 (#30)
+| '?138: '?73 due to Boring at Single(bb98[3]) (src/main.rs:110:40: 110:44 (#30)
+| '?139: '?76 due to Boring at Single(bb99[3]) (src/main.rs:110:46: 110:49 (#30)
+| '?140: '?134 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?141: '?135 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?142: '?136 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?143: '?137 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?144: '?138 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?145: '?139 due to Assignment at Single(bb94[18]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?146: '?164 due to Boring at Single(bb100[15]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?147: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?148: '?224 due to CallArgument(Some(FnDef(DefId(2:12570 ~ core[28bf]::fmt::rt::{impl#0}::new_debug), ['{erased}, Mode]))) at Single(bb94[30]) (src/main.rs:109:22: 109:26 (#30)
+| '?149: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?150: '?225 due to CallArgument(Some(FnDef(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), ['{erased}, usize]))) at Single(bb95[4]) (src/main.rs:109:31: 109:33 (#30)
+| '?151: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?152: '?226 due to CallArgument(Some(FnDef(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), ['{erased}, u32]))) at Single(bb96[4]) (src/main.rs:109:40: 109:42 (#30)
+| '?153: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?154: '?227 due to CallArgument(Some(FnDef(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), ['{erased}, f64]))) at Single(bb97[4]) (src/main.rs:109:55: 109:60 (#30)
+| '?155: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?156: '?228 due to CallArgument(Some(FnDef(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), ['{erased}, f64]))) at Single(bb98[4]) (src/main.rs:109:66: 109:71 (#30)
+| '?157: '?78 due to Boring at Single(bb100[1]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?158: '?229 due to CallArgument(Some(FnDef(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), ['{erased}, u64]))) at Single(bb99[4]) (src/main.rs:109:76: 109:78 (#30)
+| '?159: '?83 due to CallArgument(Some(FnDef(DefId(2:12669 ~ core[28bf]::fmt::{impl#4}::new), ['{erased}, 75_usize, 6_usize]))) at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?160: '?80 due to Boring at Single(bb100[12]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?161: '?83 due to CallArgument(Some(FnDef(DefId(2:12669 ~ core[28bf]::fmt::{impl#4}::new), ['{erased}, 75_usize, 6_usize]))) at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?162: '?83 due to CallArgument(Some(FnDef(DefId(2:12669 ~ core[28bf]::fmt::{impl#4}::new), ['{erased}, 75_usize, 6_usize]))) at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?163: '?82 due to Boring at Single(bb100[16]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?164: '?162 due to Boring at Single(bb100[16]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?165: '?62 due to TypeAnnotation(GenericArg) at Single(bb94[30]) (src/main.rs:109:22: 109:26 (#30)
+| '?165: '?173 due to BoringNoLocation at All(src/main.rs:109:22: 109:26) (src/main.rs:109:22: 109:26 (#30)
+| '?166: '?65 due to TypeAnnotation(GenericArg) at Single(bb95[4]) (src/main.rs:109:31: 109:33 (#30)
+| '?166: '?175 due to BoringNoLocation at All(src/main.rs:109:31: 109:33) (src/main.rs:109:31: 109:33 (#30)
+| '?167: '?68 due to TypeAnnotation(GenericArg) at Single(bb96[4]) (src/main.rs:109:40: 109:42 (#30)
+| '?167: '?177 due to BoringNoLocation at All(src/main.rs:109:40: 109:42) (src/main.rs:109:40: 109:42 (#30)
+| '?168: '?71 due to TypeAnnotation(GenericArg) at Single(bb97[4]) (src/main.rs:109:55: 109:60 (#30)
+| '?168: '?179 due to BoringNoLocation at All(src/main.rs:109:55: 109:60) (src/main.rs:109:55: 109:60 (#30)
+| '?169: '?74 due to TypeAnnotation(GenericArg) at Single(bb98[4]) (src/main.rs:109:66: 109:71 (#30)
+| '?169: '?181 due to BoringNoLocation at All(src/main.rs:109:66: 109:71) (src/main.rs:109:66: 109:71 (#30)
+| '?170: '?77 due to TypeAnnotation(GenericArg) at Single(bb99[4]) (src/main.rs:109:76: 109:78 (#30)
+| '?170: '?183 due to BoringNoLocation at All(src/main.rs:109:76: 109:78) (src/main.rs:109:76: 109:78 (#30)
+| '?171: '?83 due to TypeAnnotation(GenericArg) at Single(bb100[17]) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?171: '?185 due to BoringNoLocation at All(/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?172: '?173 due to BoringNoLocation at All(src/main.rs:109:22: 109:26) (src/main.rs:109:22: 109:26 (#30)
+| '?173: '?165 due to BoringNoLocation at All(src/main.rs:109:22: 109:26) (src/main.rs:109:22: 109:26 (#30)
+| '?173: '?172 due to BoringNoLocation at All(src/main.rs:109:22: 109:26) (src/main.rs:109:22: 109:26 (#30)
+| '?174: '?175 due to BoringNoLocation at All(src/main.rs:109:31: 109:33) (src/main.rs:109:31: 109:33 (#30)
+| '?175: '?166 due to BoringNoLocation at All(src/main.rs:109:31: 109:33) (src/main.rs:109:31: 109:33 (#30)
+| '?175: '?174 due to BoringNoLocation at All(src/main.rs:109:31: 109:33) (src/main.rs:109:31: 109:33 (#30)
+| '?176: '?177 due to BoringNoLocation at All(src/main.rs:109:40: 109:42) (src/main.rs:109:40: 109:42 (#30)
+| '?177: '?167 due to BoringNoLocation at All(src/main.rs:109:40: 109:42) (src/main.rs:109:40: 109:42 (#30)
+| '?177: '?176 due to BoringNoLocation at All(src/main.rs:109:40: 109:42) (src/main.rs:109:40: 109:42 (#30)
+| '?178: '?179 due to BoringNoLocation at All(src/main.rs:109:55: 109:60) (src/main.rs:109:55: 109:60 (#30)
+| '?179: '?168 due to BoringNoLocation at All(src/main.rs:109:55: 109:60) (src/main.rs:109:55: 109:60 (#30)
+| '?179: '?178 due to BoringNoLocation at All(src/main.rs:109:55: 109:60) (src/main.rs:109:55: 109:60 (#30)
+| '?180: '?181 due to BoringNoLocation at All(src/main.rs:109:66: 109:71) (src/main.rs:109:66: 109:71 (#30)
+| '?181: '?169 due to BoringNoLocation at All(src/main.rs:109:66: 109:71) (src/main.rs:109:66: 109:71 (#30)
+| '?181: '?180 due to BoringNoLocation at All(src/main.rs:109:66: 109:71) (src/main.rs:109:66: 109:71 (#30)
+| '?182: '?183 due to BoringNoLocation at All(src/main.rs:109:76: 109:78) (src/main.rs:109:76: 109:78 (#30)
+| '?183: '?170 due to BoringNoLocation at All(src/main.rs:109:76: 109:78) (src/main.rs:109:76: 109:78 (#30)
+| '?183: '?182 due to BoringNoLocation at All(src/main.rs:109:76: 109:78) (src/main.rs:109:76: 109:78 (#30)
+| '?184: '?185 due to BoringNoLocation at All(/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?185: '?171 due to BoringNoLocation at All(/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?185: '?184 due to BoringNoLocation at All(/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61) (/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61 (#30)
+| '?187: '?85 due to Boring at Single(bb7[5]) (src/main.rs:53:15: 53:25 (#0)
+| '?204: '?95 due to Boring at Single(bb32[10]) (src/main.rs:56:35: 56:37 (#0)
+| '?207: '?101 due to Boring at Single(bb40[12]) (src/main.rs:63:35: 63:37 (#0)
+| '?209: '?106 due to Boring at Single(bb46[11]) (src/main.rs:68:35: 68:37 (#0)
+| '?211: '?111 due to Boring at Single(bb54[11]) (src/main.rs:73:35: 73:37 (#0)
+| '?213: '?123 due to Boring at Single(bb76[6]) (src/main.rs:93:52: 93:54 (#0)
+| '?214: '?115 due to Boring at Single(bb77[6]) (src/main.rs:92:35: 92:37 (#0)
+| '?215: '?119 due to Boring at Single(bb78[8]) (src/main.rs:92:39: 92:41 (#0)
+| '?218: '?127 due to Boring at Single(bb81[8]) (src/main.rs:93:56: 93:58 (#0)
+| '?224: '?147 due to Boring at Single(bb94[30]) (src/main.rs:109:22: 109:26 (#30)
+| '?225: '?149 due to Boring at Single(bb95[4]) (src/main.rs:109:31: 109:33 (#30)
+| '?226: '?151 due to Boring at Single(bb96[4]) (src/main.rs:109:40: 109:42 (#30)
+| '?227: '?153 due to Boring at Single(bb97[4]) (src/main.rs:109:55: 109:60 (#30)
+| '?228: '?155 due to Boring at Single(bb98[4]) (src/main.rs:109:66: 109:71 (#30)
+| '?229: '?157 due to Boring at Single(bb99[4]) (src/main.rs:109:76: 109:78 (#30)
+|
+| Borrows
+| bw0: issued at bb4[2] in '?2
+| bw1: issued at bb76[4] in '?39
+| bw2: issued at bb81[6] in '?48
+| bw3: issued at bb84[3] in '?51
+| bw4: issued at bb85[4] in '?52
+| bw5: issued at bb94[7] in '?54
+| bw6: issued at bb94[9] in '?55
+| bw7: issued at bb94[11] in '?56
+| bw8: issued at bb94[13] in '?57
+| bw9: issued at bb94[15] in '?58
+| bw10: issued at bb94[17] in '?59
+| bw11: issued at bb100[15] in '?81
+| bw12: issued at bb88[4] in '?53
+| bw13: issued at bb77[4] in '?41
+| bw14: issued at bb78[6] in '?44
+| bw15: issued at bb7[4] in '?3
+| bw16: issued at bb27[3] in '?22
+| bw17: issued at bb54[9] in '?36
+| bw18: issued at bb28[3] in '?23
+| bw19: issued at bb46[9] in '?33
+| bw20: issued at bb29[3] in '?24
+| bw21: issued at bb40[10] in '?30
+| bw22: issued at bb30[3] in '?25
+| bw23: issued at bb32[8] in '?26
+| bw24: issued at bb34[7] in '?29
+|
+| User Type Annotations
+| 0: user_ty: Canonical { value: Ty(std::option::Option<Mode>), max_universe: U0, var_kinds: [] }, span: src/main.rs:46:19: 46:31, inferred_ty: std::option::Option<Mode>
+| 1: user_ty: Canonical { value: Ty(std::option::Option<Mode>), max_universe: U0, var_kinds: [] }, span: src/main.rs:46:19: 46:31, inferred_ty: std::option::Option<Mode>
+| 2: user_ty: Canonical { value: Ty(usize), max_universe: U0, var_kinds: [] }, span: src/main.rs:47:18: 47:23, inferred_ty: usize
+| 3: user_ty: Canonical { value: Ty(usize), max_universe: U0, var_kinds: [] }, span: src/main.rs:47:18: 47:23, inferred_ty: usize
+| 4: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/main.rs:48:20: 48:23, inferred_ty: u32
+| 5: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/main.rs:48:20: 48:23, inferred_ty: u32
+| 6: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/main.rs:49:19: 49:22, inferred_ty: u32
+| 7: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/main.rs:49:19: 49:22, inferred_ty: u32
+| 8: user_ty: Canonical { value: TypeOf(DefId(2:3667 ~ core[28bf]::convert::TryFrom::try_from), UserArgs { args: [u32, ^c_0], user_self_ty: None }), max_universe: U0, var_kinds: [Ty { ui: U0, sub_root: 0 }] }, span: src/main.rs:69:25: 69:38, inferred_ty: fn(u64) -> std::result::Result<u32, <u32 as std::convert::TryFrom<u64>>::Error> {<u32 as std::convert::TryFrom<u64>>::try_from}
+| 9: user_ty: Canonical { value: TypeOf(DefId(2:3667 ~ core[28bf]::convert::TryFrom::try_from), UserArgs { args: [u32, ^c_0], user_self_ty: None }), max_universe: U0, var_kinds: [Ty { ui: U0, sub_root: 0 }] }, span: src/main.rs:74:24: 74:37, inferred_ty: fn(u64) -> std::result::Result<u32, <u32 as std::convert::TryFrom<u64>>::Error> {<u32 as std::convert::TryFrom<u64>>::try_from}
+| 10: user_ty: Canonical { value: TypeOf(DefId(2:12570 ~ core[28bf]::fmt::rt::{impl#0}::new_debug), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:22: 109:26, inferred_ty: for<'a> fn(&'a Mode) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_debug::<Mode>}
+| 11: user_ty: Canonical { value: TypeOf(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:31: 109:33, inferred_ty: for<'a> fn(&'a usize) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<usize>}
+| 12: user_ty: Canonical { value: TypeOf(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:40: 109:42, inferred_ty: for<'a> fn(&'a u32) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<u32>}
+| 13: user_ty: Canonical { value: TypeOf(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:55: 109:60, inferred_ty: for<'a> fn(&'a f64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<f64>}
+| 14: user_ty: Canonical { value: TypeOf(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:66: 109:71, inferred_ty: for<'a> fn(&'a f64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<f64>}
+| 15: user_ty: Canonical { value: TypeOf(DefId(2:12568 ~ core[28bf]::fmt::rt::{impl#0}::new_display), UserArgs { args: ['^c_0, ^c_1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12567 ~ core[28bf]::fmt::rt::{impl#0}), self_ty: core::fmt::rt::Argument<'^c_2> }) }), max_universe: U0, var_kinds: [Region(U0), Ty { ui: U0, sub_root: 1 }, Region(U0)] }, span: src/main.rs:109:76: 109:78, inferred_ty: for<'a> fn(&'a u64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<u64>}
+| 16: user_ty: Canonical { value: TypeOf(DefId(2:12669 ~ core[28bf]::fmt::{impl#4}::new), UserArgs { args: ['^c_0, ^c_BoundConst { var: 1, .. }, ^c_BoundConst { var: 2, .. }], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:12667 ~ core[28bf]::fmt::{impl#4}), self_ty: std::fmt::Arguments<'^c_3> }) }), max_universe: U0, var_kinds: [Region(U0), Const(U0), Const(U0), Region(U0)] }, span: /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61, inferred_ty: unsafe fn(&[u8; 75], &[core::fmt::rt::Argument<'_>; 6]) -> std::fmt::Arguments<'_> {std::fmt::Arguments::<'_>::new::<75, 6>}
+|
+fn main() -> () {
+    let mut _0: ();                      // return place in scope 0 at src/main.rs:45:10: 45:10
+    let mut _1: std::option::Option<Mode> as UserTypeProjection { base: UserType(0), projs: [] }; // in scope 0 at src/main.rs:46:9: 46:17
+    let mut _6: std::env::Args;          // in scope 0 at src/main.rs:51:20: 51:31
+    let _7: ();                          // in scope 0 at src/main.rs:52:5: 79:6
+    let mut _8: ();                      // in scope 0 at src/main.rs:45:1: 112:2
+    let mut _9: std::option::Option<std::string::String>; // in scope 0 at src/main.rs:52:25: 52:36
+    let mut _10: &mut std::iter::Skip<std::env::Args>; // in scope 0 at src/main.rs:52:25: 52:29
+    let mut _11: isize;                  // in scope 0 at src/main.rs:52:15: 52:22
+    let mut _13: &str;                   // in scope 0 at src/main.rs:53:15: 53:25
+    let mut _14: &std::string::String;   // in scope 0 at src/main.rs:53:15: 53:16
+    let mut _15: &str;                   // in scope 0 at src/main.rs:76:20: 76:28
+    let mut _16: bool;                   // in scope 0 at src/main.rs:76:20: 76:28
+    let mut _17: &str;                   // in scope 0 at src/main.rs:76:13: 76:17
+    let mut _18: bool;                   // in scope 0 at src/main.rs:76:13: 76:17
+    let mut _19: &str;                   // in scope 0 at src/main.rs:71:13: 71:21
+    let mut _20: bool;                   // in scope 0 at src/main.rs:71:13: 71:21
+    let mut _21: &str;                   // in scope 0 at src/main.rs:66:13: 66:22
+    let mut _22: bool;                   // in scope 0 at src/main.rs:66:13: 66:22
+    let mut _23: &str;                   // in scope 0 at src/main.rs:61:13: 61:20
+    let mut _24: bool;                   // in scope 0 at src/main.rs:61:13: 61:20
+    let mut _25: &str;                   // in scope 0 at src/main.rs:54:13: 54:21
+    let mut _26: bool;                   // in scope 0 at src/main.rs:54:13: 54:21
+    let mut _28: std::option::Option<std::string::String>; // in scope 0 at src/main.rs:55:25: 55:36
+    let mut _29: &mut std::iter::Skip<std::env::Args>; // in scope 0 at src/main.rs:55:25: 55:29
+    let mut _30: {closure@src/main.rs:55:52: 55:54}; // in scope 0 at src/main.rs:55:52: 55:62
+    let mut _31: std::option::Option<Mode>; // in scope 0 at src/main.rs:56:24: 56:38
+    let mut _32: &str;                   // in scope 0 at src/main.rs:56:35: 56:37
+    let _33: &str;                       // in scope 0 at src/main.rs:56:35: 56:37
+    let mut _34: &std::string::String;   // in scope 0 at src/main.rs:56:35: 56:37
+    let _35: &std::string::String;       // in scope 0 at src/main.rs:56:35: 56:37
+    let mut _36: bool;                   // in scope 0 at src/main.rs:57:20: 57:34
+    let mut _37: &std::option::Option<Mode>; // in scope 0 at src/main.rs:57:20: 57:24
+    let mut _38: !;                      // in scope 0 at src/main.rs:57:35: 59:18
+    let _39: !;                          // in scope 0 at src/main.rs:58:21: 58:28
+    let mut _41: std::option::Option<std::string::String>; // in scope 0 at src/main.rs:62:25: 62:36
+    let mut _42: &mut std::iter::Skip<std::env::Args>; // in scope 0 at src/main.rs:62:25: 62:29
+    let mut _43: {closure@src/main.rs:62:52: 62:54}; // in scope 0 at src/main.rs:62:52: 62:62
+    let mut _45: u64;                    // in scope 0 at src/main.rs:63:25: 63:65
+    let mut _46: std::option::Option<u64>; // in scope 0 at src/main.rs:63:25: 63:38
+    let mut _47: &str;                   // in scope 0 at src/main.rs:63:35: 63:37
+    let _48: &str;                       // in scope 0 at src/main.rs:63:35: 63:37
+    let mut _49: &std::string::String;   // in scope 0 at src/main.rs:63:35: 63:37
+    let _50: &std::string::String;       // in scope 0 at src/main.rs:63:35: 63:37
+    let mut _51: {closure@src/main.rs:63:54: 63:56}; // in scope 0 at src/main.rs:63:54: 63:64
+    let mut _52: usize;                  // in scope 0 at src/main.rs:64:23: 64:24
+    let mut _54: std::option::Option<std::string::String>; // in scope 0 at src/main.rs:67:25: 67:36
+    let mut _55: &mut std::iter::Skip<std::env::Args>; // in scope 0 at src/main.rs:67:25: 67:29
+    let mut _56: {closure@src/main.rs:67:52: 67:54}; // in scope 0 at src/main.rs:67:52: 67:62
+    let mut _58: std::option::Option<u64>; // in scope 0 at src/main.rs:68:25: 68:38
+    let mut _59: &str;                   // in scope 0 at src/main.rs:68:35: 68:37
+    let _60: &str;                       // in scope 0 at src/main.rs:68:35: 68:37
+    let mut _61: &std::string::String;   // in scope 0 at src/main.rs:68:35: 68:37
+    let _62: &std::string::String;       // in scope 0 at src/main.rs:68:35: 68:37
+    let mut _63: {closure@src/main.rs:68:54: 68:56}; // in scope 0 at src/main.rs:68:54: 68:64
+    let mut _64: u32;                    // in scope 0 at src/main.rs:69:25: 69:69
+    let mut _65: std::result::Result<u32, std::num::TryFromIntError>; // in scope 0 at src/main.rs:69:25: 69:41
+    let mut _66: u64;                    // in scope 0 at src/main.rs:69:39: 69:40
+    let mut _67: {closure@src/main.rs:69:57: 69:60}; // in scope 0 at src/main.rs:69:57: 69:68
+    let mut _69: std::option::Option<std::string::String>; // in scope 0 at src/main.rs:72:25: 72:36
+    let mut _70: &mut std::iter::Skip<std::env::Args>; // in scope 0 at src/main.rs:72:25: 72:29
+    let mut _71: {closure@src/main.rs:72:52: 72:54}; // in scope 0 at src/main.rs:72:52: 72:62
+    let mut _73: std::option::Option<u64>; // in scope 0 at src/main.rs:73:25: 73:38
+    let mut _74: &str;                   // in scope 0 at src/main.rs:73:35: 73:37
+    let _75: &str;                       // in scope 0 at src/main.rs:73:35: 73:37
+    let mut _76: &std::string::String;   // in scope 0 at src/main.rs:73:35: 73:37
+    let _77: &std::string::String;       // in scope 0 at src/main.rs:73:35: 73:37
+    let mut _78: {closure@src/main.rs:73:54: 73:56}; // in scope 0 at src/main.rs:73:54: 73:64
+    let mut _79: u32;                    // in scope 0 at src/main.rs:74:24: 74:68
+    let mut _80: std::result::Result<u32, std::num::TryFromIntError>; // in scope 0 at src/main.rs:74:24: 74:40
+    let mut _81: u64;                    // in scope 0 at src/main.rs:74:38: 74:39
+    let mut _82: {closure@src/main.rs:74:56: 74:59}; // in scope 0 at src/main.rs:74:56: 74:67
+    let mut _83: !;                      // in scope 0 at src/main.rs:76:32: 76:39
+    let mut _84: !;                      // in scope 0 at src/main.rs:77:18: 77:25
+    let mut _85: !;                      // in scope 0 at src/main.rs:52:5: 79:6
+    let _86: ();                         // in scope 0 at src/main.rs:52:5: 79:6
+    let mut _87: !;                      // in scope 0 at src/main.rs:52:5: 79:6
+    let mut _89: std::option::Option<Mode>; // in scope 0 at src/main.rs:81:16: 81:20
+    let mut _90: {closure@src/main.rs:81:36: 81:38}; // in scope 0 at src/main.rs:81:36: 81:46
+    let mut _92: usize;                  // in scope 0 at src/main.rs:83:23: 83:26
+    let mut _93: u32;                    // in scope 0 at src/main.rs:83:28: 83:46
+    let mut _94: u32;                    // in scope 0 at src/main.rs:83:28: 83:32
+    let mut _96: usize;                  // in scope 0 at src/main.rs:84:23: 84:26
+    let mut _97: u32;                    // in scope 0 at src/main.rs:84:28: 84:46
+    let mut _98: u32;                    // in scope 0 at src/main.rs:84:28: 84:32
+    let mut _100: u32;                   // in scope 0 at src/main.rs:86:17: 86:27
+    let mut _101: u32;                   // in scope 0 at src/main.rs:86:18: 86:22
+    let mut _103: u32;                   // in scope 0 at src/main.rs:87:16: 87:42
+    let mut _104: u32;                   // in scope 0 at src/main.rs:87:17: 87:37
+    let mut _105: u32;                   // in scope 0 at src/main.rs:87:17: 87:21
+    let mut _107: u32;                   // in scope 0 at src/main.rs:88:13: 88:17
+    let mut _110: isize;                 // in scope 0 at src/main.rs:92:9: 92:19
+    let mut _111: &[u32];                // in scope 0 at src/main.rs:92:35: 92:37
+    let _112: &[u32];                    // in scope 0 at src/main.rs:92:35: 92:37
+    let mut _113: &std::vec::Vec<u32>;   // in scope 0 at src/main.rs:92:35: 92:37
+    let _114: &std::vec::Vec<u32>;       // in scope 0 at src/main.rs:92:35: 92:37
+    let mut _115: &[u32];                // in scope 0 at src/main.rs:92:39: 92:41
+    let _116: &[u32];                    // in scope 0 at src/main.rs:92:39: 92:41
+    let mut _117: &std::vec::Vec<u32>;   // in scope 0 at src/main.rs:92:39: 92:41
+    let _118: &std::vec::Vec<u32>;       // in scope 0 at src/main.rs:92:39: 92:41
+    let mut _119: u32;                   // in scope 0 at src/main.rs:92:43: 92:48
+    let mut _120: u32;                   // in scope 0 at src/main.rs:92:50: 92:55
+    let mut _121: u32;                   // in scope 0 at src/main.rs:92:57: 92:61
+    let mut _122: u32;                   // in scope 0 at src/main.rs:92:63: 92:64
+    let mut _123: &[u32];                // in scope 0 at src/main.rs:93:52: 93:54
+    let _124: &[u32];                    // in scope 0 at src/main.rs:93:52: 93:54
+    let mut _125: &std::vec::Vec<u32>;   // in scope 0 at src/main.rs:93:52: 93:54
+    let _126: &std::vec::Vec<u32>;       // in scope 0 at src/main.rs:93:52: 93:54
+    let mut _127: &[u32];                // in scope 0 at src/main.rs:93:56: 93:58
+    let _128: &[u32];                    // in scope 0 at src/main.rs:93:56: 93:58
+    let mut _129: &std::vec::Vec<u32>;   // in scope 0 at src/main.rs:93:56: 93:58
+    let _130: &std::vec::Vec<u32>;       // in scope 0 at src/main.rs:93:56: 93:58
+    let mut _131: u32;                   // in scope 0 at src/main.rs:93:60: 93:65
+    let mut _132: u32;                   // in scope 0 at src/main.rs:93:67: 93:72
+    let mut _133: u32;                   // in scope 0 at src/main.rs:93:74: 93:78
+    let mut _134: u32;                   // in scope 0 at src/main.rs:93:80: 93:81
+    let mut _136: &std::time::Instant;   // in scope 0 at src/main.rs:95:19: 95:24
+    let mut _138: &std::time::Duration;  // in scope 0 at src/main.rs:97:16: 97:23
+    let mut _140: bool;                  // in scope 0 at src/main.rs:98:26: 98:36
+    let mut _141: u32;                   // in scope 0 at src/main.rs:98:26: 98:31
+    let mut _142: f64;                   // in scope 0 at src/main.rs:101:9: 101:34
+    let mut _143: u128;                  // in scope 0 at src/main.rs:101:9: 101:27
+    let mut _144: &std::time::Duration;  // in scope 0 at src/main.rs:101:9: 101:16
+    let mut _145: f64;                   // in scope 0 at src/main.rs:101:37: 101:51
+    let mut _146: u32;                   // in scope 0 at src/main.rs:101:38: 101:43
+    let mut _148: f64;                   // in scope 0 at src/main.rs:104:17: 104:35
+    let mut _149: f64;                   // in scope 0 at src/main.rs:104:17: 104:29
+    let mut _150: usize;                 // in scope 0 at src/main.rs:104:18: 104:21
+    let mut _151: f64;                   // in scope 0 at src/main.rs:104:38: 104:52
+    let mut _152: u32;                   // in scope 0 at src/main.rs:104:39: 104:44
+    let mut _154: bool;                  // in scope 0 at src/main.rs:105:19: 105:30
+    let mut _155: f64;                   // in scope 0 at src/main.rs:105:19: 105:23
+    let mut _156: f64;                   // in scope 0 at src/main.rs:105:46: 105:60
+    let mut _157: f64;                   // in scope 0 at src/main.rs:105:47: 105:52
+    let mut _158: f64;                   // in scope 0 at src/main.rs:105:55: 105:59
+    let _159: u64;                       // in scope 0 at src/main.rs:107:5: 107:30
+    let mut _160: u64;                   // in scope 0 at src/main.rs:107:26: 107:29
+    let _161: ();                        // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:142:23: 144:6
+    let _162: ();                        // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:9: 143:62
+    let mut _163: std::fmt::Arguments<'_>; // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+    let mut _165: &Mode;                 // in scope 0 at src/main.rs:110:9: 110:13
+    let mut _166: &usize;                // in scope 0 at src/main.rs:110:15: 110:18
+    let mut _167: &u32;                  // in scope 0 at src/main.rs:110:20: 110:25
+    let mut _168: &f64;                  // in scope 0 at src/main.rs:110:27: 110:38
+    let mut _169: &f64;                  // in scope 0 at src/main.rs:110:40: 110:44
+    let mut _170: &u64;                  // in scope 0 at src/main.rs:110:46: 110:49
+    let mut _172: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:22: 109:26
+    let mut _173: &Mode;                 // in scope 0 at src/main.rs:110:9: 110:13
+    let mut _174: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:31: 109:33
+    let mut _175: &usize;                // in scope 0 at src/main.rs:110:15: 110:18
+    let mut _176: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:40: 109:42
+    let mut _177: &u32;                  // in scope 0 at src/main.rs:110:20: 110:25
+    let mut _178: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:55: 109:60
+    let mut _179: &f64;                  // in scope 0 at src/main.rs:110:27: 110:38
+    let mut _180: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:66: 109:71
+    let mut _181: &f64;                  // in scope 0 at src/main.rs:110:40: 110:44
+    let mut _182: core::fmt::rt::Argument<'_>; // in scope 0 at src/main.rs:109:76: 109:78
+    let mut _183: &u64;                  // in scope 0 at src/main.rs:110:46: 110:49
+    let mut _184: &[u8; 75];             // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+    let _185: &[u8; 75];                 // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+    let mut _186: &[core::fmt::rt::Argument<'_>; 6]; // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+    let _187: &[core::fmt::rt::Argument<'_>; 6]; // in scope 0 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+    scope 1 {
+        debug mode => _1;                // in scope 1 at src/main.rs:46:9: 46:17
+        let mut _2: usize as UserTypeProjection { base: UserType(2), projs: [] }; // in scope 1 at src/main.rs:47:9: 47:16
+        scope 2 {
+            debug len => _2;             // in scope 2 at src/main.rs:47:9: 47:16
+            let mut _3: u32 as UserTypeProjection { base: UserType(4), projs: [] }; // in scope 2 at src/main.rs:48:9: 48:18
+            scope 3 {
+                debug iters => _3;       // in scope 3 at src/main.rs:48:9: 48:18
+                let mut _4: u32 as UserTypeProjection { base: UserType(6), projs: [] }; // in scope 3 at src/main.rs:49:9: 49:17
+                scope 4 {
+                    debug seed => _4;    // in scope 4 at src/main.rs:49:9: 49:17
+                    let mut _5: std::iter::Skip<std::env::Args>; // in scope 4 at src/main.rs:51:9: 51:17
+                    scope 5 {
+                        debug args => _5; // in scope 5 at src/main.rs:51:9: 51:17
+                        let _88: Mode;   // in scope 5 at src/main.rs:81:9: 81:13
+                        scope 6 {
+                            debug a => _12; // in scope 6 at src/main.rs:52:20: 52:21
+                            let _12: std::string::String; // in scope 6 at src/main.rs:52:20: 52:21
+                            let _27: std::string::String; // in scope 6 at src/main.rs:55:21: 55:22
+                            let _40: std::string::String; // in scope 6 at src/main.rs:62:21: 62:22
+                            let _53: std::string::String; // in scope 6 at src/main.rs:67:21: 67:22
+                            let _68: std::string::String; // in scope 6 at src/main.rs:72:21: 72:22
+                            scope 7 {
+                                debug v => _27; // in scope 7 at src/main.rs:55:21: 55:22
+                            }
+                            scope 8 {
+                                debug v => _40; // in scope 8 at src/main.rs:62:21: 62:22
+                                let _44: usize; // in scope 8 at src/main.rs:63:21: 63:22
+                                scope 9 {
+                                    debug n => _44; // in scope 9 at src/main.rs:63:21: 63:22
+                                }
+                            }
+                            scope 10 {
+                                debug v => _53; // in scope 10 at src/main.rs:67:21: 67:22
+                                let _57: u64; // in scope 10 at src/main.rs:68:21: 68:22
+                                scope 11 {
+                                    debug n => _57; // in scope 11 at src/main.rs:68:21: 68:22
+                                }
+                            }
+                            scope 12 {
+                                debug v => _68; // in scope 12 at src/main.rs:72:21: 72:22
+                                let _72: u64; // in scope 12 at src/main.rs:73:21: 73:22
+                                scope 13 {
+                                    debug n => _72; // in scope 13 at src/main.rs:73:21: 73:22
+                                }
+                            }
+                        }
+                        scope 14 {
+                            debug mode => _88; // in scope 14 at src/main.rs:81:9: 81:13
+                            let _91: std::vec::Vec<u32>; // in scope 14 at src/main.rs:83:9: 83:10
+                            scope 15 {
+                                debug a => _91; // in scope 15 at src/main.rs:83:9: 83:10
+                                let _95: std::vec::Vec<u32>; // in scope 15 at src/main.rs:84:9: 84:10
+                                scope 16 {
+                                    debug b => _95; // in scope 16 at src/main.rs:84:9: 84:10
+                                    let _99: u32; // in scope 16 at src/main.rs:86:9: 86:14
+                                    scope 17 {
+                                        debug alpha => _99; // in scope 17 at src/main.rs:86:9: 86:14
+                                        let _102: u32; // in scope 17 at src/main.rs:87:9: 87:13
+                                        scope 18 {
+                                            debug beta => _102; // in scope 18 at src/main.rs:87:9: 87:13
+                                            let _106: u32; // in scope 18 at src/main.rs:88:9: 88:10
+                                            scope 19 {
+                                                debug c => _106; // in scope 19 at src/main.rs:88:9: 88:10
+                                                let _108: std::time::Instant; // in scope 19 at src/main.rs:90:9: 90:14
+                                                scope 20 {
+                                                    debug start => _108; // in scope 20 at src/main.rs:90:9: 90:14
+                                                    let _109: u64; // in scope 20 at src/main.rs:91:9: 91:12
+                                                    scope 21 {
+                                                        debug sum => _109; // in scope 21 at src/main.rs:91:9: 91:12
+                                                        let _135: std::time::Duration; // in scope 21 at src/main.rs:95:9: 95:16
+                                                        scope 22 {
+                                                            debug elapsed => _135; // in scope 22 at src/main.rs:95:9: 95:16
+                                                            let _137: f64; // in scope 22 at src/main.rs:97:9: 97:13
+                                                            scope 23 {
+                                                                debug secs => _137; // in scope 23 at src/main.rs:97:9: 97:13
+                                                                let _139: f64; // in scope 23 at src/main.rs:98:9: 98:20
+                                                                scope 24 {
+                                                                    debug ns_per_iter => _139; // in scope 24 at src/main.rs:98:9: 98:20
+                                                                    let _147: f64; // in scope 24 at src/main.rs:104:9: 104:14
+                                                                    scope 25 {
+                                                                        debug bytes => _147; // in scope 25 at src/main.rs:104:9: 104:14
+                                                                        let _153: f64; // in scope 25 at src/main.rs:105:9: 105:13
+                                                                        scope 26 {
+                                                                            debug mbps => _153; // in scope 26 at src/main.rs:105:9: 105:13
+                                                                            let _164: (&Mode, &usize, &u32, &f64, &f64, &u64); // in scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                                                            scope 27 {
+                                                                                debug args => _164; // in scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                                                                let _171: [core::fmt::rt::Argument<'_>; 6]; // in scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                                                                scope 28 {
+                                                                                    debug args => _171; // in scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_1);                 // scope 0 at src/main.rs:46:9: 46:17
+        _1 = Option::<Mode>::None;       // scope 0 at src/main.rs:46:34: 46:38
+        FakeRead(ForLet(None), _1);      // scope 0 at src/main.rs:46:9: 46:17
+        AscribeUserType(_1, o, UserTypeProjection { base: UserType(1), projs: [] }); // scope 0 at src/main.rs:46:19: 46:31
+        StorageLive(_2);                 // scope 1 at src/main.rs:47:9: 47:16
+        _2 = const 16384_usize;          // scope 1 at src/main.rs:47:26: 47:31
+        FakeRead(ForLet(None), _2);      // scope 1 at src/main.rs:47:9: 47:16
+        AscribeUserType(_2, o, UserTypeProjection { base: UserType(3), projs: [] }); // scope 1 at src/main.rs:47:18: 47:23
+        StorageLive(_3);                 // scope 2 at src/main.rs:48:9: 48:18
+        _3 = const 32_u32;               // scope 2 at src/main.rs:48:26: 48:28
+        FakeRead(ForLet(None), _3);      // scope 2 at src/main.rs:48:9: 48:18
+        AscribeUserType(_3, o, UserTypeProjection { base: UserType(5), projs: [] }); // scope 2 at src/main.rs:48:20: 48:23
+        StorageLive(_4);                 // scope 3 at src/main.rs:49:9: 49:17
+        _4 = const 305419896_u32;        // scope 3 at src/main.rs:49:25: 49:36
+        FakeRead(ForLet(None), _4);      // scope 3 at src/main.rs:49:9: 49:17
+        AscribeUserType(_4, o, UserTypeProjection { base: UserType(7), projs: [] }); // scope 3 at src/main.rs:49:19: 49:22
+        StorageLive(_5);                 // scope 4 at src/main.rs:51:9: 51:17
+        StorageLive(_6);                 // scope 4 at src/main.rs:51:20: 51:31
+        _6 = args() -> [return: bb1, unwind: bb120]; // scope 4 at src/main.rs:51:20: 51:31
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:51:20: 51:29
+                                         // + const_: Const { ty: fn() -> Args {args}, val: Value(args) }
+    }
+
+    bb1: {
+        _5 = <Args as Iterator>::skip(move _6, const 1_usize) -> [return: bb2, unwind: bb119]; // scope 4 at src/main.rs:51:20: 51:39
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:51:32: 51:36
+                                         // + const_: Const { ty: fn(Args, usize) -> Skip<Args> {<Args as Iterator>::skip}, val: Value(<Args as Iterator>::skip) }
+    }
+
+    bb2: {
+        StorageDead(_6);                 // scope 4 at src/main.rs:51:38: 51:39
+        FakeRead(ForLet(None), _5);      // scope 4 at src/main.rs:51:9: 51:17
+        StorageLive(_7);                 // scope 5 at src/main.rs:52:5: 79:6
+        goto -> bb3;                     // scope 5 at src/main.rs:52:5: 79:6
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb118]; // scope 5 at src/main.rs:52:5: 79:6
+    }
+
+    bb4: {
+        StorageLive(_9);                 // scope 6 at src/main.rs:52:25: 52:36
+        StorageLive(_10);                // scope 6 at src/main.rs:52:25: 52:29
+        _10 = &mut _5;                   // scope 6 at src/main.rs:52:25: 52:29
+        _9 = <Skip<Args> as Iterator>::next(move _10) -> [return: bb5, unwind: bb118]; // scope 6 at src/main.rs:52:25: 52:36
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:52:30: 52:34
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Skip<Args>) -> Option<<Skip<Args> as Iterator>::Item> {<Skip<Args> as Iterator>::next}, val: Value(<Skip<Args> as Iterator>::next) }
+    }
+
+    bb5: {
+        StorageDead(_10);                // scope 6 at src/main.rs:52:35: 52:36
+        PlaceMention(_9);                // scope 6 at src/main.rs:52:25: 52:36
+        _11 = discriminant(_9);          // scope 6 at src/main.rs:52:25: 52:36
+        switchInt(move _11) -> [1: bb6, otherwise: bb62]; // scope 6 at src/main.rs:52:15: 52:22
+    }
+
+    bb6: {
+        falseEdge -> [real: bb7, imaginary: bb62]; // scope 6 at src/main.rs:52:15: 52:22
+    }
+
+    bb7: {
+        StorageLive(_12);                // scope 6 at src/main.rs:52:20: 52:21
+        _12 = move ((_9 as Some).0: std::string::String); // scope 6 at src/main.rs:52:20: 52:21
+        StorageLive(_13);                // scope 6 at src/main.rs:53:15: 53:25
+        StorageLive(_14);                // scope 6 at src/main.rs:53:15: 53:16
+        _14 = &_12;                      // scope 6 at src/main.rs:53:15: 53:16
+        _13 = String::as_str(move _14) -> [return: bb8, unwind: bb116]; // scope 6 at src/main.rs:53:15: 53:25
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:53:17: 53:23
+                                         // + const_: Const { ty: for<'a> fn(&'a String) -> &'a str {String::as_str}, val: Value(String::as_str) }
+    }
+
+    bb8: {
+        StorageDead(_14);                // scope 6 at src/main.rs:53:24: 53:25
+        PlaceMention(_13);               // scope 6 at src/main.rs:53:15: 53:25
+        _25 = &(*_13);                   // scope 6 at src/main.rs:54:13: 54:21
+        _26 = <str as PartialEq>::eq(copy _25, const "--mode") -> [return: bb24, unwind: bb116]; // scope 6 at src/main.rs:54:13: 54:21
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:54:13: 54:21
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:54:13: 54:21
+                                         // + const_: Const { ty: &str, val: ty::Valtree("--mode") }
+    }
+
+    bb9: {
+        StorageLive(_84);                // scope 6 at src/main.rs:77:18: 77:25
+        _84 = usage() -> bb116;          // scope 6 at src/main.rs:77:18: 77:25
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:77:18: 77:23
+                                         // + const_: Const { ty: fn() -> ! {usage}, val: Value(usage) }
+    }
+
+    bb10: {
+        falseEdge -> [real: bb30, imaginary: bb11]; // scope 6 at src/main.rs:54:13: 54:21
+    }
+
+    bb11: {
+        _23 = &(*_13);                   // scope 6 at src/main.rs:61:13: 61:20
+        _24 = <str as PartialEq>::eq(copy _23, const "--len") -> [return: bb23, unwind: bb116]; // scope 6 at src/main.rs:61:13: 61:20
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:61:13: 61:20
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:61:13: 61:20
+                                         // + const_: Const { ty: &str, val: ty::Valtree("--len") }
+    }
+
+    bb12: {
+        falseEdge -> [real: bb29, imaginary: bb13]; // scope 6 at src/main.rs:61:13: 61:20
+    }
+
+    bb13: {
+        _21 = &(*_13);                   // scope 6 at src/main.rs:66:13: 66:22
+        _22 = <str as PartialEq>::eq(copy _21, const "--iters") -> [return: bb22, unwind: bb116]; // scope 6 at src/main.rs:66:13: 66:22
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:66:13: 66:22
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:66:13: 66:22
+                                         // + const_: Const { ty: &str, val: ty::Valtree("--iters") }
+    }
+
+    bb14: {
+        falseEdge -> [real: bb28, imaginary: bb15]; // scope 6 at src/main.rs:66:13: 66:22
+    }
+
+    bb15: {
+        _19 = &(*_13);                   // scope 6 at src/main.rs:71:13: 71:21
+        _20 = <str as PartialEq>::eq(copy _19, const "--seed") -> [return: bb21, unwind: bb116]; // scope 6 at src/main.rs:71:13: 71:21
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:71:13: 71:21
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:71:13: 71:21
+                                         // + const_: Const { ty: &str, val: ty::Valtree("--seed") }
+    }
+
+    bb16: {
+        falseEdge -> [real: bb27, imaginary: bb17]; // scope 6 at src/main.rs:71:13: 71:21
+    }
+
+    bb17: {
+        _17 = &(*_13);                   // scope 6 at src/main.rs:76:13: 76:17
+        _18 = <str as PartialEq>::eq(copy _17, const "-h") -> [return: bb20, unwind: bb116]; // scope 6 at src/main.rs:76:13: 76:17
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:76:13: 76:17
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:76:13: 76:17
+                                         // + const_: Const { ty: &str, val: ty::Valtree("-h") }
+    }
+
+    bb18: {
+        _15 = &(*_13);                   // scope 6 at src/main.rs:76:20: 76:28
+        _16 = <str as PartialEq>::eq(copy _15, const "--help") -> [return: bb19, unwind: bb116]; // scope 6 at src/main.rs:76:20: 76:28
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:76:20: 76:28
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:76:20: 76:28
+                                         // + const_: Const { ty: &str, val: ty::Valtree("--help") }
+    }
+
+    bb19: {
+        switchInt(move _16) -> [0: bb9, otherwise: bb25]; // scope 6 at src/main.rs:76:20: 76:28
+    }
+
+    bb20: {
+        switchInt(move _18) -> [0: bb18, otherwise: bb25]; // scope 6 at src/main.rs:76:13: 76:17
+    }
+
+    bb21: {
+        switchInt(move _20) -> [0: bb17, otherwise: bb16]; // scope 6 at src/main.rs:71:13: 71:21
+    }
+
+    bb22: {
+        switchInt(move _22) -> [0: bb15, otherwise: bb14]; // scope 6 at src/main.rs:66:13: 66:22
+    }
+
+    bb23: {
+        switchInt(move _24) -> [0: bb13, otherwise: bb12]; // scope 6 at src/main.rs:61:13: 61:20
+    }
+
+    bb24: {
+        switchInt(move _26) -> [0: bb11, otherwise: bb10]; // scope 6 at src/main.rs:54:13: 54:21
+    }
+
+    bb25: {
+        falseEdge -> [real: bb26, imaginary: bb9]; // scope 6 at src/main.rs:76:13: 76:28
+    }
+
+    bb26: {
+        StorageLive(_83);                // scope 6 at src/main.rs:76:32: 76:39
+        _83 = usage() -> bb116;          // scope 6 at src/main.rs:76:32: 76:39
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:76:32: 76:37
+                                         // + const_: Const { ty: fn() -> ! {usage}, val: Value(usage) }
+    }
+
+    bb27: {
+        StorageLive(_68);                // scope 6 at src/main.rs:72:21: 72:22
+        StorageLive(_69);                // scope 6 at src/main.rs:72:25: 72:36
+        StorageLive(_70);                // scope 6 at src/main.rs:72:25: 72:29
+        _70 = &mut _5;                   // scope 6 at src/main.rs:72:25: 72:29
+        _69 = <Skip<Args> as Iterator>::next(move _70) -> [return: bb53, unwind: bb116]; // scope 6 at src/main.rs:72:25: 72:36
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:72:30: 72:34
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Skip<Args>) -> Option<<Skip<Args> as Iterator>::Item> {<Skip<Args> as Iterator>::next}, val: Value(<Skip<Args> as Iterator>::next) }
+    }
+
+    bb28: {
+        StorageLive(_53);                // scope 6 at src/main.rs:67:21: 67:22
+        StorageLive(_54);                // scope 6 at src/main.rs:67:25: 67:36
+        StorageLive(_55);                // scope 6 at src/main.rs:67:25: 67:29
+        _55 = &mut _5;                   // scope 6 at src/main.rs:67:25: 67:29
+        _54 = <Skip<Args> as Iterator>::next(move _55) -> [return: bb45, unwind: bb116]; // scope 6 at src/main.rs:67:25: 67:36
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:67:30: 67:34
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Skip<Args>) -> Option<<Skip<Args> as Iterator>::Item> {<Skip<Args> as Iterator>::next}, val: Value(<Skip<Args> as Iterator>::next) }
+    }
+
+    bb29: {
+        StorageLive(_40);                // scope 6 at src/main.rs:62:21: 62:22
+        StorageLive(_41);                // scope 6 at src/main.rs:62:25: 62:36
+        StorageLive(_42);                // scope 6 at src/main.rs:62:25: 62:29
+        _42 = &mut _5;                   // scope 6 at src/main.rs:62:25: 62:29
+        _41 = <Skip<Args> as Iterator>::next(move _42) -> [return: bb39, unwind: bb116]; // scope 6 at src/main.rs:62:25: 62:36
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:62:30: 62:34
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Skip<Args>) -> Option<<Skip<Args> as Iterator>::Item> {<Skip<Args> as Iterator>::next}, val: Value(<Skip<Args> as Iterator>::next) }
+    }
+
+    bb30: {
+        StorageLive(_27);                // scope 6 at src/main.rs:55:21: 55:22
+        StorageLive(_28);                // scope 6 at src/main.rs:55:25: 55:36
+        StorageLive(_29);                // scope 6 at src/main.rs:55:25: 55:29
+        _29 = &mut _5;                   // scope 6 at src/main.rs:55:25: 55:29
+        _28 = <Skip<Args> as Iterator>::next(move _29) -> [return: bb31, unwind: bb116]; // scope 6 at src/main.rs:55:25: 55:36
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:55:30: 55:34
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Skip<Args>) -> Option<<Skip<Args> as Iterator>::Item> {<Skip<Args> as Iterator>::next}, val: Value(<Skip<Args> as Iterator>::next) }
+    }
+
+    bb31: {
+        StorageDead(_29);                // scope 6 at src/main.rs:55:35: 55:36
+        StorageLive(_30);                // scope 6 at src/main.rs:55:52: 55:62
+        _30 = {closure@src/main.rs:55:52: 55:54}; // scope 6 at src/main.rs:55:52: 55:62
+                                         // closure
+                                         // + def_id: DefId(0:13 ~ iterator_pipeline_bench[bbf6]::main::{closure#0})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> std::string::String, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _27 = Option::<String>::unwrap_or_else::<{closure@src/main.rs:55:52: 55:54}>(move _28, move _30) -> [return: bb32, unwind: bb115]; // scope 6 at src/main.rs:55:25: 55:63
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:55:37: 55:51
+                                         // + const_: Const { ty: fn(Option<String>, {closure@src/main.rs:55:52: 55:54}) -> String {Option::<String>::unwrap_or_else::<{closure@src/main.rs:55:52: 55:54}>}, val: Value(Option::<String>::unwrap_or_else::<{closure@src/main.rs:55:52: 55:54}>) }
+    }
+
+    bb32: {
+        StorageDead(_30);                // scope 6 at src/main.rs:55:62: 55:63
+        StorageDead(_28);                // scope 6 at src/main.rs:55:62: 55:63
+        FakeRead(ForLet(None), _27);     // scope 6 at src/main.rs:55:21: 55:22
+        StorageLive(_31);                // scope 7 at src/main.rs:56:24: 56:38
+        StorageLive(_32);                // scope 7 at src/main.rs:56:35: 56:37
+        StorageLive(_33);                // scope 7 at src/main.rs:56:35: 56:37
+        StorageLive(_34);                // scope 7 at src/main.rs:56:35: 56:37
+        StorageLive(_35);                // scope 7 at src/main.rs:56:35: 56:37
+        _35 = &_27;                      // scope 7 at src/main.rs:56:35: 56:37
+        _34 = &(*_35);                   // scope 7 at src/main.rs:56:35: 56:37
+        _33 = <String as Deref>::deref(move _34) -> [return: bb33, unwind: bb114]; // scope 7 at src/main.rs:56:35: 56:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:56:35: 56:37
+                                         // + const_: Const { ty: for<'a> fn(&'a String) -> &'a <String as Deref>::Target {<String as Deref>::deref}, val: Value(<String as Deref>::deref) }
+    }
+
+    bb33: {
+        _32 = &(*_33);                   // scope 7 at src/main.rs:56:35: 56:37
+        StorageDead(_34);                // scope 7 at src/main.rs:56:36: 56:37
+        _31 = parse_mode(move _32) -> [return: bb34, unwind: bb114]; // scope 7 at src/main.rs:56:24: 56:38
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:56:24: 56:34
+                                         // + const_: Const { ty: for<'a> fn(&'a str) -> Option<Mode> {parse_mode}, val: Value(parse_mode) }
+    }
+
+    bb34: {
+        StorageDead(_32);                // scope 7 at src/main.rs:56:37: 56:38
+        _1 = move _31;                   // scope 7 at src/main.rs:56:17: 56:38
+        StorageDead(_31);                // scope 7 at src/main.rs:56:37: 56:38
+        StorageDead(_35);                // scope 7 at src/main.rs:56:38: 56:39
+        StorageDead(_33);                // scope 7 at src/main.rs:56:38: 56:39
+        StorageLive(_36);                // scope 7 at src/main.rs:57:20: 57:34
+        StorageLive(_37);                // scope 7 at src/main.rs:57:20: 57:24
+        _37 = &_1;                       // scope 7 at src/main.rs:57:20: 57:24
+        _36 = Option::<Mode>::is_none(move _37) -> [return: bb35, unwind: bb114]; // scope 7 at src/main.rs:57:20: 57:34
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:57:25: 57:32
+                                         // + const_: Const { ty: for<'a> fn(&'a Option<Mode>) -> bool {Option::<Mode>::is_none}, val: Value(Option::<Mode>::is_none) }
+    }
+
+    bb35: {
+        switchInt(move _36) -> [0: bb37, otherwise: bb36]; // scope 7 at src/main.rs:57:20: 57:34
+    }
+
+    bb36: {
+        StorageDead(_37);                // scope 7 at src/main.rs:57:33: 57:34
+        StorageLive(_39);                // scope 7 at src/main.rs:58:21: 58:28
+        _39 = usage() -> bb114;          // scope 7 at src/main.rs:58:21: 58:28
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:58:21: 58:26
+                                         // + const_: Const { ty: fn() -> ! {usage}, val: Value(usage) }
+    }
+
+    bb37: {
+        StorageDead(_37);                // scope 7 at src/main.rs:57:33: 57:34
+        _8 = const ();                   // scope 7 at src/main.rs:59:18: 59:18
+        StorageDead(_36);                // scope 7 at src/main.rs:59:17: 59:18
+        drop(_27) -> [return: bb38, unwind: bb116]; // scope 6 at src/main.rs:60:13: 60:14
+    }
+
+    bb38: {
+        StorageDead(_27);                // scope 6 at src/main.rs:60:13: 60:14
+        goto -> bb61;                    // scope 6 at src/main.rs:60:13: 60:14
+    }
+
+    bb39: {
+        StorageDead(_42);                // scope 6 at src/main.rs:62:35: 62:36
+        StorageLive(_43);                // scope 6 at src/main.rs:62:52: 62:62
+        _43 = {closure@src/main.rs:62:52: 62:54}; // scope 6 at src/main.rs:62:52: 62:62
+                                         // closure
+                                         // + def_id: DefId(0:14 ~ iterator_pipeline_bench[bbf6]::main::{closure#1})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> std::string::String, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _40 = Option::<String>::unwrap_or_else::<{closure@src/main.rs:62:52: 62:54}>(move _41, move _43) -> [return: bb40, unwind: bb113]; // scope 6 at src/main.rs:62:25: 62:63
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:62:37: 62:51
+                                         // + const_: Const { ty: fn(Option<String>, {closure@src/main.rs:62:52: 62:54}) -> String {Option::<String>::unwrap_or_else::<{closure@src/main.rs:62:52: 62:54}>}, val: Value(Option::<String>::unwrap_or_else::<{closure@src/main.rs:62:52: 62:54}>) }
+    }
+
+    bb40: {
+        StorageDead(_43);                // scope 6 at src/main.rs:62:62: 62:63
+        StorageDead(_41);                // scope 6 at src/main.rs:62:62: 62:63
+        FakeRead(ForLet(None), _40);     // scope 6 at src/main.rs:62:21: 62:22
+        StorageLive(_44);                // scope 8 at src/main.rs:63:21: 63:22
+        StorageLive(_45);                // scope 8 at src/main.rs:63:25: 63:65
+        StorageLive(_46);                // scope 8 at src/main.rs:63:25: 63:38
+        StorageLive(_47);                // scope 8 at src/main.rs:63:35: 63:37
+        StorageLive(_48);                // scope 8 at src/main.rs:63:35: 63:37
+        StorageLive(_49);                // scope 8 at src/main.rs:63:35: 63:37
+        StorageLive(_50);                // scope 8 at src/main.rs:63:35: 63:37
+        _50 = &_40;                      // scope 8 at src/main.rs:63:35: 63:37
+        _49 = &(*_50);                   // scope 8 at src/main.rs:63:35: 63:37
+        _48 = <String as Deref>::deref(move _49) -> [return: bb41, unwind: bb112]; // scope 8 at src/main.rs:63:35: 63:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:63:35: 63:37
+                                         // + const_: Const { ty: for<'a> fn(&'a String) -> &'a <String as Deref>::Target {<String as Deref>::deref}, val: Value(<String as Deref>::deref) }
+    }
+
+    bb41: {
+        _47 = &(*_48);                   // scope 8 at src/main.rs:63:35: 63:37
+        StorageDead(_49);                // scope 8 at src/main.rs:63:36: 63:37
+        _46 = parse_u64(move _47) -> [return: bb42, unwind: bb112]; // scope 8 at src/main.rs:63:25: 63:38
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:63:25: 63:34
+                                         // + const_: Const { ty: for<'a> fn(&'a str) -> Option<u64> {parse_u64}, val: Value(parse_u64) }
+    }
+
+    bb42: {
+        StorageDead(_47);                // scope 8 at src/main.rs:63:37: 63:38
+        StorageLive(_51);                // scope 8 at src/main.rs:63:54: 63:64
+        _51 = {closure@src/main.rs:63:54: 63:56}; // scope 8 at src/main.rs:63:54: 63:64
+                                         // closure
+                                         // + def_id: DefId(0:15 ~ iterator_pipeline_bench[bbf6]::main::{closure#2})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> u64, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _45 = Option::<u64>::unwrap_or_else::<{closure@src/main.rs:63:54: 63:56}>(move _46, move _51) -> [return: bb43, unwind: bb112]; // scope 8 at src/main.rs:63:25: 63:65
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:63:39: 63:53
+                                         // + const_: Const { ty: fn(Option<u64>, {closure@src/main.rs:63:54: 63:56}) -> u64 {Option::<u64>::unwrap_or_else::<{closure@src/main.rs:63:54: 63:56}>}, val: Value(Option::<u64>::unwrap_or_else::<{closure@src/main.rs:63:54: 63:56}>) }
+    }
+
+    bb43: {
+        StorageDead(_51);                // scope 8 at src/main.rs:63:64: 63:65
+        StorageDead(_46);                // scope 8 at src/main.rs:63:64: 63:65
+        _44 = move _45 as usize (IntToInt); // scope 8 at src/main.rs:63:25: 63:74
+        StorageDead(_45);                // scope 8 at src/main.rs:63:73: 63:74
+        FakeRead(ForLet(None), _44);     // scope 8 at src/main.rs:63:21: 63:22
+        StorageDead(_50);                // scope 8 at src/main.rs:63:74: 63:75
+        StorageDead(_48);                // scope 8 at src/main.rs:63:74: 63:75
+        StorageLive(_52);                // scope 9 at src/main.rs:64:23: 64:24
+        _52 = copy _44;                  // scope 9 at src/main.rs:64:23: 64:24
+        _2 = move _52;                   // scope 9 at src/main.rs:64:17: 64:24
+        StorageDead(_52);                // scope 9 at src/main.rs:64:23: 64:24
+        _8 = const ();                   // scope 6 at src/main.rs:61:24: 65:14
+        StorageDead(_44);                // scope 8 at src/main.rs:65:13: 65:14
+        drop(_40) -> [return: bb44, unwind: bb116]; // scope 6 at src/main.rs:65:13: 65:14
+    }
+
+    bb44: {
+        StorageDead(_40);                // scope 6 at src/main.rs:65:13: 65:14
+        goto -> bb61;                    // scope 6 at src/main.rs:65:13: 65:14
+    }
+
+    bb45: {
+        StorageDead(_55);                // scope 6 at src/main.rs:67:35: 67:36
+        StorageLive(_56);                // scope 6 at src/main.rs:67:52: 67:62
+        _56 = {closure@src/main.rs:67:52: 67:54}; // scope 6 at src/main.rs:67:52: 67:62
+                                         // closure
+                                         // + def_id: DefId(0:16 ~ iterator_pipeline_bench[bbf6]::main::{closure#3})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> std::string::String, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _53 = Option::<String>::unwrap_or_else::<{closure@src/main.rs:67:52: 67:54}>(move _54, move _56) -> [return: bb46, unwind: bb111]; // scope 6 at src/main.rs:67:25: 67:63
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:67:37: 67:51
+                                         // + const_: Const { ty: fn(Option<String>, {closure@src/main.rs:67:52: 67:54}) -> String {Option::<String>::unwrap_or_else::<{closure@src/main.rs:67:52: 67:54}>}, val: Value(Option::<String>::unwrap_or_else::<{closure@src/main.rs:67:52: 67:54}>) }
+    }
+
+    bb46: {
+        StorageDead(_56);                // scope 6 at src/main.rs:67:62: 67:63
+        StorageDead(_54);                // scope 6 at src/main.rs:67:62: 67:63
+        FakeRead(ForLet(None), _53);     // scope 6 at src/main.rs:67:21: 67:22
+        StorageLive(_57);                // scope 10 at src/main.rs:68:21: 68:22
+        StorageLive(_58);                // scope 10 at src/main.rs:68:25: 68:38
+        StorageLive(_59);                // scope 10 at src/main.rs:68:35: 68:37
+        StorageLive(_60);                // scope 10 at src/main.rs:68:35: 68:37
+        StorageLive(_61);                // scope 10 at src/main.rs:68:35: 68:37
+        StorageLive(_62);                // scope 10 at src/main.rs:68:35: 68:37
+        _62 = &_53;                      // scope 10 at src/main.rs:68:35: 68:37
+        _61 = &(*_62);                   // scope 10 at src/main.rs:68:35: 68:37
+        _60 = <String as Deref>::deref(move _61) -> [return: bb47, unwind: bb110]; // scope 10 at src/main.rs:68:35: 68:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:68:35: 68:37
+                                         // + const_: Const { ty: for<'a> fn(&'a String) -> &'a <String as Deref>::Target {<String as Deref>::deref}, val: Value(<String as Deref>::deref) }
+    }
+
+    bb47: {
+        _59 = &(*_60);                   // scope 10 at src/main.rs:68:35: 68:37
+        StorageDead(_61);                // scope 10 at src/main.rs:68:36: 68:37
+        _58 = parse_u64(move _59) -> [return: bb48, unwind: bb110]; // scope 10 at src/main.rs:68:25: 68:38
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:68:25: 68:34
+                                         // + const_: Const { ty: for<'a> fn(&'a str) -> Option<u64> {parse_u64}, val: Value(parse_u64) }
+    }
+
+    bb48: {
+        StorageDead(_59);                // scope 10 at src/main.rs:68:37: 68:38
+        StorageLive(_63);                // scope 10 at src/main.rs:68:54: 68:64
+        _63 = {closure@src/main.rs:68:54: 68:56}; // scope 10 at src/main.rs:68:54: 68:64
+                                         // closure
+                                         // + def_id: DefId(0:17 ~ iterator_pipeline_bench[bbf6]::main::{closure#4})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> u64, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _57 = Option::<u64>::unwrap_or_else::<{closure@src/main.rs:68:54: 68:56}>(move _58, move _63) -> [return: bb49, unwind: bb110]; // scope 10 at src/main.rs:68:25: 68:65
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:68:39: 68:53
+                                         // + const_: Const { ty: fn(Option<u64>, {closure@src/main.rs:68:54: 68:56}) -> u64 {Option::<u64>::unwrap_or_else::<{closure@src/main.rs:68:54: 68:56}>}, val: Value(Option::<u64>::unwrap_or_else::<{closure@src/main.rs:68:54: 68:56}>) }
+    }
+
+    bb49: {
+        StorageDead(_63);                // scope 10 at src/main.rs:68:64: 68:65
+        StorageDead(_58);                // scope 10 at src/main.rs:68:64: 68:65
+        FakeRead(ForLet(None), _57);     // scope 10 at src/main.rs:68:21: 68:22
+        StorageDead(_62);                // scope 10 at src/main.rs:68:65: 68:66
+        StorageDead(_60);                // scope 10 at src/main.rs:68:65: 68:66
+        StorageLive(_64);                // scope 11 at src/main.rs:69:25: 69:69
+        StorageLive(_65);                // scope 11 at src/main.rs:69:25: 69:41
+        StorageLive(_66);                // scope 11 at src/main.rs:69:39: 69:40
+        _66 = copy _57;                  // scope 11 at src/main.rs:69:39: 69:40
+        _65 = <u32 as TryFrom<u64>>::try_from(move _66) -> [return: bb50, unwind: bb110]; // scope 11 at src/main.rs:69:25: 69:41
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:69:25: 69:38
+                                         // + user_ty: UserType(8)
+                                         // + const_: Const { ty: fn(u64) -> Result<u32, <u32 as TryFrom<u64>>::Error> {<u32 as TryFrom<u64>>::try_from}, val: Value(<u32 as TryFrom<u64>>::try_from) }
+    }
+
+    bb50: {
+        StorageDead(_66);                // scope 11 at src/main.rs:69:40: 69:41
+        StorageLive(_67);                // scope 11 at src/main.rs:69:57: 69:68
+        _67 = {closure@src/main.rs:69:57: 69:60}; // scope 11 at src/main.rs:69:57: 69:68
+                                         // closure
+                                         // + def_id: DefId(0:18 ~ iterator_pipeline_bench[bbf6]::main::{closure#5})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn((std::num::TryFromIntError,)) -> u32, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _64 = Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:69:57: 69:60}>(move _65, move _67) -> [return: bb51, unwind: bb110]; // scope 11 at src/main.rs:69:25: 69:69
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:69:42: 69:56
+                                         // + const_: Const { ty: fn(Result<u32, TryFromIntError>, {closure@src/main.rs:69:57: 69:60}) -> u32 {Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:69:57: 69:60}>}, val: Value(Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:69:57: 69:60}>) }
+    }
+
+    bb51: {
+        StorageDead(_67);                // scope 11 at src/main.rs:69:68: 69:69
+        StorageDead(_65);                // scope 11 at src/main.rs:69:68: 69:69
+        _3 = move _64;                   // scope 11 at src/main.rs:69:17: 69:69
+        StorageDead(_64);                // scope 11 at src/main.rs:69:68: 69:69
+        _8 = const ();                   // scope 6 at src/main.rs:66:26: 70:14
+        StorageDead(_57);                // scope 10 at src/main.rs:70:13: 70:14
+        drop(_53) -> [return: bb52, unwind: bb116]; // scope 6 at src/main.rs:70:13: 70:14
+    }
+
+    bb52: {
+        StorageDead(_53);                // scope 6 at src/main.rs:70:13: 70:14
+        goto -> bb61;                    // scope 6 at src/main.rs:70:13: 70:14
+    }
+
+    bb53: {
+        StorageDead(_70);                // scope 6 at src/main.rs:72:35: 72:36
+        StorageLive(_71);                // scope 6 at src/main.rs:72:52: 72:62
+        _71 = {closure@src/main.rs:72:52: 72:54}; // scope 6 at src/main.rs:72:52: 72:62
+                                         // closure
+                                         // + def_id: DefId(0:19 ~ iterator_pipeline_bench[bbf6]::main::{closure#6})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> std::string::String, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _68 = Option::<String>::unwrap_or_else::<{closure@src/main.rs:72:52: 72:54}>(move _69, move _71) -> [return: bb54, unwind: bb109]; // scope 6 at src/main.rs:72:25: 72:63
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:72:37: 72:51
+                                         // + const_: Const { ty: fn(Option<String>, {closure@src/main.rs:72:52: 72:54}) -> String {Option::<String>::unwrap_or_else::<{closure@src/main.rs:72:52: 72:54}>}, val: Value(Option::<String>::unwrap_or_else::<{closure@src/main.rs:72:52: 72:54}>) }
+    }
+
+    bb54: {
+        StorageDead(_71);                // scope 6 at src/main.rs:72:62: 72:63
+        StorageDead(_69);                // scope 6 at src/main.rs:72:62: 72:63
+        FakeRead(ForLet(None), _68);     // scope 6 at src/main.rs:72:21: 72:22
+        StorageLive(_72);                // scope 12 at src/main.rs:73:21: 73:22
+        StorageLive(_73);                // scope 12 at src/main.rs:73:25: 73:38
+        StorageLive(_74);                // scope 12 at src/main.rs:73:35: 73:37
+        StorageLive(_75);                // scope 12 at src/main.rs:73:35: 73:37
+        StorageLive(_76);                // scope 12 at src/main.rs:73:35: 73:37
+        StorageLive(_77);                // scope 12 at src/main.rs:73:35: 73:37
+        _77 = &_68;                      // scope 12 at src/main.rs:73:35: 73:37
+        _76 = &(*_77);                   // scope 12 at src/main.rs:73:35: 73:37
+        _75 = <String as Deref>::deref(move _76) -> [return: bb55, unwind: bb108]; // scope 12 at src/main.rs:73:35: 73:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:73:35: 73:37
+                                         // + const_: Const { ty: for<'a> fn(&'a String) -> &'a <String as Deref>::Target {<String as Deref>::deref}, val: Value(<String as Deref>::deref) }
+    }
+
+    bb55: {
+        _74 = &(*_75);                   // scope 12 at src/main.rs:73:35: 73:37
+        StorageDead(_76);                // scope 12 at src/main.rs:73:36: 73:37
+        _73 = parse_u64(move _74) -> [return: bb56, unwind: bb108]; // scope 12 at src/main.rs:73:25: 73:38
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:73:25: 73:34
+                                         // + const_: Const { ty: for<'a> fn(&'a str) -> Option<u64> {parse_u64}, val: Value(parse_u64) }
+    }
+
+    bb56: {
+        StorageDead(_74);                // scope 12 at src/main.rs:73:37: 73:38
+        StorageLive(_78);                // scope 12 at src/main.rs:73:54: 73:64
+        _78 = {closure@src/main.rs:73:54: 73:56}; // scope 12 at src/main.rs:73:54: 73:64
+                                         // closure
+                                         // + def_id: DefId(0:20 ~ iterator_pipeline_bench[bbf6]::main::{closure#7})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> u64, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _72 = Option::<u64>::unwrap_or_else::<{closure@src/main.rs:73:54: 73:56}>(move _73, move _78) -> [return: bb57, unwind: bb108]; // scope 12 at src/main.rs:73:25: 73:65
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:73:39: 73:53
+                                         // + const_: Const { ty: fn(Option<u64>, {closure@src/main.rs:73:54: 73:56}) -> u64 {Option::<u64>::unwrap_or_else::<{closure@src/main.rs:73:54: 73:56}>}, val: Value(Option::<u64>::unwrap_or_else::<{closure@src/main.rs:73:54: 73:56}>) }
+    }
+
+    bb57: {
+        StorageDead(_78);                // scope 12 at src/main.rs:73:64: 73:65
+        StorageDead(_73);                // scope 12 at src/main.rs:73:64: 73:65
+        FakeRead(ForLet(None), _72);     // scope 12 at src/main.rs:73:21: 73:22
+        StorageDead(_77);                // scope 12 at src/main.rs:73:65: 73:66
+        StorageDead(_75);                // scope 12 at src/main.rs:73:65: 73:66
+        StorageLive(_79);                // scope 13 at src/main.rs:74:24: 74:68
+        StorageLive(_80);                // scope 13 at src/main.rs:74:24: 74:40
+        StorageLive(_81);                // scope 13 at src/main.rs:74:38: 74:39
+        _81 = copy _72;                  // scope 13 at src/main.rs:74:38: 74:39
+        _80 = <u32 as TryFrom<u64>>::try_from(move _81) -> [return: bb58, unwind: bb108]; // scope 13 at src/main.rs:74:24: 74:40
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:74:24: 74:37
+                                         // + user_ty: UserType(9)
+                                         // + const_: Const { ty: fn(u64) -> Result<u32, <u32 as TryFrom<u64>>::Error> {<u32 as TryFrom<u64>>::try_from}, val: Value(<u32 as TryFrom<u64>>::try_from) }
+    }
+
+    bb58: {
+        StorageDead(_81);                // scope 13 at src/main.rs:74:39: 74:40
+        StorageLive(_82);                // scope 13 at src/main.rs:74:56: 74:67
+        _82 = {closure@src/main.rs:74:56: 74:59}; // scope 13 at src/main.rs:74:56: 74:67
+                                         // closure
+                                         // + def_id: DefId(0:21 ~ iterator_pipeline_bench[bbf6]::main::{closure#8})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn((std::num::TryFromIntError,)) -> u32, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _79 = Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:74:56: 74:59}>(move _80, move _82) -> [return: bb59, unwind: bb108]; // scope 13 at src/main.rs:74:24: 74:68
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:74:41: 74:55
+                                         // + const_: Const { ty: fn(Result<u32, TryFromIntError>, {closure@src/main.rs:74:56: 74:59}) -> u32 {Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:74:56: 74:59}>}, val: Value(Result::<u32, TryFromIntError>::unwrap_or_else::<{closure@src/main.rs:74:56: 74:59}>) }
+    }
+
+    bb59: {
+        StorageDead(_82);                // scope 13 at src/main.rs:74:67: 74:68
+        StorageDead(_80);                // scope 13 at src/main.rs:74:67: 74:68
+        _4 = move _79;                   // scope 13 at src/main.rs:74:17: 74:68
+        StorageDead(_79);                // scope 13 at src/main.rs:74:67: 74:68
+        _8 = const ();                   // scope 6 at src/main.rs:71:25: 75:14
+        StorageDead(_72);                // scope 12 at src/main.rs:75:13: 75:14
+        drop(_68) -> [return: bb60, unwind: bb116]; // scope 6 at src/main.rs:75:13: 75:14
+    }
+
+    bb60: {
+        StorageDead(_68);                // scope 6 at src/main.rs:75:13: 75:14
+        goto -> bb61;                    // scope 6 at src/main.rs:75:13: 75:14
+    }
+
+    bb61: {
+        StorageDead(_13);                // scope 6 at src/main.rs:79:5: 79:6
+        drop(_12) -> [return: bb63, unwind: bb117]; // scope 5 at src/main.rs:79:5: 79:6
+    }
+
+    bb62: {
+        StorageLive(_86);                // scope 5 at src/main.rs:52:5: 79:6
+        _7 = const ();                   // scope 5 at src/main.rs:52:5: 79:6
+        StorageDead(_86);                // scope 5 at src/main.rs:79:5: 79:6
+        drop(_9) -> [return: bb65, unwind: bb118]; // scope 5 at src/main.rs:79:5: 79:6
+    }
+
+    bb63: {
+        StorageDead(_12);                // scope 5 at src/main.rs:79:5: 79:6
+        drop(_9) -> [return: bb64, unwind: bb118]; // scope 5 at src/main.rs:79:5: 79:6
+    }
+
+    bb64: {
+        StorageDead(_9);                 // scope 5 at src/main.rs:79:5: 79:6
+        goto -> bb3;                     // scope 5 at src/main.rs:52:5: 79:6
+    }
+
+    bb65: {
+        StorageDead(_9);                 // scope 5 at src/main.rs:79:5: 79:6
+        StorageDead(_7);                 // scope 5 at src/main.rs:79:5: 79:6
+        StorageLive(_88);                // scope 5 at src/main.rs:81:9: 81:13
+        StorageLive(_89);                // scope 5 at src/main.rs:81:16: 81:20
+        _89 = copy _1;                   // scope 5 at src/main.rs:81:16: 81:20
+        StorageLive(_90);                // scope 5 at src/main.rs:81:36: 81:46
+        _90 = {closure@src/main.rs:81:36: 81:38}; // scope 5 at src/main.rs:81:36: 81:46
+                                         // closure
+                                         // + def_id: DefId(0:22 ~ iterator_pipeline_bench[bbf6]::main::{closure#9})
+                                         // + args: [
+                                         //     i32,
+                                         //     Binder { value: extern "RustCall" fn(()) -> Mode, bound_vars: [] },
+                                         //     (),
+                                         // ]
+        _88 = Option::<Mode>::unwrap_or_else::<{closure@src/main.rs:81:36: 81:38}>(move _89, move _90) -> [return: bb66, unwind: bb118]; // scope 5 at src/main.rs:81:16: 81:47
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:81:21: 81:35
+                                         // + const_: Const { ty: fn(Option<Mode>, {closure@src/main.rs:81:36: 81:38}) -> Mode {Option::<Mode>::unwrap_or_else::<{closure@src/main.rs:81:36: 81:38}>}, val: Value(Option::<Mode>::unwrap_or_else::<{closure@src/main.rs:81:36: 81:38}>) }
+    }
+
+    bb66: {
+        StorageDead(_90);                // scope 5 at src/main.rs:81:46: 81:47
+        StorageDead(_89);                // scope 5 at src/main.rs:81:46: 81:47
+        FakeRead(ForLet(None), _88);     // scope 5 at src/main.rs:81:9: 81:13
+        StorageLive(_91);                // scope 14 at src/main.rs:83:9: 83:10
+        StorageLive(_92);                // scope 14 at src/main.rs:83:23: 83:26
+        _92 = copy _2;                   // scope 14 at src/main.rs:83:23: 83:26
+        StorageLive(_93);                // scope 14 at src/main.rs:83:28: 83:46
+        StorageLive(_94);                // scope 14 at src/main.rs:83:28: 83:32
+        _94 = copy _4;                   // scope 14 at src/main.rs:83:28: 83:32
+        _93 = BitXor(move _94, const 2779077210_u32); // scope 14 at src/main.rs:83:28: 83:46
+        StorageDead(_94);                // scope 14 at src/main.rs:83:45: 83:46
+        _91 = make_data(move _92, move _93) -> [return: bb67, unwind: bb118]; // scope 14 at src/main.rs:83:13: 83:47
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:83:13: 83:22
+                                         // + const_: Const { ty: fn(usize, u32) -> Vec<u32> {make_data}, val: Value(make_data) }
+    }
+
+    bb67: {
+        StorageDead(_93);                // scope 14 at src/main.rs:83:46: 83:47
+        StorageDead(_92);                // scope 14 at src/main.rs:83:46: 83:47
+        FakeRead(ForLet(None), _91);     // scope 14 at src/main.rs:83:9: 83:10
+        StorageLive(_95);                // scope 15 at src/main.rs:84:9: 84:10
+        StorageLive(_96);                // scope 15 at src/main.rs:84:23: 84:26
+        _96 = copy _2;                   // scope 15 at src/main.rs:84:23: 84:26
+        StorageLive(_97);                // scope 15 at src/main.rs:84:28: 84:46
+        StorageLive(_98);                // scope 15 at src/main.rs:84:28: 84:32
+        _98 = copy _4;                   // scope 15 at src/main.rs:84:28: 84:32
+        _97 = BitXor(move _98, const 1515890085_u32); // scope 15 at src/main.rs:84:28: 84:46
+        StorageDead(_98);                // scope 15 at src/main.rs:84:45: 84:46
+        _95 = make_data(move _96, move _97) -> [return: bb68, unwind: bb107]; // scope 15 at src/main.rs:84:13: 84:47
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:84:13: 84:22
+                                         // + const_: Const { ty: fn(usize, u32) -> Vec<u32> {make_data}, val: Value(make_data) }
+    }
+
+    bb68: {
+        StorageDead(_97);                // scope 15 at src/main.rs:84:46: 84:47
+        StorageDead(_96);                // scope 15 at src/main.rs:84:46: 84:47
+        FakeRead(ForLet(None), _95);     // scope 15 at src/main.rs:84:9: 84:10
+        StorageLive(_99);                // scope 16 at src/main.rs:86:9: 86:14
+        StorageLive(_100);               // scope 16 at src/main.rs:86:17: 86:27
+        StorageLive(_101);               // scope 16 at src/main.rs:86:18: 86:22
+        _101 = copy _4;                  // scope 16 at src/main.rs:86:18: 86:22
+        _100 = BitOr(move _101, const 1_u32); // scope 16 at src/main.rs:86:17: 86:27
+        StorageDead(_101);               // scope 16 at src/main.rs:86:26: 86:27
+        _99 = core::num::<impl u32>::wrapping_mul(move _100, const 17_u32) -> [return: bb69, unwind: bb106]; // scope 16 at src/main.rs:86:17: 86:44
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:86:28: 86:40
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb69: {
+        StorageDead(_100);               // scope 16 at src/main.rs:86:43: 86:44
+        FakeRead(ForLet(None), _99);     // scope 16 at src/main.rs:86:9: 86:14
+        StorageLive(_102);               // scope 17 at src/main.rs:87:9: 87:13
+        StorageLive(_103);               // scope 17 at src/main.rs:87:16: 87:42
+        StorageLive(_104);               // scope 17 at src/main.rs:87:17: 87:37
+        StorageLive(_105);               // scope 17 at src/main.rs:87:17: 87:21
+        _105 = copy _4;                  // scope 17 at src/main.rs:87:17: 87:21
+        _104 = core::num::<impl u32>::rotate_left(move _105, const 13_u32) -> [return: bb70, unwind: bb106]; // scope 17 at src/main.rs:87:17: 87:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:87:22: 87:33
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::rotate_left}, val: Value(core::num::<impl u32>::rotate_left) }
+    }
+
+    bb70: {
+        StorageDead(_105);               // scope 17 at src/main.rs:87:36: 87:37
+        _103 = BitOr(move _104, const 1_u32); // scope 17 at src/main.rs:87:16: 87:42
+        StorageDead(_104);               // scope 17 at src/main.rs:87:41: 87:42
+        _102 = core::num::<impl u32>::wrapping_mul(move _103, const 31_u32) -> [return: bb71, unwind: bb106]; // scope 17 at src/main.rs:87:16: 87:59
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:87:43: 87:55
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb71: {
+        StorageDead(_103);               // scope 17 at src/main.rs:87:58: 87:59
+        FakeRead(ForLet(None), _102);    // scope 17 at src/main.rs:87:9: 87:13
+        StorageLive(_106);               // scope 18 at src/main.rs:88:9: 88:10
+        StorageLive(_107);               // scope 18 at src/main.rs:88:13: 88:17
+        _107 = copy _4;                  // scope 18 at src/main.rs:88:13: 88:17
+        _106 = core::num::<impl u32>::wrapping_add(move _107, const 7_u32) -> [return: bb72, unwind: bb106]; // scope 18 at src/main.rs:88:13: 88:33
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:88:18: 88:30
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_add}, val: Value(core::num::<impl u32>::wrapping_add) }
+    }
+
+    bb72: {
+        StorageDead(_107);               // scope 18 at src/main.rs:88:32: 88:33
+        FakeRead(ForLet(None), _106);    // scope 18 at src/main.rs:88:9: 88:10
+        StorageLive(_108);               // scope 19 at src/main.rs:90:9: 90:14
+        _108 = Instant::now() -> [return: bb73, unwind: bb106]; // scope 19 at src/main.rs:90:17: 90:31
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:90:17: 90:29
+                                         // + const_: Const { ty: fn() -> Instant {Instant::now}, val: Value(Instant::now) }
+    }
+
+    bb73: {
+        FakeRead(ForLet(None), _108);    // scope 19 at src/main.rs:90:9: 90:14
+        StorageLive(_109);               // scope 20 at src/main.rs:91:9: 91:12
+        PlaceMention(_88);               // scope 20 at src/main.rs:91:21: 91:25
+        _110 = discriminant(_88);        // scope 20 at src/main.rs:91:21: 91:25
+        switchInt(move _110) -> [0: bb75, 1: bb76, otherwise: bb74]; // scope 20 at src/main.rs:91:15: 91:25
+    }
+
+    bb74: {
+        FakeRead(ForMatchedPlace(None), _88); // scope 20 at src/main.rs:91:21: 91:25
+        unreachable;                     // scope 20 at src/main.rs:91:21: 91:25
+    }
+
+    bb75: {
+        falseEdge -> [real: bb77, imaginary: bb76]; // scope 20 at src/main.rs:92:9: 92:19
+    }
+
+    bb76: {
+        StorageLive(_123);               // scope 20 at src/main.rs:93:52: 93:54
+        StorageLive(_124);               // scope 20 at src/main.rs:93:52: 93:54
+        StorageLive(_125);               // scope 20 at src/main.rs:93:52: 93:54
+        StorageLive(_126);               // scope 20 at src/main.rs:93:52: 93:54
+        _126 = &_91;                     // scope 20 at src/main.rs:93:52: 93:54
+        _125 = &(*_126);                 // scope 20 at src/main.rs:93:52: 93:54
+        _124 = <Vec<u32> as Deref>::deref(move _125) -> [return: bb81, unwind: bb106]; // scope 20 at src/main.rs:93:52: 93:54
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:93:52: 93:54
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb77: {
+        StorageLive(_111);               // scope 20 at src/main.rs:92:35: 92:37
+        StorageLive(_112);               // scope 20 at src/main.rs:92:35: 92:37
+        StorageLive(_113);               // scope 20 at src/main.rs:92:35: 92:37
+        StorageLive(_114);               // scope 20 at src/main.rs:92:35: 92:37
+        _114 = &_91;                     // scope 20 at src/main.rs:92:35: 92:37
+        _113 = &(*_114);                 // scope 20 at src/main.rs:92:35: 92:37
+        _112 = <Vec<u32> as Deref>::deref(move _113) -> [return: bb78, unwind: bb106]; // scope 20 at src/main.rs:92:35: 92:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:92:35: 92:37
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb78: {
+        _111 = &(*_112);                 // scope 20 at src/main.rs:92:35: 92:37
+        StorageDead(_113);               // scope 20 at src/main.rs:92:36: 92:37
+        StorageLive(_115);               // scope 20 at src/main.rs:92:39: 92:41
+        StorageLive(_116);               // scope 20 at src/main.rs:92:39: 92:41
+        StorageLive(_117);               // scope 20 at src/main.rs:92:39: 92:41
+        StorageLive(_118);               // scope 20 at src/main.rs:92:39: 92:41
+        _118 = &_95;                     // scope 20 at src/main.rs:92:39: 92:41
+        _117 = &(*_118);                 // scope 20 at src/main.rs:92:39: 92:41
+        _116 = <Vec<u32> as Deref>::deref(move _117) -> [return: bb79, unwind: bb106]; // scope 20 at src/main.rs:92:39: 92:41
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:92:39: 92:41
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb79: {
+        _115 = &(*_116);                 // scope 20 at src/main.rs:92:39: 92:41
+        StorageDead(_117);               // scope 20 at src/main.rs:92:40: 92:41
+        StorageLive(_119);               // scope 20 at src/main.rs:92:43: 92:48
+        _119 = copy _3;                  // scope 20 at src/main.rs:92:43: 92:48
+        StorageLive(_120);               // scope 20 at src/main.rs:92:50: 92:55
+        _120 = copy _99;                 // scope 20 at src/main.rs:92:50: 92:55
+        StorageLive(_121);               // scope 20 at src/main.rs:92:57: 92:61
+        _121 = copy _102;                // scope 20 at src/main.rs:92:57: 92:61
+        StorageLive(_122);               // scope 20 at src/main.rs:92:63: 92:64
+        _122 = copy _106;                // scope 20 at src/main.rs:92:63: 92:64
+        _109 = kernel_easy(move _111, move _115, move _119, move _120, move _121, move _122) -> [return: bb80, unwind: bb106]; // scope 20 at src/main.rs:92:23: 92:65
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:92:23: 92:34
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a [u32], &'b [u32], u32, u32, u32, u32) -> u64 {kernel_easy}, val: Value(kernel_easy) }
+    }
+
+    bb80: {
+        StorageDead(_122);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_121);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_120);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_119);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_115);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_111);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_118);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_116);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_114);               // scope 20 at src/main.rs:92:64: 92:65
+        StorageDead(_112);               // scope 20 at src/main.rs:92:64: 92:65
+        goto -> bb84;                    // scope 20 at src/main.rs:92:64: 92:65
+    }
+
+    bb81: {
+        _123 = &(*_124);                 // scope 20 at src/main.rs:93:52: 93:54
+        StorageDead(_125);               // scope 20 at src/main.rs:93:53: 93:54
+        StorageLive(_127);               // scope 20 at src/main.rs:93:56: 93:58
+        StorageLive(_128);               // scope 20 at src/main.rs:93:56: 93:58
+        StorageLive(_129);               // scope 20 at src/main.rs:93:56: 93:58
+        StorageLive(_130);               // scope 20 at src/main.rs:93:56: 93:58
+        _130 = &_95;                     // scope 20 at src/main.rs:93:56: 93:58
+        _129 = &(*_130);                 // scope 20 at src/main.rs:93:56: 93:58
+        _128 = <Vec<u32> as Deref>::deref(move _129) -> [return: bb82, unwind: bb106]; // scope 20 at src/main.rs:93:56: 93:58
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:93:56: 93:58
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb82: {
+        _127 = &(*_128);                 // scope 20 at src/main.rs:93:56: 93:58
+        StorageDead(_129);               // scope 20 at src/main.rs:93:57: 93:58
+        StorageLive(_131);               // scope 20 at src/main.rs:93:60: 93:65
+        _131 = copy _3;                  // scope 20 at src/main.rs:93:60: 93:65
+        StorageLive(_132);               // scope 20 at src/main.rs:93:67: 93:72
+        _132 = copy _99;                 // scope 20 at src/main.rs:93:67: 93:72
+        StorageLive(_133);               // scope 20 at src/main.rs:93:74: 93:78
+        _133 = copy _102;                // scope 20 at src/main.rs:93:74: 93:78
+        StorageLive(_134);               // scope 20 at src/main.rs:93:80: 93:81
+        _134 = copy _106;                // scope 20 at src/main.rs:93:80: 93:81
+        _109 = kernel_mir_dependent(move _123, move _127, move _131, move _132, move _133, move _134) -> [return: bb83, unwind: bb106]; // scope 20 at src/main.rs:93:31: 93:82
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:93:31: 93:51
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a [u32], &'b [u32], u32, u32, u32, u32) -> u64 {kernel_mir_dependent}, val: Value(kernel_mir_dependent) }
+    }
+
+    bb83: {
+        StorageDead(_134);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_133);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_132);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_131);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_127);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_123);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_130);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_128);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_126);               // scope 20 at src/main.rs:93:81: 93:82
+        StorageDead(_124);               // scope 20 at src/main.rs:93:81: 93:82
+        goto -> bb84;                    // scope 20 at src/main.rs:93:81: 93:82
+    }
+
+    bb84: {
+        FakeRead(ForLet(None), _109);    // scope 20 at src/main.rs:91:9: 91:12
+        StorageLive(_135);               // scope 21 at src/main.rs:95:9: 95:16
+        StorageLive(_136);               // scope 21 at src/main.rs:95:19: 95:24
+        _136 = &_108;                    // scope 21 at src/main.rs:95:19: 95:24
+        _135 = Instant::elapsed(move _136) -> [return: bb85, unwind: bb106]; // scope 21 at src/main.rs:95:19: 95:34
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:95:25: 95:32
+                                         // + const_: Const { ty: for<'a> fn(&'a Instant) -> Duration {Instant::elapsed}, val: Value(Instant::elapsed) }
+    }
+
+    bb85: {
+        StorageDead(_136);               // scope 21 at src/main.rs:95:33: 95:34
+        FakeRead(ForLet(None), _135);    // scope 21 at src/main.rs:95:9: 95:16
+        StorageLive(_137);               // scope 22 at src/main.rs:97:9: 97:13
+        StorageLive(_138);               // scope 22 at src/main.rs:97:16: 97:23
+        _138 = &_135;                    // scope 22 at src/main.rs:97:16: 97:23
+        _137 = Duration::as_secs_f64(move _138) -> [return: bb86, unwind: bb106]; // scope 22 at src/main.rs:97:16: 97:37
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:97:24: 97:35
+                                         // + const_: Const { ty: for<'a> fn(&'a Duration) -> f64 {Duration::as_secs_f64}, val: Value(Duration::as_secs_f64) }
+    }
+
+    bb86: {
+        StorageDead(_138);               // scope 22 at src/main.rs:97:36: 97:37
+        FakeRead(ForLet(None), _137);    // scope 22 at src/main.rs:97:9: 97:13
+        StorageLive(_139);               // scope 23 at src/main.rs:98:9: 98:20
+        StorageLive(_140);               // scope 23 at src/main.rs:98:26: 98:36
+        StorageLive(_141);               // scope 23 at src/main.rs:98:26: 98:31
+        _141 = copy _3;                  // scope 23 at src/main.rs:98:26: 98:31
+        _140 = Eq(move _141, const 0_u32); // scope 23 at src/main.rs:98:26: 98:36
+        switchInt(move _140) -> [0: bb88, otherwise: bb87]; // scope 23 at src/main.rs:98:26: 98:36
+    }
+
+    bb87: {
+        StorageDead(_141);               // scope 23 at src/main.rs:98:35: 98:36
+        _139 = const 0f64;               // scope 23 at src/main.rs:99:9: 99:13
+        goto -> bb90;                    // scope 23 at src/main.rs:98:23: 102:6
+    }
+
+    bb88: {
+        StorageDead(_141);               // scope 23 at src/main.rs:98:35: 98:36
+        StorageLive(_142);               // scope 23 at src/main.rs:101:9: 101:34
+        StorageLive(_143);               // scope 23 at src/main.rs:101:9: 101:27
+        StorageLive(_144);               // scope 23 at src/main.rs:101:9: 101:16
+        _144 = &_135;                    // scope 23 at src/main.rs:101:9: 101:16
+        _143 = Duration::as_nanos(move _144) -> [return: bb89, unwind: bb106]; // scope 23 at src/main.rs:101:9: 101:27
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:101:17: 101:25
+                                         // + const_: Const { ty: for<'a> fn(&'a Duration) -> u128 {Duration::as_nanos}, val: Value(Duration::as_nanos) }
+    }
+
+    bb89: {
+        StorageDead(_144);               // scope 23 at src/main.rs:101:26: 101:27
+        _142 = move _143 as f64 (IntToFloat); // scope 23 at src/main.rs:101:9: 101:34
+        StorageDead(_143);               // scope 23 at src/main.rs:101:33: 101:34
+        StorageLive(_145);               // scope 23 at src/main.rs:101:37: 101:51
+        StorageLive(_146);               // scope 23 at src/main.rs:101:38: 101:43
+        _146 = copy _3;                  // scope 23 at src/main.rs:101:38: 101:43
+        _145 = move _146 as f64 (IntToFloat); // scope 23 at src/main.rs:101:37: 101:51
+        StorageDead(_146);               // scope 23 at src/main.rs:101:50: 101:51
+        _139 = Div(move _142, move _145); // scope 23 at src/main.rs:101:9: 101:51
+        StorageDead(_145);               // scope 23 at src/main.rs:101:50: 101:51
+        StorageDead(_142);               // scope 23 at src/main.rs:101:50: 101:51
+        goto -> bb90;                    // scope 23 at src/main.rs:98:23: 102:6
+    }
+
+    bb90: {
+        StorageDead(_140);               // scope 23 at src/main.rs:102:5: 102:6
+        FakeRead(ForLet(None), _139);    // scope 23 at src/main.rs:98:9: 98:20
+        StorageLive(_147);               // scope 24 at src/main.rs:104:9: 104:14
+        StorageLive(_148);               // scope 24 at src/main.rs:104:17: 104:35
+        StorageLive(_149);               // scope 24 at src/main.rs:104:17: 104:29
+        StorageLive(_150);               // scope 24 at src/main.rs:104:18: 104:21
+        _150 = copy _2;                  // scope 24 at src/main.rs:104:18: 104:21
+        _149 = move _150 as f64 (IntToFloat); // scope 24 at src/main.rs:104:17: 104:29
+        StorageDead(_150);               // scope 24 at src/main.rs:104:28: 104:29
+        _148 = Mul(move _149, const 8f64); // scope 24 at src/main.rs:104:17: 104:35
+        StorageDead(_149);               // scope 24 at src/main.rs:104:34: 104:35
+        StorageLive(_151);               // scope 24 at src/main.rs:104:38: 104:52
+        StorageLive(_152);               // scope 24 at src/main.rs:104:39: 104:44
+        _152 = copy _3;                  // scope 24 at src/main.rs:104:39: 104:44
+        _151 = move _152 as f64 (IntToFloat); // scope 24 at src/main.rs:104:38: 104:52
+        StorageDead(_152);               // scope 24 at src/main.rs:104:51: 104:52
+        _147 = Mul(move _148, move _151); // scope 24 at src/main.rs:104:17: 104:52
+        StorageDead(_151);               // scope 24 at src/main.rs:104:51: 104:52
+        StorageDead(_148);               // scope 24 at src/main.rs:104:51: 104:52
+        FakeRead(ForLet(None), _147);    // scope 24 at src/main.rs:104:9: 104:14
+        StorageLive(_153);               // scope 25 at src/main.rs:105:9: 105:13
+        StorageLive(_154);               // scope 25 at src/main.rs:105:19: 105:30
+        StorageLive(_155);               // scope 25 at src/main.rs:105:19: 105:23
+        _155 = copy _137;                // scope 25 at src/main.rs:105:19: 105:23
+        _154 = Eq(move _155, const 0f64); // scope 25 at src/main.rs:105:19: 105:30
+        switchInt(move _154) -> [0: bb92, otherwise: bb91]; // scope 25 at src/main.rs:105:19: 105:30
+    }
+
+    bb91: {
+        StorageDead(_155);               // scope 25 at src/main.rs:105:29: 105:30
+        _153 = const 0f64;               // scope 25 at src/main.rs:105:33: 105:36
+        goto -> bb93;                    // scope 25 at src/main.rs:105:16: 105:76
+    }
+
+    bb92: {
+        StorageDead(_155);               // scope 25 at src/main.rs:105:29: 105:30
+        StorageLive(_156);               // scope 25 at src/main.rs:105:46: 105:60
+        StorageLive(_157);               // scope 25 at src/main.rs:105:47: 105:52
+        _157 = copy _147;                // scope 25 at src/main.rs:105:47: 105:52
+        StorageLive(_158);               // scope 25 at src/main.rs:105:55: 105:59
+        _158 = copy _137;                // scope 25 at src/main.rs:105:55: 105:59
+        _156 = Div(move _157, move _158); // scope 25 at src/main.rs:105:46: 105:60
+        StorageDead(_158);               // scope 25 at src/main.rs:105:59: 105:60
+        StorageDead(_157);               // scope 25 at src/main.rs:105:59: 105:60
+        _153 = Div(move _156, const 1.0E+6f64); // scope 25 at src/main.rs:105:46: 105:74
+        StorageDead(_156);               // scope 25 at src/main.rs:105:73: 105:74
+        goto -> bb93;                    // scope 25 at src/main.rs:105:16: 105:76
+    }
+
+    bb93: {
+        StorageDead(_154);               // scope 25 at src/main.rs:105:75: 105:76
+        FakeRead(ForLet(None), _153);    // scope 25 at src/main.rs:105:9: 105:13
+        StorageLive(_159);               // scope 26 at src/main.rs:107:5: 107:30
+        StorageLive(_160);               // scope 26 at src/main.rs:107:26: 107:29
+        _160 = copy _109;                // scope 26 at src/main.rs:107:26: 107:29
+        _159 = std::hint::black_box::<u64>(move _160) -> [return: bb94, unwind: bb106]; // scope 26 at src/main.rs:107:5: 107:30
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:107:5: 107:25
+                                         // + const_: Const { ty: fn(u64) -> u64 {std::hint::black_box::<u64>}, val: Value(std::hint::black_box::<u64>) }
+    }
+
+    bb94: {
+        StorageDead(_160);               // scope 26 at src/main.rs:107:29: 107:30
+        StorageDead(_159);               // scope 26 at src/main.rs:107:30: 107:31
+        StorageLive(_161);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:142:23: 144:6
+        StorageLive(_162);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:9: 143:62
+        StorageLive(_163);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_164);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_165);               // scope 26 at src/main.rs:110:9: 110:13
+        _165 = &_88;                     // scope 26 at src/main.rs:110:9: 110:13
+        StorageLive(_166);               // scope 26 at src/main.rs:110:15: 110:18
+        _166 = &_2;                      // scope 26 at src/main.rs:110:15: 110:18
+        StorageLive(_167);               // scope 26 at src/main.rs:110:20: 110:25
+        _167 = &_3;                      // scope 26 at src/main.rs:110:20: 110:25
+        StorageLive(_168);               // scope 26 at src/main.rs:110:27: 110:38
+        _168 = &_139;                    // scope 26 at src/main.rs:110:27: 110:38
+        StorageLive(_169);               // scope 26 at src/main.rs:110:40: 110:44
+        _169 = &_153;                    // scope 26 at src/main.rs:110:40: 110:44
+        StorageLive(_170);               // scope 26 at src/main.rs:110:46: 110:49
+        _170 = &_109;                    // scope 26 at src/main.rs:110:46: 110:49
+        _164 = (move _165, move _166, move _167, move _168, move _169, move _170); // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageDead(_170);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_169);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_168);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_167);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_166);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_165);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        FakeRead(ForLet(None), _164);    // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_171);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_172);               // scope 27 at src/main.rs:109:22: 109:26
+        StorageLive(_173);               // scope 27 at src/main.rs:110:9: 110:13
+        _173 = &(*(_164.0: &Mode));      // scope 27 at src/main.rs:110:9: 110:13
+        _172 = core::fmt::rt::Argument::<'_>::new_debug::<Mode>(move _173) -> [return: bb95, unwind: bb106]; // scope 27 at src/main.rs:109:22: 109:26
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:22: 109:26
+                                         // + user_ty: UserType(10)
+                                         // + const_: Const { ty: for<'a> fn(&'a Mode) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_debug::<Mode>}, val: Value(core::fmt::rt::Argument::<'_>::new_debug::<Mode>) }
+    }
+
+    bb95: {
+        StorageDead(_173);               // scope 27 at src/main.rs:109:25: 109:26
+        StorageLive(_174);               // scope 27 at src/main.rs:109:31: 109:33
+        StorageLive(_175);               // scope 27 at src/main.rs:110:15: 110:18
+        _175 = &(*(_164.1: &usize));     // scope 27 at src/main.rs:110:15: 110:18
+        _174 = core::fmt::rt::Argument::<'_>::new_display::<usize>(move _175) -> [return: bb96, unwind: bb106]; // scope 27 at src/main.rs:109:31: 109:33
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:31: 109:33
+                                         // + user_ty: UserType(11)
+                                         // + const_: Const { ty: for<'a> fn(&'a usize) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<usize>}, val: Value(core::fmt::rt::Argument::<'_>::new_display::<usize>) }
+    }
+
+    bb96: {
+        StorageDead(_175);               // scope 27 at src/main.rs:109:32: 109:33
+        StorageLive(_176);               // scope 27 at src/main.rs:109:40: 109:42
+        StorageLive(_177);               // scope 27 at src/main.rs:110:20: 110:25
+        _177 = &(*(_164.2: &u32));       // scope 27 at src/main.rs:110:20: 110:25
+        _176 = core::fmt::rt::Argument::<'_>::new_display::<u32>(move _177) -> [return: bb97, unwind: bb106]; // scope 27 at src/main.rs:109:40: 109:42
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:40: 109:42
+                                         // + user_ty: UserType(12)
+                                         // + const_: Const { ty: for<'a> fn(&'a u32) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<u32>}, val: Value(core::fmt::rt::Argument::<'_>::new_display::<u32>) }
+    }
+
+    bb97: {
+        StorageDead(_177);               // scope 27 at src/main.rs:109:41: 109:42
+        StorageLive(_178);               // scope 27 at src/main.rs:109:55: 109:60
+        StorageLive(_179);               // scope 27 at src/main.rs:110:27: 110:38
+        _179 = &(*(_164.3: &f64));       // scope 27 at src/main.rs:110:27: 110:38
+        _178 = core::fmt::rt::Argument::<'_>::new_display::<f64>(move _179) -> [return: bb98, unwind: bb106]; // scope 27 at src/main.rs:109:55: 109:60
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:55: 109:60
+                                         // + user_ty: UserType(13)
+                                         // + const_: Const { ty: for<'a> fn(&'a f64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<f64>}, val: Value(core::fmt::rt::Argument::<'_>::new_display::<f64>) }
+    }
+
+    bb98: {
+        StorageDead(_179);               // scope 27 at src/main.rs:109:59: 109:60
+        StorageLive(_180);               // scope 27 at src/main.rs:109:66: 109:71
+        StorageLive(_181);               // scope 27 at src/main.rs:110:40: 110:44
+        _181 = &(*(_164.4: &f64));       // scope 27 at src/main.rs:110:40: 110:44
+        _180 = core::fmt::rt::Argument::<'_>::new_display::<f64>(move _181) -> [return: bb99, unwind: bb106]; // scope 27 at src/main.rs:109:66: 109:71
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:66: 109:71
+                                         // + user_ty: UserType(14)
+                                         // + const_: Const { ty: for<'a> fn(&'a f64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<f64>}, val: Value(core::fmt::rt::Argument::<'_>::new_display::<f64>) }
+    }
+
+    bb99: {
+        StorageDead(_181);               // scope 27 at src/main.rs:109:70: 109:71
+        StorageLive(_182);               // scope 27 at src/main.rs:109:76: 109:78
+        StorageLive(_183);               // scope 27 at src/main.rs:110:46: 110:49
+        _183 = &(*(_164.5: &u64));       // scope 27 at src/main.rs:110:46: 110:49
+        _182 = core::fmt::rt::Argument::<'_>::new_display::<u64>(move _183) -> [return: bb100, unwind: bb106]; // scope 27 at src/main.rs:109:76: 109:78
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:109:76: 109:78
+                                         // + user_ty: UserType(15)
+                                         // + const_: Const { ty: for<'a> fn(&'a u64) -> core::fmt::rt::Argument<'a> {core::fmt::rt::Argument::<'_>::new_display::<u64>}, val: Value(core::fmt::rt::Argument::<'_>::new_display::<u64>) }
+    }
+
+    bb100: {
+        StorageDead(_183);               // scope 27 at src/main.rs:109:77: 109:78
+        _171 = [move _172, move _174, move _176, move _178, move _180, move _182]; // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageDead(_182);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_180);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_178);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_176);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_174);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_172);               // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        FakeRead(ForLet(None), _171);    // scope 27 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_184);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_185);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        _185 = const b"\x0cRESULT mode=\xc0\x05 len=\xc0\x07 iters=\xc0\r ns_per_iter=\xc5 \x00\x00p\x03\x00\x06 mbps=\xc5 \x00\x00p\x03\x00\x05 sum=\xc0\x01\n\x00"; // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                         // mir::ConstOperand
+                                         // + span: /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                         // + const_: Const { ty: &[u8; 75], val: Value(b"\x0cRESULT mode=\xc0\x05 len=\xc0\x07 iters=\xc0\r ns_per_iter=\xc5 \x00\x00p\x03\x00\x06 mbps=\xc5 \x00\x00p\x03\x00\x05 sum=\xc0\x01\n\x00") }
+        _184 = &(*_185);                 // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_186);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        StorageLive(_187);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        _187 = &_171;                    // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        _186 = &(*_187);                 // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+        _163 = Arguments::<'_>::new::<75, 6>(move _184, move _186) -> [return: bb101, unwind: bb106]; // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                         // mir::ConstOperand
+                                         // + span: /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:28: 143:61
+                                         // + user_ty: UserType(16)
+                                         // + const_: Const { ty: unsafe fn(&[u8; 75], &[core::fmt::rt::Argument<'_>; 6]) -> Arguments<'_> {Arguments::<'_>::new::<75, 6>}, val: Value(Arguments::<'_>::new::<75, 6>) }
+    }
+
+    bb101: {
+        StorageDead(_187);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_186);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_185);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        StorageDead(_184);               // scope 28 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:60: 143:61
+        _162 = std::io::_print(move _163) -> [return: bb102, unwind: bb106]; // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:9: 143:62
+                                         // mir::ConstOperand
+                                         // + span: /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:9: 143:27
+                                         // + const_: Const { ty: for<'a> fn(Arguments<'a>) {std::io::_print}, val: Value(std::io::_print) }
+    }
+
+    bb102: {
+        StorageDead(_163);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:61: 143:62
+        StorageDead(_171);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:62: 143:63
+        StorageDead(_164);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:62: 143:63
+        StorageDead(_162);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:143:62: 143:63
+        _161 = const ();                 // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:142:23: 144:6
+        StorageDead(_161);               // scope 26 at /rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/std/src/macros.rs:144:5: 144:6
+        _0 = const ();                   // scope 0 at src/main.rs:45:11: 112:2
+        StorageDead(_153);               // scope 25 at src/main.rs:112:1: 112:2
+        StorageDead(_147);               // scope 24 at src/main.rs:112:1: 112:2
+        StorageDead(_139);               // scope 23 at src/main.rs:112:1: 112:2
+        StorageDead(_137);               // scope 22 at src/main.rs:112:1: 112:2
+        StorageDead(_135);               // scope 21 at src/main.rs:112:1: 112:2
+        StorageDead(_109);               // scope 20 at src/main.rs:112:1: 112:2
+        StorageDead(_108);               // scope 19 at src/main.rs:112:1: 112:2
+        StorageDead(_106);               // scope 18 at src/main.rs:112:1: 112:2
+        StorageDead(_102);               // scope 17 at src/main.rs:112:1: 112:2
+        StorageDead(_99);                // scope 16 at src/main.rs:112:1: 112:2
+        drop(_95) -> [return: bb103, unwind: bb107]; // scope 15 at src/main.rs:112:1: 112:2
+    }
+
+    bb103: {
+        StorageDead(_95);                // scope 15 at src/main.rs:112:1: 112:2
+        drop(_91) -> [return: bb104, unwind: bb118]; // scope 14 at src/main.rs:112:1: 112:2
+    }
+
+    bb104: {
+        StorageDead(_91);                // scope 14 at src/main.rs:112:1: 112:2
+        StorageDead(_88);                // scope 5 at src/main.rs:112:1: 112:2
+        drop(_5) -> [return: bb105, unwind: bb120]; // scope 4 at src/main.rs:112:1: 112:2
+    }
+
+    bb105: {
+        StorageDead(_5);                 // scope 4 at src/main.rs:112:1: 112:2
+        StorageDead(_4);                 // scope 3 at src/main.rs:112:1: 112:2
+        StorageDead(_3);                 // scope 2 at src/main.rs:112:1: 112:2
+        StorageDead(_2);                 // scope 1 at src/main.rs:112:1: 112:2
+        StorageDead(_1);                 // scope 0 at src/main.rs:112:1: 112:2
+        return;                          // scope 0 at src/main.rs:112:2: 112:2
+    }
+
+    bb106 (cleanup): {
+        drop(_95) -> [return: bb107, unwind terminate(cleanup)]; // scope 15 at src/main.rs:112:1: 112:2
+    }
+
+    bb107 (cleanup): {
+        drop(_91) -> [return: bb118, unwind terminate(cleanup)]; // scope 14 at src/main.rs:112:1: 112:2
+    }
+
+    bb108 (cleanup): {
+        drop(_68) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:75:13: 75:14
+    }
+
+    bb109 (cleanup): {
+        drop(_69) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:72:62: 72:63
+    }
+
+    bb110 (cleanup): {
+        drop(_53) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:70:13: 70:14
+    }
+
+    bb111 (cleanup): {
+        drop(_54) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:67:62: 67:63
+    }
+
+    bb112 (cleanup): {
+        drop(_40) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:65:13: 65:14
+    }
+
+    bb113 (cleanup): {
+        drop(_41) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:62:62: 62:63
+    }
+
+    bb114 (cleanup): {
+        drop(_27) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:60:13: 60:14
+    }
+
+    bb115 (cleanup): {
+        drop(_28) -> [return: bb116, unwind terminate(cleanup)]; // scope 6 at src/main.rs:55:62: 55:63
+    }
+
+    bb116 (cleanup): {
+        drop(_12) -> [return: bb117, unwind terminate(cleanup)]; // scope 5 at src/main.rs:79:5: 79:6
+    }
+
+    bb117 (cleanup): {
+        drop(_9) -> [return: bb118, unwind terminate(cleanup)]; // scope 5 at src/main.rs:79:5: 79:6
+    }
+
+    bb118 (cleanup): {
+        drop(_5) -> [return: bb120, unwind terminate(cleanup)]; // scope 4 at src/main.rs:112:1: 112:2
+    }
+
+    bb119 (cleanup): {
+        drop(_6) -> [return: bb120, unwind terminate(cleanup)]; // scope 4 at src/main.rs:51:38: 51:39
+    }
+
+    bb120 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:45:1: 112:2
+    }
+}
+
+alloc12 (size: 75, align: 1) {
+    0x00 │ 0c 52 45 53 55 4c 54 20 6d 6f 64 65 3d c0 05 20 │ .RESULT mode=.. 
+    0x10 │ 6c 65 6e 3d c0 07 20 69 74 65 72 73 3d c0 0d 20 │ len=.. iters=.. 
+    0x20 │ 6e 73 5f 70 65 72 5f 69 74 65 72 3d c5 20 00 00 │ ns_per_iter=. ..
+    0x30 │ 70 03 00 06 20 6d 62 70 73 3d c5 20 00 00 70 03 │ p... mbps=. ..p.
+    0x40 │ 00 05 20 73 75 6d 3d c0 01 0a 00                │ .. sum=....
+}

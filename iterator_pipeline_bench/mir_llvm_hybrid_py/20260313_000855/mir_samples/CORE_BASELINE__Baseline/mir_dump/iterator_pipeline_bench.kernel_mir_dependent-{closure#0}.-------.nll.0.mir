@@ -1,0 +1,78 @@
+// MIR for `kernel_mir_dependent::{closure#0}` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?6, '?1, '?2, '?3, '?4, '?5]
+| '?1 | External | ['?6, '?1]
+| '?2 | External | ['?6, '?2]
+| '?3 | External | ['?6, '?3]
+| '?4 | External | ['?6, '?4]
+| '?5 | Local | ['?6, '?5]
+| '?6 | Local | ['?6]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=13], '?0, '?1, '?2, '?3, '?4, '?5, '?6}
+| '?1 | U0 | {bb0[0..=13], '?1}
+| '?2 | U0 | {bb0[0..=13], '?2}
+| '?3 | U0 | {bb0[0..=13], '?3}
+| '?4 | U0 | {bb0[0..=13], '?4}
+| '?5 | U0 | {bb0[0..=13], '?5}
+| '?6 | U0 | {bb0[0..=13], '?6}
+| '?7 | U0 | {bb0[1]}
+| '?8 | U0 | {bb0[3]}
+| '?9 | U0 | {bb0[0..=13], '?5}
+| '?10 | U0 | {bb0[0..=13], '?1}
+| '?11 | U0 | {bb0[0..=13], '?2}
+| '?12 | U0 | {bb0[0..=13], '?1}
+| '?13 | U0 | {bb0[0..=13], '?2}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=13]}
+| '?1 live at {bb0[0..=13]}
+| '?2 live at {bb0[0..=13]}
+| '?3 live at {bb0[0..=13]}
+| '?4 live at {bb0[0..=13]}
+| '?5 live at {bb0[0..=13]}
+| '?6 live at {bb0[0..=13]}
+| '?7 live at {bb0[1]}
+| '?8 live at {bb0[3]}
+| '?1: '?10 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?1: '?12 due to BoringNoLocation at All(src/lib.rs:48:19: 48:27) (src/lib.rs:48:19: 48:27 (#0)
+| '?2: '?11 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?2: '?13 due to BoringNoLocation at All(src/lib.rs:48:19: 48:27) (src/lib.rs:48:19: 48:27 (#0)
+| '?5: '?9 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?9: '?5 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?10: '?1 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?11: '?2 due to BoringNoLocation at All(src/lib.rs:48:18: 48:35) (src/lib.rs:48:18: 48:35 (#0)
+| '?12: '?1 due to BoringNoLocation at All(src/lib.rs:48:19: 48:27) (src/lib.rs:48:19: 48:27 (#0)
+| '?12: '?7 due to Boring at Single(bb0[1]) (src/lib.rs:48:21: 48:22 (#0)
+| '?13: '?2 due to BoringNoLocation at All(src/lib.rs:48:19: 48:27) (src/lib.rs:48:19: 48:27 (#0)
+| '?13: '?8 due to Boring at Single(bb0[3]) (src/lib.rs:48:25: 48:26 (#0)
+|
+fn kernel_mir_dependent::{closure#0}(_1: &mut {closure@src/lib.rs:48:18: 48:28}, _2: (&u32, &u32)) -> (u32, u32) {
+    let mut _0: (u32, u32);              // return place in scope 0 at src/lib.rs:48:28: 48:28
+    let _3: u32;                         // in scope 0 at src/lib.rs:48:21: 48:22
+    let _4: u32;                         // in scope 0 at src/lib.rs:48:25: 48:26
+    let mut _5: u32;                     // in scope 0 at src/lib.rs:48:30: 48:31
+    let mut _6: u32;                     // in scope 0 at src/lib.rs:48:33: 48:34
+    scope 1 {
+        debug x => _3;                   // in scope 1 at src/lib.rs:48:21: 48:22
+        debug y => _4;                   // in scope 1 at src/lib.rs:48:25: 48:26
+    }
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/lib.rs:48:21: 48:22
+        _3 = copy (*(_2.0: &u32));       // scope 0 at src/lib.rs:48:21: 48:22
+        StorageLive(_4);                 // scope 0 at src/lib.rs:48:25: 48:26
+        _4 = copy (*(_2.1: &u32));       // scope 0 at src/lib.rs:48:25: 48:26
+        StorageLive(_5);                 // scope 1 at src/lib.rs:48:30: 48:31
+        _5 = copy _3;                    // scope 1 at src/lib.rs:48:30: 48:31
+        StorageLive(_6);                 // scope 1 at src/lib.rs:48:33: 48:34
+        _6 = copy _4;                    // scope 1 at src/lib.rs:48:33: 48:34
+        _0 = (move _5, move _6);         // scope 1 at src/lib.rs:48:29: 48:35
+        StorageDead(_6);                 // scope 1 at src/lib.rs:48:34: 48:35
+        StorageDead(_5);                 // scope 1 at src/lib.rs:48:34: 48:35
+        StorageDead(_4);                 // scope 0 at src/lib.rs:48:34: 48:35
+        StorageDead(_3);                 // scope 0 at src/lib.rs:48:34: 48:35
+        return;                          // scope 0 at src/lib.rs:48:35: 48:35
+    }
+}

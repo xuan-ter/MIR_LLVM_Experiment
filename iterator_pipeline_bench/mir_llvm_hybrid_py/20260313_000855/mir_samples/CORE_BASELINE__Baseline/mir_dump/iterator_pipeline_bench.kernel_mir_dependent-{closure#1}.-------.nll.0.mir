@@ -1,0 +1,49 @@
+// MIR for `kernel_mir_dependent::{closure#1}` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?4, '?1, '?2, '?3]
+| '?1 | External | ['?4, '?1]
+| '?2 | External | ['?4, '?2]
+| '?3 | Local | ['?4, '?3]
+| '?4 | Local | ['?4]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?0, '?1, '?2, '?3, '?4}
+| '?1 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?1}
+| '?2 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?2}
+| '?3 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?3}
+| '?4 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?4}
+| '?5 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], '?3}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=2], bb1[0..=1], bb2[0]}
+| '?1 live at {bb0[0..=2], bb1[0..=1], bb2[0]}
+| '?2 live at {bb0[0..=2], bb1[0..=1], bb2[0]}
+| '?3 live at {bb0[0..=2], bb1[0..=1], bb2[0]}
+| '?4 live at {bb0[0..=2], bb1[0..=1], bb2[0]}
+| '?3: '?5 due to BoringNoLocation at All(src/lib.rs:49:18: 49:44) (src/lib.rs:49:18: 49:44 (#0)
+| '?5: '?3 due to BoringNoLocation at All(src/lib.rs:49:18: 49:44) (src/lib.rs:49:18: 49:44 (#0)
+|
+fn kernel_mir_dependent::{closure#1}(_1: &mut {closure@src/lib.rs:49:18: 49:21}, _2: (u32, u32)) -> (u32, u32) {
+    debug p => _2;                       // in scope 0 at src/lib.rs:49:19: 49:20
+    let mut _0: (u32, u32);              // return place in scope 0 at src/lib.rs:49:21: 49:21
+    let mut _3: (u32, u32);              // in scope 0 at src/lib.rs:49:36: 49:37
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/lib.rs:49:36: 49:37
+        _3 = copy _2;                    // scope 0 at src/lib.rs:49:36: 49:37
+        _0 = step_add_pair(move _3, const 1_u32, const 2_u32) -> [return: bb1, unwind: bb2]; // scope 0 at src/lib.rs:49:22: 49:44
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:49:22: 49:35
+                                         // + const_: Const { ty: fn((u32, u32), u32, u32) -> (u32, u32) {step_add_pair}, val: Value(step_add_pair) }
+    }
+
+    bb1: {
+        StorageDead(_3);                 // scope 0 at src/lib.rs:49:43: 49:44
+        return;                          // scope 0 at src/lib.rs:49:44: 49:44
+    }
+
+    bb2 (cleanup): {
+        resume;                          // scope 0 at src/lib.rs:49:18: 49:44
+    }
+}

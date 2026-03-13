@@ -1,0 +1,29 @@
+// MIR for `<impl at src/main.rs:16:41: 16:43>::assert_fields_are_eq` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=1], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=1], '?1}
+| '?2 | U0 | {bb0[0..=1], '?2}
+| '?3 | U0 | {bb0[0..=1], '?1}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=1]}
+| '?1 live at {bb0[0..=1]}
+| '?2 live at {bb0[0..=1]}
+| '?1: '?3 due to BoringNoLocation at All(src/main.rs:16:41: 16:43) (src/main.rs:16:41: 16:43 (#9)
+| '?3: '?1 due to BoringNoLocation at All(src/main.rs:16:41: 16:43) (src/main.rs:16:41: 16:43 (#9)
+|
+fn <impl at src/main.rs:16:41: 16:43>::assert_fields_are_eq(_1: &Mode) -> () {
+    debug self => _1;                    // in scope 0 at src/main.rs:16:41: 16:43
+    let mut _0: ();                      // return place in scope 0 at src/main.rs:16:41: 16:43
+
+    bb0: {
+        _0 = const ();                   // scope 0 at src/main.rs:16:41: 16:43
+        return;                          // scope 0 at src/main.rs:16:43: 16:43
+    }
+}

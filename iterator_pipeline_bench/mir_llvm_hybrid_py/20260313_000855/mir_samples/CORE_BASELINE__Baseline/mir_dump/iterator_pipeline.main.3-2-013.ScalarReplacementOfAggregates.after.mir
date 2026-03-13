@@ -1,0 +1,62 @@
+// MIR for `main` after ScalarReplacementOfAggregates
+
+fn main() -> () {
+    let mut _0: ();
+    let mut _1: &[&test::TestDescAndFn];
+    let mut _2: &[&test::TestDescAndFn; 2];
+    let _3: &[&test::TestDescAndFn; 2];
+    let _4: [&test::TestDescAndFn; 2];
+    let mut _5: &test::TestDescAndFn;
+    let _6: &test::TestDescAndFn;
+    let _7: test::TestDescAndFn;
+    let mut _8: &test::TestDescAndFn;
+    let _9: &test::TestDescAndFn;
+    let _10: test::TestDescAndFn;
+    let mut _11: &[&test::TestDescAndFn; 2];
+    let _12: test::TestDesc;
+    let _13: test::TestFn;
+    let _14: test::TestDesc;
+    let _15: test::TestFn;
+    let _16: test::TestName;
+    let _17: bool;
+    let _18: std::option::Option<&str>;
+    let _19: &str;
+    let _20: usize;
+    let _21: usize;
+    let _22: usize;
+    let _23: usize;
+    let _24: test::ShouldPanic;
+    let _25: bool;
+    let _26: bool;
+    let _27: test::TestType;
+    let _28: test::TestName;
+    let _29: bool;
+    let _30: std::option::Option<&str>;
+    let _31: &str;
+    let _32: usize;
+    let _33: usize;
+    let _34: usize;
+    let _35: usize;
+    let _36: test::ShouldPanic;
+    let _37: bool;
+    let _38: bool;
+    let _39: test::TestType;
+
+    bb0: {
+        StorageLive(_1);
+        StorageLive(_2);
+        StorageLive(_3);
+        _11 = const main::promoted[0];
+        _3 = copy _11;
+        _2 = copy _3;
+        _1 = copy _2 as &[&test::TestDescAndFn] (PointerCoercion(Unsize, Implicit));
+        StorageDead(_2);
+        _0 = test_main_static(copy _1) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_1);
+        StorageDead(_3);
+        return;
+    }
+}

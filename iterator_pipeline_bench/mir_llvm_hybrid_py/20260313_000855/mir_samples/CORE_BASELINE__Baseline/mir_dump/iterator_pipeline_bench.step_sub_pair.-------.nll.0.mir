@@ -1,0 +1,65 @@
+// MIR for `step_sub_pair` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=5], bb1[0..=7], bb2[0..=5], bb3[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=5], bb1[0..=7], bb2[0..=5], bb3[0], '?1}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=5], bb1[0..=7], bb2[0..=5], bb3[0]}
+| '?1 live at {bb0[0..=5], bb1[0..=7], bb2[0..=5], bb3[0]}
+|
+fn step_sub_pair(_1: (u32, u32), _2: u32, _3: u32) -> (u32, u32) {
+    debug p => _1;                       // in scope 0 at src/lib.rs:22:18: 22:19
+    debug sx => _2;                      // in scope 0 at src/lib.rs:22:33: 22:35
+    debug sy => _3;                      // in scope 0 at src/lib.rs:22:42: 22:44
+    let mut _0: (u32, u32);              // return place in scope 0 at src/lib.rs:22:54: 22:64
+    let mut _4: u32;                     // in scope 0 at src/lib.rs:23:6: 23:26
+    let mut _5: u32;                     // in scope 0 at src/lib.rs:23:6: 23:9
+    let mut _6: u32;                     // in scope 0 at src/lib.rs:23:23: 23:25
+    let mut _7: u32;                     // in scope 0 at src/lib.rs:23:28: 23:48
+    let mut _8: u32;                     // in scope 0 at src/lib.rs:23:28: 23:31
+    let mut _9: u32;                     // in scope 0 at src/lib.rs:23:45: 23:47
+
+    bb0: {
+        StorageLive(_4);                 // scope 0 at src/lib.rs:23:6: 23:26
+        StorageLive(_5);                 // scope 0 at src/lib.rs:23:6: 23:9
+        _5 = copy (_1.0: u32);           // scope 0 at src/lib.rs:23:6: 23:9
+        StorageLive(_6);                 // scope 0 at src/lib.rs:23:23: 23:25
+        _6 = copy _2;                    // scope 0 at src/lib.rs:23:23: 23:25
+        _4 = core::num::<impl u32>::wrapping_sub(move _5, move _6) -> [return: bb1, unwind: bb3]; // scope 0 at src/lib.rs:23:6: 23:26
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:23:10: 23:22
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_sub}, val: Value(core::num::<impl u32>::wrapping_sub) }
+    }
+
+    bb1: {
+        StorageDead(_6);                 // scope 0 at src/lib.rs:23:25: 23:26
+        StorageDead(_5);                 // scope 0 at src/lib.rs:23:25: 23:26
+        StorageLive(_7);                 // scope 0 at src/lib.rs:23:28: 23:48
+        StorageLive(_8);                 // scope 0 at src/lib.rs:23:28: 23:31
+        _8 = copy (_1.1: u32);           // scope 0 at src/lib.rs:23:28: 23:31
+        StorageLive(_9);                 // scope 0 at src/lib.rs:23:45: 23:47
+        _9 = copy _3;                    // scope 0 at src/lib.rs:23:45: 23:47
+        _7 = core::num::<impl u32>::wrapping_sub(move _8, move _9) -> [return: bb2, unwind: bb3]; // scope 0 at src/lib.rs:23:28: 23:48
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:23:32: 23:44
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_sub}, val: Value(core::num::<impl u32>::wrapping_sub) }
+    }
+
+    bb2: {
+        StorageDead(_9);                 // scope 0 at src/lib.rs:23:47: 23:48
+        StorageDead(_8);                 // scope 0 at src/lib.rs:23:47: 23:48
+        _0 = (move _4, move _7);         // scope 0 at src/lib.rs:23:5: 23:49
+        StorageDead(_7);                 // scope 0 at src/lib.rs:23:48: 23:49
+        StorageDead(_4);                 // scope 0 at src/lib.rs:23:48: 23:49
+        return;                          // scope 0 at src/lib.rs:24:2: 24:2
+    }
+
+    bb3 (cleanup): {
+        resume;                          // scope 0 at src/lib.rs:22:1: 24:2
+    }
+}

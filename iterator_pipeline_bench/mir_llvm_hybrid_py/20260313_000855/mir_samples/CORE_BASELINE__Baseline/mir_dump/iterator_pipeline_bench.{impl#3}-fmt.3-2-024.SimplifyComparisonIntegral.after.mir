@@ -1,0 +1,46 @@
+// MIR for `<impl at src/main.rs:16:23: 16:28>::fmt` after SimplifyComparisonIntegral
+
+fn <impl at src/main.rs:16:23: 16:28>::fmt(_1: &Mode, _2: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
+    debug self => _1;
+    debug f => _2;
+    let mut _0: std::result::Result<(), std::fmt::Error>;
+    let mut _3: &str;
+    let mut _4: isize;
+
+    bb0: {
+        StorageLive(_3);
+        _4 = discriminant((*_1));
+        switchInt(move _4) -> [0: bb3, 1: bb2, otherwise: bb1];
+    }
+
+    bb1: {
+        unreachable;
+    }
+
+    bb2: {
+        _3 = const "MirDependent";
+        goto -> bb4;
+    }
+
+    bb3: {
+        _3 = const "Easy";
+        goto -> bb4;
+    }
+
+    bb4: {
+        _0 = Formatter::<'_>::write_str(copy _2, move _3) -> [return: bb5, unwind continue];
+    }
+
+    bb5: {
+        StorageDead(_3);
+        return;
+    }
+}
+
+alloc5 (size: 12, align: 1) {
+    4d 69 72 44 65 70 65 6e 64 65 6e 74             │ MirDependent
+}
+
+alloc4 (size: 4, align: 1) {
+    45 61 73 79                                     │ Easy
+}

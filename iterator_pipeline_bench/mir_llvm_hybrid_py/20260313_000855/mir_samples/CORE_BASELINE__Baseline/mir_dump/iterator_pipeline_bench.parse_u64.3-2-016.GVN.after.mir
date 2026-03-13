@@ -1,0 +1,286 @@
+// MIR for `parse_u64` after GVN
+
+fn parse_u64(_1: &str) -> Option<u64> {
+    debug s => _1;
+    let mut _0: std::option::Option<u64>;
+    let mut _2: std::option::Option<&str>;
+    let mut _3: &str;
+    let mut _4: isize;
+    let mut _6: std::result::Result<u64, std::num::ParseIntError>;
+    let mut _7: &str;
+    let mut _8: std::result::Result<u64, std::num::ParseIntError>;
+    let mut _9: &str;
+    let mut _10: &str;
+    let mut _24: u32;
+    scope 1 {
+        debug hex => _5;
+        let _5: &str;
+        scope 2 (inlined core::str::<impl str>::strip_prefix::<&str>) {
+            scope 3 (inlined <&str as Pattern>::strip_prefix_of) {
+                let mut _11: bool;
+                let _12: &str;
+                let mut _13: usize;
+                scope 4 (inlined <&str as Pattern>::is_prefix_of) {
+                    let _14: &[u8];
+                    let _15: &[u8];
+                    scope 5 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                    scope 6 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                }
+                scope 7 (inlined core::str::<impl str>::as_bytes) {
+                }
+                scope 8 (inlined core::str::<impl str>::get_unchecked::<std::ops::RangeFrom<usize>>) {
+                    let _16: *const str;
+                    let mut _17: *const str;
+                    scope 9 (inlined core::str::traits::<impl SliceIndex<str> for std::ops::RangeFrom<usize>>::get_unchecked) {
+                        let _18: usize;
+                        scope 10 {
+                            scope 13 (inlined #[track_caller] core::str::traits::<impl SliceIndex<str> for std::ops::Range<usize>>::get_unchecked) {
+                                let _19: ();
+                                let mut _21: *const [u8];
+                                let mut _22: *const u8;
+                                let mut _23: *const u8;
+                                scope 14 {
+                                    let _20: usize;
+                                    scope 15 {
+                                        scope 18 (inlined std::ptr::const_ptr::<impl *const [u8]>::as_ptr) {
+                                        }
+                                        scope 19 (inlined #[track_caller] std::ptr::const_ptr::<impl *const u8>::add) {
+                                        }
+                                        scope 20 (inlined slice_from_raw_parts::<u8>) {
+                                            scope 21 (inlined std::ptr::from_raw_parts::<[u8], u8>) {
+                                            }
+                                        }
+                                    }
+                                    scope 16 (inlined std::ptr::const_ptr::<impl *const [u8]>::len) {
+                                        scope 17 (inlined std::ptr::metadata::<[u8]>) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 11 (inlined std::ptr::const_ptr::<impl *const [u8]>::len) {
+                            scope 12 (inlined std::ptr::metadata::<[u8]>) {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        scope 22 (inlined core::num::<impl u64>::from_str_radix) {
+            let _25: &[u8];
+            scope 23 (inlined core::str::<impl str>::as_bytes) {
+            }
+        }
+        scope 24 (inlined Result::<u64, ParseIntError>::ok) {
+            let mut _26: isize;
+            let _27: u64;
+            let mut _28: isize;
+            scope 25 {
+            }
+        }
+    }
+    scope 26 (inlined core::str::<impl str>::parse::<u64>) {
+        scope 27 (inlined core::num::<impl FromStr for u64>::from_str) {
+            scope 28 (inlined core::num::<impl u64>::from_str_radix) {
+                let _29: &[u8];
+                scope 29 (inlined core::str::<impl str>::as_bytes) {
+                }
+            }
+        }
+    }
+    scope 30 (inlined Result::<u64, ParseIntError>::ok) {
+        let mut _30: isize;
+        let _31: u64;
+        let mut _32: isize;
+        scope 31 {
+        }
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = copy _1;
+        StorageLive(_10);
+        _10 = const "0x";
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_15);
+        StorageLive(_11);
+        nop;
+        _14 = copy _1 as &[u8] (Transmute);
+        _15 = const "0x" as &[u8] (Transmute);
+        _11 = core::slice::<impl [u8]>::starts_with(copy _14, copy _15) -> [return: bb7, unwind continue];
+    }
+
+    bb1: {
+        nop;
+        _5 = copy ((_2 as Some).0: &str);
+        StorageLive(_6);
+        StorageLive(_7);
+        _7 = copy _5;
+        StorageLive(_24);
+        _24 = const 16_u32;
+        StorageLive(_25);
+        _25 = copy _5 as &[u8] (Transmute);
+        _6 = core::num::<impl u64>::from_ascii_radix(move _25, const 16_u32) -> [return: bb10, unwind continue];
+    }
+
+    bb2: {
+        StorageLive(_8);
+        StorageLive(_9);
+        _9 = copy _1;
+        StorageLive(_29);
+        _29 = copy _14;
+        _8 = core::num::<impl u64>::from_ascii_radix(copy _14, const 10_u32) -> [return: bb16, unwind continue];
+    }
+
+    bb3: {
+        StorageDead(_2);
+        return;
+    }
+
+    bb4: {
+        _13 = PtrMetadata(copy _15);
+        StorageLive(_16);
+        StorageLive(_17);
+        _17 = &raw const (*_1);
+        StorageLive(_18);
+        _18 = PtrMetadata(copy _1);
+        StorageLive(_20);
+        goto -> bb9;
+    }
+
+    bb5: {
+        _2 = const Option::<&str>::None;
+        goto -> bb6;
+    }
+
+    bb6: {
+        StorageDead(_11);
+        StorageDead(_15);
+        StorageDead(_13);
+        StorageDead(_12);
+        StorageDead(_10);
+        StorageDead(_3);
+        _4 = discriminant(_2);
+        switchInt(move _4) -> [1: bb1, 0: bb2, otherwise: bb11];
+    }
+
+    bb7: {
+        nop;
+        switchInt(move _11) -> [0: bb5, otherwise: bb4];
+    }
+
+    bb8: {
+        _19 = core::str::traits::<impl SliceIndex<str> for std::ops::Range<usize>>::get_unchecked::precondition_check(copy _13, copy _18, copy _18) -> [return: bb9, unwind unreachable];
+    }
+
+    bb9: {
+        _20 = SubUnchecked(copy _18, copy _13);
+        StorageLive(_21);
+        StorageLive(_22);
+        StorageLive(_23);
+        _23 = copy _17 as *const u8 (PtrToPtr);
+        _22 = Offset(copy _23, copy _13);
+        StorageDead(_23);
+        _21 = *const [u8] from (copy _22, copy _20);
+        StorageDead(_22);
+        _16 = copy _21 as *const str (PtrToPtr);
+        StorageDead(_21);
+        StorageDead(_20);
+        StorageDead(_18);
+        StorageDead(_17);
+        _12 = &(*_16);
+        StorageDead(_16);
+        _2 = Option::<&str>::Some(copy _12);
+        goto -> bb6;
+    }
+
+    bb10: {
+        StorageDead(_25);
+        StorageDead(_24);
+        StorageDead(_7);
+        nop;
+        StorageLive(_27);
+        StorageLive(_28);
+        _26 = discriminant(_6);
+        switchInt(copy _26) -> [0: bb13, 1: bb12, otherwise: bb11];
+    }
+
+    bb11: {
+        unreachable;
+    }
+
+    bb12: {
+        _0 = const Option::<u64>::None;
+        goto -> bb15;
+    }
+
+    bb13: {
+        _27 = move ((_6 as Ok).0: u64);
+        _0 = Option::<u64>::Some(copy _27);
+        goto -> bb15;
+    }
+
+    bb14: {
+        StorageDead(_28);
+        StorageDead(_27);
+        nop;
+        StorageDead(_6);
+        nop;
+        goto -> bb3;
+    }
+
+    bb15: {
+        _28 = copy _26;
+        switchInt(copy _26) -> [0: bb14, 1: bb14, otherwise: bb11];
+    }
+
+    bb16: {
+        StorageDead(_29);
+        StorageDead(_9);
+        nop;
+        StorageLive(_31);
+        StorageLive(_32);
+        _30 = discriminant(_8);
+        switchInt(copy _30) -> [0: bb18, 1: bb17, otherwise: bb11];
+    }
+
+    bb17: {
+        _0 = const Option::<u64>::None;
+        goto -> bb20;
+    }
+
+    bb18: {
+        _31 = move ((_8 as Ok).0: u64);
+        _0 = Option::<u64>::Some(copy _31);
+        goto -> bb20;
+    }
+
+    bb19: {
+        StorageDead(_32);
+        StorageDead(_31);
+        nop;
+        StorageDead(_8);
+        goto -> bb3;
+    }
+
+    bb20: {
+        _32 = copy _30;
+        switchInt(copy _30) -> [0: bb19, 1: bb19, otherwise: bb11];
+    }
+}
+
+alloc63 (size: 16, align: 8) {
+    00 00 00 00 00 00 00 00 __ __ __ __ __ __ __ __ │ ........░░░░░░░░
+}
+
+alloc19 (size: 16, align: 8) {
+    00 00 00 00 00 00 00 00 __ __ __ __ __ __ __ __ │ ........░░░░░░░░
+}
+
+alloc9 (size: 2, align: 1) {
+    30 78                                           │ 0x
+}

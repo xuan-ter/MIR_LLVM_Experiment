@@ -1,0 +1,19 @@
+// MIR for `mir_dependent_case::{closure#0}` after MatchBranchSimplification
+
+fn mir_dependent_case::{closure#0}(_1: &{closure@benches/iterator_pipeline.rs:46:1: 68:2}, _2: &mut Bencher) -> Result<(), String> {
+    debug __bench_mir_dependent_case => _2;
+    let mut _0: std::result::Result<(), std::string::String>;
+    let mut _3: ();
+
+    bb0: {
+        _3 = mir_dependent_case(copy _2) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _0 = assert_test_result::<()>(const ()) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        return;
+    }
+}

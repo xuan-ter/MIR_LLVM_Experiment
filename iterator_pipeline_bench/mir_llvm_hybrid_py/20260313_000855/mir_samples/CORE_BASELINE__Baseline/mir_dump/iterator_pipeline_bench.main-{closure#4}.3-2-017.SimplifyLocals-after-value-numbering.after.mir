@@ -1,0 +1,10 @@
+// MIR for `main::{closure#4}` after SimplifyLocals-after-value-numbering
+
+fn main::{closure#4}(_1: {closure@src/main.rs:68:54: 68:56}) -> u64 {
+    let mut _0: u64;
+    let mut _2: !;
+
+    bb0: {
+        _2 = usage() -> unwind continue;
+    }
+}

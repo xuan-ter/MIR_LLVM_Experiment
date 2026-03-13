@@ -13,3 +13,6 @@
 **/results_expanded/
 
 **/benchmark_data*.txt
+
+!iterator_pipeline_bench/mir_llvm_hybrid_py/
+!iterator_pipeline_bench/mir_llvm_hybrid_py/**

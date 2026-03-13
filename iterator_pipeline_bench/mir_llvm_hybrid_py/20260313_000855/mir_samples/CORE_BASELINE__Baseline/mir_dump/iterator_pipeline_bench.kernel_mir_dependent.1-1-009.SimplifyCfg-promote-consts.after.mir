@@ -1,0 +1,250 @@
+// MIR for `kernel_mir_dependent` after SimplifyCfg-promote-consts
+
+| User Type Annotations
+| 0: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/lib.rs:43:18: 43:21, inferred_ty: u64
+| 1: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/lib.rs:43:18: 43:21, inferred_ty: u64
+| 2: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/lib.rs:45:16: 45:19, inferred_ty: u32
+| 3: user_ty: Canonical { value: Ty(u32), max_universe: U0, var_kinds: [] }, span: src/lib.rs:45:16: 45:19, inferred_ty: u32
+|
+fn kernel_mir_dependent(_1: &[u32], _2: &[u32], _3: u32, _4: u32, _5: u32, _6: u32) -> u64 {
+    debug a => _1;
+    debug b => _2;
+    debug rounds => _3;
+    debug alpha => _4;
+    debug beta => _5;
+    debug c => _6;
+    let mut _0: u64;
+    let mut _7: u64 as UserTypeProjection { base: UserType(0), projs: [] };
+    let _8: ();
+    let mut _9: std::ops::Range<u32>;
+    let mut _10: std::ops::Range<u32>;
+    let mut _11: u32;
+    let mut _13: ();
+    let _14: ();
+    let mut _15: std::option::Option<u32>;
+    let mut _16: &mut std::ops::Range<u32>;
+    let mut _17: &mut std::ops::Range<u32>;
+    let mut _18: isize;
+    let mut _19: !;
+    let mut _21: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}>;
+    let mut _22: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>;
+    let mut _23: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>;
+    let mut _24: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>;
+    let mut _25: std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>;
+    let mut _26: std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>;
+    let mut _27: std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>;
+    let mut _28: std::slice::Iter<'_, u32>;
+    let mut _29: &[u32];
+    let mut _30: std::slice::Iter<'_, u32>;
+    let mut _31: &[u32];
+    let mut _32: {closure@src/lib.rs:48:18: 48:28};
+    let mut _33: {closure@src/lib.rs:49:18: 49:21};
+    let mut _34: {closure@src/lib.rs:50:18: 50:21};
+    let mut _35: {closure@src/lib.rs:53:18: 53:26};
+    let mut _36: &u32;
+    let mut _37: &u32;
+    let mut _38: &u32;
+    let mut _39: {closure@src/lib.rs:58:25: 58:33};
+    let mut _40: u64;
+    let mut _41: u64;
+    let mut _42: u64;
+    let mut _43: u32;
+    scope 1 {
+        debug sum => _7;
+        let mut _12: std::ops::Range<u32>;
+        scope 2 {
+            debug iter => _12;
+            let _20: u32 as UserTypeProjection { base: UserType(2), projs: [] };
+            scope 3 {
+                debug s => _20;
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_7);
+        _7 = const 0_u64;
+        FakeRead(ForLet(None), _7);
+        AscribeUserType(_7, o, UserTypeProjection { base: UserType(1), projs: [] });
+        StorageLive(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_11);
+        _11 = copy _3;
+        _10 = std::ops::Range::<u32> { start: const 0_u32, end: move _11 };
+        StorageDead(_11);
+        _9 = <std::ops::Range<u32> as IntoIterator>::into_iter(move _10) -> [return: bb1, unwind: bb20];
+    }
+
+    bb1: {
+        StorageDead(_10);
+        PlaceMention(_9);
+        StorageLive(_12);
+        _12 = move _9;
+        goto -> bb2;
+    }
+
+    bb2: {
+        falseUnwind -> [real: bb3, unwind: bb20];
+    }
+
+    bb3: {
+        StorageLive(_14);
+        StorageLive(_15);
+        StorageLive(_16);
+        StorageLive(_17);
+        _17 = &mut _12;
+        _16 = &mut (*_17);
+        _15 = <std::ops::Range<u32> as Iterator>::next(move _16) -> [return: bb4, unwind: bb20];
+    }
+
+    bb4: {
+        StorageDead(_16);
+        PlaceMention(_15);
+        _18 = discriminant(_15);
+        switchInt(move _18) -> [0: bb6, 1: bb7, otherwise: bb5];
+    }
+
+    bb5: {
+        FakeRead(ForMatchedPlace(None), _15);
+        unreachable;
+    }
+
+    bb6: {
+        falseEdge -> [real: bb8, imaginary: bb7];
+    }
+
+    bb7: {
+        StorageLive(_20);
+        StorageLive(_21);
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_24);
+        StorageLive(_25);
+        StorageLive(_26);
+        StorageLive(_27);
+        StorageLive(_28);
+        StorageLive(_29);
+        _29 = &(*_1);
+        _28 = core::slice::<impl [u32]>::iter(move _29) -> [return: bb9, unwind: bb20];
+    }
+
+    bb8: {
+        _8 = const ();
+        StorageDead(_17);
+        StorageDead(_15);
+        StorageDead(_14);
+        StorageDead(_12);
+        StorageDead(_9);
+        StorageDead(_8);
+        _0 = copy _7;
+        StorageDead(_7);
+        return;
+    }
+
+    bb9: {
+        StorageDead(_29);
+        StorageLive(_30);
+        StorageLive(_31);
+        _31 = &(*_2);
+        _30 = core::slice::<impl [u32]>::iter(move _31) -> [return: bb10, unwind: bb20];
+    }
+
+    bb10: {
+        StorageDead(_31);
+        _27 = <std::slice::Iter<'_, u32> as Iterator>::zip::<std::slice::Iter<'_, u32>>(move _28, move _30) -> [return: bb11, unwind: bb20];
+    }
+
+    bb11: {
+        StorageDead(_30);
+        StorageDead(_28);
+        StorageLive(_32);
+        _32 = {closure@src/lib.rs:48:18: 48:28};
+        _26 = <Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:48:18: 48:28}>(move _27, move _32) -> [return: bb12, unwind: bb20];
+    }
+
+    bb12: {
+        StorageDead(_32);
+        StorageDead(_27);
+        StorageLive(_33);
+        _33 = {closure@src/lib.rs:49:18: 49:21};
+        _25 = <Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:49:18: 49:21}>(move _26, move _33) -> [return: bb13, unwind: bb20];
+    }
+
+    bb13: {
+        StorageDead(_33);
+        StorageDead(_26);
+        StorageLive(_34);
+        _34 = {closure@src/lib.rs:50:18: 50:21};
+        _24 = <Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:50:18: 50:21}>(move _25, move _34) -> [return: bb14, unwind: bb20];
+    }
+
+    bb14: {
+        StorageDead(_34);
+        StorageDead(_25);
+        _23 = <Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>(move _24, step_pack_unpack) -> [return: bb15, unwind: bb20];
+    }
+
+    bb15: {
+        StorageDead(_24);
+        _22 = <Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_xor_zero}>(move _23, step_xor_zero) -> [return: bb16, unwind: bb20];
+    }
+
+    bb16: {
+        StorageDead(_23);
+        StorageLive(_35);
+        StorageLive(_36);
+        _36 = &_4;
+        StorageLive(_37);
+        _37 = &_5;
+        StorageLive(_38);
+        _38 = &_6;
+        _35 = {closure@src/lib.rs:53:18: 53:26} { alpha: move _36, beta: move _37, c: move _38 };
+        StorageDead(_38);
+        StorageDead(_37);
+        StorageDead(_36);
+        _21 = <Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> as Iterator>::map::<u32, {closure@src/lib.rs:53:18: 53:26}>(move _22, move _35) -> [return: bb17, unwind: bb20];
+    }
+
+    bb17: {
+        StorageDead(_35);
+        StorageDead(_22);
+        StorageLive(_39);
+        _39 = {closure@src/lib.rs:58:25: 58:33};
+        _20 = <Map<Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}> as Iterator>::fold::<u32, {closure@src/lib.rs:58:25: 58:33}>(move _21, const 0_u32, move _39) -> [return: bb18, unwind: bb20];
+    }
+
+    bb18: {
+        StorageDead(_39);
+        StorageDead(_21);
+        FakeRead(ForLet(None), _20);
+        AscribeUserType(_20, o, UserTypeProjection { base: UserType(3), projs: [] });
+        StorageLive(_40);
+        StorageLive(_41);
+        _41 = copy _7;
+        StorageLive(_42);
+        StorageLive(_43);
+        _43 = copy _20;
+        _42 = move _43 as u64 (IntToInt);
+        StorageDead(_43);
+        _40 = core::num::<impl u64>::wrapping_add(move _41, move _42) -> [return: bb19, unwind: bb20];
+    }
+
+    bb19: {
+        StorageDead(_42);
+        StorageDead(_41);
+        _7 = move _40;
+        StorageDead(_40);
+        _14 = const ();
+        StorageDead(_20);
+        StorageDead(_17);
+        StorageDead(_15);
+        StorageDead(_14);
+        _13 = const ();
+        goto -> bb2;
+    }
+
+    bb20 (cleanup): {
+        resume;
+    }
+}

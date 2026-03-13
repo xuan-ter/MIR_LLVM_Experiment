@@ -1,0 +1,179 @@
+// MIR for `kernel_easy::{closure#0}` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?9, '?1, '?2, '?3, '?4, '?5, '?6, '?7, '?8]
+| '?1 | External | ['?9, '?1]
+| '?2 | External | ['?9, '?2]
+| '?3 | External | ['?9, '?3, '?8]
+| '?4 | External | ['?9, '?4, '?8]
+| '?5 | External | ['?9, '?5, '?8]
+| '?6 | External | ['?9, '?6]
+| '?7 | External | ['?9, '?7]
+| '?8 | Local | ['?9, '?8]
+| '?9 | Local | ['?9]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?0, '?1, '?2, '?3, '?4, '?5, '?6, '?7, '?8, '?9}
+| '?1 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?1}
+| '?2 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?2}
+| '?3 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?3}
+| '?4 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?4}
+| '?5 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?5}
+| '?6 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?6}
+| '?7 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?7}
+| '?8 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?8}
+| '?9 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?9}
+| '?10 | U0 | {}
+| '?11 | U0 | {}
+| '?12 | U0 | {}
+| '?13 | U0 | {bb0[1]}
+| '?14 | U0 | {bb0[3]}
+| '?15 | U0 | {bb0[8]}
+| '?16 | U0 | {bb1[7]}
+| '?17 | U0 | {bb3[3]}
+| '?18 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?8}
+| '?19 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?1}
+| '?20 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?2}
+| '?21 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?3}
+| '?22 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?4}
+| '?23 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?5}
+| '?24 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?1}
+| '?25 | U0 | {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0], '?2}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?1 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?2 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?3 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?4 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?5 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?6 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?7 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?8 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?9 live at {bb0[0..=9], bb1[0..=8], bb2[0..=8], bb3[0..=4], bb4[0..=6], bb5[0]}
+| '?13 live at {bb0[1]}
+| '?14 live at {bb0[3]}
+| '?15 live at {bb0[8]}
+| '?16 live at {bb1[7]}
+| '?17 live at {bb3[3]}
+| '?1: '?19 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?1: '?24 due to BoringNoLocation at All(src/lib.rs:7:19: 7:27) (src/lib.rs:7:19: 7:27 (#0)
+| '?2: '?20 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?2: '?25 due to BoringNoLocation at All(src/lib.rs:7:19: 7:27) (src/lib.rs:7:19: 7:27 (#0)
+| '?3: '?21 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?4: '?22 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?5: '?23 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?8: '?18 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?18: '?8 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?19: '?1 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?20: '?2 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?21: '?3 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?21: '?15 due to Boring at Single(bb0[8]) (src/lib.rs:8:41: 8:46 (#0)
+| '?22: '?4 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?22: '?16 due to Boring at Single(bb1[7]) (src/lib.rs:9:41: 9:45 (#0)
+| '?23: '?5 due to BoringNoLocation at All(src/lib.rs:7:18: 11:14) (src/lib.rs:7:18: 11:14 (#0)
+| '?23: '?17 due to Boring at Single(bb3[3]) (src/lib.rs:10:50: 10:51 (#0)
+| '?24: '?1 due to BoringNoLocation at All(src/lib.rs:7:19: 7:27) (src/lib.rs:7:19: 7:27 (#0)
+| '?24: '?13 due to Boring at Single(bb0[1]) (src/lib.rs:7:21: 7:22 (#0)
+| '?25: '?2 due to BoringNoLocation at All(src/lib.rs:7:19: 7:27) (src/lib.rs:7:19: 7:27 (#0)
+| '?25: '?14 due to Boring at Single(bb0[3]) (src/lib.rs:7:25: 7:26 (#0)
+|
+fn kernel_easy::{closure#0}(_1: &mut {closure@src/lib.rs:7:18: 7:28}, _2: (&u32, &u32)) -> u32 {
+    debug alpha => (*((*_1).0: &u32));   // in scope 0 at src/lib.rs:1:55: 1:60
+    debug beta => (*((*_1).1: &u32));    // in scope 0 at src/lib.rs:1:67: 1:71
+    debug c => (*((*_1).2: &u32));       // in scope 0 at src/lib.rs:1:78: 1:79
+    let mut _0: u32;                     // return place in scope 0 at src/lib.rs:7:28: 7:28
+    let _3: u32;                         // in scope 0 at src/lib.rs:7:21: 7:22
+    let _4: u32;                         // in scope 0 at src/lib.rs:7:25: 7:26
+    let mut _6: u32;                     // in scope 0 at src/lib.rs:8:26: 8:27
+    let mut _7: u32;                     // in scope 0 at src/lib.rs:8:41: 8:46
+    let mut _9: u32;                     // in scope 0 at src/lib.rs:9:26: 9:27
+    let mut _10: u32;                    // in scope 0 at src/lib.rs:9:41: 9:45
+    let mut _11: u32;                    // in scope 0 at src/lib.rs:10:17: 10:36
+    let mut _12: u32;                    // in scope 0 at src/lib.rs:10:17: 10:19
+    let mut _13: u32;                    // in scope 0 at src/lib.rs:10:33: 10:35
+    let mut _14: u32;                    // in scope 0 at src/lib.rs:10:50: 10:51
+    scope 1 {
+        debug x => _3;                   // in scope 1 at src/lib.rs:7:21: 7:22
+        debug y => _4;                   // in scope 1 at src/lib.rs:7:25: 7:26
+        let _5: u32;                     // in scope 1 at src/lib.rs:8:21: 8:23
+        scope 2 {
+            debug t0 => _5;              // in scope 2 at src/lib.rs:8:21: 8:23
+            let _8: u32;                 // in scope 2 at src/lib.rs:9:21: 9:23
+            scope 3 {
+                debug t1 => _8;          // in scope 3 at src/lib.rs:9:21: 9:23
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/lib.rs:7:21: 7:22
+        _3 = copy (*(_2.0: &u32));       // scope 0 at src/lib.rs:7:21: 7:22
+        StorageLive(_4);                 // scope 0 at src/lib.rs:7:25: 7:26
+        _4 = copy (*(_2.1: &u32));       // scope 0 at src/lib.rs:7:25: 7:26
+        StorageLive(_5);                 // scope 1 at src/lib.rs:8:21: 8:23
+        StorageLive(_6);                 // scope 1 at src/lib.rs:8:26: 8:27
+        _6 = copy _3;                    // scope 1 at src/lib.rs:8:26: 8:27
+        StorageLive(_7);                 // scope 1 at src/lib.rs:8:41: 8:46
+        _7 = copy (*((*_1).0: &u32));    // scope 1 at src/lib.rs:8:41: 8:46
+        _5 = core::num::<impl u32>::wrapping_mul(move _6, move _7) -> [return: bb1, unwind: bb5]; // scope 1 at src/lib.rs:8:26: 8:47
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:8:28: 8:40
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb1: {
+        StorageDead(_7);                 // scope 1 at src/lib.rs:8:46: 8:47
+        StorageDead(_6);                 // scope 1 at src/lib.rs:8:46: 8:47
+        FakeRead(ForLet(None), _5);      // scope 1 at src/lib.rs:8:21: 8:23
+        StorageLive(_8);                 // scope 2 at src/lib.rs:9:21: 9:23
+        StorageLive(_9);                 // scope 2 at src/lib.rs:9:26: 9:27
+        _9 = copy _4;                    // scope 2 at src/lib.rs:9:26: 9:27
+        StorageLive(_10);                // scope 2 at src/lib.rs:9:41: 9:45
+        _10 = copy (*((*_1).1: &u32));   // scope 2 at src/lib.rs:9:41: 9:45
+        _8 = core::num::<impl u32>::wrapping_mul(move _9, move _10) -> [return: bb2, unwind: bb5]; // scope 2 at src/lib.rs:9:26: 9:46
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:9:28: 9:40
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb2: {
+        StorageDead(_10);                // scope 2 at src/lib.rs:9:45: 9:46
+        StorageDead(_9);                 // scope 2 at src/lib.rs:9:45: 9:46
+        FakeRead(ForLet(None), _8);      // scope 2 at src/lib.rs:9:21: 9:23
+        StorageLive(_11);                // scope 3 at src/lib.rs:10:17: 10:36
+        StorageLive(_12);                // scope 3 at src/lib.rs:10:17: 10:19
+        _12 = copy _5;                   // scope 3 at src/lib.rs:10:17: 10:19
+        StorageLive(_13);                // scope 3 at src/lib.rs:10:33: 10:35
+        _13 = copy _8;                   // scope 3 at src/lib.rs:10:33: 10:35
+        _11 = core::num::<impl u32>::wrapping_add(move _12, move _13) -> [return: bb3, unwind: bb5]; // scope 3 at src/lib.rs:10:17: 10:36
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:10:20: 10:32
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_add}, val: Value(core::num::<impl u32>::wrapping_add) }
+    }
+
+    bb3: {
+        StorageDead(_13);                // scope 3 at src/lib.rs:10:35: 10:36
+        StorageDead(_12);                // scope 3 at src/lib.rs:10:35: 10:36
+        StorageLive(_14);                // scope 3 at src/lib.rs:10:50: 10:51
+        _14 = copy (*((*_1).2: &u32));   // scope 3 at src/lib.rs:10:50: 10:51
+        _0 = core::num::<impl u32>::wrapping_add(move _11, move _14) -> [return: bb4, unwind: bb5]; // scope 3 at src/lib.rs:10:17: 10:52
+                                         // mir::ConstOperand
+                                         // + span: src/lib.rs:10:37: 10:49
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_add}, val: Value(core::num::<impl u32>::wrapping_add) }
+    }
+
+    bb4: {
+        StorageDead(_14);                // scope 3 at src/lib.rs:10:51: 10:52
+        StorageDead(_11);                // scope 3 at src/lib.rs:10:51: 10:52
+        StorageDead(_8);                 // scope 2 at src/lib.rs:11:13: 11:14
+        StorageDead(_5);                 // scope 1 at src/lib.rs:11:13: 11:14
+        StorageDead(_4);                 // scope 0 at src/lib.rs:11:13: 11:14
+        StorageDead(_3);                 // scope 0 at src/lib.rs:11:13: 11:14
+        return;                          // scope 0 at src/lib.rs:11:14: 11:14
+    }
+
+    bb5 (cleanup): {
+        resume;                          // scope 0 at src/lib.rs:7:18: 11:14
+    }
+}

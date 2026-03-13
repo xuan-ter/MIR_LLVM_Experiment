@@ -1,0 +1,235 @@
+// MIR for `easy_case::{closure#0}` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?5, '?1, '?2, '?3, '?4]
+| '?1 | External | ['?5, '?1, '?4]
+| '?2 | External | ['?5, '?2, '?4]
+| '?3 | External | ['?5, '?3]
+| '?4 | Local | ['?5, '?4]
+| '?5 | Local | ['?5]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?0, '?1, '?2, '?3, '?4, '?5}
+| '?1 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?1}
+| '?2 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?2}
+| '?3 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?3}
+| '?4 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?4}
+| '?5 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?5}
+| '?6 | U0 | {}
+| '?7 | U0 | {}
+| '?8 | U0 | {bb0[7..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?9 | U0 | {bb0[7..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?10 | U0 | {bb0[8..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?11 | U0 | {bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?12 | U0 | {bb1[2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?13 | U0 | {bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?14 | U0 | {bb2[8..=10], bb3[0..=2], bb4[0..=2]}
+| '?15 | U0 | {bb2[8..=10], bb3[0..=2], bb4[0..=2]}
+| '?16 | U0 | {bb2[9..=10], bb3[0..=2], bb4[0..=2]}
+| '?17 | U0 | {bb3[0..=2], bb4[0..=2]}
+| '?18 | U0 | {bb3[2], bb4[0..=2]}
+| '?19 | U0 | {bb4[0..=2]}
+| '?20 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?4}
+| '?21 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?1}
+| '?22 | U0 | {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0], '?2}
+| '?23 | U0 | {bb2[1..=10], bb3[0..=2], bb4[0..=2]}
+| '?24 | U0 | {bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?25 | U0 | {bb1[1..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?26 | U0 | {bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?27 | U0 | {bb0[9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?28 | U0 | {bb0[8..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?29 | U0 | {bb4[1..=2]}
+| '?30 | U0 | {bb4[0..=2]}
+| '?31 | U0 | {bb3[1..=2], bb4[0..=2]}
+| '?32 | U0 | {bb3[0..=2], bb4[0..=2]}
+| '?33 | U0 | {bb2[10], bb3[0..=2], bb4[0..=2]}
+| '?34 | U0 | {bb2[9..=10], bb3[0..=2], bb4[0..=2]}
+| '?35 | U0 | {bb0[9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2]}
+| '?36 | U0 | {bb2[10], bb3[0..=2], bb4[0..=2]}
+| '?37 | U0 | {bb4[2]}
+| '?38 | U0 | {bb4[2]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?1 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?2 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?3 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?4 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?5 live at {bb0[0..=9], bb1[0..=2], bb2[0..=10], bb3[0..=2], bb4[0..=2], bb5[0..=12], bb6[0..=4], bb7[0]}
+| '?8 live at {bb0[7]}
+| '?9 live at {bb0[7]}
+| '?10 live at {bb0[8]}
+| '?11 live at {bb1[0]}
+| '?12 live at {bb1[2]}
+| '?13 live at {bb2[0]}
+| '?14 live at {bb2[8]}
+| '?15 live at {bb2[8]}
+| '?16 live at {bb2[9]}
+| '?17 live at {bb3[0]}
+| '?18 live at {bb3[2]}
+| '?19 live at {bb4[0]}
+| '?23 live at {bb2[1..=10], bb3[0..=2], bb4[0..=2]}
+| '?24 live at {bb2[0]}
+| '?25 live at {bb1[1..=2]}
+| '?26 live at {bb1[0]}
+| '?27 live at {bb0[9]}
+| '?28 live at {bb0[8]}
+| '?29 live at {bb4[1..=2]}
+| '?30 live at {bb4[0]}
+| '?31 live at {bb3[1..=2]}
+| '?32 live at {bb3[0]}
+| '?33 live at {bb2[10]}
+| '?34 live at {bb2[9]}
+| '?35 live at {bb0[9]}
+| '?36 live at {bb2[10]}
+| '?37 live at {bb4[2]}
+| '?38 live at {bb4[2]}
+| '?1: '?21 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?2: '?22 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?4: '?20 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?8: '?28 due to Boring at Single(bb0[7]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?9: '?8 due to ClosureUpvar(0) at Single(bb0[7]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?10: '?27 due to Boring at Single(bb0[8]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?11: '?25 due to Boring at Single(bb1[0]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?12: '?24 due to Boring at Single(bb1[2]) (benches/iterator_pipeline.rs:34:13: 34:26 (#0)
+| '?13: '?23 due to Boring at Single(bb2[0]) (benches/iterator_pipeline.rs:34:13: 34:26 (#0)
+| '?14: '?34 due to Boring at Single(bb2[8]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?15: '?14 due to ClosureUpvar(1) at Single(bb2[8]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?16: '?33 due to Boring at Single(bb2[9]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?17: '?31 due to Boring at Single(bb3[0]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?18: '?30 due to Boring at Single(bb3[2]) (benches/iterator_pipeline.rs:35:13: 35:29 (#0)
+| '?19: '?29 due to Boring at Single(bb4[0]) (benches/iterator_pipeline.rs:35:13: 35:29 (#0)
+| '?20: '?4 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?21: '?1 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?21: '?9 due to Boring at Single(bb0[7]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?22: '?2 due to BoringNoLocation at All(benches/iterator_pipeline.rs:32:12: 42:6) (benches/iterator_pipeline.rs:32:12: 42:6 (#0)
+| '?22: '?15 due to Boring at Single(bb2[8]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?23: '?37 due to CallArgument(Some(FnDef(DefId(23:3 ~ iterator_pipeline_bench[25c7]::kernel_easy), []))) at Single(bb4[2]) (benches/iterator_pipeline.rs:33:19: 40:10 (#0)
+| '?24: '?13 due to Boring at Single(bb2[0]) (benches/iterator_pipeline.rs:34:13: 34:26 (#0)
+| '?25: '?12 due to CallArgument(Some(FnDef(DefId(2:1531 ~ core[28bf]::hint::black_box), [&'{erased} [u32]]))) at Single(bb1[2]) (benches/iterator_pipeline.rs:34:13: 34:26 (#0)
+| '?26: '?11 due to Boring at Single(bb1[0]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?27: '?35 due to Boring at Single(bb0[9]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?28: '?10 due to Boring at Single(bb0[8]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?29: '?38 due to CallArgument(Some(FnDef(DefId(23:3 ~ iterator_pipeline_bench[25c7]::kernel_easy), []))) at Single(bb4[2]) (benches/iterator_pipeline.rs:33:19: 40:10 (#0)
+| '?30: '?19 due to Boring at Single(bb4[0]) (benches/iterator_pipeline.rs:35:13: 35:29 (#0)
+| '?31: '?18 due to CallArgument(Some(FnDef(DefId(2:1531 ~ core[28bf]::hint::black_box), [&'{erased} [u32]]))) at Single(bb3[2]) (benches/iterator_pipeline.rs:35:13: 35:29 (#0)
+| '?32: '?17 due to Boring at Single(bb3[0]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?33: '?36 due to Boring at Single(bb2[10]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?34: '?16 due to Boring at Single(bb2[9]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+| '?35: '?26 due to Boring at Single(bb0[9]) (benches/iterator_pipeline.rs:34:23: 34:25 (#0)
+| '?36: '?32 due to Boring at Single(bb2[10]) (benches/iterator_pipeline.rs:35:23: 35:28 (#0)
+|
+fn easy_case::{closure#0}(_1: &mut {closure@benches/iterator_pipeline.rs:32:12: 32:14}) -> () {
+    debug a => (*((*_1).0: &std::vec::Vec<u32>)); // in scope 0 at benches/iterator_pipeline.rs:28:9: 28:10
+    debug b_in => (*((*_1).1: &std::vec::Vec<u32>)); // in scope 0 at benches/iterator_pipeline.rs:29:9: 29:13
+    let mut _0: ();                      // return place in scope 0 at benches/iterator_pipeline.rs:32:14: 32:14
+    let _2: u64;                         // in scope 0 at benches/iterator_pipeline.rs:33:13: 33:16
+    let mut _3: &[u32];                  // in scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+    let _4: &[u32];                      // in scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+    let mut _5: &[u32];                  // in scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+    let _6: &[u32];                      // in scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+    let mut _7: &std::vec::Vec<u32>;     // in scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+    let _8: &std::vec::Vec<u32>;         // in scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+    let mut _9: &[u32];                  // in scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+    let _10: &[u32];                     // in scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+    let mut _11: &[u32];                 // in scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+    let _12: &[u32];                     // in scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+    let mut _13: &std::vec::Vec<u32>;    // in scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+    let _14: &std::vec::Vec<u32>;        // in scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+    let _15: u64;                        // in scope 0 at benches/iterator_pipeline.rs:41:9: 41:23
+    let mut _16: u64;                    // in scope 0 at benches/iterator_pipeline.rs:41:19: 41:22
+    scope 1 {
+        debug sum => _2;                 // in scope 1 at benches/iterator_pipeline.rs:33:13: 33:16
+    }
+
+    bb0: {
+        StorageLive(_2);                 // scope 0 at benches/iterator_pipeline.rs:33:13: 33:16
+        StorageLive(_3);                 // scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+        StorageLive(_4);                 // scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+        StorageLive(_5);                 // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        StorageLive(_6);                 // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        StorageLive(_7);                 // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        StorageLive(_8);                 // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        _8 = &(*((*_1).0: &std::vec::Vec<u32>)); // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        _7 = &(*_8);                     // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        _6 = <Vec<u32> as Deref>::deref(move _7) -> [return: bb1, unwind: bb7]; // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:34:23: 34:25
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb1: {
+        _5 = &(*_6);                     // scope 0 at benches/iterator_pipeline.rs:34:23: 34:25
+        StorageDead(_7);                 // scope 0 at benches/iterator_pipeline.rs:34:24: 34:25
+        _4 = std::hint::black_box::<&[u32]>(move _5) -> [return: bb2, unwind: bb7]; // scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:34:13: 34:22
+                                         // + const_: Const { ty: fn(&[u32]) -> &[u32] {std::hint::black_box::<&[u32]>}, val: Value(std::hint::black_box::<&[u32]>) }
+    }
+
+    bb2: {
+        _3 = &(*_4);                     // scope 0 at benches/iterator_pipeline.rs:34:13: 34:26
+        StorageDead(_5);                 // scope 0 at benches/iterator_pipeline.rs:34:25: 34:26
+        StorageLive(_9);                 // scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+        StorageLive(_10);                // scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+        StorageLive(_11);                // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        StorageLive(_12);                // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        StorageLive(_13);                // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        StorageLive(_14);                // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        _14 = &(*((*_1).1: &std::vec::Vec<u32>)); // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        _13 = &(*_14);                   // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        _12 = <Vec<u32> as Deref>::deref(move _13) -> [return: bb3, unwind: bb7]; // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:35:23: 35:28
+                                         // + const_: Const { ty: for<'a> fn(&'a Vec<u32>) -> &'a <Vec<u32> as Deref>::Target {<Vec<u32> as Deref>::deref}, val: Value(<Vec<u32> as Deref>::deref) }
+    }
+
+    bb3: {
+        _11 = &(*_12);                   // scope 0 at benches/iterator_pipeline.rs:35:23: 35:28
+        StorageDead(_13);                // scope 0 at benches/iterator_pipeline.rs:35:27: 35:28
+        _10 = std::hint::black_box::<&[u32]>(move _11) -> [return: bb4, unwind: bb7]; // scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:35:13: 35:22
+                                         // + const_: Const { ty: fn(&[u32]) -> &[u32] {std::hint::black_box::<&[u32]>}, val: Value(std::hint::black_box::<&[u32]>) }
+    }
+
+    bb4: {
+        _9 = &(*_10);                    // scope 0 at benches/iterator_pipeline.rs:35:13: 35:29
+        StorageDead(_11);                // scope 0 at benches/iterator_pipeline.rs:35:28: 35:29
+        _2 = kernel_easy(move _3, move _9, const easy_case::ROUNDS, const easy_case::ALPHA, const easy_case::BETA, const easy_case::C) -> [return: bb5, unwind: bb7]; // scope 0 at benches/iterator_pipeline.rs:33:19: 40:10
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:33:19: 33:30
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a [u32], &'b [u32], u32, u32, u32, u32) -> u64 {kernel_easy}, val: Value(kernel_easy) }
+    }
+
+    bb5: {
+        StorageDead(_9);                 // scope 0 at benches/iterator_pipeline.rs:40:9: 40:10
+        StorageDead(_3);                 // scope 0 at benches/iterator_pipeline.rs:40:9: 40:10
+        FakeRead(ForLet(None), _2);      // scope 0 at benches/iterator_pipeline.rs:33:13: 33:16
+        StorageDead(_14);                // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageDead(_12);                // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageDead(_10);                // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageDead(_8);                 // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageDead(_6);                 // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageDead(_4);                 // scope 0 at benches/iterator_pipeline.rs:40:10: 40:11
+        StorageLive(_15);                // scope 1 at benches/iterator_pipeline.rs:41:9: 41:23
+        StorageLive(_16);                // scope 1 at benches/iterator_pipeline.rs:41:19: 41:22
+        _16 = copy _2;                   // scope 1 at benches/iterator_pipeline.rs:41:19: 41:22
+        _15 = std::hint::black_box::<u64>(move _16) -> [return: bb6, unwind: bb7]; // scope 1 at benches/iterator_pipeline.rs:41:9: 41:23
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:41:9: 41:18
+                                         // + const_: Const { ty: fn(u64) -> u64 {std::hint::black_box::<u64>}, val: Value(std::hint::black_box::<u64>) }
+    }
+
+    bb6: {
+        StorageDead(_16);                // scope 1 at benches/iterator_pipeline.rs:41:22: 41:23
+        StorageDead(_15);                // scope 1 at benches/iterator_pipeline.rs:41:23: 41:24
+        _0 = const ();                   // scope 0 at benches/iterator_pipeline.rs:32:15: 42:6
+        StorageDead(_2);                 // scope 0 at benches/iterator_pipeline.rs:42:5: 42:6
+        return;                          // scope 0 at benches/iterator_pipeline.rs:42:6: 42:6
+    }
+
+    bb7 (cleanup): {
+        resume;                          // scope 0 at benches/iterator_pipeline.rs:32:12: 42:6
+    }
+}

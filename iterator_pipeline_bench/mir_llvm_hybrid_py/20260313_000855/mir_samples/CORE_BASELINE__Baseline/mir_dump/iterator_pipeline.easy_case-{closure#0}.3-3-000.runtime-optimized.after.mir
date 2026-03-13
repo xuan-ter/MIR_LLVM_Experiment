@@ -1,0 +1,19 @@
+// MIR for `easy_case::{closure#0}` after runtime-optimized
+
+fn easy_case::{closure#0}(_1: &{closure@benches/iterator_pipeline.rs:21:1: 43:2}, _2: &mut Bencher) -> Result<(), String> {
+    debug __bench_easy_case => _2;
+    let mut _0: std::result::Result<(), std::string::String>;
+    let mut _3: ();
+
+    bb0: {
+        _3 = easy_case(move _2) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _0 = assert_test_result::<()>(const ()) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        return;
+    }
+}

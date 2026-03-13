@@ -1,0 +1,11 @@
+// MIR for `<impl at src/main.rs:16:41: 16:43>::assert_fields_are_eq` before ElaborateDrops
+
+fn <impl at src/main.rs:16:41: 16:43>::assert_fields_are_eq(_1: &Mode) -> () {
+    debug self => _1;
+    let mut _0: ();
+
+    bb0: {
+        _0 = const ();
+        return;
+    }
+}

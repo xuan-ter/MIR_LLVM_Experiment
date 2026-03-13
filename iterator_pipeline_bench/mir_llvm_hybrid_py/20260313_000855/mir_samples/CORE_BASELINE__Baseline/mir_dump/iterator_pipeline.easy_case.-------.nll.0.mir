@@ -1,0 +1,110 @@
+// MIR for `easy_case` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, !1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?1 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?1}
+| '?2 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, !1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?3 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, !1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?4 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, !1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?5 | U0 | {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, !1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?6 | U1 | {!1_0.Named(DefId(20:1744 ~ test[8ded]::types::TestFn::'_))}
+| '?7 | U1 | {}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0]}
+| '?1 live at {bb0[0..=13], bb1[0..=10], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0]}
+| '?2 live at {bb0[2]}
+| '?3 live at {bb0[4]}
+| '?4 live at {bb0[9]}
+| '?2: '?0 due to Boring at Single(bb0[2]) (benches/iterator_pipeline.rs:21:1: 43:2 (#6)
+| '?3: '?5 due to Usage at Single(bb0[4]) (benches/iterator_pipeline.rs:21:1: 43:2 (#6)
+| '?4: '?0 due to Boring at Single(bb0[9]) (benches/iterator_pipeline.rs:21:1: 43:2 (#6)
+| '?5: '?0 due to Boring at Single(bb0[9]) (benches/iterator_pipeline.rs:21:1: 43:2 (#6)
+| '?6: '?7 due to Cast { is_raw_ptr_dyn_type_cast: false, is_implicit_coercion: true, unsize_to: None } at Single(bb1[5]) (benches/iterator_pipeline.rs:21:1: 43:2 (#6)
+|
+const easy_case: TestDescAndFn = {
+    let mut _0: test::TestDescAndFn;     // return place in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _1: test::TestDesc;          // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _2: test::TestName;          // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _3: std::option::Option<&str>; // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _4: test::ShouldPanic;       // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _5: test::TestType;          // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _6: test::TestFn;            // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _7: for<'a> fn(&'a mut test::Bencher) -> std::result::Result<(), std::string::String>; // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    let mut _8: {closure@benches/iterator_pipeline.rs:21:1: 43:2}; // in scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+
+    bb0: {
+        StorageLive(_1);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageLive(_2);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _2 = StaticTestName(const "easy_case"); // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:21:1: 43:2
+                                         // + const_: Const { ty: &str, val: Value("easy_case") }
+        StorageLive(_3);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _3 = Option::<&str>::None;       // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageLive(_4);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _4 = test::ShouldPanic::No;      // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageLive(_5);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _5 = test::TestType::Unknown;    // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _1 = TestDesc { name: move _2, ignore: const false, ignore_message: move _3, source_file: const "benches/iterator_pipeline.rs", start_line: const 21_usize, start_col: const 4_usize, end_line: const 21_usize, end_col: const 13_usize, should_panic: move _4, compile_fail: const false, no_run: const false, test_type: move _5 }; // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+                                         // mir::ConstOperand
+                                         // + span: benches/iterator_pipeline.rs:21:1: 43:2
+                                         // + const_: Const { ty: &str, val: Value("benches/iterator_pipeline.rs") }
+        StorageDead(_5);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        StorageDead(_4);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        StorageDead(_3);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        drop(_2) -> [return: bb1, unwind: bb4]; // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+    }
+
+    bb1: {
+        StorageDead(_2);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        StorageLive(_6);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageLive(_7);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageLive(_8);                 // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        _8 = {closure@benches/iterator_pipeline.rs:21:1: 43:2}; // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+                                         // closure
+                                         // + def_id: DefId(0:12 ~ iterator_pipeline[8f74]::easy_case::{closure#0})
+                                         // + args: [
+                                         //     i8,
+                                         //     Binder { value: extern "RustCall" fn((&'^0 mut test::Bencher,)) -> std::result::Result<(), std::string::String>, bound_vars: [Region(BrAnon)] },
+                                         //     (),
+                                         // ]
+        _7 = move _8 as for<'a> fn(&'a mut test::Bencher) -> std::result::Result<(), std::string::String> (PointerCoercion(ClosureFnPointer(Safe), Implicit)); // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageDead(_8);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        _6 = StaticBenchFn(move _7);     // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        StorageDead(_7);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        _0 = TestDescAndFn { desc: move _1, testfn: move _6 }; // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+        drop(_6) -> [return: bb2, unwind: bb4]; // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+    }
+
+    bb2: {
+        StorageDead(_6);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        drop(_1) -> [return: bb3, unwind: bb5]; // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+    }
+
+    bb3: {
+        StorageDead(_1);                 // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+        return;                          // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    }
+
+    bb4 (cleanup): {
+        drop(_1) -> [return: bb5, unwind terminate(cleanup)]; // scope 0 at benches/iterator_pipeline.rs:43:1: 43:2
+    }
+
+    bb5 (cleanup): {
+        resume;                          // scope 0 at benches/iterator_pipeline.rs:21:1: 43:2
+    }
+}
+
+alloc2 (size: 28, align: 1) {
+    0x00 │ 62 65 6e 63 68 65 73 2f 69 74 65 72 61 74 6f 72 │ benches/iterator
+    0x10 │ 5f 70 69 70 65 6c 69 6e 65 2e 72 73             │ _pipeline.rs
+}
+
+alloc1 (size: 9, align: 1) {
+    65 61 73 79 5f 63 61 73 65                      │ easy_case
+}

@@ -1,0 +1,551 @@
+// MIR for `kernel_mir_dependent` 0 DestinationPropagation-dataflow
+
+fn kernel_mir_dependent(_1: &[u32], _2: &[u32], _3: u32, _4: u32, _5: u32, _6: u32) -> u64 {
+    debug a => _1;
+    debug b => _2;
+    debug rounds => _3;
+    debug alpha => _4;
+    debug beta => _5;
+    debug c => _6;
+    let mut _0: u64;
+    let mut _7: u64;
+    let mut _8: std::option::Option<u32>;
+    let mut _9: isize;
+    let mut _11: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>;
+    let mut _12: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>;
+    let mut _13: std::iter::Map<std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>;
+    let mut _14: std::iter::Map<std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>;
+    let mut _15: std::iter::Map<std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>;
+    let mut _16: std::iter::Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>;
+    let mut _17: std::slice::Iter<'_, u32>;
+    let mut _18: std::slice::Iter<'_, u32>;
+    let mut _19: {closure@src/lib.rs:53:18: 53:26};
+    let mut _20: &u32;
+    let mut _21: &u32;
+    let mut _22: &u32;
+    let mut _23: u64;
+    let mut _24: u64;
+    let mut _25: u64;
+    let mut _30: u32;
+    scope 1 {
+        debug sum => _7;
+        let mut _52: u32;
+        let mut _53: u32;
+        scope 2 {
+            debug ((iter: std::ops::Range<u32>).0: u32) => _52;
+            debug ((iter: std::ops::Range<u32>).1: u32) => _3;
+            let _10: u32;
+            scope 3 {
+                debug s => _10;
+                scope 51 (inlined core::num::<impl u64>::wrapping_add) {
+                }
+            }
+            scope 5 (inlined iter::range::<impl Iterator for std::ops::Range<u32>>::next) {
+                scope 6 (inlined <std::ops::Range<u32> as iter::range::RangeIteratorImpl>::spec_next) {
+                    let mut _26: bool;
+                    let _27: u32;
+                    let mut _28: u32;
+                    scope 7 {
+                        scope 9 (inlined <u32 as Step>::forward_unchecked) {
+                            let mut _31: u32;
+                            scope 10 (inlined #[track_caller] core::num::<impl u32>::unchecked_add) {
+                                let _32: ();
+                                scope 11 (inlined core::ub_checks::check_language_ub) {
+                                    scope 12 (inlined core::ub_checks::check_language_ub::runtime) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    scope 8 (inlined std::cmp::impls::<impl PartialOrd for u32>::lt) {
+                        let mut _29: u32;
+                    }
+                }
+            }
+            scope 13 (inlined core::slice::<impl [u32]>::iter) {
+                scope 14 (inlined std::slice::Iter::<'_, u32>::new) {
+                    let _33: usize;
+                    let mut _35: std::ptr::NonNull<[u32]>;
+                    let mut _37: *mut u32;
+                    let mut _38: *mut u32;
+                    scope 15 {
+                        let _34: std::ptr::NonNull<u32>;
+                        scope 16 {
+                            let _36: *const u32;
+                            scope 17 {
+                            }
+                            scope 21 (inlined std::ptr::without_provenance::<u32>) {
+                                scope 22 (inlined without_provenance_mut::<u32>) {
+                                }
+                            }
+                            scope 23 (inlined NonNull::<u32>::as_ptr) {
+                            }
+                            scope 24 (inlined #[track_caller] std::ptr::mut_ptr::<impl *mut u32>::add) {
+                            }
+                        }
+                        scope 18 (inlined NonNull::<[u32]>::from_ref) {
+                            let mut _39: *const [u32];
+                        }
+                        scope 19 (inlined NonNull::<[u32]>::cast::<u32>) {
+                            let mut _40: *mut u32;
+                            let mut _41: *mut [u32];
+                            scope 20 (inlined NonNull::<[u32]>::as_ptr) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 25 (inlined core::slice::<impl [u32]>::iter) {
+                scope 26 (inlined std::slice::Iter::<'_, u32>::new) {
+                    let _42: usize;
+                    let mut _44: std::ptr::NonNull<[u32]>;
+                    let mut _46: *mut u32;
+                    let mut _47: *mut u32;
+                    scope 27 {
+                        let _43: std::ptr::NonNull<u32>;
+                        scope 28 {
+                            let _45: *const u32;
+                            scope 29 {
+                            }
+                            scope 33 (inlined std::ptr::without_provenance::<u32>) {
+                                scope 34 (inlined without_provenance_mut::<u32>) {
+                                }
+                            }
+                            scope 35 (inlined NonNull::<u32>::as_ptr) {
+                            }
+                            scope 36 (inlined #[track_caller] std::ptr::mut_ptr::<impl *mut u32>::add) {
+                            }
+                        }
+                        scope 30 (inlined NonNull::<[u32]>::from_ref) {
+                            let mut _48: *const [u32];
+                        }
+                        scope 31 (inlined NonNull::<[u32]>::cast::<u32>) {
+                            let mut _49: *mut u32;
+                            let mut _50: *mut [u32];
+                            scope 32 (inlined NonNull::<[u32]>::as_ptr) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 37 (inlined <Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:48:18: 48:28}>) {
+                scope 38 (inlined Map::<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>::new) {
+                }
+            }
+            scope 39 (inlined <Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:49:18: 49:21}>) {
+                scope 40 (inlined Map::<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>::new) {
+                }
+            }
+            scope 41 (inlined <Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}> as Iterator>::map::<(u32, u32), {closure@src/lib.rs:50:18: 50:21}>) {
+                scope 42 (inlined Map::<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>::new) {
+                }
+            }
+            scope 43 (inlined <Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>) {
+                scope 44 (inlined Map::<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>::new) {
+                }
+            }
+            scope 45 (inlined <Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}> as Iterator>::map::<(u32, u32), fn((u32, u32)) -> (u32, u32) {step_xor_zero}>) {
+                scope 46 (inlined Map::<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>::new) {
+                }
+            }
+            scope 47 (inlined <Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> as Iterator>::map::<u32, {closure@src/lib.rs:53:18: 53:26}>) {
+                scope 48 (inlined Map::<Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}>::new) {
+                }
+            }
+            scope 49 (inlined <Map<Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}>, {closure@src/lib.rs:53:18: 53:26}> as Iterator>::fold::<u32, {closure@src/lib.rs:58:25: 58:33}>) {
+                let mut _51: {closure@std::iter::adapters::map::map_fold<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>::{closure#0}};
+                scope 50 (inlined iter::adapters::map::map_fold::<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>) {
+                }
+            }
+        }
+        scope 4 (inlined <std::ops::Range<u32> as IntoIterator>::into_iter) {
+        }
+    }
+
+    bb0: {
+        // before: TwoStepIndex(245) => []
+        StorageLive(_7);
+        // after: TwoStepIndex(244) => []
+        // before: TwoStepIndex(243) => []
+        _7 = const 0_u64;
+        // after: TwoStepIndex(242) => [_7]
+        // before: TwoStepIndex(241) => [_7]
+        StorageLive(_52);
+        // after: TwoStepIndex(240) => [_7]
+        // before: TwoStepIndex(239) => [_7]
+        _52 = const 0_u32;
+        // after: TwoStepIndex(238) => [_52, _7]
+        // before: TwoStepIndex(237) => [_52, _7]
+        goto -> bb1;
+        // after: TwoStepIndex(236) => [_52, _7]
+    }
+
+    bb1: {
+        // before: TwoStepIndex(235) => [_52, _7]
+        StorageLive(_26);
+        // after: TwoStepIndex(234) => [_52, _7]
+        // before: TwoStepIndex(233) => [_52, _7]
+        StorageLive(_29);
+        // after: TwoStepIndex(232) => [_52, _7]
+        // before: TwoStepIndex(231) => [_52, _7]
+        _29 = copy _52;
+        // after: TwoStepIndex(230) => [_29, _52, _7]
+        // before: TwoStepIndex(229) => [_29, _52, _7]
+        _26 = Lt(move _29, copy _3);
+        // after: TwoStepIndex(228) => [_29, _52, _7]
+        // before: TwoStepIndex(227) => [_52, _7]
+        StorageDead(_29);
+        // after: TwoStepIndex(226) => [_52, _7]
+        // before: TwoStepIndex(225) => [_52, _7]
+        switchInt(move _26) -> [0: bb4, otherwise: bb3];
+        // after: TwoStepIndex(224) => [_52, _7]
+    }
+
+    bb2: {
+        // before: TwoStepIndex(223) => [_52, _7]
+        StorageDead(_18);
+        // after: TwoStepIndex(222) => [_52, _7]
+        // before: TwoStepIndex(221) => [_52, _7]
+        StorageDead(_17);
+        // after: TwoStepIndex(220) => [_52, _7]
+        // before: TwoStepIndex(219) => [_52, _7]
+        _15 = Map::<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}> { iter: copy _16, f: const ZeroSized: {closure@src/lib.rs:48:18: 48:28} };
+        // after: TwoStepIndex(218) => [_52, _7]
+        // before: TwoStepIndex(217) => [_52, _7]
+        StorageDead(_16);
+        // after: TwoStepIndex(216) => [_52, _7]
+        // before: TwoStepIndex(215) => [_52, _7]
+        _14 = Map::<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}> { iter: copy _15, f: const ZeroSized: {closure@src/lib.rs:49:18: 49:21} };
+        // after: TwoStepIndex(214) => [_52, _7]
+        // before: TwoStepIndex(213) => [_52, _7]
+        StorageDead(_15);
+        // after: TwoStepIndex(212) => [_52, _7]
+        // before: TwoStepIndex(211) => [_52, _7]
+        _13 = Map::<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}> { iter: copy _14, f: const ZeroSized: {closure@src/lib.rs:50:18: 50:21} };
+        // after: TwoStepIndex(210) => [_52, _7]
+        // before: TwoStepIndex(209) => [_52, _7]
+        StorageDead(_14);
+        // after: TwoStepIndex(208) => [_52, _7]
+        // before: TwoStepIndex(207) => [_52, _7]
+        _12 = Map::<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}> { iter: copy _13, f: step_pack_unpack };
+        // after: TwoStepIndex(206) => [_52, _7]
+        // before: TwoStepIndex(205) => [_52, _7]
+        StorageDead(_13);
+        // after: TwoStepIndex(204) => [_52, _7]
+        // before: TwoStepIndex(203) => [_52, _7]
+        _11 = Map::<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> { iter: copy _12, f: step_xor_zero };
+        // after: TwoStepIndex(202) => [_52, _7]
+        // before: TwoStepIndex(201) => [_52, _7]
+        StorageDead(_12);
+        // after: TwoStepIndex(200) => [_52, _7]
+        // before: TwoStepIndex(199) => [_52, _7]
+        StorageLive(_20);
+        // after: TwoStepIndex(198) => [_52, _7]
+        // before: TwoStepIndex(197) => [_52, _7]
+        _20 = &_4;
+        // after: TwoStepIndex(196) => [_52, _7]
+        // before: TwoStepIndex(195) => [_52, _7]
+        StorageLive(_21);
+        // after: TwoStepIndex(194) => [_52, _7]
+        // before: TwoStepIndex(193) => [_52, _7]
+        _21 = &_5;
+        // after: TwoStepIndex(192) => [_52, _7]
+        // before: TwoStepIndex(191) => [_52, _7]
+        StorageLive(_22);
+        // after: TwoStepIndex(190) => [_52, _7]
+        // before: TwoStepIndex(189) => [_52, _7]
+        _22 = &_6;
+        // after: TwoStepIndex(188) => [_52, _7]
+        // before: TwoStepIndex(187) => [_52, _7]
+        _19 = {closure@src/lib.rs:53:18: 53:26} { alpha: copy _20, beta: copy _21, c: copy _22 };
+        // after: TwoStepIndex(186) => [_52, _7]
+        // before: TwoStepIndex(185) => [_52, _7]
+        StorageDead(_22);
+        // after: TwoStepIndex(184) => [_52, _7]
+        // before: TwoStepIndex(183) => [_52, _7]
+        StorageDead(_21);
+        // after: TwoStepIndex(182) => [_52, _7]
+        // before: TwoStepIndex(181) => [_52, _7]
+        StorageDead(_20);
+        // after: TwoStepIndex(180) => [_52, _7]
+        // before: TwoStepIndex(179) => [_52, _7]
+        StorageLive(_51);
+        // after: TwoStepIndex(178) => [_52, _7]
+        // before: TwoStepIndex(177) => [_52, _7]
+        _51 = {closure@/rustc/2d76d9bc76f27b03b4899e72ce561c7ac2c5cf6b/library/core/src/iter/adapters/map.rs:88:5: 88:20} { 0: const ZeroSized: {closure@src/lib.rs:58:25: 58:33}, 1: copy _19 };
+        // after: TwoStepIndex(176) => [_52, _7]
+        // before: TwoStepIndex(175) => [_52, _7]
+        _10 = <Map<Map<Map<Map<Map<Zip<std::slice::Iter<'_, u32>, std::slice::Iter<'_, u32>>, {closure@src/lib.rs:48:18: 48:28}>, {closure@src/lib.rs:49:18: 49:21}>, {closure@src/lib.rs:50:18: 50:21}>, fn((u32, u32)) -> (u32, u32) {step_pack_unpack}>, fn((u32, u32)) -> (u32, u32) {step_xor_zero}> as Iterator>::fold::<u32, {closure@iter::adapters::map::map_fold<(u32, u32), u32, u32, {closure@src/lib.rs:53:18: 53:26}, {closure@src/lib.rs:58:25: 58:33}>::{closure#0}}>(move _11, const 0_u32, move _51) -> [return: bb5, unwind continue];
+        // after: TwoStepIndex(174) => [_52, _7]
+    }
+
+    bb3: {
+        // before: TwoStepIndex(173) => [_52, _7]
+        _27 = copy _52;
+        // after: TwoStepIndex(172) => [_27, _7]
+        // before: TwoStepIndex(171) => [_27, _7]
+        StorageLive(_28);
+        // after: TwoStepIndex(170) => [_27, _7]
+        // before: TwoStepIndex(169) => [_27, _7]
+        _28 = AddUnchecked(copy _27, const 1_u32);
+        // after: TwoStepIndex(168) => [_27, _28, _7]
+        // before: TwoStepIndex(167) => [_28, _7]
+        _52 = move _28;
+        // after: TwoStepIndex(166) => [_52, _7]
+        // before: TwoStepIndex(165) => [_52, _7]
+        StorageDead(_28);
+        // after: TwoStepIndex(164) => [_52, _7]
+        // before: TwoStepIndex(163) => [_52, _7]
+        StorageDead(_26);
+        // after: TwoStepIndex(162) => [_52, _7]
+        // before: TwoStepIndex(161) => [_52, _7]
+        StorageLive(_12);
+        // after: TwoStepIndex(160) => [_52, _7]
+        // before: TwoStepIndex(159) => [_52, _7]
+        StorageLive(_13);
+        // after: TwoStepIndex(158) => [_52, _7]
+        // before: TwoStepIndex(157) => [_52, _7]
+        StorageLive(_14);
+        // after: TwoStepIndex(156) => [_52, _7]
+        // before: TwoStepIndex(155) => [_52, _7]
+        StorageLive(_15);
+        // after: TwoStepIndex(154) => [_52, _7]
+        // before: TwoStepIndex(153) => [_52, _7]
+        StorageLive(_16);
+        // after: TwoStepIndex(152) => [_52, _7]
+        // before: TwoStepIndex(151) => [_52, _7]
+        StorageLive(_17);
+        // after: TwoStepIndex(150) => [_52, _7]
+        // before: TwoStepIndex(149) => [_52, _7]
+        StorageLive(_33);
+        // after: TwoStepIndex(148) => [_52, _7]
+        // before: TwoStepIndex(147) => [_52, _7]
+        StorageLive(_34);
+        // after: TwoStepIndex(146) => [_52, _7]
+        // before: TwoStepIndex(145) => [_52, _7]
+        StorageLive(_36);
+        // after: TwoStepIndex(144) => [_52, _7]
+        // before: TwoStepIndex(143) => [_52, _7]
+        _33 = PtrMetadata(copy _1);
+        // after: TwoStepIndex(142) => [_52, _7]
+        // before: TwoStepIndex(141) => [_52, _7]
+        StorageLive(_35);
+        // after: TwoStepIndex(140) => [_52, _7]
+        // before: TwoStepIndex(139) => [_52, _7]
+        StorageLive(_39);
+        // after: TwoStepIndex(138) => [_52, _7]
+        // before: TwoStepIndex(137) => [_52, _7]
+        _39 = &raw const (*_1);
+        // after: TwoStepIndex(136) => [_52, _7]
+        // before: TwoStepIndex(135) => [_52, _7]
+        _35 = copy _39 as std::ptr::NonNull<[u32]> (Transmute);
+        // after: TwoStepIndex(134) => [_52, _7]
+        // before: TwoStepIndex(133) => [_52, _7]
+        StorageDead(_39);
+        // after: TwoStepIndex(132) => [_52, _7]
+        // before: TwoStepIndex(131) => [_52, _7]
+        StorageLive(_40);
+        // after: TwoStepIndex(130) => [_52, _7]
+        // before: TwoStepIndex(129) => [_52, _7]
+        StorageLive(_41);
+        // after: TwoStepIndex(128) => [_52, _7]
+        // before: TwoStepIndex(127) => [_52, _7]
+        _41 = copy _35 as *mut [u32] (Transmute);
+        // after: TwoStepIndex(126) => [_52, _7]
+        // before: TwoStepIndex(125) => [_52, _7]
+        _40 = copy _41 as *mut u32 (PtrToPtr);
+        // after: TwoStepIndex(124) => [_52, _7]
+        // before: TwoStepIndex(123) => [_52, _7]
+        StorageDead(_41);
+        // after: TwoStepIndex(122) => [_52, _7]
+        // before: TwoStepIndex(121) => [_52, _7]
+        _34 = copy _40 as std::ptr::NonNull<u32> (Transmute);
+        // after: TwoStepIndex(120) => [_52, _7]
+        // before: TwoStepIndex(119) => [_52, _7]
+        StorageDead(_40);
+        // after: TwoStepIndex(118) => [_52, _7]
+        // before: TwoStepIndex(117) => [_52, _7]
+        StorageDead(_35);
+        // after: TwoStepIndex(116) => [_52, _7]
+        // before: TwoStepIndex(115) => [_52, _7]
+        StorageLive(_37);
+        // after: TwoStepIndex(114) => [_52, _7]
+        // before: TwoStepIndex(113) => [_52, _7]
+        StorageLive(_38);
+        // after: TwoStepIndex(112) => [_52, _7]
+        // before: TwoStepIndex(111) => [_52, _7]
+        _38 = copy _34 as *mut u32 (Transmute);
+        // after: TwoStepIndex(110) => [_52, _7]
+        // before: TwoStepIndex(109) => [_52, _7]
+        _37 = Offset(copy _38, copy _33);
+        // after: TwoStepIndex(108) => [_52, _7]
+        // before: TwoStepIndex(107) => [_52, _7]
+        StorageDead(_38);
+        // after: TwoStepIndex(106) => [_52, _7]
+        // before: TwoStepIndex(105) => [_52, _7]
+        _36 = copy _37 as *const u32 (PtrToPtr);
+        // after: TwoStepIndex(104) => [_52, _7]
+        // before: TwoStepIndex(103) => [_52, _7]
+        StorageDead(_37);
+        // after: TwoStepIndex(102) => [_52, _7]
+        // before: TwoStepIndex(101) => [_52, _7]
+        _17 = std::slice::Iter::<'_, u32> { ptr: copy _34, end_or_len: copy _36, _marker: const PhantomData::<&u32> };
+        // after: TwoStepIndex(100) => [_52, _7]
+        // before: TwoStepIndex(99) => [_52, _7]
+        StorageDead(_36);
+        // after: TwoStepIndex(98) => [_52, _7]
+        // before: TwoStepIndex(97) => [_52, _7]
+        StorageDead(_34);
+        // after: TwoStepIndex(96) => [_52, _7]
+        // before: TwoStepIndex(95) => [_52, _7]
+        StorageDead(_33);
+        // after: TwoStepIndex(94) => [_52, _7]
+        // before: TwoStepIndex(93) => [_52, _7]
+        StorageLive(_18);
+        // after: TwoStepIndex(92) => [_52, _7]
+        // before: TwoStepIndex(91) => [_52, _7]
+        StorageLive(_42);
+        // after: TwoStepIndex(90) => [_52, _7]
+        // before: TwoStepIndex(89) => [_52, _7]
+        StorageLive(_43);
+        // after: TwoStepIndex(88) => [_52, _7]
+        // before: TwoStepIndex(87) => [_52, _7]
+        StorageLive(_45);
+        // after: TwoStepIndex(86) => [_52, _7]
+        // before: TwoStepIndex(85) => [_52, _7]
+        _42 = PtrMetadata(copy _2);
+        // after: TwoStepIndex(84) => [_52, _7]
+        // before: TwoStepIndex(83) => [_52, _7]
+        StorageLive(_44);
+        // after: TwoStepIndex(82) => [_52, _7]
+        // before: TwoStepIndex(81) => [_52, _7]
+        StorageLive(_48);
+        // after: TwoStepIndex(80) => [_52, _7]
+        // before: TwoStepIndex(79) => [_52, _7]
+        _48 = &raw const (*_2);
+        // after: TwoStepIndex(78) => [_52, _7]
+        // before: TwoStepIndex(77) => [_52, _7]
+        _44 = copy _48 as std::ptr::NonNull<[u32]> (Transmute);
+        // after: TwoStepIndex(76) => [_52, _7]
+        // before: TwoStepIndex(75) => [_52, _7]
+        StorageDead(_48);
+        // after: TwoStepIndex(74) => [_52, _7]
+        // before: TwoStepIndex(73) => [_52, _7]
+        StorageLive(_49);
+        // after: TwoStepIndex(72) => [_52, _7]
+        // before: TwoStepIndex(71) => [_52, _7]
+        StorageLive(_50);
+        // after: TwoStepIndex(70) => [_52, _7]
+        // before: TwoStepIndex(69) => [_52, _7]
+        _50 = copy _44 as *mut [u32] (Transmute);
+        // after: TwoStepIndex(68) => [_52, _7]
+        // before: TwoStepIndex(67) => [_52, _7]
+        _49 = copy _50 as *mut u32 (PtrToPtr);
+        // after: TwoStepIndex(66) => [_52, _7]
+        // before: TwoStepIndex(65) => [_52, _7]
+        StorageDead(_50);
+        // after: TwoStepIndex(64) => [_52, _7]
+        // before: TwoStepIndex(63) => [_52, _7]
+        _43 = copy _49 as std::ptr::NonNull<u32> (Transmute);
+        // after: TwoStepIndex(62) => [_52, _7]
+        // before: TwoStepIndex(61) => [_52, _7]
+        StorageDead(_49);
+        // after: TwoStepIndex(60) => [_52, _7]
+        // before: TwoStepIndex(59) => [_52, _7]
+        StorageDead(_44);
+        // after: TwoStepIndex(58) => [_52, _7]
+        // before: TwoStepIndex(57) => [_52, _7]
+        StorageLive(_46);
+        // after: TwoStepIndex(56) => [_52, _7]
+        // before: TwoStepIndex(55) => [_52, _7]
+        StorageLive(_47);
+        // after: TwoStepIndex(54) => [_52, _7]
+        // before: TwoStepIndex(53) => [_52, _7]
+        _47 = copy _43 as *mut u32 (Transmute);
+        // after: TwoStepIndex(52) => [_52, _7]
+        // before: TwoStepIndex(51) => [_52, _7]
+        _46 = Offset(copy _47, copy _42);
+        // after: TwoStepIndex(50) => [_52, _7]
+        // before: TwoStepIndex(49) => [_52, _7]
+        StorageDead(_47);
+        // after: TwoStepIndex(48) => [_52, _7]
+        // before: TwoStepIndex(47) => [_52, _7]
+        _45 = copy _46 as *const u32 (PtrToPtr);
+        // after: TwoStepIndex(46) => [_52, _7]
+        // before: TwoStepIndex(45) => [_52, _7]
+        StorageDead(_46);
+        // after: TwoStepIndex(44) => [_52, _7]
+        // before: TwoStepIndex(43) => [_52, _7]
+        _18 = std::slice::Iter::<'_, u32> { ptr: copy _43, end_or_len: copy _45, _marker: const PhantomData::<&u32> };
+        // after: TwoStepIndex(42) => [_52, _7]
+        // before: TwoStepIndex(41) => [_52, _7]
+        StorageDead(_45);
+        // after: TwoStepIndex(40) => [_52, _7]
+        // before: TwoStepIndex(39) => [_52, _7]
+        StorageDead(_43);
+        // after: TwoStepIndex(38) => [_52, _7]
+        // before: TwoStepIndex(37) => [_52, _7]
+        StorageDead(_42);
+        // after: TwoStepIndex(36) => [_52, _7]
+        // before: TwoStepIndex(35) => [_52, _7]
+        _16 = <std::slice::Iter<'_, u32> as Iterator>::zip::<std::slice::Iter<'_, u32>>(move _17, move _18) -> [return: bb2, unwind continue];
+        // after: TwoStepIndex(34) => [_52, _7]
+    }
+
+    bb4: {
+        // before: TwoStepIndex(33) => [_7]
+        StorageDead(_26);
+        // after: TwoStepIndex(32) => [_7]
+        // before: TwoStepIndex(31) => [_7]
+        StorageDead(_52);
+        // after: TwoStepIndex(30) => [_7]
+        // before: TwoStepIndex(29) => [_7]
+        _0 = copy _7;
+        // after: TwoStepIndex(28) => [_0]
+        // before: TwoStepIndex(27) => [_0]
+        StorageDead(_7);
+        // after: TwoStepIndex(26) => [_0]
+        // before: TwoStepIndex(25) => [_0]
+        return;
+        // after: TwoStepIndex(24) => [_0]
+    }
+
+    bb5: {
+        // before: TwoStepIndex(23) => [_52, _7]
+        StorageDead(_51);
+        // after: TwoStepIndex(22) => [_52, _7]
+        // before: TwoStepIndex(21) => [_52, _7]
+        StorageLive(_23);
+        // after: TwoStepIndex(20) => [_52, _7]
+        // before: TwoStepIndex(19) => [_52, _7]
+        StorageLive(_24);
+        // after: TwoStepIndex(18) => [_52, _7]
+        // before: TwoStepIndex(17) => [_52, _7]
+        _24 = copy _7;
+        // after: TwoStepIndex(16) => [_52, _24]
+        // before: TwoStepIndex(15) => [_52, _24]
+        StorageLive(_25);
+        // after: TwoStepIndex(14) => [_52, _24]
+        // before: TwoStepIndex(13) => [_52, _24]
+        _25 = copy _10 as u64 (IntToInt);
+        // after: TwoStepIndex(12) => [_52, _24]
+        // before: TwoStepIndex(11) => [_52, _24]
+        _23 = Add(copy _24, copy _25);
+        // after: TwoStepIndex(10) => [_52, _24, _23]
+        // before: TwoStepIndex(9) => [_52, _23]
+        StorageDead(_25);
+        // after: TwoStepIndex(8) => [_52, _23]
+        // before: TwoStepIndex(7) => [_52, _23]
+        StorageDead(_24);
+        // after: TwoStepIndex(6) => [_52, _23]
+        // before: TwoStepIndex(5) => [_52, _23]
+        _7 = move _23;
+        // after: TwoStepIndex(4) => [_52, _7]
+        // before: TwoStepIndex(3) => [_52, _7]
+        StorageDead(_23);
+        // after: TwoStepIndex(2) => [_52, _7]
+        // before: TwoStepIndex(1) => [_52, _7]
+        goto -> bb1;
+        // after: TwoStepIndex(0) => [_52, _7]
+    }
+}

@@ -1,0 +1,15 @@
+// MIR for `step_xor_zero` 0 DestinationPropagation-dataflow
+
+fn step_xor_zero(_1: (u32, u32)) -> (u32, u32) {
+    debug p => _1;
+    let mut _0: (u32, u32);
+
+    bb0: {
+        // before: TwoStepIndex(3) => [_1]
+        _0 = copy _1;
+        // after: TwoStepIndex(2) => [_0]
+        // before: TwoStepIndex(1) => [_0]
+        return;
+        // after: TwoStepIndex(0) => [_0]
+    }
+}

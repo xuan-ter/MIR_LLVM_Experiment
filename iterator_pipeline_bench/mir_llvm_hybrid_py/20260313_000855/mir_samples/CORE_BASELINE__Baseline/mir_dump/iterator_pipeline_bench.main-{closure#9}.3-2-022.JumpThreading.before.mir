@@ -1,0 +1,10 @@
+// MIR for `main::{closure#9}` before JumpThreading
+
+fn main::{closure#9}(_1: {closure@src/main.rs:81:36: 81:38}) -> Mode {
+    let mut _0: Mode;
+    let mut _2: !;
+
+    bb0: {
+        _2 = usage() -> unwind continue;
+    }
+}

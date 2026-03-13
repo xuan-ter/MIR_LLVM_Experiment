@@ -1,0 +1,24 @@
+
+   Compiling iterator_pipeline_bench v0.1.0 (/mnt/MIR_LLVM_Experiment/iterator_pipeline_bench)
+remark: <unknown>:0:0: vectorized loop (vectorization width: 4, interleaved count: 2)
+remark: <unknown>:0:0: vectorized loop (vectorization width: 4, interleaved count: 2)
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+    Finished `bench` profile [optimized] target(s) in 2.30s
+  Executable benches/iterator_pipeline.rs (target/release/deps/iterator_pipeline-f4068355a58077a2)

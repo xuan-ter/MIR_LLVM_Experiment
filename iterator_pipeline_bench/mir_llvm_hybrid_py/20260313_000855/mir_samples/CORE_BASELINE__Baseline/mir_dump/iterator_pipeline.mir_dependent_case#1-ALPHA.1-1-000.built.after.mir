@@ -1,0 +1,10 @@
+// MIR for `mir_dependent_case::ALPHA` after built
+
+const mir_dependent_case::ALPHA: u32 = {
+    let mut _0: u32;
+
+    bb0: {
+        _0 = const 17_u32;
+        return;
+    }
+}

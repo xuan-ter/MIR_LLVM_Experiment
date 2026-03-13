@@ -1,0 +1,60 @@
+// MIR for `usage` after ElaborateDrops
+
+fn usage() -> ! {
+    let mut _0: !;
+    let _1: ();
+    let _2: ();
+    let mut _3: std::fmt::Arguments<'_>;
+    let _4: ();
+    let _5: ();
+    let mut _6: std::fmt::Arguments<'_>;
+    let _7: !;
+
+    bb0: {
+        StorageLive(_1);
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = Arguments::<'_>::from_str(const "Usage:\n") -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _2 = std::io::_eprint(move _3) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_3);
+        StorageDead(_2);
+        _1 = const ();
+        StorageDead(_1);
+        StorageLive(_4);
+        StorageLive(_5);
+        StorageLive(_6);
+        _6 = Arguments::<'_>::from_str(const "  iterator_pipeline_bench --mode easy|mir-dependent --len <N> --iters <N> --seed <N>\n") -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        _5 = std::io::_eprint(move _6) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_6);
+        StorageDead(_5);
+        _4 = const ();
+        StorageDead(_4);
+        StorageLive(_7);
+        _7 = exit(const 2_i32) -> unwind continue;
+    }
+}
+
+alloc11 (size: 85, align: 1) {
+    0x00 │ 20 20 69 74 65 72 61 74 6f 72 5f 70 69 70 65 6c │   iterator_pipel
+    0x10 │ 69 6e 65 5f 62 65 6e 63 68 20 2d 2d 6d 6f 64 65 │ ine_bench --mode
+    0x20 │ 20 65 61 73 79 7c 6d 69 72 2d 64 65 70 65 6e 64 │  easy|mir-depend
+    0x30 │ 65 6e 74 20 2d 2d 6c 65 6e 20 3c 4e 3e 20 2d 2d │ ent --len <N> --
+    0x40 │ 69 74 65 72 73 20 3c 4e 3e 20 2d 2d 73 65 65 64 │ iters <N> --seed
+    0x50 │ 20 3c 4e 3e 0a                                  │  <N>.
+}
+
+alloc10 (size: 7, align: 1) {
+    55 73 61 67 65 3a 0a                            │ Usage:.
+}

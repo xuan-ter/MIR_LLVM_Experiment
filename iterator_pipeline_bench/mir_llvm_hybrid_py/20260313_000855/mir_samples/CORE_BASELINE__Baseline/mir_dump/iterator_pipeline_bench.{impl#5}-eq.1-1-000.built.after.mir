@@ -1,0 +1,54 @@
+// MIR for `<impl at src/main.rs:16:30: 16:39>::eq` after built
+
+fn <impl at src/main.rs:16:30: 16:39>::eq(_1: &Mode, _2: &Mode) -> bool {
+    debug self => _1;
+    debug other => _2;
+    let mut _0: bool;
+    let _3: isize;
+    let mut _4: &Mode;
+    let mut _6: &Mode;
+    let mut _7: isize;
+    let mut _8: isize;
+    scope 1 {
+        debug __self_discr => _3;
+        let _5: isize;
+        scope 2 {
+            debug __arg1_discr => _5;
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = &(*_1);
+        _3 = discriminant_value::<Mode>(move _4) -> [return: bb1, unwind: bb3];
+    }
+
+    bb1: {
+        StorageDead(_4);
+        FakeRead(ForLet(None), _3);
+        StorageLive(_5);
+        StorageLive(_6);
+        _6 = &(*_2);
+        _5 = discriminant_value::<Mode>(move _6) -> [return: bb2, unwind: bb3];
+    }
+
+    bb2: {
+        StorageDead(_6);
+        FakeRead(ForLet(None), _5);
+        StorageLive(_7);
+        _7 = copy _3;
+        StorageLive(_8);
+        _8 = copy _5;
+        _0 = Eq(move _7, move _8);
+        StorageDead(_8);
+        StorageDead(_7);
+        StorageDead(_5);
+        StorageDead(_3);
+        return;
+    }
+
+    bb3 (cleanup): {
+        resume;
+    }
+}

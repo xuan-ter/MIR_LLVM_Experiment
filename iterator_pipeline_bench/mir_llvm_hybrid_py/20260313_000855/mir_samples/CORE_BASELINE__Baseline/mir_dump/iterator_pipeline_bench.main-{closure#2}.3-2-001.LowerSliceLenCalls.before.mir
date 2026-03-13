@@ -1,0 +1,11 @@
+// MIR for `main::{closure#2}` before LowerSliceLenCalls
+
+fn main::{closure#2}(_1: {closure@src/main.rs:63:54: 63:56}) -> u64 {
+    let mut _0: u64;
+    let mut _2: !;
+
+    bb0: {
+        StorageLive(_2);
+        _2 = usage() -> unwind continue;
+    }
+}

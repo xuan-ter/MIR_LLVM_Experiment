@@ -1,0 +1,102 @@
+// MIR for `<impl at src/main.rs:16:30: 16:39>::eq` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?3, '?1, '?2]
+| '?1 | Local | ['?3, '?1]
+| '?2 | Local | ['?3, '?2]
+| '?3 | Local | ['?3]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?0, '?1, '?2, '?3}
+| '?1 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?1}
+| '?2 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?2}
+| '?3 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?3}
+| '?4 | U0 | {bb0[2..=3]}
+| '?5 | U0 | {bb1[4..=5]}
+| '?6 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?1}
+| '?7 | U0 | {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0], '?2}
+| '?8 | U0 | {bb0[3]}
+| '?9 | U0 | {bb1[5]}
+| '?10 | U0 | {bb0[3]}
+| '?11 | U0 | {bb1[5]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0]}
+| '?1 live at {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0]}
+| '?2 live at {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0]}
+| '?3 live at {bb0[0..=3], bb1[0..=5], bb2[0..=11], bb3[0]}
+| '?4 live at {bb0[2]}
+| '?5 live at {bb1[4]}
+| '?8 live at {bb0[3]}
+| '?9 live at {bb1[5]}
+| '?10 live at {bb0[3]}
+| '?11 live at {bb1[5]}
+| '?1: '?6 due to BoringNoLocation at All(src/main.rs:16:30: 16:39) (src/main.rs:16:30: 16:39 (#8)
+| '?2: '?7 due to BoringNoLocation at All(src/main.rs:16:30: 16:39) (src/main.rs:16:30: 16:39 (#8)
+| '?4: '?8 due to Boring at Single(bb0[2]) (src/main.rs:16:30: 16:39 (#8)
+| '?5: '?9 due to Boring at Single(bb1[4]) (src/main.rs:16:30: 16:39 (#8)
+| '?6: '?1 due to BoringNoLocation at All(src/main.rs:16:30: 16:39) (src/main.rs:16:30: 16:39 (#8)
+| '?6: '?4 due to Boring at Single(bb0[2]) (src/main.rs:16:30: 16:39 (#8)
+| '?7: '?2 due to BoringNoLocation at All(src/main.rs:16:30: 16:39) (src/main.rs:16:30: 16:39 (#8)
+| '?7: '?5 due to Boring at Single(bb1[4]) (src/main.rs:16:30: 16:39 (#8)
+| '?8: '?10 due to CallArgument(Some(FnDef(DefId(2:2127 ~ core[28bf]::intrinsics::discriminant_value), [Mode]))) at Single(bb0[3]) (src/main.rs:16:30: 16:39 (#8)
+| '?9: '?11 due to CallArgument(Some(FnDef(DefId(2:2127 ~ core[28bf]::intrinsics::discriminant_value), [Mode]))) at Single(bb1[5]) (src/main.rs:16:30: 16:39 (#8)
+|
+fn <impl at src/main.rs:16:30: 16:39>::eq(_1: &Mode, _2: &Mode) -> bool {
+    debug self => _1;                    // in scope 0 at src/main.rs:16:30: 16:39
+    debug other => _2;                   // in scope 0 at src/main.rs:16:30: 16:39
+    let mut _0: bool;                    // return place in scope 0 at src/main.rs:16:30: 16:39
+    let _3: isize;                       // in scope 0 at src/main.rs:16:30: 16:39
+    let mut _4: &Mode;                   // in scope 0 at src/main.rs:16:30: 16:39
+    let mut _6: &Mode;                   // in scope 0 at src/main.rs:16:30: 16:39
+    let mut _7: isize;                   // in scope 0 at src/main.rs:16:30: 16:39
+    let mut _8: isize;                   // in scope 0 at src/main.rs:16:30: 16:39
+    scope 1 {
+        debug __self_discr => _3;        // in scope 1 at src/main.rs:16:30: 16:39
+        let _5: isize;                   // in scope 1 at src/main.rs:16:30: 16:39
+        scope 2 {
+            debug __arg1_discr => _5;    // in scope 2 at src/main.rs:16:30: 16:39
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/main.rs:16:30: 16:39
+        StorageLive(_4);                 // scope 0 at src/main.rs:16:30: 16:39
+        _4 = &(*_1);                     // scope 0 at src/main.rs:16:30: 16:39
+        _3 = discriminant_value::<Mode>(move _4) -> [return: bb1, unwind: bb3]; // scope 0 at src/main.rs:16:30: 16:39
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:30: 16:39
+                                         // + const_: Const { ty: for<'a> fn(&'a Mode) -> <Mode as DiscriminantKind>::Discriminant {discriminant_value::<Mode>}, val: Value(discriminant_value::<Mode>) }
+    }
+
+    bb1: {
+        StorageDead(_4);                 // scope 0 at src/main.rs:16:38: 16:39
+        FakeRead(ForLet(None), _3);      // scope 0 at src/main.rs:16:30: 16:39
+        StorageLive(_5);                 // scope 1 at src/main.rs:16:30: 16:39
+        StorageLive(_6);                 // scope 1 at src/main.rs:16:30: 16:39
+        _6 = &(*_2);                     // scope 1 at src/main.rs:16:30: 16:39
+        _5 = discriminant_value::<Mode>(move _6) -> [return: bb2, unwind: bb3]; // scope 1 at src/main.rs:16:30: 16:39
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:30: 16:39
+                                         // + const_: Const { ty: for<'a> fn(&'a Mode) -> <Mode as DiscriminantKind>::Discriminant {discriminant_value::<Mode>}, val: Value(discriminant_value::<Mode>) }
+    }
+
+    bb2: {
+        StorageDead(_6);                 // scope 1 at src/main.rs:16:38: 16:39
+        FakeRead(ForLet(None), _5);      // scope 1 at src/main.rs:16:30: 16:39
+        StorageLive(_7);                 // scope 2 at src/main.rs:16:30: 16:39
+        _7 = copy _3;                    // scope 2 at src/main.rs:16:30: 16:39
+        StorageLive(_8);                 // scope 2 at src/main.rs:16:30: 16:39
+        _8 = copy _5;                    // scope 2 at src/main.rs:16:30: 16:39
+        _0 = Eq(move _7, move _8);       // scope 2 at src/main.rs:16:30: 16:39
+        StorageDead(_8);                 // scope 2 at src/main.rs:16:38: 16:39
+        StorageDead(_7);                 // scope 2 at src/main.rs:16:38: 16:39
+        StorageDead(_5);                 // scope 1 at src/main.rs:16:38: 16:39
+        StorageDead(_3);                 // scope 0 at src/main.rs:16:38: 16:39
+        return;                          // scope 0 at src/main.rs:16:39: 16:39
+    }
+
+    bb3 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:16:30: 16:39
+    }
+}

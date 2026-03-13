@@ -1,0 +1,10 @@
+// MIR for `main::{closure#5}` after SimplifyLocals-final
+
+fn main::{closure#5}(_1: {closure@src/main.rs:69:57: 69:60}, _2: TryFromIntError) -> u32 {
+    let mut _0: u32;
+    let mut _3: !;
+
+    bb0: {
+        _3 = usage() -> unwind continue;
+    }
+}

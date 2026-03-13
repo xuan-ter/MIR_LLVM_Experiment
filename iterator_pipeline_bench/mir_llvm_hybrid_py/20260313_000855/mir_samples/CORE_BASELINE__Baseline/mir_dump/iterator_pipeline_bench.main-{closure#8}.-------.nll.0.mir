@@ -1,0 +1,33 @@
+// MIR for `main::{closure#8}` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=1], bb1[0], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=1], bb1[0], '?1}
+| '?2 | U0 | {bb0[0..=1], bb1[0], '?2}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=1], bb1[0]}
+| '?1 live at {bb0[0..=1], bb1[0]}
+| '?2 live at {bb0[0..=1], bb1[0]}
+|
+fn main::{closure#8}(_1: {closure@src/main.rs:74:56: 74:59}, _2: TryFromIntError) -> u32 {
+    let mut _0: u32;                     // return place in scope 0 at src/main.rs:74:59: 74:59
+    let mut _3: !;                       // in scope 0 at src/main.rs:74:60: 74:67
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/main.rs:74:60: 74:67
+        _3 = usage() -> bb1;             // scope 0 at src/main.rs:74:60: 74:67
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:74:60: 74:65
+                                         // + const_: Const { ty: fn() -> ! {usage}, val: Value(usage) }
+    }
+
+    bb1 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:74:56: 74:67
+    }
+}

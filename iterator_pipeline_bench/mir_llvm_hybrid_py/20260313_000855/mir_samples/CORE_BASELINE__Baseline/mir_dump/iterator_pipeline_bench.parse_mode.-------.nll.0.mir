@@ -1,0 +1,173 @@
+// MIR for `parse_mode` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0], '?1}
+| '?2 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0], '?2}
+| '?3 | U0 | {bb0[1..=2]}
+| '?4 | U0 | {}
+| '?5 | U0 | {bb0[2]}
+| '?6 | U0 | {bb3[0..=1]}
+| '?7 | U0 | {}
+| '?8 | U0 | {bb3[1]}
+| '?9 | U0 | {bb5[0..=1]}
+| '?10 | U0 | {}
+| '?11 | U0 | {bb5[1]}
+| '?12 | U0 | {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0], '?1}
+| '?13 | U0 | {bb5[1]}
+| '?14 | U0 | {bb3[1]}
+| '?15 | U0 | {bb0[2]}
+| '?16 | U0 | {bb0[2]}
+| '?17 | U0 | {bb0[2]}
+| '?18 | U0 | {bb3[1]}
+| '?19 | U0 | {bb3[1]}
+| '?20 | U0 | {bb5[1]}
+| '?21 | U0 | {bb5[1]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0]}
+| '?1 live at {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0]}
+| '?2 live at {bb0[0..=2], bb1[0..=1], bb2[0], bb3[0..=1], bb4[0], bb5[0..=1], bb6[0], bb7[0], bb8[0], bb9[0], bb10[0..=4], bb11[0..=4], bb12[0..=4], bb13[0], bb14[0]}
+| '?3 live at {bb0[1]}
+| '?5 live at {bb0[2]}
+| '?6 live at {bb3[0]}
+| '?8 live at {bb3[1]}
+| '?9 live at {bb5[0]}
+| '?11 live at {bb5[1]}
+| '?13 live at {bb5[1]}
+| '?14 live at {bb3[1]}
+| '?15 live at {bb0[2]}
+| '?16 live at {bb0[2]}
+| '?17 live at {bb0[2]}
+| '?18 live at {bb3[1]}
+| '?19 live at {bb3[1]}
+| '?20 live at {bb5[1]}
+| '?21 live at {bb5[1]}
+| '?1: '?12 due to BoringNoLocation at All(src/main.rs:22:15: 22:16) (src/main.rs:22:15: 22:16 (#0)
+| '?3: '?15 due to Boring at Single(bb0[1]) (src/main.rs:24:9: 24:15 (#0)
+| '?5: '?17 due to Boring at Single(bb0[2]) (src/main.rs:24:9: 24:15 (#0)
+| '?6: '?14 due to Boring at Single(bb3[0]) (src/main.rs:25:9: 25:24 (#0)
+| '?8: '?19 due to Boring at Single(bb3[1]) (src/main.rs:25:9: 25:24 (#0)
+| '?9: '?13 due to Boring at Single(bb5[0]) (src/main.rs:26:9: 26:24 (#0)
+| '?11: '?21 due to Boring at Single(bb5[1]) (src/main.rs:26:9: 26:24 (#0)
+| '?12: '?1 due to BoringNoLocation at All(src/main.rs:22:15: 22:16) (src/main.rs:22:15: 22:16 (#0)
+| '?12: '?3 due to Boring at Single(bb0[1]) (src/main.rs:24:9: 24:15 (#0)
+| '?12: '?6 due to Boring at Single(bb3[0]) (src/main.rs:25:9: 25:24 (#0)
+| '?12: '?9 due to Boring at Single(bb5[0]) (src/main.rs:26:9: 26:24 (#0)
+| '?13: '?20 due to Boring at Single(bb5[1]) (src/main.rs:26:9: 26:24 (#0)
+| '?14: '?18 due to Boring at Single(bb3[1]) (src/main.rs:25:9: 25:24 (#0)
+| '?15: '?16 due to Boring at Single(bb0[2]) (src/main.rs:24:9: 24:15 (#0)
+|
+fn parse_mode(_1: &str) -> Option<Mode> {
+    debug s => _1;                       // in scope 0 at src/main.rs:22:15: 22:16
+    let mut _0: std::option::Option<Mode>; // return place in scope 0 at src/main.rs:22:27: 22:39
+    let mut _2: &str;                    // in scope 0 at src/main.rs:26:9: 26:24
+    let mut _3: bool;                    // in scope 0 at src/main.rs:26:9: 26:24
+    let mut _4: &str;                    // in scope 0 at src/main.rs:25:9: 25:24
+    let mut _5: bool;                    // in scope 0 at src/main.rs:25:9: 25:24
+    let mut _6: &str;                    // in scope 0 at src/main.rs:24:9: 24:15
+    let mut _7: bool;                    // in scope 0 at src/main.rs:24:9: 24:15
+    let mut _8: Mode;                    // in scope 0 at src/main.rs:24:24: 24:34
+    let mut _9: Mode;                    // in scope 0 at src/main.rs:25:33: 25:51
+    let mut _10: Mode;                   // in scope 0 at src/main.rs:26:33: 26:51
+
+    bb0: {
+        PlaceMention(_1);                // scope 0 at src/main.rs:23:11: 23:12
+        _6 = &(*_1);                     // scope 0 at src/main.rs:24:9: 24:15
+        _7 = <str as PartialEq>::eq(copy _6, const "easy") -> [return: bb9, unwind: bb14]; // scope 0 at src/main.rs:24:9: 24:15
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:24:9: 24:15
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:24:9: 24:15
+                                         // + const_: Const { ty: &str, val: ty::Valtree("easy") }
+    }
+
+    bb1: {
+        _0 = Option::<Mode>::None;       // scope 0 at src/main.rs:27:14: 27:18
+        goto -> bb13;                    // scope 0 at src/main.rs:27:14: 27:18
+    }
+
+    bb2: {
+        falseEdge -> [real: bb12, imaginary: bb3]; // scope 0 at src/main.rs:24:9: 24:15
+    }
+
+    bb3: {
+        _4 = &(*_1);                     // scope 0 at src/main.rs:25:9: 25:24
+        _5 = <str as PartialEq>::eq(copy _4, const "mir-dependent") -> [return: bb8, unwind: bb14]; // scope 0 at src/main.rs:25:9: 25:24
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:25:9: 25:24
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:25:9: 25:24
+                                         // + const_: Const { ty: &str, val: ty::Valtree("mir-dependent") }
+    }
+
+    bb4: {
+        falseEdge -> [real: bb11, imaginary: bb5]; // scope 0 at src/main.rs:25:9: 25:24
+    }
+
+    bb5: {
+        _2 = &(*_1);                     // scope 0 at src/main.rs:26:9: 26:24
+        _3 = <str as PartialEq>::eq(copy _2, const "mir_dependent") -> [return: bb7, unwind: bb14]; // scope 0 at src/main.rs:26:9: 26:24
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:26:9: 26:24
+                                         // + const_: Const { ty: for<'a, 'b> fn(&'a str, &'b str) -> bool {<str as PartialEq>::eq}, val: Value(<str as PartialEq>::eq) }
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:26:9: 26:24
+                                         // + const_: Const { ty: &str, val: ty::Valtree("mir_dependent") }
+    }
+
+    bb6: {
+        falseEdge -> [real: bb10, imaginary: bb1]; // scope 0 at src/main.rs:26:9: 26:24
+    }
+
+    bb7: {
+        switchInt(move _3) -> [0: bb1, otherwise: bb6]; // scope 0 at src/main.rs:26:9: 26:24
+    }
+
+    bb8: {
+        switchInt(move _5) -> [0: bb5, otherwise: bb4]; // scope 0 at src/main.rs:25:9: 25:24
+    }
+
+    bb9: {
+        switchInt(move _7) -> [0: bb3, otherwise: bb2]; // scope 0 at src/main.rs:24:9: 24:15
+    }
+
+    bb10: {
+        StorageLive(_10);                // scope 0 at src/main.rs:26:33: 26:51
+        _10 = Mode::MirDependent;        // scope 0 at src/main.rs:26:33: 26:51
+        _0 = Option::<Mode>::Some(move _10); // scope 0 at src/main.rs:26:28: 26:52
+        StorageDead(_10);                // scope 0 at src/main.rs:26:51: 26:52
+        goto -> bb13;                    // scope 0 at src/main.rs:26:51: 26:52
+    }
+
+    bb11: {
+        StorageLive(_9);                 // scope 0 at src/main.rs:25:33: 25:51
+        _9 = Mode::MirDependent;         // scope 0 at src/main.rs:25:33: 25:51
+        _0 = Option::<Mode>::Some(move _9); // scope 0 at src/main.rs:25:28: 25:52
+        StorageDead(_9);                 // scope 0 at src/main.rs:25:51: 25:52
+        goto -> bb13;                    // scope 0 at src/main.rs:25:51: 25:52
+    }
+
+    bb12: {
+        StorageLive(_8);                 // scope 0 at src/main.rs:24:24: 24:34
+        _8 = Mode::Easy;                 // scope 0 at src/main.rs:24:24: 24:34
+        _0 = Option::<Mode>::Some(move _8); // scope 0 at src/main.rs:24:19: 24:35
+        StorageDead(_8);                 // scope 0 at src/main.rs:24:34: 24:35
+        goto -> bb13;                    // scope 0 at src/main.rs:24:34: 24:35
+    }
+
+    bb13: {
+        return;                          // scope 0 at src/main.rs:29:2: 29:2
+    }
+
+    bb14 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:22:1: 29:2
+    }
+}

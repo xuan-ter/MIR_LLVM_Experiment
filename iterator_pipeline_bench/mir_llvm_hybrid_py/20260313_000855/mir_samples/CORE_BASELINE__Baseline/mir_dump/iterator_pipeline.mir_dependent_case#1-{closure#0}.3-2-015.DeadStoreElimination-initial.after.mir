@@ -1,0 +1,156 @@
+// MIR for `mir_dependent_case::{closure#0}` after DeadStoreElimination-initial
+
+fn mir_dependent_case::{closure#0}(_1: &mut {closure@benches/iterator_pipeline.rs:57:12: 57:14}) -> () {
+    debug a => (*((*_1).0: &std::vec::Vec<u32>));
+    debug b_in => (*((*_1).1: &std::vec::Vec<u32>));
+    let mut _0: ();
+    let _2: u64;
+    let mut _3: &[u32];
+    let _4: &[u32];
+    let mut _5: &[u32];
+    let _6: &[u32];
+    let mut _7: &[u32];
+    let _8: &[u32];
+    let mut _9: &[u32];
+    let _10: &[u32];
+    let _11: u64;
+    let mut _12: u64;
+    let mut _13: &std::vec::Vec<u32>;
+    let mut _14: &std::vec::Vec<u32>;
+    scope 1 {
+        debug sum => _2;
+        scope 26 (inlined std::hint::black_box::<u64>) {
+        }
+    }
+    scope 2 (inlined <Vec<u32> as Deref>::deref) {
+        scope 3 (inlined Vec::<u32>::as_slice) {
+            let _15: *const [u32];
+            let mut _16: *const u32;
+            let mut _17: usize;
+            scope 4 (inlined Vec::<u32>::as_ptr) {
+                scope 5 (inlined alloc::raw_vec::RawVec::<u32>::ptr) {
+                    scope 6 (inlined alloc::raw_vec::RawVecInner::ptr::<u32>) {
+                        scope 7 (inlined alloc::raw_vec::RawVecInner::non_null::<u32>) {
+                            let mut _18: std::ptr::NonNull<u8>;
+                            scope 8 (inlined std::ptr::Unique::<u8>::cast::<u32>) {
+                                scope 9 (inlined NonNull::<u8>::cast::<u32>) {
+                                    scope 10 (inlined NonNull::<u8>::as_ptr) {
+                                    }
+                                }
+                            }
+                            scope 11 (inlined std::ptr::Unique::<u32>::as_non_null_ptr) {
+                            }
+                        }
+                        scope 12 (inlined NonNull::<u32>::as_ptr) {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 13 (inlined std::hint::black_box::<&[u32]>) {
+    }
+    scope 14 (inlined <Vec<u32> as Deref>::deref) {
+        scope 15 (inlined Vec::<u32>::as_slice) {
+            let _19: *const [u32];
+            let mut _20: *const u32;
+            let mut _21: usize;
+            scope 16 (inlined Vec::<u32>::as_ptr) {
+                scope 17 (inlined alloc::raw_vec::RawVec::<u32>::ptr) {
+                    scope 18 (inlined alloc::raw_vec::RawVecInner::ptr::<u32>) {
+                        scope 19 (inlined alloc::raw_vec::RawVecInner::non_null::<u32>) {
+                            let mut _22: std::ptr::NonNull<u8>;
+                            scope 20 (inlined std::ptr::Unique::<u8>::cast::<u32>) {
+                                scope 21 (inlined NonNull::<u8>::cast::<u32>) {
+                                    scope 22 (inlined NonNull::<u8>::as_ptr) {
+                                    }
+                                }
+                            }
+                            scope 23 (inlined std::ptr::Unique::<u32>::as_non_null_ptr) {
+                            }
+                        }
+                        scope 24 (inlined NonNull::<u32>::as_ptr) {
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 25 (inlined std::hint::black_box::<&[u32]>) {
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        StorageLive(_5);
+        StorageLive(_6);
+        _13 = copy ((*_1).0: &std::vec::Vec<u32>);
+        StorageLive(_15);
+        StorageLive(_16);
+        StorageLive(_18);
+        _18 = copy (((((*_13).0: alloc::raw_vec::RawVec<u32>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _16 = copy _18 as *const u32 (Transmute);
+        StorageDead(_18);
+        StorageLive(_17);
+        _17 = copy ((*_13).1: usize);
+        _15 = *const [u32] from (copy _16, move _17);
+        StorageDead(_17);
+        StorageDead(_16);
+        _6 = &(*_15);
+        StorageDead(_15);
+        _5 = copy _6;
+        _4 = std::intrinsics::black_box::<&[u32]>(move _5) -> [return: bb2, unwind unreachable];
+    }
+
+    bb1: {
+        StorageDead(_7);
+        StorageDead(_3);
+        StorageDead(_10);
+        StorageDead(_8);
+        StorageDead(_6);
+        StorageDead(_4);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = copy _2;
+        _11 = std::intrinsics::black_box::<u64>(move _12) -> [return: bb4, unwind unreachable];
+    }
+
+    bb2: {
+        _3 = copy _4;
+        StorageDead(_5);
+        StorageLive(_7);
+        StorageLive(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        _14 = copy ((*_1).1: &std::vec::Vec<u32>);
+        StorageLive(_19);
+        StorageLive(_20);
+        StorageLive(_22);
+        _22 = copy (((((*_14).0: alloc::raw_vec::RawVec<u32>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _20 = copy _22 as *const u32 (Transmute);
+        StorageDead(_22);
+        StorageLive(_21);
+        _21 = copy ((*_14).1: usize);
+        _19 = *const [u32] from (copy _20, move _21);
+        StorageDead(_21);
+        StorageDead(_20);
+        _10 = &(*_19);
+        StorageDead(_19);
+        _9 = copy _10;
+        _8 = std::intrinsics::black_box::<&[u32]>(move _9) -> [return: bb3, unwind unreachable];
+    }
+
+    bb3: {
+        _7 = copy _8;
+        StorageDead(_9);
+        _2 = kernel_mir_dependent(move _3, move _7, const mir_dependent_case::ROUNDS, const mir_dependent_case::ALPHA, const mir_dependent_case::BETA, const mir_dependent_case::C) -> [return: bb1, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_12);
+        StorageDead(_11);
+        StorageDead(_2);
+        return;
+    }
+}

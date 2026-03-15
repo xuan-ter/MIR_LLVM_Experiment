@@ -178,19 +178,28 @@ def measure_combination(combo, runs, cwd, bench_file, logf):
     return {"ConfigName": name, "RunID": runs, "LLVM_Pass": llvm_pass_label, "MIR_Pass": mir_pass_label, "BinarySize(Bytes)": size, "TotalRuntime(s)": f"{avg_search:.6f}", "CompileTime(s)": f"{compile_avg:.6f}", "Status": "Success"}
 
 def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(script_dir)
+    default_json_path = "/mnt/MIR_LLVM_Experiment/table/table_json/combined_experiment_matrix.json"
+    if not os.path.exists(default_json_path):
+        default_json_path = os.path.join(repo_root, "table", "table_json", "combined_experiment_matrix.json")
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("--json-path", default="/mnt/fjx/Compiler_Experiment/table/table_json/combined_experiment_matrix.json")
+    parser.add_argument("--json-path", default=default_json_path)
     parser.add_argument("--runs", type=int, default=1)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--output-dir", default="")
     args = parser.parse_args()
     
-    project_root = "/mnt/fjx/Compiler_Experiment/bat"
+    project_root = script_dir
     
     # Ensure project root exists
     if not os.path.exists(project_root):
         print(f"Error: Project root {project_root} does not exist.")
+        return
+    if not os.path.exists(args.json_path):
+        print(f"Error: JSON path {args.json_path} does not exist.")
         return
 
     bench_file = ensure_bench_file(project_root)

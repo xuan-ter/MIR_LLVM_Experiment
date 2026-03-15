@@ -44,6 +44,17 @@ def get_combinations(json_path):
         data = json.load(f)
     return data.get("combinations", [])
 
+def find_start_index_by_name(combos, start_name):
+    if not start_name:
+        return None
+    if start_name.upper() in {"BEGIN", "START", "ALL"}:
+        return None
+    for i, combo in enumerate(combos):
+        name = combo.get("name") or combo.get("Experiment_ID")
+        if name == start_name:
+            return i
+    return None
+
 def clean_project(cwd, env):
     target_dir = os.path.join(cwd, "target")
     if os.path.exists(target_dir):
@@ -188,16 +199,21 @@ def measure_combination(combo, runs, cwd, bench_file, logf):
     return results
 
 def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.abspath(os.path.join(script_dir, ".."))
+    default_json_path = os.path.join(repo_root, "table", "table_json", "combined_experiment_matrix.json")
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("--json-path", default="/mnt/fjx/Compiler_Experiment/table/table_json/combined_experiment_matrix.json")
+    parser.add_argument("--json-path", default=default_json_path)
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--start", type=int, default=0)
+    parser.add_argument("--start-name", default="EXP_DBL_0540")
     parser.add_argument("--output-dir", default="")
     
     args = parser.parse_args()
     
-    project_root = "/mnt/fjx/Compiler_Experiment/regex"
+    project_root = script_dir
     bench_file = ensure_bench_file(project_root)
     
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -208,6 +224,10 @@ def main():
     exec_log = os.path.join(base_out, "experiment_execution.log")
     
     combos = get_combinations(args.json_path)
+
+    start_idx = find_start_index_by_name(combos, args.start_name)
+    if start_idx is not None:
+        combos = combos[start_idx:]
     
     if args.start > 0:
         combos = combos[args.start:]

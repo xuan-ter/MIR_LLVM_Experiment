@@ -19,3 +19,7 @@
 
 !trait_test/mir_llvm_hybrid_py/
 !trait_test/mir_llvm_hybrid_py/**
+
+!regex/mir_llvm_hybrid_py/
+!regex/mir_llvm_hybrid_py/**
+!regex/benchmark_data*.txt

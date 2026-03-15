@@ -23,3 +23,6 @@
 !regex/mir_llvm_hybrid_py/
 !regex/mir_llvm_hybrid_py/**
 !regex/benchmark_data*.txt
+
+!hyper/mir_llvm_hybrid_py/
+!hyper/mir_llvm_hybrid_py/**

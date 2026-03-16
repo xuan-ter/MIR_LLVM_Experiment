@@ -1,0 +1,1135 @@
+// MIR for `main` after DeadStoreElimination-initial
+
+fn main() -> () {
+    let mut _0: ();
+    let _1: usize;
+    let mut _2: u64;
+    let mut _3: &str;
+    let _4: &str;
+    let mut _6: u64;
+    let mut _7: &str;
+    let _8: &str;
+    let mut _10: u64;
+    let mut _11: &str;
+    let _12: &str;
+    let mut _14: &str;
+    let _15: &str;
+    let mut _16: &str;
+    let _17: &str;
+    let mut _19: usize;
+    let mut _20: u32;
+    let mut _23: &str;
+    let mut _24: &str;
+    let mut _25: bool;
+    let mut _26: &str;
+    let mut _27: bool;
+    let mut _28: &[u32];
+    let _29: &[u32];
+    let mut _30: u32;
+    let mut _31: &[u32];
+    let _32: &[u32];
+    let mut _33: u32;
+    let _35: std::time::Duration;
+    let mut _36: &std::time::Instant;
+    let _37: ();
+    let mut _38: std::fmt::Arguments<'_>;
+    let mut _39: &std::string::String;
+    let mut _41: core::fmt::rt::Argument<'_>;
+    let mut _42: &[u8; 14];
+    let _43: &[u8; 14];
+    let mut _44: &[core::fmt::rt::Argument<'_>; 1];
+    let _45: &[core::fmt::rt::Argument<'_>; 1];
+    let _46: ();
+    let mut _47: std::fmt::Arguments<'_>;
+    let mut _48: &usize;
+    let mut _50: core::fmt::rt::Argument<'_>;
+    let mut _51: &[u8; 8];
+    let _52: &[u8; 8];
+    let mut _53: &[core::fmt::rt::Argument<'_>; 1];
+    let _54: &[core::fmt::rt::Argument<'_>; 1];
+    let _55: ();
+    let mut _56: std::fmt::Arguments<'_>;
+    let mut _57: &u32;
+    let mut _59: core::fmt::rt::Argument<'_>;
+    let mut _60: &[u8; 12];
+    let _61: &[u8; 12];
+    let mut _62: &[core::fmt::rt::Argument<'_>; 1];
+    let _63: &[core::fmt::rt::Argument<'_>; 1];
+    let _64: ();
+    let mut _65: std::fmt::Arguments<'_>;
+    let mut _66: &u64;
+    let mut _68: core::fmt::rt::Argument<'_>;
+    let mut _69: &[u8; 10];
+    let _70: &[u8; 10];
+    let mut _71: &[core::fmt::rt::Argument<'_>; 1];
+    let _72: &[core::fmt::rt::Argument<'_>; 1];
+    let _73: ();
+    let mut _74: std::fmt::Arguments<'_>;
+    let mut _75: &f64;
+    let mut _77: core::fmt::rt::Argument<'_>;
+    let mut _78: &[u8; 25];
+    let _79: &[u8; 25];
+    let mut _80: &[core::fmt::rt::Argument<'_>; 1];
+    let _81: &[core::fmt::rt::Argument<'_>; 1];
+    let _82: ();
+    let mut _83: std::fmt::Arguments<'_>;
+    let mut _84: &f64;
+    let _85: f64;
+    let mut _86: f64;
+    let mut _87: f64;
+    let mut _88: usize;
+    let mut _89: f64;
+    let mut _90: u32;
+    let mut _91: f64;
+    let mut _93: core::fmt::rt::Argument<'_>;
+    let mut _94: &[u8; 31];
+    let _95: &[u8; 31];
+    let mut _96: &[core::fmt::rt::Argument<'_>; 1];
+    let _97: &[core::fmt::rt::Argument<'_>; 1];
+    let mut _98: &std::string::String;
+    let mut _99: &usize;
+    let mut _100: &u32;
+    let mut _101: &u64;
+    let mut _102: &f64;
+    let mut _103: &f64;
+    let mut _109: &str;
+    let mut _110: &str;
+    let mut _125: &str;
+    let mut _126: &str;
+    scope 1 {
+        debug n => _1;
+        let _5: u32;
+        scope 2 {
+            debug iters => _5;
+            let _9: u32;
+            scope 3 {
+                debug seed => _9;
+                let _13: std::string::String;
+                scope 4 {
+                    debug variant => _13;
+                    let _18: std::vec::Vec<u32>;
+                    scope 5 {
+                        debug data => _18;
+                        let _21: std::time::Instant;
+                        scope 6 {
+                            debug start => _21;
+                            let _22: u64;
+                            scope 7 {
+                                debug sum => _22;
+                                let _34: f64;
+                                scope 8 {
+                                    debug elapsed => _34;
+                                    let _189: &std::string::String;
+                                    let _190: &usize;
+                                    let _191: &u32;
+                                    let _192: &u64;
+                                    let _193: &f64;
+                                    let _194: &f64;
+                                    scope 9 {
+                                        debug ((args: (&String,)).0: &std::string::String) => _189;
+                                        let _40: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 10 {
+                                            debug args => _40;
+                                            scope 82 (inlined Arguments::<'_>::new::<14, 1>) {
+                                                let mut _152: std::ptr::NonNull<u8>;
+                                                let mut _153: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 77 (inlined core::fmt::rt::Argument::<'_>::new_display::<String>) {
+                                            let mut _147: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _148: std::ptr::NonNull<()>;
+                                            let mut _149: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _150: for<'a, 'b, 'c> fn(&'a std::string::String, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 78 {
+                                            }
+                                            scope 79 (inlined NonNull::<String>::from_ref) {
+                                                let mut _151: *const std::string::String;
+                                            }
+                                            scope 80 (inlined NonNull::<String>::cast::<()>) {
+                                                scope 81 (inlined NonNull::<String>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    scope 11 {
+                                        debug ((args: (&usize,)).0: &usize) => _190;
+                                        let _49: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 12 {
+                                            debug args => _49;
+                                            scope 88 (inlined Arguments::<'_>::new::<8, 1>) {
+                                                let mut _159: std::ptr::NonNull<u8>;
+                                                let mut _160: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 83 (inlined core::fmt::rt::Argument::<'_>::new_display::<usize>) {
+                                            let mut _154: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _155: std::ptr::NonNull<()>;
+                                            let mut _156: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _157: for<'a, 'b, 'c> fn(&'a usize, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 84 {
+                                            }
+                                            scope 85 (inlined NonNull::<usize>::from_ref) {
+                                                let mut _158: *const usize;
+                                            }
+                                            scope 86 (inlined NonNull::<usize>::cast::<()>) {
+                                                scope 87 (inlined NonNull::<usize>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    scope 13 {
+                                        debug ((args: (&u32,)).0: &u32) => _191;
+                                        let _58: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 14 {
+                                            debug args => _58;
+                                            scope 94 (inlined Arguments::<'_>::new::<12, 1>) {
+                                                let mut _166: std::ptr::NonNull<u8>;
+                                                let mut _167: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 89 (inlined core::fmt::rt::Argument::<'_>::new_display::<u32>) {
+                                            let mut _161: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _162: std::ptr::NonNull<()>;
+                                            let mut _163: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _164: for<'a, 'b, 'c> fn(&'a u32, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 90 {
+                                            }
+                                            scope 91 (inlined NonNull::<u32>::from_ref) {
+                                                let mut _165: *const u32;
+                                            }
+                                            scope 92 (inlined NonNull::<u32>::cast::<()>) {
+                                                scope 93 (inlined NonNull::<u32>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    scope 15 {
+                                        debug ((args: (&u64,)).0: &u64) => _192;
+                                        let _67: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 16 {
+                                            debug args => _67;
+                                            scope 100 (inlined Arguments::<'_>::new::<10, 1>) {
+                                                let mut _173: std::ptr::NonNull<u8>;
+                                                let mut _174: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 95 (inlined core::fmt::rt::Argument::<'_>::new_display::<u64>) {
+                                            let mut _168: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _169: std::ptr::NonNull<()>;
+                                            let mut _170: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _171: for<'a, 'b, 'c> fn(&'a u64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 96 {
+                                            }
+                                            scope 97 (inlined NonNull::<u64>::from_ref) {
+                                                let mut _172: *const u64;
+                                            }
+                                            scope 98 (inlined NonNull::<u64>::cast::<()>) {
+                                                scope 99 (inlined NonNull::<u64>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    scope 17 {
+                                        debug ((args: (&f64,)).0: &f64) => _193;
+                                        let _76: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 18 {
+                                            debug args => _76;
+                                            scope 106 (inlined Arguments::<'_>::new::<25, 1>) {
+                                                let mut _180: std::ptr::NonNull<u8>;
+                                                let mut _181: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 101 (inlined core::fmt::rt::Argument::<'_>::new_display::<f64>) {
+                                            let mut _175: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _176: std::ptr::NonNull<()>;
+                                            let mut _177: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _178: for<'a, 'b, 'c> fn(&'a f64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 102 {
+                                            }
+                                            scope 103 (inlined NonNull::<f64>::from_ref) {
+                                                let mut _179: *const f64;
+                                            }
+                                            scope 104 (inlined NonNull::<f64>::cast::<()>) {
+                                                scope 105 (inlined NonNull::<f64>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    scope 19 {
+                                        debug ((args: (&f64,)).0: &f64) => _194;
+                                        let _92: [core::fmt::rt::Argument<'_>; 1];
+                                        scope 20 {
+                                            debug args => _92;
+                                            scope 112 (inlined Arguments::<'_>::new::<31, 1>) {
+                                                let mut _187: std::ptr::NonNull<u8>;
+                                                let mut _188: std::ptr::NonNull<core::fmt::rt::Argument<'_>>;
+                                            }
+                                        }
+                                        scope 107 (inlined core::fmt::rt::Argument::<'_>::new_display::<f64>) {
+                                            let mut _182: core::fmt::rt::ArgumentType<'_>;
+                                            let mut _183: std::ptr::NonNull<()>;
+                                            let mut _184: for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error>;
+                                            let _185: for<'a, 'b, 'c> fn(&'a f64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error>;
+                                            scope 108 {
+                                            }
+                                            scope 109 (inlined NonNull::<f64>::from_ref) {
+                                                let mut _186: *const f64;
+                                            }
+                                            scope 110 (inlined NonNull::<f64>::cast::<()>) {
+                                                scope 111 (inlined NonNull::<f64>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                scope 75 (inlined Duration::as_secs_f64) {
+                                    let mut _141: f64;
+                                    let mut _142: u64;
+                                    let mut _143: f64;
+                                    let mut _144: f64;
+                                    let mut _145: u32;
+                                    let mut _146: core::num::niche_types::Nanoseconds;
+                                    scope 76 (inlined core::num::niche_types::Nanoseconds::as_inner) {
+                                    }
+                                }
+                            }
+                            scope 21 (inlined String::as_str) {
+                                let _104: &[u8];
+                                scope 22 (inlined Vec::<u8>::as_slice) {
+                                    let _105: *const [u8];
+                                    let mut _106: *const u8;
+                                    let mut _107: usize;
+                                    scope 23 (inlined Vec::<u8>::as_ptr) {
+                                        scope 24 (inlined alloc::raw_vec::RawVec::<u8>::ptr) {
+                                            scope 25 (inlined alloc::raw_vec::RawVecInner::ptr::<u8>) {
+                                                scope 26 (inlined alloc::raw_vec::RawVecInner::non_null::<u8>) {
+                                                    let mut _108: std::ptr::NonNull<u8>;
+                                                    scope 27 (inlined std::ptr::Unique::<u8>::cast::<u8>) {
+                                                        scope 28 (inlined NonNull::<u8>::cast::<u8>) {
+                                                            scope 29 (inlined NonNull::<u8>::as_ptr) {
+                                                            }
+                                                        }
+                                                    }
+                                                    scope 30 (inlined std::ptr::Unique::<u8>::as_non_null_ptr) {
+                                                    }
+                                                }
+                                                scope 31 (inlined NonNull::<u8>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                scope 32 (inlined from_utf8_unchecked) {
+                                }
+                            }
+                            scope 33 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+                                let _111: &[u8];
+                                let _112: &[u8];
+                                scope 34 (inlined core::str::<impl str>::as_bytes) {
+                                }
+                                scope 35 (inlined core::str::<impl str>::as_bytes) {
+                                }
+                                scope 36 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+                                    scope 37 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                                        let _113: usize;
+                                        let mut _114: bool;
+                                        let mut _115: usize;
+                                        let mut _116: *const u8;
+                                        let mut _117: *const u8;
+                                        scope 38 {
+                                            scope 39 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                                let mut _118: *const [u8];
+                                            }
+                                            scope 40 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                                let mut _119: *const [u8];
+                                            }
+                                            scope 41 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                                                let mut _120: i32;
+                                                scope 42 {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            scope 43 (inlined <Vec<u32> as Deref>::deref) {
+                                scope 44 (inlined Vec::<u32>::as_slice) {
+                                    let _121: *const [u32];
+                                    let mut _122: *const u32;
+                                    let mut _123: usize;
+                                    scope 45 (inlined Vec::<u32>::as_ptr) {
+                                        scope 46 (inlined alloc::raw_vec::RawVec::<u32>::ptr) {
+                                            scope 47 (inlined alloc::raw_vec::RawVecInner::ptr::<u32>) {
+                                                scope 48 (inlined alloc::raw_vec::RawVecInner::non_null::<u32>) {
+                                                    let mut _124: std::ptr::NonNull<u8>;
+                                                    scope 49 (inlined std::ptr::Unique::<u8>::cast::<u32>) {
+                                                        scope 50 (inlined NonNull::<u8>::cast::<u32>) {
+                                                            scope 51 (inlined NonNull::<u8>::as_ptr) {
+                                                            }
+                                                        }
+                                                    }
+                                                    scope 52 (inlined std::ptr::Unique::<u32>::as_non_null_ptr) {
+                                                    }
+                                                }
+                                                scope 53 (inlined NonNull::<u32>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            scope 54 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+                                let _127: &[u8];
+                                let _128: &[u8];
+                                scope 55 (inlined core::str::<impl str>::as_bytes) {
+                                }
+                                scope 56 (inlined core::str::<impl str>::as_bytes) {
+                                }
+                                scope 57 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+                                    scope 58 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                                        let _129: usize;
+                                        let mut _130: bool;
+                                        let mut _131: usize;
+                                        let mut _132: *const u8;
+                                        let mut _133: *const u8;
+                                        scope 59 {
+                                            scope 60 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                                let mut _134: *const [u8];
+                                            }
+                                            scope 61 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                                let mut _135: *const [u8];
+                                            }
+                                            scope 62 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                                                let mut _136: i32;
+                                                scope 63 {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            scope 64 (inlined <Vec<u32> as Deref>::deref) {
+                                scope 65 (inlined Vec::<u32>::as_slice) {
+                                    let _137: *const [u32];
+                                    let mut _138: *const u32;
+                                    let mut _139: usize;
+                                    scope 66 (inlined Vec::<u32>::as_ptr) {
+                                        scope 67 (inlined alloc::raw_vec::RawVec::<u32>::ptr) {
+                                            scope 68 (inlined alloc::raw_vec::RawVecInner::ptr::<u32>) {
+                                                scope 69 (inlined alloc::raw_vec::RawVecInner::non_null::<u32>) {
+                                                    let mut _140: std::ptr::NonNull<u8>;
+                                                    scope 70 (inlined std::ptr::Unique::<u8>::cast::<u32>) {
+                                                        scope 71 (inlined NonNull::<u8>::cast::<u32>) {
+                                                            scope 72 (inlined NonNull::<u8>::as_ptr) {
+                                                            }
+                                                        }
+                                                    }
+                                                    scope 73 (inlined std::ptr::Unique::<u32>::as_non_null_ptr) {
+                                                    }
+                                                }
+                                                scope 74 (inlined NonNull::<u32>::as_ptr) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_1);
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = const "--n";
+        _3 = copy _4;
+        _2 = parse_arg_u64(move _3, const 5000000_u64) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        _1 = move _2 as usize (IntToInt);
+        StorageDead(_2);
+        StorageDead(_4);
+        StorageLive(_5);
+        StorageLive(_6);
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = const "--iters";
+        _7 = copy _8;
+        _6 = parse_arg_u64(move _7, const 100_u64) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_7);
+        _5 = move _6 as u32 (IntToInt);
+        StorageDead(_6);
+        StorageDead(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = const "--seed";
+        _11 = copy _12;
+        _10 = parse_arg_u64(move _11, const 1_u64) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        StorageDead(_11);
+        _9 = move _10 as u32 (IntToInt);
+        StorageDead(_10);
+        StorageDead(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        StorageLive(_15);
+        _15 = const "--variant";
+        _14 = copy _15;
+        StorageLive(_16);
+        StorageLive(_17);
+        _17 = const "b";
+        _16 = copy _17;
+        _13 = parse_arg_string(move _14, move _16) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_16);
+        StorageDead(_14);
+        StorageDead(_17);
+        StorageDead(_15);
+        StorageLive(_18);
+        StorageLive(_19);
+        _19 = copy _1;
+        StorageLive(_20);
+        _20 = copy _9;
+        _18 = make_data(move _19, move _20) -> [return: bb5, unwind: bb23];
+    }
+
+    bb5: {
+        StorageDead(_20);
+        StorageDead(_19);
+        StorageLive(_21);
+        _21 = Instant::now() -> [return: bb6, unwind: bb22];
+    }
+
+    bb6: {
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_104);
+        StorageLive(_105);
+        StorageLive(_106);
+        StorageLive(_108);
+        _108 = copy (((((_13.0: std::vec::Vec<u8>).0: alloc::raw_vec::RawVec<u8>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _106 = copy _108 as *const u8 (Transmute);
+        StorageDead(_108);
+        StorageLive(_107);
+        _107 = copy ((_13.0: std::vec::Vec<u8>).1: usize);
+        _105 = *const [u8] from (copy _106, move _107);
+        StorageDead(_107);
+        StorageDead(_106);
+        _104 = &(*_105);
+        StorageDead(_105);
+        _23 = copy _104 as &str (Transmute);
+        StorageDead(_104);
+        _26 = copy _23;
+        StorageLive(_109);
+        _109 = copy _26;
+        StorageLive(_110);
+        _110 = const "a";
+        StorageLive(_111);
+        StorageLive(_112);
+        StorageLive(_113);
+        StorageLive(_116);
+        StorageLive(_117);
+        _111 = copy _109 as &[u8] (Transmute);
+        _112 = copy _110 as &[u8] (Transmute);
+        _113 = PtrMetadata(copy _111);
+        StorageLive(_114);
+        StorageLive(_115);
+        _115 = PtrMetadata(copy _112);
+        _114 = Eq(copy _113, move _115);
+        switchInt(move _114) -> [0: bb26, otherwise: bb25];
+    }
+
+    bb7: {
+        StorageLive(_31);
+        StorageLive(_32);
+        StorageLive(_121);
+        StorageLive(_122);
+        StorageLive(_124);
+        _124 = copy ((((_18.0: alloc::raw_vec::RawVec<u32>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _122 = copy _124 as *const u32 (Transmute);
+        StorageDead(_124);
+        StorageLive(_123);
+        _123 = copy (_18.1: usize);
+        _121 = *const [u32] from (copy _122, move _123);
+        StorageDead(_123);
+        StorageDead(_122);
+        _32 = &(*_121);
+        StorageDead(_121);
+        _31 = copy _32;
+        StorageLive(_33);
+        _33 = copy _5;
+        _22 = workload_b(move _31, move _33) -> [return: bb11, unwind: bb22];
+    }
+
+    bb8: {
+        _24 = copy _23;
+        StorageLive(_125);
+        _125 = copy _24;
+        StorageLive(_126);
+        _126 = const "A";
+        StorageLive(_127);
+        StorageLive(_128);
+        StorageLive(_129);
+        StorageLive(_132);
+        StorageLive(_133);
+        _127 = copy _125 as &[u8] (Transmute);
+        _128 = copy _126 as &[u8] (Transmute);
+        _129 = PtrMetadata(copy _127);
+        StorageLive(_130);
+        StorageLive(_131);
+        _131 = PtrMetadata(copy _128);
+        _130 = Eq(copy _129, move _131);
+        switchInt(move _130) -> [0: bb30, otherwise: bb29];
+    }
+
+    bb9: {
+        StorageLive(_28);
+        StorageLive(_29);
+        StorageLive(_137);
+        StorageLive(_138);
+        StorageLive(_140);
+        _140 = copy ((((_18.0: alloc::raw_vec::RawVec<u32>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _138 = copy _140 as *const u32 (Transmute);
+        StorageDead(_140);
+        StorageLive(_139);
+        _139 = copy (_18.1: usize);
+        _137 = *const [u32] from (copy _138, move _139);
+        StorageDead(_139);
+        StorageDead(_138);
+        _29 = &(*_137);
+        StorageDead(_137);
+        _28 = copy _29;
+        StorageLive(_30);
+        _30 = copy _5;
+        _22 = workload_a(move _28, move _30) -> [return: bb10, unwind: bb22];
+    }
+
+    bb10: {
+        StorageDead(_30);
+        StorageDead(_28);
+        StorageDead(_29);
+        goto -> bb12;
+    }
+
+    bb11: {
+        StorageDead(_33);
+        StorageDead(_31);
+        StorageDead(_32);
+        goto -> bb12;
+    }
+
+    bb12: {
+        StorageDead(_23);
+        StorageLive(_34);
+        StorageLive(_35);
+        StorageLive(_36);
+        _36 = &_21;
+        _35 = Instant::elapsed(move _36) -> [return: bb13, unwind: bb22];
+    }
+
+    bb13: {
+        StorageDead(_36);
+        StorageLive(_141);
+        StorageLive(_142);
+        _142 = copy (_35.0: u64);
+        _141 = move _142 as f64 (IntToFloat);
+        StorageDead(_142);
+        StorageLive(_143);
+        StorageLive(_144);
+        StorageLive(_145);
+        StorageLive(_146);
+        _146 = copy (_35.1: core::num::niche_types::Nanoseconds);
+        _145 = copy _146 as u32 (Transmute);
+        StorageDead(_146);
+        _144 = move _145 as f64 (IntToFloat);
+        StorageDead(_145);
+        _143 = Div(move _144, const 1.0E+9f64);
+        StorageDead(_144);
+        _34 = Add(move _141, move _143);
+        StorageDead(_143);
+        StorageDead(_141);
+        StorageDead(_35);
+        StorageLive(_38);
+        StorageLive(_189);
+        StorageLive(_39);
+        _39 = &_13;
+        _189 = copy _39;
+        StorageDead(_39);
+        StorageLive(_40);
+        StorageLive(_41);
+        _98 = copy _189;
+        StorageLive(_150);
+        StorageLive(_151);
+        StorageLive(_147);
+        StorageLive(_148);
+        _151 = &raw const (*_98);
+        _148 = copy _151 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_149);
+        _150 = <std::string::String as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a std::string::String, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _149 = copy _150 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _147 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _148, formatter: copy _149, _lifetime: const PhantomData::<&()> };
+        StorageDead(_149);
+        StorageDead(_148);
+        _41 = core::fmt::rt::Argument::<'_> { ty: move _147 };
+        StorageDead(_147);
+        StorageDead(_151);
+        StorageDead(_150);
+        _40 = [move _41];
+        StorageDead(_41);
+        StorageLive(_42);
+        StorageLive(_43);
+        _43 = const b"\tVariant: \xc0\x01\n\x00";
+        _42 = copy _43;
+        StorageLive(_44);
+        StorageLive(_45);
+        _45 = &_40;
+        _44 = copy _45;
+        StorageLive(_152);
+        _152 = copy _42 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_153);
+        _153 = copy _44 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _38 = Arguments::<'_> { template: move _152, args: move _153 };
+        StorageDead(_153);
+        StorageDead(_152);
+        StorageDead(_45);
+        StorageDead(_44);
+        StorageDead(_43);
+        StorageDead(_42);
+        _37 = std::io::_print(move _38) -> [return: bb14, unwind: bb22];
+    }
+
+    bb14: {
+        StorageDead(_38);
+        StorageDead(_40);
+        StorageDead(_189);
+        StorageLive(_47);
+        StorageLive(_190);
+        StorageLive(_48);
+        _48 = &_1;
+        _190 = copy _48;
+        StorageDead(_48);
+        StorageLive(_49);
+        StorageLive(_50);
+        _99 = copy _190;
+        StorageLive(_157);
+        StorageLive(_158);
+        StorageLive(_154);
+        StorageLive(_155);
+        _158 = &raw const (*_99);
+        _155 = copy _158 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_156);
+        _157 = <usize as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a usize, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _156 = copy _157 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _154 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _155, formatter: copy _156, _lifetime: const PhantomData::<&()> };
+        StorageDead(_156);
+        StorageDead(_155);
+        _50 = core::fmt::rt::Argument::<'_> { ty: move _154 };
+        StorageDead(_154);
+        StorageDead(_158);
+        StorageDead(_157);
+        _49 = [move _50];
+        StorageDead(_50);
+        StorageLive(_51);
+        StorageLive(_52);
+        _52 = const b"\x03N: \xc0\x01\n\x00";
+        _51 = copy _52;
+        StorageLive(_53);
+        StorageLive(_54);
+        _54 = &_49;
+        _53 = copy _54;
+        StorageLive(_159);
+        _159 = copy _51 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_160);
+        _160 = copy _53 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _47 = Arguments::<'_> { template: move _159, args: move _160 };
+        StorageDead(_160);
+        StorageDead(_159);
+        StorageDead(_54);
+        StorageDead(_53);
+        StorageDead(_52);
+        StorageDead(_51);
+        _46 = std::io::_print(move _47) -> [return: bb15, unwind: bb22];
+    }
+
+    bb15: {
+        StorageDead(_47);
+        StorageDead(_49);
+        StorageDead(_190);
+        StorageLive(_56);
+        StorageLive(_191);
+        StorageLive(_57);
+        _57 = &_5;
+        _191 = copy _57;
+        StorageDead(_57);
+        StorageLive(_58);
+        StorageLive(_59);
+        _100 = copy _191;
+        StorageLive(_164);
+        StorageLive(_165);
+        StorageLive(_161);
+        StorageLive(_162);
+        _165 = &raw const (*_100);
+        _162 = copy _165 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_163);
+        _164 = <u32 as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a u32, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _163 = copy _164 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _161 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _162, formatter: copy _163, _lifetime: const PhantomData::<&()> };
+        StorageDead(_163);
+        StorageDead(_162);
+        _59 = core::fmt::rt::Argument::<'_> { ty: move _161 };
+        StorageDead(_161);
+        StorageDead(_165);
+        StorageDead(_164);
+        _58 = [move _59];
+        StorageDead(_59);
+        StorageLive(_60);
+        StorageLive(_61);
+        _61 = const b"\x07Iters: \xc0\x01\n\x00";
+        _60 = copy _61;
+        StorageLive(_62);
+        StorageLive(_63);
+        _63 = &_58;
+        _62 = copy _63;
+        StorageLive(_166);
+        _166 = copy _60 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_167);
+        _167 = copy _62 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _56 = Arguments::<'_> { template: move _166, args: move _167 };
+        StorageDead(_167);
+        StorageDead(_166);
+        StorageDead(_63);
+        StorageDead(_62);
+        StorageDead(_61);
+        StorageDead(_60);
+        _55 = std::io::_print(move _56) -> [return: bb16, unwind: bb22];
+    }
+
+    bb16: {
+        StorageDead(_56);
+        StorageDead(_58);
+        StorageDead(_191);
+        StorageLive(_65);
+        StorageLive(_192);
+        StorageLive(_66);
+        _66 = &_22;
+        _192 = copy _66;
+        StorageDead(_66);
+        StorageLive(_67);
+        StorageLive(_68);
+        _101 = copy _192;
+        StorageLive(_171);
+        StorageLive(_172);
+        StorageLive(_168);
+        StorageLive(_169);
+        _172 = &raw const (*_101);
+        _169 = copy _172 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_170);
+        _171 = <u64 as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a u64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _170 = copy _171 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _168 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _169, formatter: copy _170, _lifetime: const PhantomData::<&()> };
+        StorageDead(_170);
+        StorageDead(_169);
+        _68 = core::fmt::rt::Argument::<'_> { ty: move _168 };
+        StorageDead(_168);
+        StorageDead(_172);
+        StorageDead(_171);
+        _67 = [move _68];
+        StorageDead(_68);
+        StorageLive(_69);
+        StorageLive(_70);
+        _70 = const b"\x05Sum: \xc0\x01\n\x00";
+        _69 = copy _70;
+        StorageLive(_71);
+        StorageLive(_72);
+        _72 = &_67;
+        _71 = copy _72;
+        StorageLive(_173);
+        _173 = copy _69 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_174);
+        _174 = copy _71 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _65 = Arguments::<'_> { template: move _173, args: move _174 };
+        StorageDead(_174);
+        StorageDead(_173);
+        StorageDead(_72);
+        StorageDead(_71);
+        StorageDead(_70);
+        StorageDead(_69);
+        _64 = std::io::_print(move _65) -> [return: bb17, unwind: bb22];
+    }
+
+    bb17: {
+        StorageDead(_65);
+        StorageDead(_67);
+        StorageDead(_192);
+        StorageLive(_74);
+        StorageLive(_193);
+        StorageLive(_75);
+        _75 = &_34;
+        _193 = copy _75;
+        StorageDead(_75);
+        StorageLive(_76);
+        StorageLive(_77);
+        _102 = copy _193;
+        StorageLive(_178);
+        StorageLive(_179);
+        StorageLive(_175);
+        StorageLive(_176);
+        _179 = &raw const (*_102);
+        _176 = copy _179 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_177);
+        _178 = <f64 as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a f64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _177 = copy _178 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _175 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _176, formatter: copy _177, _lifetime: const PhantomData::<&()> };
+        StorageDead(_177);
+        StorageDead(_176);
+        _77 = core::fmt::rt::Argument::<'_> { ty: move _175 };
+        StorageDead(_175);
+        StorageDead(_179);
+        StorageDead(_178);
+        _76 = [move _77];
+        StorageDead(_77);
+        StorageLive(_78);
+        StorageLive(_79);
+        _79 = const b"\x0cTotal Time: \xc5 \x00\x00p\x06\x00\x03 s\n\x00";
+        _78 = copy _79;
+        StorageLive(_80);
+        StorageLive(_81);
+        _81 = &_76;
+        _80 = copy _81;
+        StorageLive(_180);
+        _180 = copy _78 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_181);
+        _181 = copy _80 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _74 = Arguments::<'_> { template: move _180, args: move _181 };
+        StorageDead(_181);
+        StorageDead(_180);
+        StorageDead(_81);
+        StorageDead(_80);
+        StorageDead(_79);
+        StorageDead(_78);
+        _73 = std::io::_print(move _74) -> [return: bb18, unwind: bb22];
+    }
+
+    bb18: {
+        StorageDead(_74);
+        StorageDead(_76);
+        StorageDead(_193);
+        StorageLive(_83);
+        StorageLive(_194);
+        StorageLive(_84);
+        StorageLive(_85);
+        StorageLive(_86);
+        StorageLive(_87);
+        StorageLive(_88);
+        _88 = copy _1;
+        _87 = move _88 as f64 (IntToFloat);
+        StorageDead(_88);
+        StorageLive(_89);
+        StorageLive(_90);
+        _90 = copy _5;
+        _89 = move _90 as f64 (IntToFloat);
+        StorageDead(_90);
+        _86 = Mul(move _87, move _89);
+        StorageDead(_89);
+        StorageDead(_87);
+        StorageLive(_91);
+        _91 = copy _34;
+        _85 = Div(move _86, move _91);
+        StorageDead(_91);
+        StorageDead(_86);
+        _84 = &_85;
+        _194 = copy _84;
+        StorageDead(_84);
+        StorageLive(_92);
+        StorageLive(_93);
+        _103 = copy _194;
+        StorageLive(_185);
+        StorageLive(_186);
+        StorageLive(_182);
+        StorageLive(_183);
+        _186 = &raw const (*_103);
+        _183 = copy _186 as std::ptr::NonNull<()> (Transmute);
+        StorageLive(_184);
+        _185 = <f64 as std::fmt::Display>::fmt as for<'a, 'b, 'c> fn(&'a f64, &'b mut std::fmt::Formatter<'c>) -> std::result::Result<(), std::fmt::Error> (PointerCoercion(ReifyFnPointer(Safe), Implicit));
+        _184 = copy _185 as for<'a, 'b> unsafe fn(std::ptr::NonNull<()>, &'a mut std::fmt::Formatter<'b>) -> std::result::Result<(), std::fmt::Error> (Transmute);
+        _182 = core::fmt::rt::ArgumentType::<'_>::Placeholder { value: move _183, formatter: copy _184, _lifetime: const PhantomData::<&()> };
+        StorageDead(_184);
+        StorageDead(_183);
+        _93 = core::fmt::rt::Argument::<'_> { ty: move _182 };
+        StorageDead(_182);
+        StorageDead(_186);
+        StorageDead(_185);
+        _92 = [move _93];
+        StorageDead(_93);
+        StorageLive(_94);
+        StorageLive(_95);
+        _95 = const b"\x0cThroughput: \xc5 \x00\x00p\x02\x00\t iters/s\n\x00";
+        _94 = copy _95;
+        StorageLive(_96);
+        StorageLive(_97);
+        _97 = &_92;
+        _96 = copy _97;
+        StorageLive(_187);
+        _187 = copy _94 as std::ptr::NonNull<u8> (Transmute);
+        StorageLive(_188);
+        _188 = copy _96 as std::ptr::NonNull<core::fmt::rt::Argument<'_>> (Transmute);
+        _83 = Arguments::<'_> { template: move _187, args: move _188 };
+        StorageDead(_188);
+        StorageDead(_187);
+        StorageDead(_97);
+        StorageDead(_96);
+        StorageDead(_95);
+        StorageDead(_94);
+        _82 = std::io::_print(move _83) -> [return: bb19, unwind: bb22];
+    }
+
+    bb19: {
+        StorageDead(_83);
+        StorageDead(_92);
+        StorageDead(_85);
+        StorageDead(_194);
+        StorageDead(_34);
+        StorageDead(_22);
+        StorageDead(_21);
+        drop(_18) -> [return: bb20, unwind: bb23];
+    }
+
+    bb20: {
+        StorageDead(_18);
+        drop(_13) -> [return: bb21, unwind: bb24];
+    }
+
+    bb21: {
+        StorageDead(_13);
+        StorageDead(_9);
+        StorageDead(_5);
+        StorageDead(_1);
+        return;
+    }
+
+    bb22 (cleanup): {
+        drop(_18) -> [return: bb23, unwind terminate(cleanup)];
+    }
+
+    bb23 (cleanup): {
+        drop(_13) -> [return: bb24, unwind terminate(cleanup)];
+    }
+
+    bb24 (cleanup): {
+        resume;
+    }
+
+    bb25: {
+        StorageDead(_115);
+        StorageLive(_118);
+        _118 = &raw const (*_111);
+        _116 = copy _118 as *const u8 (PtrToPtr);
+        StorageDead(_118);
+        StorageLive(_119);
+        _119 = &raw const (*_112);
+        _117 = copy _119 as *const u8 (PtrToPtr);
+        StorageDead(_119);
+        StorageLive(_120);
+        _120 = compare_bytes(move _116, move _117, move _113) -> [return: bb28, unwind unreachable];
+    }
+
+    bb26: {
+        StorageDead(_115);
+        _27 = const false;
+        goto -> bb27;
+    }
+
+    bb27: {
+        StorageDead(_114);
+        StorageDead(_117);
+        StorageDead(_116);
+        StorageDead(_113);
+        StorageDead(_112);
+        StorageDead(_111);
+        StorageDead(_110);
+        StorageDead(_109);
+        switchInt(move _27) -> [0: bb8, otherwise: bb9];
+    }
+
+    bb28: {
+        _27 = Eq(move _120, const 0_i32);
+        StorageDead(_120);
+        goto -> bb27;
+    }
+
+    bb29: {
+        StorageDead(_131);
+        StorageLive(_134);
+        _134 = &raw const (*_127);
+        _132 = copy _134 as *const u8 (PtrToPtr);
+        StorageDead(_134);
+        StorageLive(_135);
+        _135 = &raw const (*_128);
+        _133 = copy _135 as *const u8 (PtrToPtr);
+        StorageDead(_135);
+        StorageLive(_136);
+        _136 = compare_bytes(move _132, move _133, move _129) -> [return: bb32, unwind unreachable];
+    }
+
+    bb30: {
+        StorageDead(_131);
+        _25 = const false;
+        goto -> bb31;
+    }
+
+    bb31: {
+        StorageDead(_130);
+        StorageDead(_133);
+        StorageDead(_132);
+        StorageDead(_129);
+        StorageDead(_128);
+        StorageDead(_127);
+        StorageDead(_126);
+        StorageDead(_125);
+        switchInt(move _25) -> [0: bb7, otherwise: bb9];
+    }
+
+    bb32: {
+        _25 = Eq(move _136, const 0_i32);
+        StorageDead(_136);
+        goto -> bb31;
+    }
+}
+
+alloc14 (size: 31, align: 1) { .. }
+
+alloc13 (size: 25, align: 1) { .. }
+
+alloc12 (size: 10, align: 1) { .. }
+
+alloc11 (size: 12, align: 1) { .. }
+
+alloc10 (size: 8, align: 1) { .. }
+
+alloc9 (size: 14, align: 1) { .. }
+
+alloc8 (size: 1, align: 1) { .. }
+
+alloc7 (size: 9, align: 1) { .. }
+
+alloc6 (size: 6, align: 1) { .. }
+
+alloc5 (size: 7, align: 1) { .. }
+
+alloc4 (size: 3, align: 1) { .. }

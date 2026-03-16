@@ -1,0 +1,94 @@
+// MIR for `postprocess` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=4], bb1[0..=1], bb2[0..=6], bb3[0..=6], bb4[0..=13], bb5[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=4], bb1[0..=1], bb2[0..=6], bb3[0..=6], bb4[0..=13], bb5[0], '?1}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=4], bb1[0..=1], bb2[0..=6], bb3[0..=6], bb4[0..=13], bb5[0]}
+| '?1 live at {bb0[0..=4], bb1[0..=1], bb2[0..=6], bb3[0..=6], bb4[0..=13], bb5[0]}
+|
+fn postprocess(_1: u32) -> u32 {
+    debug t => _1;                       // in scope 0 at src/main.rs:22:16: 22:21
+    let mut _0: u32;                     // return place in scope 0 at src/main.rs:22:31: 22:34
+    let mut _2: u32;                     // in scope 0 at src/main.rs:23:9: 23:57
+    let mut _3: u32;                     // in scope 0 at src/main.rs:23:9: 23:32
+    let mut _4: u32;                     // in scope 0 at src/main.rs:23:9: 23:10
+    let mut _5: u32;                     // in scope 0 at src/main.rs:24:10: 24:26
+    let mut _6: u32;                     // in scope 0 at src/main.rs:24:10: 24:11
+    let mut _7: u32;                     // in scope 0 at src/main.rs:25:9: 25:35
+    let mut _8: u32;                     // in scope 0 at src/main.rs:25:9: 25:10
+    let mut _9: u32;                     // in scope 0 at src/main.rs:26:5: 26:6
+    let mut _10: u32;                    // in scope 0 at src/main.rs:26:9: 26:18
+    let mut _11: u32;                    // in scope 0 at src/main.rs:26:10: 26:11
+
+    bb0: {
+        StorageLive(_2);                 // scope 0 at src/main.rs:23:9: 23:57
+        StorageLive(_3);                 // scope 0 at src/main.rs:23:9: 23:32
+        StorageLive(_4);                 // scope 0 at src/main.rs:23:9: 23:10
+        _4 = copy _1;                    // scope 0 at src/main.rs:23:9: 23:10
+        _3 = core::num::<impl u32>::wrapping_mul(move _4, const 1664525_u32) -> [return: bb1, unwind: bb5]; // scope 0 at src/main.rs:23:9: 23:32
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:23:11: 23:23
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb1: {
+        StorageDead(_4);                 // scope 0 at src/main.rs:23:31: 23:32
+        _2 = core::num::<impl u32>::wrapping_add(move _3, const 1013904223_u32) -> [return: bb2, unwind: bb5]; // scope 0 at src/main.rs:23:9: 23:57
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:23:33: 23:45
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_add}, val: Value(core::num::<impl u32>::wrapping_add) }
+    }
+
+    bb2: {
+        StorageDead(_3);                 // scope 0 at src/main.rs:23:56: 23:57
+        _1 = move _2;                    // scope 0 at src/main.rs:23:5: 23:57
+        StorageDead(_2);                 // scope 0 at src/main.rs:23:56: 23:57
+        StorageLive(_5);                 // scope 0 at src/main.rs:24:10: 24:26
+        StorageLive(_6);                 // scope 0 at src/main.rs:24:10: 24:11
+        _6 = copy _1;                    // scope 0 at src/main.rs:24:10: 24:11
+        _5 = core::num::<impl u32>::rotate_left(move _6, const 7_u32) -> [return: bb3, unwind: bb5]; // scope 0 at src/main.rs:24:10: 24:26
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:24:12: 24:23
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::rotate_left}, val: Value(core::num::<impl u32>::rotate_left) }
+    }
+
+    bb3: {
+        StorageDead(_6);                 // scope 0 at src/main.rs:24:25: 24:26
+        _1 = BitXor(copy _1, move _5);   // scope 0 at src/main.rs:24:5: 24:26
+        StorageDead(_5);                 // scope 0 at src/main.rs:24:25: 24:26
+        StorageLive(_7);                 // scope 0 at src/main.rs:25:9: 25:35
+        StorageLive(_8);                 // scope 0 at src/main.rs:25:9: 25:10
+        _8 = copy _1;                    // scope 0 at src/main.rs:25:9: 25:10
+        _7 = core::num::<impl u32>::wrapping_mul(move _8, const 2246822519_u32) -> [return: bb4, unwind: bb5]; // scope 0 at src/main.rs:25:9: 25:35
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:25:11: 25:23
+                                         // + const_: Const { ty: fn(u32, u32) -> u32 {core::num::<impl u32>::wrapping_mul}, val: Value(core::num::<impl u32>::wrapping_mul) }
+    }
+
+    bb4: {
+        StorageDead(_8);                 // scope 0 at src/main.rs:25:34: 25:35
+        _1 = move _7;                    // scope 0 at src/main.rs:25:5: 25:35
+        StorageDead(_7);                 // scope 0 at src/main.rs:25:34: 25:35
+        StorageLive(_9);                 // scope 0 at src/main.rs:26:5: 26:6
+        _9 = copy _1;                    // scope 0 at src/main.rs:26:5: 26:6
+        StorageLive(_10);                // scope 0 at src/main.rs:26:9: 26:18
+        StorageLive(_11);                // scope 0 at src/main.rs:26:10: 26:11
+        _11 = copy _1;                   // scope 0 at src/main.rs:26:10: 26:11
+        _10 = Shr(move _11, const 16_i32); // scope 0 at src/main.rs:26:9: 26:18
+        StorageDead(_11);                // scope 0 at src/main.rs:26:17: 26:18
+        _0 = BitXor(move _9, move _10);  // scope 0 at src/main.rs:26:5: 26:18
+        StorageDead(_10);                // scope 0 at src/main.rs:26:17: 26:18
+        StorageDead(_9);                 // scope 0 at src/main.rs:26:17: 26:18
+        return;                          // scope 0 at src/main.rs:27:2: 27:2
+    }
+
+    bb5 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:22:1: 27:2
+    }
+}

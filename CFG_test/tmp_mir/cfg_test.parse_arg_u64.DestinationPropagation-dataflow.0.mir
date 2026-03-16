@@ -1,0 +1,1144 @@
+// MIR for `parse_arg_u64` 0 DestinationPropagation-dataflow
+
+fn parse_arg_u64(_1: &str, _2: u64) -> u64 {
+    debug flag => _1;
+    debug default => _2;
+    let mut _0: u64;
+    let mut _3: std::iter::Skip<std::env::Args>;
+    let mut _4: std::env::Args;
+    let mut _5: std::option::Option<std::string::String>;
+    let mut _6: isize;
+    let mut _8: bool;
+    let mut _9: std::option::Option<std::string::String>;
+    let mut _10: isize;
+    let mut _12: std::result::Result<u64, std::num::ParseIntError>;
+    let _13: &str;
+    scope 1 {
+        debug args => _3;
+        scope 2 {
+            debug a => _7;
+            let _7: std::string::String;
+            scope 3 {
+                debug v => _11;
+                let _11: std::string::String;
+                scope 55 (inlined <Skip<Args> as Iterator>::next) {
+                    let mut _47: bool;
+                    let mut _48: usize;
+                    let mut _49: &mut std::env::Args;
+                    let mut _50: usize;
+                    let mut _51: &mut std::env::Args;
+                    scope 56 (inlined std::intrinsics::unlikely) {
+                        let _52: ();
+                    }
+                    scope 57 (inlined std::mem::take::<usize>) {
+                        scope 58 (inlined std::mem::replace::<usize>) {
+                            scope 59 {
+                            }
+                        }
+                        scope 60 (inlined <usize as Default>::default) {
+                        }
+                    }
+                    scope 61 (inlined <Args as Iterator>::nth) {
+                        let mut _53: std::result::Result<(), std::num::NonZero<usize>>;
+                        let mut _54: std::option::Option<std::convert::Infallible>;
+                        scope 62 {
+                            scope 63 {
+                                scope 70 (inlined <Option<String> as FromResidual<Option<Infallible>>>::from_residual) {
+                                    let mut _56: isize;
+                                    let mut _57: bool;
+                                }
+                            }
+                        }
+                        scope 64 {
+                            scope 65 {
+                            }
+                        }
+                        scope 66 (inlined Result::<(), NonZero<usize>>::ok) {
+                            let mut _55: isize;
+                            scope 67 {
+                            }
+                        }
+                        scope 68 (inlined <Option<()> as Try>::branch) {
+                            scope 69 {
+                            }
+                        }
+                        scope 71 (inlined <Args as Iterator>::advance_by) {
+                            scope 72 (inlined <Args as advance_by::SpecAdvanceBy>::spec_advance_by) {
+                                let _58: std::num::NonZero<usize>;
+                                let mut _59: std::option::Option<std::num::NonZero<usize>>;
+                                let mut _60: isize;
+                                let mut _62: isize;
+                                scope 73 {
+                                    let _61: std::option::Option<std::num::NonZero<usize>>;
+                                    scope 74 {
+                                        let _63: std::num::NonZero<usize>;
+                                        scope 75 {
+                                        }
+                                    }
+                                }
+                                scope 76 (inlined NonZero::<usize>::new) {
+                                }
+                            }
+                        }
+                    }
+                }
+                scope 77 (inlined <String as Deref>::deref) {
+                    scope 78 (inlined String::as_str) {
+                        let _64: &[u8];
+                        scope 79 (inlined Vec::<u8>::as_slice) {
+                            let _65: *const [u8];
+                            let mut _66: *const u8;
+                            let mut _67: usize;
+                            scope 80 (inlined Vec::<u8>::as_ptr) {
+                                scope 81 (inlined alloc::raw_vec::RawVec::<u8>::ptr) {
+                                    scope 82 (inlined alloc::raw_vec::RawVecInner::ptr::<u8>) {
+                                        scope 83 (inlined alloc::raw_vec::RawVecInner::non_null::<u8>) {
+                                            let mut _68: std::ptr::NonNull<u8>;
+                                            scope 84 (inlined std::ptr::Unique::<u8>::cast::<u8>) {
+                                                scope 85 (inlined NonNull::<u8>::cast::<u8>) {
+                                                    scope 86 (inlined NonNull::<u8>::as_ptr) {
+                                                    }
+                                                }
+                                            }
+                                            scope 87 (inlined std::ptr::Unique::<u8>::as_non_null_ptr) {
+                                            }
+                                        }
+                                        scope 88 (inlined NonNull::<u8>::as_ptr) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 89 (inlined from_utf8_unchecked) {
+                        }
+                    }
+                }
+                scope 90 (inlined core::str::<impl str>::parse::<u64>) {
+                    scope 91 (inlined core::num::<impl FromStr for u64>::from_str) {
+                        scope 92 (inlined core::num::<impl u64>::from_str_radix) {
+                            let _69: &[u8];
+                            scope 93 (inlined core::str::<impl str>::as_bytes) {
+                            }
+                        }
+                    }
+                }
+                scope 94 (inlined Result::<u64, ParseIntError>::unwrap_or) {
+                    let mut _70: isize;
+                    scope 95 {
+                    }
+                }
+            }
+            scope 6 (inlined <Skip<Args> as Iterator>::next) {
+                let mut _14: bool;
+                let mut _15: usize;
+                let mut _16: &mut std::env::Args;
+                let mut _17: usize;
+                let mut _18: &mut std::env::Args;
+                scope 7 (inlined std::intrinsics::unlikely) {
+                    let _19: ();
+                }
+                scope 8 (inlined std::mem::take::<usize>) {
+                    scope 9 (inlined std::mem::replace::<usize>) {
+                        scope 10 {
+                        }
+                    }
+                    scope 11 (inlined <usize as Default>::default) {
+                    }
+                }
+                scope 12 (inlined <Args as Iterator>::nth) {
+                    let mut _20: std::result::Result<(), std::num::NonZero<usize>>;
+                    let mut _21: std::option::Option<std::convert::Infallible>;
+                    scope 13 {
+                        scope 14 {
+                            scope 21 (inlined <Option<String> as FromResidual<Option<Infallible>>>::from_residual) {
+                                let mut _23: isize;
+                                let mut _24: bool;
+                            }
+                        }
+                    }
+                    scope 15 {
+                        scope 16 {
+                        }
+                    }
+                    scope 17 (inlined Result::<(), NonZero<usize>>::ok) {
+                        let mut _22: isize;
+                        scope 18 {
+                        }
+                    }
+                    scope 19 (inlined <Option<()> as Try>::branch) {
+                        scope 20 {
+                        }
+                    }
+                    scope 22 (inlined <Args as Iterator>::advance_by) {
+                        scope 23 (inlined <Args as advance_by::SpecAdvanceBy>::spec_advance_by) {
+                            let _25: std::num::NonZero<usize>;
+                            let mut _26: std::option::Option<std::num::NonZero<usize>>;
+                            let mut _27: isize;
+                            let mut _29: isize;
+                            scope 24 {
+                                let _28: std::option::Option<std::num::NonZero<usize>>;
+                                scope 25 {
+                                    let _30: std::num::NonZero<usize>;
+                                    scope 26 {
+                                    }
+                                }
+                            }
+                            scope 27 (inlined NonZero::<usize>::new) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 28 (inlined <String as PartialEq<&str>>::eq) {
+                scope 29 (inlined #[track_caller] <String as Index<RangeFull>>::index) {
+                    let _31: &str;
+                    scope 30 (inlined String::as_str) {
+                        let _32: &[u8];
+                        scope 31 (inlined Vec::<u8>::as_slice) {
+                            let _33: *const [u8];
+                            let mut _34: *const u8;
+                            let mut _35: usize;
+                            scope 32 (inlined Vec::<u8>::as_ptr) {
+                                scope 33 (inlined alloc::raw_vec::RawVec::<u8>::ptr) {
+                                    scope 34 (inlined alloc::raw_vec::RawVecInner::ptr::<u8>) {
+                                        scope 35 (inlined alloc::raw_vec::RawVecInner::non_null::<u8>) {
+                                            let mut _36: std::ptr::NonNull<u8>;
+                                            scope 36 (inlined std::ptr::Unique::<u8>::cast::<u8>) {
+                                                scope 37 (inlined NonNull::<u8>::cast::<u8>) {
+                                                    scope 38 (inlined NonNull::<u8>::as_ptr) {
+                                                    }
+                                                }
+                                            }
+                                            scope 39 (inlined std::ptr::Unique::<u8>::as_non_null_ptr) {
+                                            }
+                                        }
+                                        scope 40 (inlined NonNull::<u8>::as_ptr) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 41 (inlined from_utf8_unchecked) {
+                        }
+                    }
+                    scope 42 (inlined #[track_caller] core::str::traits::<impl SliceIndex<str> for RangeFull>::index) {
+                    }
+                }
+                scope 43 (inlined #[track_caller] core::str::traits::<impl Index<RangeFull> for str>::index) {
+                    scope 44 (inlined #[track_caller] core::str::traits::<impl SliceIndex<str> for RangeFull>::index) {
+                    }
+                }
+                scope 45 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+                    let _37: &[u8];
+                    let _38: &[u8];
+                    scope 46 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                    scope 47 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                    scope 48 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+                        scope 49 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                            let _39: usize;
+                            let mut _40: bool;
+                            let mut _41: usize;
+                            let mut _42: *const u8;
+                            let mut _43: *const u8;
+                            scope 50 {
+                                scope 51 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                    let mut _44: *const [u8];
+                                }
+                                scope 52 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                    let mut _45: *const [u8];
+                                }
+                                scope 53 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                                    let mut _46: i32;
+                                    scope 54 {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 4 (inlined <Args as Iterator>::skip) {
+        scope 5 (inlined Skip::<Args>::new) {
+        }
+    }
+
+    bb0: {
+        // before: TwoStepIndex(481) => [_2]
+        StorageLive(_3);
+        // after: TwoStepIndex(480) => [_2]
+        // before: TwoStepIndex(479) => [_2]
+        StorageLive(_4);
+        // after: TwoStepIndex(478) => [_2]
+        // before: TwoStepIndex(477) => [_2]
+        _4 = args() -> [return: bb1, unwind continue];
+        // after: TwoStepIndex(476) => [_2]
+    }
+
+    bb1: {
+        // before: TwoStepIndex(475) => [_2]
+        _3 = Skip::<Args> { iter: copy _4, n: const 1_usize };
+        // after: TwoStepIndex(474) => [_2]
+        // before: TwoStepIndex(473) => [_2]
+        StorageDead(_4);
+        // after: TwoStepIndex(472) => [_2]
+        // before: TwoStepIndex(471) => [_2]
+        goto -> bb2;
+        // after: TwoStepIndex(470) => [_2]
+    }
+
+    bb2: {
+        // before: TwoStepIndex(469) => [_2]
+        StorageLive(_5);
+        // after: TwoStepIndex(468) => [_2]
+        // before: TwoStepIndex(467) => [_2]
+        StorageLive(_14);
+        // after: TwoStepIndex(466) => [_2]
+        // before: TwoStepIndex(465) => [_2]
+        StorageLive(_15);
+        // after: TwoStepIndex(464) => [_2]
+        // before: TwoStepIndex(463) => [_2]
+        _15 = copy (_3.1: usize);
+        // after: TwoStepIndex(462) => [_2]
+        // before: TwoStepIndex(461) => [_2]
+        _14 = Gt(move _15, const 0_usize);
+        // after: TwoStepIndex(460) => [_2]
+        // before: TwoStepIndex(459) => [_2]
+        StorageDead(_15);
+        // after: TwoStepIndex(458) => [_2]
+        // before: TwoStepIndex(457) => [_2]
+        switchInt(copy _14) -> [0: bb23, otherwise: bb21];
+        // after: TwoStepIndex(456) => [_2]
+    }
+
+    bb3: {
+        // before: TwoStepIndex(455) => [_2]
+        StorageLive(_7);
+        // after: TwoStepIndex(454) => [_2]
+        // before: TwoStepIndex(453) => [_2]
+        _7 = move ((_5 as Some).0: std::string::String);
+        // after: TwoStepIndex(452) => [_2]
+        // before: TwoStepIndex(451) => [_2]
+        StorageLive(_8);
+        // after: TwoStepIndex(450) => [_2]
+        // before: TwoStepIndex(449) => [_2]
+        StorageLive(_31);
+        // after: TwoStepIndex(448) => [_2]
+        // before: TwoStepIndex(447) => [_2]
+        StorageLive(_32);
+        // after: TwoStepIndex(446) => [_2]
+        // before: TwoStepIndex(445) => [_2]
+        StorageLive(_33);
+        // after: TwoStepIndex(444) => [_2]
+        // before: TwoStepIndex(443) => [_2]
+        StorageLive(_34);
+        // after: TwoStepIndex(442) => [_2]
+        // before: TwoStepIndex(441) => [_2]
+        StorageLive(_36);
+        // after: TwoStepIndex(440) => [_2]
+        // before: TwoStepIndex(439) => [_2]
+        _36 = copy (((((_7.0: std::vec::Vec<u8>).0: alloc::raw_vec::RawVec<u8>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        // after: TwoStepIndex(438) => [_2]
+        // before: TwoStepIndex(437) => [_2]
+        _34 = copy _36 as *const u8 (Transmute);
+        // after: TwoStepIndex(436) => [_2]
+        // before: TwoStepIndex(435) => [_2]
+        StorageDead(_36);
+        // after: TwoStepIndex(434) => [_2]
+        // before: TwoStepIndex(433) => [_2]
+        StorageLive(_35);
+        // after: TwoStepIndex(432) => [_2]
+        // before: TwoStepIndex(431) => [_2]
+        _35 = copy ((_7.0: std::vec::Vec<u8>).1: usize);
+        // after: TwoStepIndex(430) => [_2]
+        // before: TwoStepIndex(429) => [_2]
+        _33 = *const [u8] from (copy _34, move _35);
+        // after: TwoStepIndex(428) => [_2]
+        // before: TwoStepIndex(427) => [_2]
+        StorageDead(_35);
+        // after: TwoStepIndex(426) => [_2]
+        // before: TwoStepIndex(425) => [_2]
+        StorageDead(_34);
+        // after: TwoStepIndex(424) => [_2]
+        // before: TwoStepIndex(423) => [_2]
+        _32 = &(*_33);
+        // after: TwoStepIndex(422) => [_2]
+        // before: TwoStepIndex(421) => [_2]
+        StorageDead(_33);
+        // after: TwoStepIndex(420) => [_2]
+        // before: TwoStepIndex(419) => [_2]
+        _31 = copy _32 as &str (Transmute);
+        // after: TwoStepIndex(418) => [_2]
+        // before: TwoStepIndex(417) => [_2]
+        StorageDead(_32);
+        // after: TwoStepIndex(416) => [_2]
+        // before: TwoStepIndex(415) => [_2]
+        StorageLive(_37);
+        // after: TwoStepIndex(414) => [_2]
+        // before: TwoStepIndex(413) => [_2]
+        StorageLive(_38);
+        // after: TwoStepIndex(412) => [_2]
+        // before: TwoStepIndex(411) => [_2]
+        StorageLive(_39);
+        // after: TwoStepIndex(410) => [_2]
+        // before: TwoStepIndex(409) => [_2]
+        StorageLive(_42);
+        // after: TwoStepIndex(408) => [_2]
+        // before: TwoStepIndex(407) => [_2]
+        StorageLive(_43);
+        // after: TwoStepIndex(406) => [_2]
+        // before: TwoStepIndex(405) => [_2]
+        _37 = copy _31 as &[u8] (Transmute);
+        // after: TwoStepIndex(404) => [_2]
+        // before: TwoStepIndex(403) => [_2]
+        _38 = copy _1 as &[u8] (Transmute);
+        // after: TwoStepIndex(402) => [_2]
+        // before: TwoStepIndex(401) => [_2]
+        _39 = PtrMetadata(copy _37);
+        // after: TwoStepIndex(400) => [_2]
+        // before: TwoStepIndex(399) => [_2]
+        StorageLive(_40);
+        // after: TwoStepIndex(398) => [_2]
+        // before: TwoStepIndex(397) => [_2]
+        StorageLive(_41);
+        // after: TwoStepIndex(396) => [_2]
+        // before: TwoStepIndex(395) => [_2]
+        _41 = PtrMetadata(copy _38);
+        // after: TwoStepIndex(394) => [_2]
+        // before: TwoStepIndex(393) => [_2]
+        _40 = Eq(copy _39, move _41);
+        // after: TwoStepIndex(392) => [_2]
+        // before: TwoStepIndex(391) => [_2]
+        switchInt(move _40) -> [0: bb32, otherwise: bb31];
+        // after: TwoStepIndex(390) => [_2]
+    }
+
+    bb4: {
+        // before: TwoStepIndex(389) => [_2]
+        StorageLive(_9);
+        // after: TwoStepIndex(388) => [_2]
+        // before: TwoStepIndex(387) => [_2]
+        StorageLive(_47);
+        // after: TwoStepIndex(386) => [_2]
+        // before: TwoStepIndex(385) => [_2]
+        StorageLive(_48);
+        // after: TwoStepIndex(384) => [_2]
+        // before: TwoStepIndex(383) => [_2]
+        _48 = copy (_3.1: usize);
+        // after: TwoStepIndex(382) => [_2]
+        // before: TwoStepIndex(381) => [_2]
+        _47 = Gt(move _48, const 0_usize);
+        // after: TwoStepIndex(380) => [_2]
+        // before: TwoStepIndex(379) => [_2]
+        StorageDead(_48);
+        // after: TwoStepIndex(378) => [_2]
+        // before: TwoStepIndex(377) => [_2]
+        switchInt(copy _47) -> [0: bb38, otherwise: bb36];
+        // after: TwoStepIndex(376) => [_2]
+    }
+
+    bb5: {
+        // before: TwoStepIndex(375) => [_2]
+        StorageLive(_11);
+        // after: TwoStepIndex(374) => [_2]
+        // before: TwoStepIndex(373) => [_2]
+        _11 = move ((_9 as Some).0: std::string::String);
+        // after: TwoStepIndex(372) => [_2]
+        // before: TwoStepIndex(371) => [_2]
+        StorageLive(_12);
+        // after: TwoStepIndex(370) => [_2]
+        // before: TwoStepIndex(369) => [_2]
+        StorageLive(_64);
+        // after: TwoStepIndex(368) => [_2]
+        // before: TwoStepIndex(367) => [_2]
+        StorageLive(_65);
+        // after: TwoStepIndex(366) => [_2]
+        // before: TwoStepIndex(365) => [_2]
+        StorageLive(_66);
+        // after: TwoStepIndex(364) => [_2]
+        // before: TwoStepIndex(363) => [_2]
+        StorageLive(_68);
+        // after: TwoStepIndex(362) => [_2]
+        // before: TwoStepIndex(361) => [_2]
+        _68 = copy (((((_11.0: std::vec::Vec<u8>).0: alloc::raw_vec::RawVec<u8>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        // after: TwoStepIndex(360) => [_2]
+        // before: TwoStepIndex(359) => [_2]
+        _66 = copy _68 as *const u8 (Transmute);
+        // after: TwoStepIndex(358) => [_2]
+        // before: TwoStepIndex(357) => [_2]
+        StorageDead(_68);
+        // after: TwoStepIndex(356) => [_2]
+        // before: TwoStepIndex(355) => [_2]
+        StorageLive(_67);
+        // after: TwoStepIndex(354) => [_2]
+        // before: TwoStepIndex(353) => [_2]
+        _67 = copy ((_11.0: std::vec::Vec<u8>).1: usize);
+        // after: TwoStepIndex(352) => [_2]
+        // before: TwoStepIndex(351) => [_2]
+        _65 = *const [u8] from (copy _66, move _67);
+        // after: TwoStepIndex(350) => [_2]
+        // before: TwoStepIndex(349) => [_2]
+        StorageDead(_67);
+        // after: TwoStepIndex(348) => [_2]
+        // before: TwoStepIndex(347) => [_2]
+        StorageDead(_66);
+        // after: TwoStepIndex(346) => [_2]
+        // before: TwoStepIndex(345) => [_2]
+        _64 = &(*_65);
+        // after: TwoStepIndex(344) => [_2]
+        // before: TwoStepIndex(343) => [_2]
+        StorageDead(_65);
+        // after: TwoStepIndex(342) => [_2]
+        // before: TwoStepIndex(341) => [_2]
+        _13 = copy _64 as &str (Transmute);
+        // after: TwoStepIndex(340) => [_2]
+        // before: TwoStepIndex(339) => [_2]
+        StorageDead(_64);
+        // after: TwoStepIndex(338) => [_2]
+        // before: TwoStepIndex(337) => [_2]
+        StorageLive(_69);
+        // after: TwoStepIndex(336) => [_2]
+        // before: TwoStepIndex(335) => [_2]
+        _69 = copy _13 as &[u8] (Transmute);
+        // after: TwoStepIndex(334) => [_2]
+        // before: TwoStepIndex(333) => [_2]
+        _12 = core::num::<impl u64>::from_ascii_radix(move _69, const 10_u32) -> [return: bb45, unwind: bb15];
+        // after: TwoStepIndex(332) => [_2]
+    }
+
+    bb6: {
+        // before: TwoStepIndex(331) => [_2]
+        StorageDead(_9);
+        // after: TwoStepIndex(330) => [_2]
+        // before: TwoStepIndex(329) => [_2]
+        goto -> bb7;
+        // after: TwoStepIndex(328) => [_2]
+    }
+
+    bb7: {
+        // before: TwoStepIndex(327) => [_2]
+        StorageDead(_8);
+        // after: TwoStepIndex(326) => [_2]
+        // before: TwoStepIndex(325) => [_2]
+        drop(_7) -> [return: bb9, unwind: bb17];
+        // after: TwoStepIndex(324) => [_2]
+    }
+
+    bb8: {
+        // before: TwoStepIndex(323) => [_2]
+        StorageDead(_5);
+        // after: TwoStepIndex(322) => [_2]
+        // before: TwoStepIndex(321) => [_2]
+        _0 = copy _2;
+        // after: TwoStepIndex(320) => [_0]
+        // before: TwoStepIndex(319) => [_0]
+        drop(_3) -> [return: bb10, unwind continue];
+        // after: TwoStepIndex(318) => [_0]
+    }
+
+    bb9: {
+        // before: TwoStepIndex(317) => [_2]
+        StorageDead(_7);
+        // after: TwoStepIndex(316) => [_2]
+        // before: TwoStepIndex(315) => [_2]
+        StorageDead(_5);
+        // after: TwoStepIndex(314) => [_2]
+        // before: TwoStepIndex(313) => [_2]
+        goto -> bb2;
+        // after: TwoStepIndex(312) => [_2]
+    }
+
+    bb10: {
+        // before: TwoStepIndex(311) => [_0]
+        StorageDead(_3);
+        // after: TwoStepIndex(310) => [_0]
+        // before: TwoStepIndex(309) => [_0]
+        goto -> bb14;
+        // after: TwoStepIndex(308) => [_0]
+    }
+
+    bb11: {
+        // before: TwoStepIndex(307) => [_0]
+        StorageDead(_11);
+        // after: TwoStepIndex(306) => [_0]
+        // before: TwoStepIndex(305) => [_0]
+        StorageDead(_9);
+        // after: TwoStepIndex(304) => [_0]
+        // before: TwoStepIndex(303) => [_0]
+        StorageDead(_8);
+        // after: TwoStepIndex(302) => [_0]
+        // before: TwoStepIndex(301) => [_0]
+        drop(_7) -> [return: bb12, unwind: bb17];
+        // after: TwoStepIndex(300) => [_0]
+    }
+
+    bb12: {
+        // before: TwoStepIndex(299) => [_0]
+        StorageDead(_7);
+        // after: TwoStepIndex(298) => [_0]
+        // before: TwoStepIndex(297) => [_0]
+        StorageDead(_5);
+        // after: TwoStepIndex(296) => [_0]
+        // before: TwoStepIndex(295) => [_0]
+        drop(_3) -> [return: bb13, unwind continue];
+        // after: TwoStepIndex(294) => [_0]
+    }
+
+    bb13: {
+        // before: TwoStepIndex(293) => [_0]
+        StorageDead(_3);
+        // after: TwoStepIndex(292) => [_0]
+        // before: TwoStepIndex(291) => [_0]
+        goto -> bb14;
+        // after: TwoStepIndex(290) => [_0]
+    }
+
+    bb14: {
+        // before: TwoStepIndex(289) => [_0]
+        return;
+        // after: TwoStepIndex(288) => [_0]
+    }
+
+    bb15 (cleanup): {
+        // before: TwoStepIndex(287) => []
+        drop(_11) -> [return: bb16, unwind terminate(cleanup)];
+        // after: TwoStepIndex(286) => []
+    }
+
+    bb16 (cleanup): {
+        // before: TwoStepIndex(285) => []
+        drop(_7) -> [return: bb17, unwind terminate(cleanup)];
+        // after: TwoStepIndex(284) => []
+    }
+
+    bb17 (cleanup): {
+        // before: TwoStepIndex(283) => []
+        drop(_3) -> [return: bb18, unwind terminate(cleanup)];
+        // after: TwoStepIndex(282) => []
+    }
+
+    bb18 (cleanup): {
+        // before: TwoStepIndex(281) => []
+        resume;
+        // after: TwoStepIndex(280) => []
+    }
+
+    bb19: {
+        // before: TwoStepIndex(279) => [_2]
+        _6 = discriminant(_5);
+        // after: TwoStepIndex(278) => [_2]
+        // before: TwoStepIndex(277) => [_2]
+        switchInt(move _6) -> [1: bb3, 0: bb8, otherwise: bb24];
+        // after: TwoStepIndex(276) => [_2]
+    }
+
+    bb20: {
+        // before: TwoStepIndex(275) => [_2]
+        StorageDead(_18);
+        // after: TwoStepIndex(274) => [_2]
+        // before: TwoStepIndex(273) => [_2]
+        goto -> bb19;
+        // after: TwoStepIndex(272) => [_2]
+    }
+
+    bb21: {
+        // before: TwoStepIndex(271) => [_2]
+        _19 = std::intrinsics::cold_path() -> [return: bb22, unwind unreachable];
+        // after: TwoStepIndex(270) => [_2]
+    }
+
+    bb22: {
+        // before: TwoStepIndex(269) => [_2]
+        StorageDead(_14);
+        // after: TwoStepIndex(268) => [_2]
+        // before: TwoStepIndex(267) => [_2]
+        _16 = &mut (_3.0: std::env::Args);
+        // after: TwoStepIndex(266) => [_2]
+        // before: TwoStepIndex(265) => [_2]
+        StorageLive(_17);
+        // after: TwoStepIndex(264) => [_2]
+        // before: TwoStepIndex(263) => [_2]
+        _17 = copy (_3.1: usize);
+        // after: TwoStepIndex(262) => [_2]
+        // before: TwoStepIndex(261) => [_2]
+        (_3.1: usize) = const 0_usize;
+        // after: TwoStepIndex(260) => [_2]
+        // before: TwoStepIndex(259) => [_2]
+        StorageLive(_25);
+        // after: TwoStepIndex(258) => [_2]
+        // before: TwoStepIndex(257) => [_2]
+        StorageLive(_27);
+        // after: TwoStepIndex(256) => [_2]
+        // before: TwoStepIndex(255) => [_2]
+        StorageLive(_29);
+        // after: TwoStepIndex(254) => [_2]
+        // before: TwoStepIndex(253) => [_2]
+        StorageLive(_26);
+        // after: TwoStepIndex(252) => [_2]
+        // before: TwoStepIndex(251) => [_2]
+        _26 = copy _17 as std::option::Option<std::num::NonZero<usize>> (Transmute);
+        // after: TwoStepIndex(250) => [_2]
+        // before: TwoStepIndex(249) => [_2]
+        _27 = discriminant(_26);
+        // after: TwoStepIndex(248) => [_2]
+        // before: TwoStepIndex(247) => [_2]
+        switchInt(move _27) -> [1: bb26, 0: bb27, otherwise: bb24];
+        // after: TwoStepIndex(246) => [_2]
+    }
+
+    bb23: {
+        // before: TwoStepIndex(245) => [_2]
+        StorageDead(_14);
+        // after: TwoStepIndex(244) => [_2]
+        // before: TwoStepIndex(243) => [_2]
+        StorageLive(_18);
+        // after: TwoStepIndex(242) => [_2]
+        // before: TwoStepIndex(241) => [_2]
+        _18 = &mut (_3.0: std::env::Args);
+        // after: TwoStepIndex(240) => [_2]
+        // before: TwoStepIndex(239) => [_2]
+        _5 = <Args as Iterator>::next(move _18) -> [return: bb20, unwind: bb17];
+        // after: TwoStepIndex(238) => [_2]
+    }
+
+    bb24: {
+        // before: TwoStepIndex(237) => []
+        unreachable;
+        // after: TwoStepIndex(236) => []
+    }
+
+    bb25: {
+        // before: TwoStepIndex(235) => [_2]
+        StorageDead(_17);
+        // after: TwoStepIndex(234) => [_2]
+        // before: TwoStepIndex(233) => [_2]
+        goto -> bb19;
+        // after: TwoStepIndex(232) => [_2]
+    }
+
+    bb26: {
+        // before: TwoStepIndex(231) => [_2]
+        _25 = copy ((_26 as Some).0: std::num::NonZero<usize>);
+        // after: TwoStepIndex(230) => [_2]
+        // before: TwoStepIndex(229) => [_2]
+        StorageDead(_26);
+        // after: TwoStepIndex(228) => [_2]
+        // before: TwoStepIndex(227) => [_2]
+        StorageLive(_28);
+        // after: TwoStepIndex(226) => [_2]
+        // before: TwoStepIndex(225) => [_2]
+        _28 = <Args as Iterator>::try_fold::<NonZero<usize>, {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}, Option<NonZero<usize>>>(copy _16, move _25, const ZeroSized: {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}) -> [return: bb28, unwind: bb17];
+        // after: TwoStepIndex(224) => [_2]
+    }
+
+    bb27: {
+        // before: TwoStepIndex(223) => [_2]
+        StorageDead(_26);
+        // after: TwoStepIndex(222) => [_2]
+        // before: TwoStepIndex(221) => [_2]
+        goto -> bb49;
+        // after: TwoStepIndex(220) => [_2]
+    }
+
+    bb28: {
+        // before: TwoStepIndex(219) => [_2]
+        _29 = discriminant(_28);
+        // after: TwoStepIndex(218) => [_2]
+        // before: TwoStepIndex(217) => [_2]
+        switchInt(move _29) -> [0: bb30, 1: bb29, otherwise: bb24];
+        // after: TwoStepIndex(216) => [_2]
+    }
+
+    bb29: {
+        // before: TwoStepIndex(215) => [_2]
+        StorageDead(_28);
+        // after: TwoStepIndex(214) => [_2]
+        // before: TwoStepIndex(213) => [_2]
+        StorageDead(_29);
+        // after: TwoStepIndex(212) => [_2]
+        // before: TwoStepIndex(211) => [_2]
+        StorageDead(_27);
+        // after: TwoStepIndex(210) => [_2]
+        // before: TwoStepIndex(209) => [_2]
+        StorageDead(_25);
+        // after: TwoStepIndex(208) => [_2]
+        // before: TwoStepIndex(207) => [_2]
+        StorageLive(_23);
+        // after: TwoStepIndex(206) => [_2]
+        // before: TwoStepIndex(205) => [_2]
+        StorageLive(_24);
+        // after: TwoStepIndex(204) => [_2]
+        // before: TwoStepIndex(203) => [_2]
+        _23 = discriminant(_21);
+        // after: TwoStepIndex(202) => [_2]
+        // before: TwoStepIndex(201) => [_2]
+        _24 = Eq(copy _23, const 0_isize);
+        // after: TwoStepIndex(200) => [_2]
+        // before: TwoStepIndex(199) => [_2]
+        assume(move _24);
+        // after: TwoStepIndex(198) => [_2]
+        // before: TwoStepIndex(197) => [_2]
+        StorageDead(_24);
+        // after: TwoStepIndex(196) => [_2]
+        // before: TwoStepIndex(195) => [_2]
+        StorageDead(_23);
+        // after: TwoStepIndex(194) => [_2]
+        // before: TwoStepIndex(193) => [_2]
+        StorageDead(_17);
+        // after: TwoStepIndex(192) => [_2]
+        // before: TwoStepIndex(191) => [_2]
+        goto -> bb8;
+        // after: TwoStepIndex(190) => [_2]
+    }
+
+    bb30: {
+        // before: TwoStepIndex(189) => [_2]
+        StorageDead(_28);
+        // after: TwoStepIndex(188) => [_2]
+        // before: TwoStepIndex(187) => [_2]
+        goto -> bb49;
+        // after: TwoStepIndex(186) => [_2]
+    }
+
+    bb31: {
+        // before: TwoStepIndex(185) => [_2]
+        StorageDead(_41);
+        // after: TwoStepIndex(184) => [_2]
+        // before: TwoStepIndex(183) => [_2]
+        StorageLive(_44);
+        // after: TwoStepIndex(182) => [_2]
+        // before: TwoStepIndex(181) => [_2]
+        _44 = &raw const (*_37);
+        // after: TwoStepIndex(180) => [_2]
+        // before: TwoStepIndex(179) => [_2]
+        _42 = copy _44 as *const u8 (PtrToPtr);
+        // after: TwoStepIndex(178) => [_2]
+        // before: TwoStepIndex(177) => [_2]
+        StorageDead(_44);
+        // after: TwoStepIndex(176) => [_2]
+        // before: TwoStepIndex(175) => [_2]
+        StorageLive(_45);
+        // after: TwoStepIndex(174) => [_2]
+        // before: TwoStepIndex(173) => [_2]
+        _45 = &raw const (*_38);
+        // after: TwoStepIndex(172) => [_2]
+        // before: TwoStepIndex(171) => [_2]
+        _43 = copy _45 as *const u8 (PtrToPtr);
+        // after: TwoStepIndex(170) => [_2]
+        // before: TwoStepIndex(169) => [_2]
+        StorageDead(_45);
+        // after: TwoStepIndex(168) => [_2]
+        // before: TwoStepIndex(167) => [_2]
+        StorageLive(_46);
+        // after: TwoStepIndex(166) => [_2]
+        // before: TwoStepIndex(165) => [_2]
+        _46 = compare_bytes(move _42, move _43, move _39) -> [return: bb33, unwind unreachable];
+        // after: TwoStepIndex(164) => [_2]
+    }
+
+    bb32: {
+        // before: TwoStepIndex(163) => [_2]
+        StorageDead(_41);
+        // after: TwoStepIndex(162) => [_2]
+        // before: TwoStepIndex(161) => [_2]
+        StorageDead(_40);
+        // after: TwoStepIndex(160) => [_2]
+        // before: TwoStepIndex(159) => [_2]
+        StorageDead(_43);
+        // after: TwoStepIndex(158) => [_2]
+        // before: TwoStepIndex(157) => [_2]
+        StorageDead(_42);
+        // after: TwoStepIndex(156) => [_2]
+        // before: TwoStepIndex(155) => [_2]
+        StorageDead(_39);
+        // after: TwoStepIndex(154) => [_2]
+        // before: TwoStepIndex(153) => [_2]
+        StorageDead(_38);
+        // after: TwoStepIndex(152) => [_2]
+        // before: TwoStepIndex(151) => [_2]
+        StorageDead(_37);
+        // after: TwoStepIndex(150) => [_2]
+        // before: TwoStepIndex(149) => [_2]
+        StorageDead(_31);
+        // after: TwoStepIndex(148) => [_2]
+        // before: TwoStepIndex(147) => [_2]
+        goto -> bb7;
+        // after: TwoStepIndex(146) => [_2]
+    }
+
+    bb33: {
+        // before: TwoStepIndex(145) => [_2]
+        _8 = Eq(move _46, const 0_i32);
+        // after: TwoStepIndex(144) => [_2]
+        // before: TwoStepIndex(143) => [_2]
+        StorageDead(_46);
+        // after: TwoStepIndex(142) => [_2]
+        // before: TwoStepIndex(141) => [_2]
+        StorageDead(_40);
+        // after: TwoStepIndex(140) => [_2]
+        // before: TwoStepIndex(139) => [_2]
+        StorageDead(_43);
+        // after: TwoStepIndex(138) => [_2]
+        // before: TwoStepIndex(137) => [_2]
+        StorageDead(_42);
+        // after: TwoStepIndex(136) => [_2]
+        // before: TwoStepIndex(135) => [_2]
+        StorageDead(_39);
+        // after: TwoStepIndex(134) => [_2]
+        // before: TwoStepIndex(133) => [_2]
+        StorageDead(_38);
+        // after: TwoStepIndex(132) => [_2]
+        // before: TwoStepIndex(131) => [_2]
+        StorageDead(_37);
+        // after: TwoStepIndex(130) => [_2]
+        // before: TwoStepIndex(129) => [_2]
+        StorageDead(_31);
+        // after: TwoStepIndex(128) => [_2]
+        // before: TwoStepIndex(127) => [_2]
+        switchInt(move _8) -> [0: bb7, otherwise: bb4];
+        // after: TwoStepIndex(126) => [_2]
+    }
+
+    bb34: {
+        // before: TwoStepIndex(125) => [_2]
+        _10 = discriminant(_9);
+        // after: TwoStepIndex(124) => [_2]
+        // before: TwoStepIndex(123) => [_2]
+        switchInt(move _10) -> [1: bb5, 0: bb6, otherwise: bb24];
+        // after: TwoStepIndex(122) => [_2]
+    }
+
+    bb35: {
+        // before: TwoStepIndex(121) => [_2]
+        StorageDead(_51);
+        // after: TwoStepIndex(120) => [_2]
+        // before: TwoStepIndex(119) => [_2]
+        goto -> bb34;
+        // after: TwoStepIndex(118) => [_2]
+    }
+
+    bb36: {
+        // before: TwoStepIndex(117) => [_2]
+        _52 = std::intrinsics::cold_path() -> [return: bb37, unwind unreachable];
+        // after: TwoStepIndex(116) => [_2]
+    }
+
+    bb37: {
+        // before: TwoStepIndex(115) => [_2]
+        StorageDead(_47);
+        // after: TwoStepIndex(114) => [_2]
+        // before: TwoStepIndex(113) => [_2]
+        _49 = &mut (_3.0: std::env::Args);
+        // after: TwoStepIndex(112) => [_2]
+        // before: TwoStepIndex(111) => [_2]
+        StorageLive(_50);
+        // after: TwoStepIndex(110) => [_2]
+        // before: TwoStepIndex(109) => [_2]
+        _50 = copy (_3.1: usize);
+        // after: TwoStepIndex(108) => [_2]
+        // before: TwoStepIndex(107) => [_2]
+        (_3.1: usize) = const 0_usize;
+        // after: TwoStepIndex(106) => [_2]
+        // before: TwoStepIndex(105) => [_2]
+        StorageLive(_58);
+        // after: TwoStepIndex(104) => [_2]
+        // before: TwoStepIndex(103) => [_2]
+        StorageLive(_60);
+        // after: TwoStepIndex(102) => [_2]
+        // before: TwoStepIndex(101) => [_2]
+        StorageLive(_62);
+        // after: TwoStepIndex(100) => [_2]
+        // before: TwoStepIndex(99) => [_2]
+        StorageLive(_59);
+        // after: TwoStepIndex(98) => [_2]
+        // before: TwoStepIndex(97) => [_2]
+        _59 = copy _50 as std::option::Option<std::num::NonZero<usize>> (Transmute);
+        // after: TwoStepIndex(96) => [_2]
+        // before: TwoStepIndex(95) => [_2]
+        _60 = discriminant(_59);
+        // after: TwoStepIndex(94) => [_2]
+        // before: TwoStepIndex(93) => [_2]
+        switchInt(move _60) -> [1: bb40, 0: bb41, otherwise: bb24];
+        // after: TwoStepIndex(92) => [_2]
+    }
+
+    bb38: {
+        // before: TwoStepIndex(91) => [_2]
+        StorageDead(_47);
+        // after: TwoStepIndex(90) => [_2]
+        // before: TwoStepIndex(89) => [_2]
+        StorageLive(_51);
+        // after: TwoStepIndex(88) => [_2]
+        // before: TwoStepIndex(87) => [_2]
+        _51 = &mut (_3.0: std::env::Args);
+        // after: TwoStepIndex(86) => [_2]
+        // before: TwoStepIndex(85) => [_2]
+        _9 = <Args as Iterator>::next(move _51) -> [return: bb35, unwind: bb16];
+        // after: TwoStepIndex(84) => [_2]
+    }
+
+    bb39: {
+        // before: TwoStepIndex(83) => [_2]
+        StorageDead(_50);
+        // after: TwoStepIndex(82) => [_2]
+        // before: TwoStepIndex(81) => [_2]
+        goto -> bb34;
+        // after: TwoStepIndex(80) => [_2]
+    }
+
+    bb40: {
+        // before: TwoStepIndex(79) => [_2]
+        _58 = copy ((_59 as Some).0: std::num::NonZero<usize>);
+        // after: TwoStepIndex(78) => [_2]
+        // before: TwoStepIndex(77) => [_2]
+        StorageDead(_59);
+        // after: TwoStepIndex(76) => [_2]
+        // before: TwoStepIndex(75) => [_2]
+        StorageLive(_61);
+        // after: TwoStepIndex(74) => [_2]
+        // before: TwoStepIndex(73) => [_2]
+        _61 = <Args as Iterator>::try_fold::<NonZero<usize>, {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}, Option<NonZero<usize>>>(copy _49, move _58, const ZeroSized: {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}) -> [return: bb42, unwind: bb16];
+        // after: TwoStepIndex(72) => [_2]
+    }
+
+    bb41: {
+        // before: TwoStepIndex(71) => [_2]
+        StorageDead(_59);
+        // after: TwoStepIndex(70) => [_2]
+        // before: TwoStepIndex(69) => [_2]
+        goto -> bb50;
+        // after: TwoStepIndex(68) => [_2]
+    }
+
+    bb42: {
+        // before: TwoStepIndex(67) => [_2]
+        _62 = discriminant(_61);
+        // after: TwoStepIndex(66) => [_2]
+        // before: TwoStepIndex(65) => [_2]
+        switchInt(move _62) -> [0: bb44, 1: bb43, otherwise: bb24];
+        // after: TwoStepIndex(64) => [_2]
+    }
+
+    bb43: {
+        // before: TwoStepIndex(63) => [_2]
+        StorageDead(_61);
+        // after: TwoStepIndex(62) => [_2]
+        // before: TwoStepIndex(61) => [_2]
+        StorageDead(_62);
+        // after: TwoStepIndex(60) => [_2]
+        // before: TwoStepIndex(59) => [_2]
+        StorageDead(_60);
+        // after: TwoStepIndex(58) => [_2]
+        // before: TwoStepIndex(57) => [_2]
+        StorageDead(_58);
+        // after: TwoStepIndex(56) => [_2]
+        // before: TwoStepIndex(55) => [_2]
+        StorageLive(_56);
+        // after: TwoStepIndex(54) => [_2]
+        // before: TwoStepIndex(53) => [_2]
+        StorageLive(_57);
+        // after: TwoStepIndex(52) => [_2]
+        // before: TwoStepIndex(51) => [_2]
+        _56 = discriminant(_54);
+        // after: TwoStepIndex(50) => [_2]
+        // before: TwoStepIndex(49) => [_2]
+        _57 = Eq(copy _56, const 0_isize);
+        // after: TwoStepIndex(48) => [_2]
+        // before: TwoStepIndex(47) => [_2]
+        assume(move _57);
+        // after: TwoStepIndex(46) => [_2]
+        // before: TwoStepIndex(45) => [_2]
+        StorageDead(_57);
+        // after: TwoStepIndex(44) => [_2]
+        // before: TwoStepIndex(43) => [_2]
+        StorageDead(_56);
+        // after: TwoStepIndex(42) => [_2]
+        // before: TwoStepIndex(41) => [_2]
+        StorageDead(_50);
+        // after: TwoStepIndex(40) => [_2]
+        // before: TwoStepIndex(39) => [_2]
+        goto -> bb6;
+        // after: TwoStepIndex(38) => [_2]
+    }
+
+    bb44: {
+        // before: TwoStepIndex(37) => [_2]
+        StorageDead(_61);
+        // after: TwoStepIndex(36) => [_2]
+        // before: TwoStepIndex(35) => [_2]
+        goto -> bb50;
+        // after: TwoStepIndex(34) => [_2]
+    }
+
+    bb45: {
+        // before: TwoStepIndex(33) => [_2]
+        StorageDead(_69);
+        // after: TwoStepIndex(32) => [_2]
+        // before: TwoStepIndex(31) => [_2]
+        _70 = discriminant(_12);
+        // after: TwoStepIndex(30) => [_2]
+        // before: TwoStepIndex(29) => [_2]
+        switchInt(copy _70) -> [0: bb48, 1: bb47, otherwise: bb24];
+        // after: TwoStepIndex(28) => [_2]
+    }
+
+    bb46: {
+        // before: TwoStepIndex(27) => [_0]
+        StorageDead(_12);
+        // after: TwoStepIndex(26) => [_0]
+        // before: TwoStepIndex(25) => [_0]
+        drop(_11) -> [return: bb11, unwind: bb16];
+        // after: TwoStepIndex(24) => [_0]
+    }
+
+    bb47: {
+        // before: TwoStepIndex(23) => [_2]
+        _0 = copy _2;
+        // after: TwoStepIndex(22) => [_0]
+        // before: TwoStepIndex(21) => [_0]
+        goto -> bb46;
+        // after: TwoStepIndex(20) => [_0]
+    }
+
+    bb48: {
+        // before: TwoStepIndex(19) => []
+        _0 = move ((_12 as Ok).0: u64);
+        // after: TwoStepIndex(18) => [_0]
+        // before: TwoStepIndex(17) => [_0]
+        goto -> bb46;
+        // after: TwoStepIndex(16) => [_0]
+    }
+
+    bb49: {
+        // before: TwoStepIndex(15) => [_2]
+        StorageDead(_29);
+        // after: TwoStepIndex(14) => [_2]
+        // before: TwoStepIndex(13) => [_2]
+        StorageDead(_27);
+        // after: TwoStepIndex(12) => [_2]
+        // before: TwoStepIndex(11) => [_2]
+        StorageDead(_25);
+        // after: TwoStepIndex(10) => [_2]
+        // before: TwoStepIndex(9) => [_2]
+        _5 = <Args as Iterator>::next(move _16) -> [return: bb25, unwind: bb17];
+        // after: TwoStepIndex(8) => [_2]
+    }
+
+    bb50: {
+        // before: TwoStepIndex(7) => [_2]
+        StorageDead(_62);
+        // after: TwoStepIndex(6) => [_2]
+        // before: TwoStepIndex(5) => [_2]
+        StorageDead(_60);
+        // after: TwoStepIndex(4) => [_2]
+        // before: TwoStepIndex(3) => [_2]
+        StorageDead(_58);
+        // after: TwoStepIndex(2) => [_2]
+        // before: TwoStepIndex(1) => [_2]
+        _9 = <Args as Iterator>::next(move _49) -> [return: bb39, unwind: bb16];
+        // after: TwoStepIndex(0) => [_2]
+    }
+}

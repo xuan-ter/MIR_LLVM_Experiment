@@ -26,3 +26,6 @@
 
 !hyper/mir_llvm_hybrid_py/
 !hyper/mir_llvm_hybrid_py/**
+
+!loop_test/mir_llvm_hybrid_py/
+!loop_test/mir_llvm_hybrid_py/**

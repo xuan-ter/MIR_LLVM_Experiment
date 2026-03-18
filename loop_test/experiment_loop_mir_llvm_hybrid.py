@@ -9,6 +9,9 @@ import shutil
 import subprocess
 import time
 from datetime import datetime
+import math
+from collections import defaultdict
+from statistics import median
 
 
 PROJECT_ROOT = "/mnt/fjx/Compiler_Experiment/loop_test"
@@ -758,8 +761,291 @@ def measure_combination_mode(
         logf.flush()
 
 
+def _to_float(v, default=None):
+    try:
+        x = float(v)
+        if math.isfinite(x):
+            return x
+        return default
+    except Exception:
+        return default
+
+
+def _read_csv_rows(path):
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        r = csv.DictReader(f)
+        return [row for row in r]
+
+
+def _write_csv_rows(path, fieldnames, rows):
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        w.writeheader()
+        for row in rows:
+            w.writerow(row)
+
+
+def _pareto_nondominated(rows, keys):
+    pts = []
+    for r in rows:
+        p = []
+        ok = True
+        for k in keys:
+            v = _to_float(r.get(k), None)
+            if v is None:
+                ok = False
+                break
+            p.append(v)
+        if ok:
+            pts.append((r, tuple(p)))
+
+    keep = []
+    for i, (ri, pi) in enumerate(pts):
+        dominated = False
+        for j, (rj, pj) in enumerate(pts):
+            if i == j:
+                continue
+            le_all = all(a <= b for a, b in zip(pj, pi))
+            lt_any = any(a < b for a, b in zip(pj, pi))
+            if le_all and lt_any:
+                dominated = True
+                break
+        if not dominated:
+            keep.append(ri)
+    return keep
+
+
+def analyze_results_csv(input_csv, analysis_out):
+    in_path = str(input_csv).strip()
+    if in_path.startswith("\\") and not in_path.startswith("/"):
+        in_path = in_path.replace("\\", "/")
+    in_path = os.path.abspath(in_path)
+    if not os.path.exists(in_path):
+        raise FileNotFoundError(in_path)
+
+    root = str(analysis_out).strip()
+    if root:
+        if root.startswith("\\") and not root.startswith("/"):
+            root = root.replace("\\", "/")
+        root = os.path.abspath(root)
+    else:
+        root = os.path.join(PROJECT_ROOT, "analysis")
+    os.makedirs(root, exist_ok=True)
+
+    base = os.path.basename(os.path.dirname(in_path)) or "analysis"
+    out_dir = os.path.join(root, safe_dir_name(base))
+    if os.path.exists(out_dir) and os.listdir(out_dir):
+        out_dir = out_dir + "_" + datetime.now().strftime("%Y%m%d_%H%M%S")
+    os.makedirs(out_dir, exist_ok=True)
+
+    rows = _read_csv_rows(in_path)
+    n_total = len(rows)
+    ok_rows = [r for r in rows if str(r.get("Status", "")).strip() == "Success"]
+    n_ok = len(ok_rows)
+
+    baseline = {}
+    baseline_rows = [r for r in ok_rows if str(r.get("ConfigName", "")).strip() == "EXP_000_ALL_OFF"]
+    by_mode = defaultdict(list)
+    for r in baseline_rows:
+        mode = str(r.get("Mode", "")).strip()
+        rt = _to_float(r.get("TotalRuntime(s)"), None)
+        ct = _to_float(r.get("CompileTime(s)"), None)
+        sz = _to_float(r.get("BinarySize(Bytes)"), None)
+        if not mode or rt is None or ct is None or sz is None:
+            continue
+        by_mode[mode].append((rt, ct, sz))
+    for mode, pts in by_mode.items():
+        baseline[mode] = {
+            "runtime_med": median([p[0] for p in pts]),
+            "compile_med": median([p[1] for p in pts]),
+            "size_med": median([p[2] for p in pts]),
+        }
+
+    groups = defaultdict(list)
+    for r in ok_rows:
+        key = (
+            str(r.get("ConfigName", "")).strip(),
+            str(r.get("Mode", "")).strip(),
+            str(r.get("LLVM_Pass", "")).strip(),
+            str(r.get("MIR_Pass", "")).strip(),
+        )
+        groups[key].append(r)
+
+    summary = []
+    for (cfg, mode, llvm_p, mir_p), rs in groups.items():
+        rts = [_to_float(r.get("TotalRuntime(s)"), None) for r in rs]
+        cts = [_to_float(r.get("CompileTime(s)"), None) for r in rs]
+        szs = [_to_float(r.get("BinarySize(Bytes)"), None) for r in rs]
+        rts = [x for x in rts if x is not None]
+        cts = [x for x in cts if x is not None]
+        szs = [x for x in szs if x is not None]
+        if not rts or not cts or not szs:
+            continue
+
+        rt_med = median(rts)
+        ct_med = median(cts)
+        sz_med = median(szs)
+        b = baseline.get(mode, None)
+        if b:
+            rt_delta = (rt_med / b["runtime_med"] - 1.0) * 100.0 if b["runtime_med"] else None
+            ct_delta = (ct_med / b["compile_med"] - 1.0) * 100.0 if b["compile_med"] else None
+            sz_delta = (sz_med / b["size_med"] - 1.0) * 100.0 if b["size_med"] else None
+        else:
+            rt_delta = None
+            ct_delta = None
+            sz_delta = None
+
+        summary.append(
+            {
+                "ConfigName": cfg,
+                "Mode": mode,
+                "LLVM_Pass": llvm_p,
+                "MIR_Pass": mir_p,
+                "n": len(rs),
+                "runtime_med": rt_med,
+                "compile_med": ct_med,
+                "size_med": sz_med,
+                "runtime_delta_pct": rt_delta,
+                "compile_delta_pct": ct_delta,
+                "size_delta_pct": sz_delta,
+            }
+        )
+
+    summary.sort(key=lambda r: (str(r.get("Mode", "")), _to_float(r.get("runtime_med"), 0.0)))
+
+    baseline_rows_out = []
+    for mode, b in sorted(baseline.items()):
+        baseline_rows_out.append(
+            {
+                "Mode": mode,
+                "runtime_med": b["runtime_med"],
+                "compile_med": b["compile_med"],
+                "size_med": b["size_med"],
+                "n_total": n_total,
+                "n_success": n_ok,
+            }
+        )
+    _write_csv_rows(
+        os.path.join(out_dir, "baseline_by_mode.csv"),
+        ["Mode", "runtime_med", "compile_med", "size_med", "n_total", "n_success"],
+        baseline_rows_out,
+    )
+    _write_csv_rows(
+        os.path.join(out_dir, "summary_by_config_mode.csv"),
+        [
+            "ConfigName",
+            "Mode",
+            "LLVM_Pass",
+            "MIR_Pass",
+            "n",
+            "runtime_med",
+            "compile_med",
+            "size_med",
+            "runtime_delta_pct",
+            "compile_delta_pct",
+            "size_delta_pct",
+        ],
+        summary,
+    )
+
+    modes = sorted({str(r.get("Mode", "")).strip() for r in summary if str(r.get("Mode", "")).strip()})
+    for mode in modes:
+        rs = [r for r in summary if str(r.get("Mode", "")).strip() == mode]
+        pareto = _pareto_nondominated(rs, ("runtime_med", "compile_med", "size_med"))
+        pareto.sort(key=lambda r: (_to_float(r.get("runtime_med"), 0.0), _to_float(r.get("size_med"), 0.0)))
+        _write_csv_rows(
+            os.path.join(out_dir, f"pareto_front_{safe_dir_name(mode)}.csv"),
+            [
+                "ConfigName",
+                "Mode",
+                "LLVM_Pass",
+                "MIR_Pass",
+                "n",
+                "runtime_med",
+                "compile_med",
+                "size_med",
+                "runtime_delta_pct",
+                "compile_delta_pct",
+                "size_delta_pct",
+            ],
+            pareto,
+        )
+
+    try:
+        import matplotlib.pyplot as plt
+
+        def _label(r):
+            x = str(r.get("MIR_Pass", "")).strip() or str(r.get("ConfigName", "")).strip()
+            return x[:48] + ("…" if len(x) > 48 else "")
+
+        for mode in modes:
+            rs = [r for r in summary if str(r.get("Mode", "")).strip() == mode]
+            for metric, title in (
+                ("runtime_delta_pct", "Runtime Δ% vs baseline (median)"),
+                ("compile_delta_pct", "Compile time Δ% vs baseline (median)"),
+                ("size_delta_pct", "Binary size Δ% vs baseline (median)"),
+            ):
+                rs2 = [(r, _to_float(r.get(metric), None)) for r in rs]
+                rs2 = [(r, v) for r, v in rs2 if v is not None]
+                if not rs2:
+                    continue
+                rs2.sort(key=lambda x: x[1])
+                top = rs2[:20]
+                labels = [_label(r) for r, _ in top]
+                vals = [v for _, v in top]
+                plt.figure(figsize=(10, 6))
+                plt.barh(list(range(len(vals))), vals, color="#4C78A8")
+                plt.yticks(list(range(len(vals))), labels, fontsize=9)
+                plt.gca().invert_yaxis()
+                plt.axvline(0, color="#333", linewidth=1)
+                plt.xlabel("Δ%")
+                plt.title(f"{mode}: {title} (top 20)")
+                plt.tight_layout()
+                out_png = os.path.join(out_dir, f"{safe_dir_name(mode)}_{metric}_top20.png")
+                out_pdf = os.path.join(out_dir, f"{safe_dir_name(mode)}_{metric}_top20.pdf")
+                plt.savefig(out_png, dpi=200)
+                plt.savefig(out_pdf)
+                plt.close()
+
+            pareto = _pareto_nondominated(rs, ("runtime_med", "compile_med", "size_med"))
+            if pareto:
+                plt.figure(figsize=(8, 6))
+                plt.scatter(
+                    [_to_float(r.get("runtime_med"), 0.0) for r in rs],
+                    [_to_float(r.get("size_med"), 0.0) for r in rs],
+                    s=18,
+                    alpha=0.25,
+                    color="#999999",
+                )
+                plt.scatter(
+                    [_to_float(r.get("runtime_med"), 0.0) for r in pareto],
+                    [_to_float(r.get("size_med"), 0.0) for r in pareto],
+                    s=28,
+                    alpha=0.9,
+                    color="#E45756",
+                    label="Pareto front",
+                )
+                plt.xlabel("Runtime (s), median")
+                plt.ylabel("Binary size (bytes), median")
+                plt.title(f"{mode}: Runtime vs Size (median), Pareto highlighted")
+                plt.legend(loc="best", fontsize=9)
+                plt.tight_layout()
+                out_png = os.path.join(out_dir, f"{safe_dir_name(mode)}_runtime_vs_size_pareto.png")
+                out_pdf = os.path.join(out_dir, f"{safe_dir_name(mode)}_runtime_vs_size_pareto.pdf")
+                plt.savefig(out_png, dpi=200)
+                plt.savefig(out_pdf)
+                plt.close()
+    except Exception:
+        pass
+
+    print(f"[Analysis] Input: {in_path}")
+    print(f"[Analysis] Output dir: {out_dir}")
+
+
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--analyze-csv", default="")
+    parser.add_argument("--analysis-out", default="")
     parser.add_argument("--json-path", default=DEFAULT_JSON_PATH)
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--limit", type=int, default=0)
@@ -777,6 +1063,10 @@ def main():
     parser.add_argument("--no-evidence", action="store_true")
     parser.add_argument("--keep-ir", action="store_true")
     args = parser.parse_args()
+
+    if str(args.analyze_csv).strip():
+        analyze_results_csv(str(args.analyze_csv).strip(), str(args.analysis_out).strip())
+        return
 
     modes = [m.strip() for m in args.modes.split(",") if m.strip()]
     modes = ["mir-dependent" if m in ("mir_dependent", "mir", "dependent") else m for m in modes]

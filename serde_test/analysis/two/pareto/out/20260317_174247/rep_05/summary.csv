@@ -1,0 +1,10 @@
+rep,method,budget,hv_final,hv_ref,t95
+5,ggps,1200,1.13,1.41,
+5,ggps_hub_only,1200,1.071,1.41,
+5,ggps_neighbor_only,1200,1.896,1.41,220
+5,ggps_no_centrality,1200,1.125,1.41,
+5,random,1200,1.35,1.41,880
+5,bo,1200,1.287,1.41,
+5,ga,1200,1.699,1.41,360
+5,ggps_random_subspace,1200,1.135,1.41,
+5,ggps_nonhub_subspace,1200,1.197,1.41,

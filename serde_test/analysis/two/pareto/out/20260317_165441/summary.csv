@@ -1,0 +1,7 @@
+method,budget,hv_final,hv_ref,t95
+ggps,1200,1.152,1.41,
+random,1200,1.293,1.41,
+ga,1200,1.795,1.41,360
+bo,1200,1.293,1.41,
+ggps_random_subspace,1200,1.166,1.41,
+ggps_nonhub_subspace,1200,1.212,1.41,

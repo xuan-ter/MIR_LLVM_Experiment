@@ -1,20 +1,297 @@
-import pandas as pd
-import numpy as np
 import os
 import glob
-from sklearn.linear_model import LassoCV, Lasso
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import KFold
-import matplotlib.pyplot as plt
-import seaborn as sns
-import networkx as nx
-from matplotlib.lines import Line2D
+import math
+import csv
+
+try:
+    import pandas as pd
+    import numpy as np
+    from sklearn.linear_model import LassoCV, Lasso
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import networkx as nx
+    from matplotlib.lines import Line2D
+    HAVE_LASSO_STACK = True
+except Exception:
+    HAVE_LASSO_STACK = False
+
+from PIL import Image, ImageDraw, ImageFont
 
 # Configuration
 DATA_DIR = "/mnt/fjx/Compiler_Experiment/analysis/data"
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+def _load_font(size, bold=False):
+    candidates = []
+    if bold:
+        candidates.extend([
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        ])
+    candidates.extend([
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ])
+    for p in candidates:
+        try:
+            return ImageFont.truetype(p, size=size)
+        except Exception:
+            continue
+    return ImageFont.load_default()
+
+def plot_coupling_matrix_from_edges_csv(
+    edges_csv_path,
+    output_png_path,
+    top_mir=25,
+    top_llvm=25,
+):
+    if not os.path.exists(edges_csv_path):
+        raise FileNotFoundError(edges_csv_path)
+
+    edges = []
+    with open(edges_csv_path, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            src = str(r.get("Source", "")).strip()
+            tgt = str(r.get("Target", "")).strip()
+            if not src or not tgt:
+                continue
+            try:
+                w = float(r.get("Weight"))
+            except Exception:
+                continue
+            try:
+                s = float(r.get("Stability"))
+            except Exception:
+                s = 0.0
+            edges.append((src, tgt, w, s))
+
+    if not edges:
+        return
+
+    mir_strength = {}
+    llvm_strength = {}
+    for src, tgt, w, s in edges:
+        strength = abs(w) * (0.2 + 0.8 * max(0.0, min(1.0, s)))
+        mir_strength[src] = mir_strength.get(src, 0.0) + strength
+        llvm_strength[tgt] = llvm_strength.get(tgt, 0.0) + strength
+
+    mir_top = [k for k, _ in sorted(mir_strength.items(), key=lambda x: x[1], reverse=True)[: max(1, int(top_mir))]]
+    llvm_top = [k for k, _ in sorted(llvm_strength.items(), key=lambda x: x[1], reverse=True)[: max(1, int(top_llvm))]]
+
+    edge_map = {}
+    max_mag = 0.0
+    for src, tgt, w, s in edges:
+        if src not in mir_top or tgt not in llvm_top:
+            continue
+        edge_map[(src, tgt)] = (w, s)
+        max_mag = max(max_mag, abs(w))
+    max_mag = max(max_mag, 1e-9)
+
+    ROT_PAD = 10
+
+    def draw_rotated_text(x, y, text, font, angle=90, fill=(0, 0, 0, 255)):
+        pad = ROT_PAD
+        try:
+            _d = ImageDraw.Draw(Image.new("RGBA", (1, 1), (255, 255, 255, 0)))
+            tb = _d.textbbox((0, 0), text, font=font)
+            tw = tb[2] - tb[0]
+            th = tb[3] - tb[1]
+        except Exception:
+            tw = 10 * len(text)
+            th = 18
+            tb = (0, 0, tw, th)
+        tmp = Image.new("RGBA", (max(1, tw + pad * 2), max(1, th + pad * 2)), (255, 255, 255, 0))
+        tmp_draw = ImageDraw.Draw(tmp)
+        tmp_draw.text((pad - tb[0], pad - tb[1]), text, fill=fill, font=font)
+        rot = tmp.rotate(angle, expand=True, resample=Image.BICUBIC)
+        img.alpha_composite(rot, (int(x), int(y)))
+        return rot.size
+
+    cell = 30
+    right = 90
+    bottom = 170
+    top_text = 150
+
+    font_title = _load_font(36, bold=True)
+    font_sub = _load_font(20, bold=False)
+    font_axis = _load_font(20, bold=True)
+    font_lbl = _load_font(16, bold=False)
+    font_tick = _load_font(12, bold=False)
+
+    llvm_labels = [s[:18] for s in llvm_top]
+    mir_labels = [s[:42] for s in mir_top]
+
+    max_mir_w = 0
+    max_mir_h = 0
+    dummy = Image.new("RGBA", (10, 10), (255, 255, 255, 0))
+    dummy_draw = ImageDraw.Draw(dummy)
+    for s in mir_labels:
+        try:
+            tb = dummy_draw.textbbox((0, 0), s, font=font_tick)
+            tw = tb[2] - tb[0]
+            th = tb[3] - tb[1]
+        except Exception:
+            tw = 10 * len(s)
+            th = 14
+        if tw > max_mir_w:
+            max_mir_w = tw
+        if th > max_mir_h:
+            max_mir_h = th
+
+    max_rot_h = 0
+    max_rot_w = 0
+    for s in llvm_labels:
+        try:
+            tb = dummy_draw.textbbox((0, 0), s, font=font_tick)
+            tw = tb[2] - tb[0]
+            th = tb[3] - tb[1]
+        except Exception:
+            tw = 10 * len(s)
+            th = 14
+        rot_w = th + ROT_PAD * 2
+        rot_h = tw + ROT_PAD * 2
+        if rot_h > max_rot_h:
+            max_rot_h = rot_h
+        if rot_w > max_rot_w:
+            max_rot_w = rot_w
+
+    mir_axis_lbl = "MIR Passes"
+    try:
+        tb = dummy_draw.textbbox((0, 0), mir_axis_lbl, font=font_axis)
+        mir_axis_w = tb[2] - tb[0]
+        mir_axis_h = tb[3] - tb[1]
+    except Exception:
+        mir_axis_w = 10 * len(mir_axis_lbl)
+        mir_axis_h = 20
+    mir_axis_rot_w = mir_axis_h + ROT_PAD * 2
+    mir_axis_rot_h = mir_axis_w + ROT_PAD * 2
+
+    outer_pad_x = 80
+    outer_pad_right = 80
+    gap_axis_to_labels = 18
+    gap_labels_to_grid = 18
+    top = max(240, top_text + max_rot_h + 30)
+
+    grid_w = cell * len(llvm_top)
+    grid_h = cell * len(mir_top)
+    content_w = mir_axis_rot_w + gap_axis_to_labels + max_mir_w + gap_labels_to_grid + grid_w
+    width = outer_pad_x + content_w + outer_pad_right
+    height = top + grid_h + bottom
+
+    img = Image.new("RGBA", (width, height), (255, 255, 255, 255))
+    draw = ImageDraw.Draw(img)
+
+    draw.text((70, 40), "Lasso Coupling Matrix (Alternative View)", fill=(0, 0, 0), font=font_title)
+    draw.text((70, 92), f"Top MIR={len(mir_top)} by strength; Top LLVM={len(llvm_top)} by strength", fill=(70, 70, 70), font=font_sub)
+    draw.text((70, 124), "Cell color: red=conflict(+), blue=synergy(-); opacity ~ stability; intensity ~ |weight|", fill=(70, 70, 70), font=font_sub)
+
+    left = outer_pad_x + mir_axis_rot_w + gap_axis_to_labels + max_mir_w + gap_labels_to_grid
+
+    draw.rectangle([left, top, left + grid_w, top + grid_h], fill=(248, 248, 248, 255))
+
+    for j, lbl in enumerate(llvm_labels):
+        x = left + j * cell
+        draw.line([(x, top), (x, top + grid_h)], fill=(230, 230, 230, 255), width=1)
+        try:
+            tb = draw.textbbox((0, 0), lbl, font=font_tick)
+            txt_w = tb[2] - tb[0]
+            txt_h = tb[3] - tb[1]
+        except Exception:
+            txt_w = 10 * len(lbl)
+            txt_h = 14
+        rot_w = txt_h + ROT_PAD * 2
+        rot_h = txt_w + ROT_PAD * 2
+        x_txt = x + cell // 2 - rot_w // 2
+        y_txt = top - 10 - rot_h
+        draw_rotated_text(x_txt, y_txt, lbl, font_tick, angle=90, fill=(0, 0, 0, 255))
+    draw.line([(left + grid_w, top), (left + grid_w, top + grid_h)], fill=(230, 230, 230, 255), width=1)
+
+    for i, mir in enumerate(mir_labels):
+        y = top + i * cell
+        draw.line([(left, y), (left + grid_w, y)], fill=(230, 230, 230, 255), width=1)
+        try:
+            tb = draw.textbbox((0, 0), mir, font=font_tick)
+            tw = tb[2] - tb[0]
+            th = tb[3] - tb[1]
+        except Exception:
+            tw = 10 * len(mir)
+            th = 14
+        x_txt = left - gap_labels_to_grid - tw
+        y_txt = y + cell // 2 - th // 2
+        draw.text((x_txt, y_txt), mir, fill=(0, 0, 0), font=font_tick)
+    draw.line([(left, top + grid_h), (left + grid_w, top + grid_h)], fill=(230, 230, 230, 255), width=1)
+
+    for i, mir in enumerate(mir_top):
+        for j, llvm in enumerate(llvm_top):
+            key = (mir, llvm)
+            if key not in edge_map:
+                continue
+            w, s = edge_map[key]
+            mag = min(1.0, abs(w) / max_mag)
+            stab = max(0.0, min(1.0, s))
+            alpha = int(35 + 220 * stab)
+            base = int(40 + 180 * mag)
+            if w >= 0:
+                col = (220, 30, 30, alpha)
+            else:
+                col = (30, 90, 220, alpha)
+            x0 = left + j * cell + 1
+            y0 = top + i * cell + 1
+            x1 = x0 + cell - 2
+            y1 = y0 + cell - 2
+            draw.rectangle([x0, y0, x1, y1], fill=col, outline=(0, 0, 0, 30), width=1)
+
+    llvm_axis_lbl = "LLVM Passes"
+    try:
+        tb = draw.textbbox((0, 0), llvm_axis_lbl, font=font_axis)
+        llvm_axis_w = tb[2] - tb[0]
+        llvm_axis_h = tb[3] - tb[1]
+    except Exception:
+        llvm_axis_w = 10 * len(llvm_axis_lbl)
+        llvm_axis_h = 20
+    x_llvm_axis = left + grid_w // 2 - llvm_axis_w // 2
+    y_llvm_axis = top - max_rot_h - 26
+    draw.text((x_llvm_axis, y_llvm_axis), llvm_axis_lbl, fill=(0, 0, 0), font=font_axis)
+
+    x_mir_col = outer_pad_x
+    x_mir = x_mir_col + (mir_axis_rot_w - mir_axis_rot_w) // 2
+    y_mir = top + grid_h // 2 - mir_axis_rot_h // 2
+    draw_rotated_text(x_mir, y_mir, mir_axis_lbl, font_axis, angle=90, fill=(0, 0, 0, 255))
+
+    conflict_lbl = "Conflict (+)"
+    synergy_lbl = "Synergy (-)"
+    try:
+        tb = draw.textbbox((0, 0), conflict_lbl, font=font_lbl)
+        w_conf = tb[2] - tb[0]
+        h_conf = tb[3] - tb[1]
+    except Exception:
+        w_conf = 10 * len(conflict_lbl)
+        h_conf = 16
+    try:
+        tb = draw.textbbox((0, 0), synergy_lbl, font=font_lbl)
+        w_syn = tb[2] - tb[0]
+        h_syn = tb[3] - tb[1]
+    except Exception:
+        w_syn = 10 * len(synergy_lbl)
+        h_syn = 16
+
+    sw, sh = 30, 18
+    gap_box_text = 10
+    gap_items = 40
+    legend_w = (sw + gap_box_text + w_conf) + gap_items + (sw + gap_box_text + w_syn)
+
+    lx = left + grid_w // 2 - legend_w // 2
+    ly = top + grid_h + 40
+    draw.rectangle([lx, ly, lx + sw, ly + sh], fill=(220, 30, 30, 200), outline=(0, 0, 0, 120), width=1)
+    draw.text((lx + sw + gap_box_text, ly + sh // 2 - h_conf // 2), conflict_lbl, fill=(0, 0, 0), font=font_lbl)
+    lx2 = lx + (sw + gap_box_text + w_conf) + gap_items
+    draw.rectangle([lx2, ly, lx2 + sw, ly + sh], fill=(30, 90, 220, 200), outline=(0, 0, 0, 120), width=1)
+    draw.text((lx2 + sw + gap_box_text, ly + sh // 2 - h_syn // 2), synergy_lbl, fill=(0, 0, 0), font=font_lbl)
+
+    img.convert("RGB").save(output_png_path)
+    pdf_path = os.path.splitext(output_png_path)[0] + ".pdf"
+    img.convert("RGB").save(pdf_path, "PDF", resolution=300.0)
 
 def load_and_preprocess_data():
     """
@@ -291,19 +568,20 @@ def plot_coupling_graph(df_edges, mir_passes, llvm_passes):
     print("Graph plot saved.")
 
 if __name__ == "__main__":
-    try:
-        X, y, feature_names, mir_passes, llvm_passes = load_and_preprocess_data()
-        
-        # Run Lasso
-        stability, coeffs = run_lasso_stability_selection(X, y, feature_names, n_bootstrap=50)
-        
-        # Save and Plot
-        df_edges = save_coupling_graph(stability, coeffs, feature_names, threshold=0.4) # Threshold 40%
-        plot_coupling_graph(df_edges, mir_passes, llvm_passes)
-        
-        print("\n=== Top Recovered Interactions ===")
-        if not df_edges.empty:
-            print(df_edges.sort_values('Stability', ascending=False).head(10))
-        
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    if HAVE_LASSO_STACK:
+        try:
+            X, y, feature_names, mir_passes, llvm_passes = load_and_preprocess_data()
+            stability, coeffs = run_lasso_stability_selection(X, y, feature_names, n_bootstrap=50)
+            df_edges = save_coupling_graph(stability, coeffs, feature_names, threshold=0.4)
+            plot_coupling_graph(df_edges, mir_passes, llvm_passes)
+            print("\n=== Top Recovered Interactions ===")
+            if not df_edges.empty:
+                print(df_edges.sort_values('Stability', ascending=False).head(10))
+        except Exception as e:
+            print(f"An error occurred: {e}")
+    else:
+        edges_csv = os.path.join(OUTPUT_DIR, "coupling_edges.csv")
+        out_png = os.path.join(OUTPUT_DIR, "lasso_coupling_matrix_top25x25.png")
+        plot_coupling_matrix_from_edges_csv(edges_csv, out_png, top_mir=25, top_llvm=25)
+        print(f"Saved alternative matrix view to {out_png}")
+        print(f"Saved alternative matrix view to {os.path.splitext(out_png)[0] + '.pdf'}")

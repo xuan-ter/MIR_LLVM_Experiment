@@ -6,8 +6,10 @@ import os
 import numpy as np
 
 # Configuration
-INPUT_CSV = "/mnt/fjx/Compiler_Experiment/analysis/one/interaction_results.csv"
-OUTPUT_DIR = "/mnt/fjx/Compiler_Experiment/analysis/one/coupling_plots"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_CSV = os.path.join(BASE_DIR, "interaction_results.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "coupling_plots")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def plot_filtered_heatmap(df, output_path):
     """
@@ -174,13 +176,13 @@ def main():
         return
 
     # 1. Filtered Heatmap
-    plot_filtered_heatmap(df, os.path.join(OUTPUT_DIR, "filtered_heatmap.png"))
+    plot_filtered_heatmap(df, os.path.join(OUTPUT_DIR, "filtered_heatmap.pdf"))
 
     # 2. Clustermap
-    plot_clustermap(df, os.path.join(OUTPUT_DIR, "clustered_heatmap.png"))
+    plot_clustermap(df, os.path.join(OUTPUT_DIR, "clustered_heatmap.pdf"))
 
     # 3. Bipartite Network (Top 50)
-    plot_bipartite_network(df, os.path.join(OUTPUT_DIR, "coupling_network_top50.png"), top_n=50)
+    plot_bipartite_network(df, os.path.join(OUTPUT_DIR, "coupling_network_top50.pdf"), top_n=50)
 
 if __name__ == "__main__":
     main()

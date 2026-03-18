@@ -8,8 +8,9 @@ import seaborn as sns
 from statsmodels.stats.multitest import multipletests
 
 # Configuration
-DATA_DIR = "/mnt/fjx/Compiler_Experiment/analysis/data"
-OUTPUT_DIR = "/mnt/fjx/Compiler_Experiment/analysis/one"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "data"))
+OUTPUT_DIR = BASE_DIR
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def load_data():
@@ -180,28 +181,44 @@ def main():
     sns.heatmap(pivot_delta, cmap="RdBu_r", center=0, annot=False)
     plt.title("Interaction Effect (Delta) Heatmap")
     plt.tight_layout()
-    plt.savefig(os.path.join(OUTPUT_DIR, "interaction_heatmap.png"))
+    plt.savefig(os.path.join(OUTPUT_DIR, "interaction_heatmap.png"), bbox_inches="tight")
+    plt.savefig(os.path.join(OUTPUT_DIR, "interaction_heatmap.pdf"), bbox_inches="tight")
     
     # 2. Heatmap of Significance (P-adj)
     # Mask non-significant ones?
     pivot_sig = results_df.pivot(index='mir_pass', columns='llvm_pass', values='significant')
     
     # 3. Top-K Forest Plot
-    top_k = results_df[results_df['significant']].sort_values('delta', key=abs, ascending=False).head(20)
+    top_k = (
+        results_df[results_df["significant"]]
+        .sort_values("delta", key=abs, ascending=False)
+        .head(50)
+        .copy()
+    )
     if not top_k.empty:
-        plt.figure(figsize=(10, 8))
-        # Create label
-        top_k['label'] = top_k['mir_pass'] + " + " + top_k['llvm_pass']
-        
-        plt.errorbar(x=top_k['delta'], y=range(len(top_k)), 
-                     xerr=[top_k['delta'] - top_k['ci_low'], top_k['ci_high'] - top_k['delta']], 
-                     fmt='o', capsize=5)
-        plt.yticks(range(len(top_k)), top_k['label'])
-        plt.axvline(x=0, color='r', linestyle='--')
+        top_k["label"] = top_k["mir_pass"] + " + " + top_k["llvm_pass"]
+        fig_h = max(10.0, 0.38 * len(top_k) + 2.0)
+        plt.figure(figsize=(12, fig_h))
+
+        plt.errorbar(
+            x=top_k["delta"],
+            y=range(len(top_k)),
+            xerr=[top_k["delta"] - top_k["ci_low"], top_k["ci_high"] - top_k["delta"]],
+            fmt="o",
+            capsize=4,
+            markersize=4,
+            elinewidth=1.2,
+        )
+        plt.yticks(range(len(top_k)), top_k["label"], fontsize=8)
+        plt.axvline(x=0, color="r", linestyle="--", linewidth=1.2)
         plt.xlabel("Interaction Effect (Delta)")
-        plt.title("Top Significant Interactions")
+        plt.title("Top Significant Interactions (Top 50)")
         plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, "top_interactions_forest.png"))
+        out_png = os.path.join(OUTPUT_DIR, "top_interactions_forest.png")
+        out_pdf = os.path.join(OUTPUT_DIR, "top_interactions_forest.pdf")
+        plt.savefig(out_png, bbox_inches="tight")
+        plt.savefig(out_pdf, bbox_inches="tight")
+        plt.close()
     
     # 4. Save the 2x2 mean table for the top 1 result (as example)
     if not results_df.empty:

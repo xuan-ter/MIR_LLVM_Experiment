@@ -5,8 +5,10 @@ import os
 import numpy as np
 
 # Configuration
-INPUT_CSV = "/mnt/fjx/Compiler_Experiment/analysis/one/interaction_results.csv"
-OUTPUT_DIR = "/mnt/fjx/Compiler_Experiment/analysis/one/coupling_plots"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_CSV = os.path.join(BASE_DIR, "interaction_results.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "coupling_plots")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def plot_knowledge_graph(df, output_path, top_n=None):
     """
@@ -123,7 +125,7 @@ def main():
         print("Error: Input CSV file not found.")
         return
 
-    plot_knowledge_graph(df, os.path.join(OUTPUT_DIR, "coupling_knowledge_graph.png"), top_n=None)
+    plot_knowledge_graph(df, os.path.join(OUTPUT_DIR, "coupling_knowledge_graph.pdf"), top_n=None)
 
 if __name__ == "__main__":
     main()

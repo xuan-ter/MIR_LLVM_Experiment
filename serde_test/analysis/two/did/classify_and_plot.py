@@ -16,6 +16,7 @@ except Exception:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_CSV = os.path.join(BASE_DIR, "interaction_results.csv")
 OUTPUT_BASE = os.path.join(BASE_DIR, "classified_results")
+INTERACTION_DELTA_X_MAX = 0.10
 
 # Paths
 NEG_DIR = os.path.join(OUTPUT_BASE, "negative_interaction")
@@ -284,7 +285,7 @@ def plot_top_interactions_forest_pil(rows, output_png_path, top_n=50):
     pdf_path = os.path.splitext(output_png_path)[0] + ".pdf"
     img.convert("RGB").save(pdf_path, "PDF", resolution=300.0)
 
-def plot_delta_distributions_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path, bins=50):
+def plot_delta_distributions_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path, bins=50, x_max=None):
     deltas_all = [d for d in (neg_deltas + pos_deltas + ind_deltas) if d is not None and d == d]
     if not deltas_all:
         return
@@ -295,6 +296,12 @@ def plot_delta_distributions_three_types(neg_deltas, pos_deltas, ind_deltas, out
     pad = max_abs * 0.05
     min_x = -(max_abs + pad)
     max_x = +(max_abs + pad)
+    if x_max is not None:
+        x_max = float(x_max)
+        min_x = -x_max
+        max_x = x_max
+        max_abs = x_max
+        pad = 0.0
 
     width, height = 2400, 1500
     img = Image.new("RGBA", (width, height), (255, 255, 255, 255))
@@ -475,7 +482,7 @@ def plot_delta_distributions_three_types(neg_deltas, pos_deltas, ind_deltas, out
     pdf_path = os.path.splitext(output_png_path)[0] + ".pdf"
     img.convert("RGB").save(pdf_path, "PDF", resolution=300.0)
 
-def plot_kde_overlay_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path):
+def plot_kde_overlay_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path, x_max=None):
     deltas_all = [d for d in (neg_deltas + pos_deltas + ind_deltas) if d is not None and d == d]
     if not deltas_all:
         return
@@ -486,6 +493,12 @@ def plot_kde_overlay_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_
     pad = max_abs * 0.05
     min_x = -(max_abs + pad)
     max_x = +(max_abs + pad)
+    if x_max is not None:
+        x_max = float(x_max)
+        min_x = -x_max
+        max_x = x_max
+        max_abs = x_max
+        pad = 0.0
 
     width, height = 2400, 1100
     img = Image.new("RGBA", (width, height), (255, 255, 255, 255))
@@ -602,7 +615,7 @@ def plot_kde_overlay_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_
     pdf_path = os.path.splitext(output_png_path)[0] + ".pdf"
     img.convert("RGB").save(pdf_path, "PDF", resolution=300.0)
 
-def plot_kde_panels_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path):
+def plot_kde_panels_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_path, x_max=None):
     deltas_all = [d for d in (neg_deltas + pos_deltas + ind_deltas) if d is not None and d == d]
     if not deltas_all:
         return
@@ -613,6 +626,12 @@ def plot_kde_panels_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_p
     pad = max_abs * 0.05
     min_x = -(max_abs + pad)
     max_x = +(max_abs + pad)
+    if x_max is not None:
+        x_max = float(x_max)
+        min_x = -x_max
+        max_x = x_max
+        max_abs = x_max
+        pad = 0.0
 
     width, height = 2400, 1500
     img = Image.new("RGBA", (width, height), (255, 255, 255, 255))
@@ -720,6 +739,34 @@ def plot_kde_panels_three_types(neg_deltas, pos_deltas, ind_deltas, output_png_p
     pdf_path = os.path.splitext(output_png_path)[0] + ".pdf"
     img.convert("RGB").save(pdf_path, "PDF", resolution=300.0)
 
+def combine_interaction_delta_figures(output_dir, output_pdf_path):
+    parts = [
+        os.path.join(output_dir, "interaction_delta_dist_by_type.png"),
+        os.path.join(output_dir, "interaction_delta_kde_overlay.png"),
+    ]
+    imgs = []
+    for p in parts:
+        if not os.path.exists(p):
+            return
+        imgs.append(Image.open(p).convert("RGB"))
+
+    width = max(im.size[0] for im in imgs)
+    gap = 40
+    height = sum(im.size[1] for im in imgs) + gap * (len(imgs) - 1)
+    combined = Image.new("RGB", (width, height), (255, 255, 255))
+    y = 0
+    resample = getattr(getattr(Image, "Resampling", None), "LANCZOS", None) or getattr(Image, "LANCZOS", None)
+    for im in imgs:
+        if im.size[0] != width:
+            new_h = int(im.size[1] * (width / im.size[0]))
+            if resample is not None:
+                im = im.resize((width, new_h), resample=resample)
+            else:
+                im = im.resize((width, new_h))
+        combined.paste(im, (0, y))
+        y += im.size[1] + gap
+    combined.save(output_pdf_path, "PDF", resolution=300.0)
+
 def main():
     print(f"Reading data from {INPUT_CSV}...")
     if HAVE_MPL:
@@ -790,6 +837,7 @@ def main():
             ind_deltas=ind_deltas,
             output_png_path=out_path,
             bins=50,
+            x_max=INTERACTION_DELTA_X_MAX,
         )
         print(f"Saved distribution plot to {out_path}")
         print(f"Saved distribution plot to {os.path.splitext(out_path)[0] + '.pdf'}")
@@ -799,6 +847,7 @@ def main():
             pos_deltas=pos_deltas,
             ind_deltas=ind_deltas,
             output_png_path=kde_overlay_out,
+            x_max=INTERACTION_DELTA_X_MAX,
         )
         print(f"Saved KDE overlay plot to {kde_overlay_out}")
         print(f"Saved KDE overlay plot to {os.path.splitext(kde_overlay_out)[0] + '.pdf'}")
@@ -808,9 +857,13 @@ def main():
             pos_deltas=pos_deltas,
             ind_deltas=ind_deltas,
             output_png_path=kde_panels_out,
+            x_max=INTERACTION_DELTA_X_MAX,
         )
         print(f"Saved 3-panel KDE plot to {kde_panels_out}")
         print(f"Saved 3-panel KDE plot to {os.path.splitext(kde_panels_out)[0] + '.pdf'}")
+        combined_out = os.path.join(OUTPUT_BASE, "interaction_delta_combined.pdf")
+        combine_interaction_delta_figures(OUTPUT_BASE, combined_out)
+        print(f"Saved combined interaction-delta PDF to {combined_out}")
         forest_out = os.path.join(BASE_DIR, "top_interactions_forest.png")
         plot_top_interactions_forest_pil(rows, forest_out, top_n=50)
         print(f"Saved top-50 forest plot to {forest_out}")
@@ -876,6 +929,7 @@ def main():
         ind_deltas=ind_deltas,
         output_png_path=dist_out,
         bins=50,
+        x_max=INTERACTION_DELTA_X_MAX,
     )
 
     kde_overlay_out = os.path.join(OUTPUT_BASE, "interaction_delta_kde_overlay.png")
@@ -884,6 +938,7 @@ def main():
         pos_deltas=pos_deltas,
         ind_deltas=ind_deltas,
         output_png_path=kde_overlay_out,
+        x_max=INTERACTION_DELTA_X_MAX,
     )
 
     kde_panels_out = os.path.join(OUTPUT_BASE, "interaction_delta_kde_panels_by_type.png")
@@ -892,7 +947,11 @@ def main():
         pos_deltas=pos_deltas,
         ind_deltas=ind_deltas,
         output_png_path=kde_panels_out,
+        x_max=INTERACTION_DELTA_X_MAX,
     )
+
+    combined_out = os.path.join(OUTPUT_BASE, "interaction_delta_combined.pdf")
+    combine_interaction_delta_figures(OUTPUT_BASE, combined_out)
 
     print("Plots generated.")
 

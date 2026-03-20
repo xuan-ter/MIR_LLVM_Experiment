@@ -1,9 +1,25 @@
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import networkx as nx
 import os
+import csv
 import numpy as np
+import matplotlib.pyplot as plt
+
+try:
+    import pandas as pd
+    HAVE_PANDAS = True
+except Exception:
+    HAVE_PANDAS = False
+
+try:
+    import seaborn as sns
+    HAVE_SEABORN = True
+except Exception:
+    HAVE_SEABORN = False
+
+try:
+    import networkx as nx
+    HAVE_NETWORKX = True
+except Exception:
+    HAVE_NETWORKX = False
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -11,40 +27,134 @@ INPUT_CSV = os.path.join(BASE_DIR, "interaction_results.csv")
 OUTPUT_DIR = os.path.join(BASE_DIR, "coupling_plots")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-def plot_filtered_heatmap(df, output_path):
+def plot_filtered_heatmap(data, output_path):
     """
     Plots a heatmap showing ONLY significant interactions.
     Non-significant cells are masked (white).
     Rows/Cols with NO significant interactions are removed to reduce clutter.
     """
-    # Filter only significant rows/cols first
-    sig_df = df[df['significant'] == True]
-    if sig_df.empty:
+    if HAVE_PANDAS and HAVE_SEABORN:
+        df = data
+        sig_df = df[df['significant'] == True]
+        if sig_df.empty:
+            print("No significant interactions found for heatmap.")
+            return
+
+        relevant_mir = sig_df['mir_pass'].unique()
+        relevant_llvm = sig_df['llvm_pass'].unique()
+
+        pivot_delta = df.pivot(index='mir_pass', columns='llvm_pass', values='delta')
+        pivot_sig = df.pivot(index='mir_pass', columns='llvm_pass', values='significant')
+
+        pivot_delta = pivot_delta.loc[relevant_mir, relevant_llvm]
+        pivot_sig = pivot_sig.loc[relevant_mir, relevant_llvm]
+
+        mask = ~pivot_sig.fillna(False).astype(bool)
+
+        fig, ax = plt.subplots(figsize=(20, 15))
+        sns.heatmap(
+            pivot_delta,
+            mask=mask,
+            center=0,
+            cmap='RdBu_r',
+            annot=False,
+            cbar_kws={
+                'label': 'Interaction Delta (Significant Only)',
+                'orientation': 'horizontal',
+                'pad': 0.08,
+                'shrink': 0.8,
+            },
+            square=True,
+            linewidths=.5,
+            linecolor='gray',
+            ax=ax,
+        )
+        ax.set_title('Filtered Interaction Heatmap (Non-Significant Masked)')
+        cbar = ax.collections[0].colorbar
+        cbar.ax.xaxis.set_label_position('bottom')
+        cbar.ax.xaxis.set_ticks_position('bottom')
+        fig.tight_layout()
+        fig.savefig(output_path)
+        plt.close()
+        print(f"Saved filtered heatmap to {output_path}")
+        return
+
+    def fbool(x):
+        return str(x).strip().lower() == "true"
+
+    def ffloat(x):
+        try:
+            return float(str(x).strip())
+        except Exception:
+            return float("nan")
+
+    rows = data
+    mir_order = {}
+    llvm_order = {}
+    for r in rows:
+        if not fbool(r.get("significant")):
+            continue
+        m = str(r.get("mir_pass", "")).strip()
+        l = str(r.get("llvm_pass", "")).strip()
+        if m and m not in mir_order:
+            mir_order[m] = len(mir_order)
+        if l and l not in llvm_order:
+            llvm_order[l] = len(llvm_order)
+
+    mir_list = list(mir_order.keys())
+    llvm_list = list(llvm_order.keys())
+    if not mir_list or not llvm_list:
         print("No significant interactions found for heatmap.")
         return
 
-    relevant_mir = sig_df['mir_pass'].unique()
-    relevant_llvm = sig_df['llvm_pass'].unique()
+    m = len(mir_list)
+    n = len(llvm_list)
+    mat = np.full((m, n), np.nan, dtype=float)
+    for r in rows:
+        if not fbool(r.get("significant")):
+            continue
+        mir = str(r.get("mir_pass", "")).strip()
+        llvm = str(r.get("llvm_pass", "")).strip()
+        if mir not in mir_order or llvm not in llvm_order:
+            continue
+        d = ffloat(r.get("delta"))
+        if d != d:
+            continue
+        mat[mir_order[mir], llvm_order[llvm]] = d
 
-    # Pivot full data but only for relevant items
-    pivot_delta = df.pivot(index='mir_pass', columns='llvm_pass', values='delta')
-    pivot_sig = df.pivot(index='mir_pass', columns='llvm_pass', values='significant')
+    max_abs = float(np.nanmax(np.abs(mat)))
+    if not (max_abs > 0):
+        print("No valid deltas found for heatmap.")
+        return
 
-    # Subset to relevant items
-    pivot_delta = pivot_delta.loc[relevant_mir, relevant_llvm]
-    pivot_sig = pivot_sig.loc[relevant_mir, relevant_llvm]
+    from matplotlib.colors import TwoSlopeNorm
 
-    # Mask: True means data will be hidden
-    # We hide where significant is False or NaN
-    mask = ~pivot_sig.fillna(False).astype(bool)
+    masked = np.ma.array(mat, mask=np.isnan(mat))
+    cmap = plt.get_cmap("RdBu_r").copy()
+    cmap.set_bad(color="white")
+    norm = TwoSlopeNorm(vmin=-max_abs, vcenter=0.0, vmax=max_abs)
 
-    plt.figure(figsize=(20, 15))
-    sns.heatmap(pivot_delta, mask=mask, center=0, cmap='RdBu_r', annot=False, 
-                cbar_kws={'label': 'Interaction Delta (Significant Only)'},
-                square=True, linewidths=.5, linecolor='gray')
-    plt.title('Filtered Interaction Heatmap (Non-Significant Masked)')
-    plt.tight_layout()
-    plt.savefig(output_path)
+    fig, ax = plt.subplots(figsize=(20, 15))
+    im = ax.imshow(masked, cmap=cmap, norm=norm, aspect="equal", interpolation="nearest")
+    ax.set_title("Filtered Interaction Heatmap (Non-Significant Masked)")
+
+    ax.set_xticks(range(n))
+    ax.set_yticks(range(m))
+    ax.set_xticklabels(llvm_list, rotation=90, fontsize=6)
+    ax.set_yticklabels(mir_list, fontsize=6)
+
+    ax.set_xticks(np.arange(-.5, n, 1), minor=True)
+    ax.set_yticks(np.arange(-.5, m, 1), minor=True)
+    ax.grid(which="minor", color="gray", linestyle="-", linewidth=0.3)
+    ax.tick_params(which="minor", bottom=False, left=False)
+
+    cbar = fig.colorbar(im, ax=ax, orientation="horizontal", pad=0.08, shrink=0.8)
+    cbar.set_label("Interaction Delta (Significant Only)")
+    cbar.ax.xaxis.set_label_position("bottom")
+    cbar.ax.xaxis.set_ticks_position("bottom")
+
+    fig.tight_layout()
+    fig.savefig(output_path)
     plt.close()
     print(f"Saved filtered heatmap to {output_path}")
 
@@ -169,20 +279,29 @@ def plot_bipartite_network(df, output_path, top_n=50):
 
 def main():
     print(f"Reading data from {INPUT_CSV}...")
-    try:
-        df = pd.read_csv(INPUT_CSV)
-    except FileNotFoundError:
+    if HAVE_PANDAS:
+        try:
+            df = pd.read_csv(INPUT_CSV)
+        except FileNotFoundError:
+            print("Error: Input CSV file not found.")
+            return
+        plot_filtered_heatmap(df, os.path.join(OUTPUT_DIR, "filtered_heatmap.pdf"))
+        if HAVE_SEABORN:
+            plot_clustermap(df, os.path.join(OUTPUT_DIR, "clustered_heatmap.pdf"))
+        if HAVE_NETWORKX:
+            plot_bipartite_network(df, os.path.join(OUTPUT_DIR, "coupling_network_top50.pdf"), top_n=50)
+        return
+
+    if not os.path.exists(INPUT_CSV):
         print("Error: Input CSV file not found.")
         return
 
-    # 1. Filtered Heatmap
-    plot_filtered_heatmap(df, os.path.join(OUTPUT_DIR, "filtered_heatmap.pdf"))
+    rows = []
+    with open(INPUT_CSV, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            rows.append(r)
 
-    # 2. Clustermap
-    plot_clustermap(df, os.path.join(OUTPUT_DIR, "clustered_heatmap.pdf"))
-
-    # 3. Bipartite Network (Top 50)
-    plot_bipartite_network(df, os.path.join(OUTPUT_DIR, "coupling_network_top50.pdf"), top_n=50)
+    plot_filtered_heatmap(rows, os.path.join(OUTPUT_DIR, "filtered_heatmap.pdf"))
 
 if __name__ == "__main__":
     main()

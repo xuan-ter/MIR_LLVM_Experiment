@@ -1,0 +1,291 @@
+// MIR for `parse_arg_string` before SimplifyCfg-initial
+
+fn parse_arg_string(_1: &str, _2: &str) -> String {
+    debug flag => _1;
+    debug default => _2;
+    let mut _0: std::string::String;
+    let mut _3: std::iter::Skip<std::env::Args>;
+    let mut _4: std::env::Args;
+    let _5: ();
+    let mut _6: ();
+    let mut _7: std::option::Option<std::string::String>;
+    let mut _8: &mut std::iter::Skip<std::env::Args>;
+    let mut _9: isize;
+    let mut _11: bool;
+    let mut _12: &std::string::String;
+    let mut _13: &&str;
+    let mut _14: std::option::Option<std::string::String>;
+    let mut _15: &mut std::iter::Skip<std::env::Args>;
+    let mut _16: isize;
+    let mut _18: !;
+    let mut _19: !;
+    let _20: ();
+    let mut _21: !;
+    let mut _22: &str;
+    scope 1 {
+        debug args => _3;
+        scope 2 {
+            debug a => _10;
+            let _10: std::string::String;
+            scope 3 {
+                debug v => _17;
+                let _17: std::string::String;
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = args() -> [return: bb1, unwind: bb49];
+    }
+
+    bb1: {
+        _3 = <Args as Iterator>::skip(move _4, const 1_usize) -> [return: bb2, unwind: bb48];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        FakeRead(ForLet(None), _3);
+        StorageLive(_5);
+        goto -> bb3;
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb47];
+    }
+
+    bb4: {
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = &mut _3;
+        _7 = <Skip<Args> as Iterator>::next(move _8) -> [return: bb5, unwind: bb47];
+    }
+
+    bb5: {
+        StorageDead(_8);
+        PlaceMention(_7);
+        _9 = discriminant(_7);
+        switchInt(move _9) -> [1: bb7, otherwise: bb6];
+    }
+
+    bb6: {
+        goto -> bb26;
+    }
+
+    bb7: {
+        falseEdge -> [real: bb9, imaginary: bb6];
+    }
+
+    bb8: {
+        goto -> bb6;
+    }
+
+    bb9: {
+        StorageLive(_10);
+        _10 = move ((_7 as Some).0: std::string::String);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = &_10;
+        StorageLive(_13);
+        _13 = &_1;
+        _11 = <String as PartialEq<&str>>::eq(move _12, move _13) -> [return: bb10, unwind: bb45];
+    }
+
+    bb10: {
+        switchInt(move _11) -> [0: bb12, otherwise: bb11];
+    }
+
+    bb11: {
+        StorageDead(_13);
+        StorageDead(_12);
+        StorageLive(_14);
+        StorageLive(_15);
+        _15 = &mut _3;
+        _14 = <Skip<Args> as Iterator>::next(move _15) -> [return: bb13, unwind: bb45];
+    }
+
+    bb12: {
+        goto -> bb24;
+    }
+
+    bb13: {
+        StorageDead(_15);
+        PlaceMention(_14);
+        _16 = discriminant(_14);
+        switchInt(move _16) -> [1: bb15, otherwise: bb14];
+    }
+
+    bb14: {
+        goto -> bb20;
+    }
+
+    bb15: {
+        falseEdge -> [real: bb17, imaginary: bb14];
+    }
+
+    bb16: {
+        goto -> bb14;
+    }
+
+    bb17: {
+        StorageLive(_17);
+        _17 = move ((_14 as Some).0: std::string::String);
+        _0 = move _17;
+        goto -> bb37;
+    }
+
+    bb18: {
+        unreachable;
+    }
+
+    bb19: {
+        drop(_17) -> [return: bb21, unwind: bb44];
+    }
+
+    bb20: {
+        _6 = const ();
+        goto -> bb22;
+    }
+
+    bb21: {
+        StorageDead(_17);
+        goto -> bb22;
+    }
+
+    bb22: {
+        drop(_14) -> [return: bb23, unwind: bb45];
+    }
+
+    bb23: {
+        StorageDead(_14);
+        goto -> bb25;
+    }
+
+    bb24: {
+        StorageDead(_13);
+        StorageDead(_12);
+        _6 = const ();
+        goto -> bb25;
+    }
+
+    bb25: {
+        StorageDead(_11);
+        drop(_10) -> [return: bb27, unwind: bb46];
+    }
+
+    bb26: {
+        StorageLive(_20);
+        _5 = const ();
+        goto -> bb33;
+    }
+
+    bb27: {
+        StorageDead(_10);
+        goto -> bb31;
+    }
+
+    bb28: {
+        unreachable;
+    }
+
+    bb29: {
+        StorageDead(_20);
+        unreachable;
+    }
+
+    bb30: {
+        goto -> bb31;
+    }
+
+    bb31: {
+        drop(_7) -> [return: bb32, unwind: bb47];
+    }
+
+    bb32: {
+        StorageDead(_7);
+        goto -> bb3;
+    }
+
+    bb33: {
+        StorageDead(_20);
+        drop(_7) -> [return: bb34, unwind: bb47];
+    }
+
+    bb34: {
+        StorageDead(_7);
+        StorageDead(_5);
+        StorageLive(_22);
+        _22 = &(*_2);
+        _0 = <str as ToString>::to_string(move _22) -> [return: bb35, unwind: bb47];
+    }
+
+    bb35: {
+        StorageDead(_22);
+        drop(_3) -> [return: bb36, unwind: bb49];
+    }
+
+    bb36: {
+        StorageDead(_3);
+        goto -> bb43;
+    }
+
+    bb37: {
+        drop(_17) -> [return: bb38, unwind: bb44];
+    }
+
+    bb38: {
+        StorageDead(_17);
+        drop(_14) -> [return: bb39, unwind: bb45];
+    }
+
+    bb39: {
+        StorageDead(_14);
+        StorageDead(_11);
+        drop(_10) -> [return: bb40, unwind: bb46];
+    }
+
+    bb40: {
+        StorageDead(_10);
+        drop(_7) -> [return: bb41, unwind: bb47];
+    }
+
+    bb41: {
+        StorageDead(_7);
+        StorageDead(_5);
+        drop(_3) -> [return: bb42, unwind: bb49];
+    }
+
+    bb42: {
+        StorageDead(_3);
+        goto -> bb43;
+    }
+
+    bb43: {
+        return;
+    }
+
+    bb44 (cleanup): {
+        drop(_14) -> [return: bb45, unwind terminate(cleanup)];
+    }
+
+    bb45 (cleanup): {
+        drop(_10) -> [return: bb46, unwind terminate(cleanup)];
+    }
+
+    bb46 (cleanup): {
+        drop(_7) -> [return: bb47, unwind terminate(cleanup)];
+    }
+
+    bb47 (cleanup): {
+        drop(_3) -> [return: bb49, unwind terminate(cleanup)];
+    }
+
+    bb48 (cleanup): {
+        drop(_4) -> [return: bb49, unwind terminate(cleanup)];
+    }
+
+    bb49 (cleanup): {
+        resume;
+    }
+}

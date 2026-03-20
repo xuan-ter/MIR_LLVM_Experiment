@@ -1,0 +1,84 @@
+// MIR for `xorshift32` 0 DestinationPropagation-dataflow
+
+fn xorshift32(_1: u32) -> u32 {
+    debug x => _1;
+    let mut _0: u32;
+    let mut _2: u32;
+    let mut _3: u32;
+    let mut _4: u32;
+    let mut _5: u32;
+    let mut _6: u32;
+    let mut _7: u32;
+
+    bb0: {
+        // before: TwoStepIndex(45) => [_1]
+        StorageLive(_2);
+        // after: TwoStepIndex(44) => [_1]
+        // before: TwoStepIndex(43) => [_1]
+        StorageLive(_3);
+        // after: TwoStepIndex(42) => [_1]
+        // before: TwoStepIndex(41) => [_1]
+        _3 = copy _1;
+        // after: TwoStepIndex(40) => [_3, _1]
+        // before: TwoStepIndex(39) => [_3, _1]
+        _2 = Shl(move _3, const 13_i32);
+        // after: TwoStepIndex(38) => [_3, _1]
+        // before: TwoStepIndex(37) => [_1]
+        StorageDead(_3);
+        // after: TwoStepIndex(36) => [_1]
+        // before: TwoStepIndex(35) => [_1]
+        _1 = BitXor(copy _1, move _2);
+        // after: TwoStepIndex(34) => [_1]
+        // before: TwoStepIndex(33) => [_1]
+        StorageDead(_2);
+        // after: TwoStepIndex(32) => [_1]
+        // before: TwoStepIndex(31) => [_1]
+        StorageLive(_4);
+        // after: TwoStepIndex(30) => [_1]
+        // before: TwoStepIndex(29) => [_1]
+        StorageLive(_5);
+        // after: TwoStepIndex(28) => [_1]
+        // before: TwoStepIndex(27) => [_1]
+        _5 = copy _1;
+        // after: TwoStepIndex(26) => [_1, _5]
+        // before: TwoStepIndex(25) => [_1, _5]
+        _4 = Shr(move _5, const 17_i32);
+        // after: TwoStepIndex(24) => [_1, _5]
+        // before: TwoStepIndex(23) => [_1]
+        StorageDead(_5);
+        // after: TwoStepIndex(22) => [_1]
+        // before: TwoStepIndex(21) => [_1]
+        _1 = BitXor(copy _1, move _4);
+        // after: TwoStepIndex(20) => [_1]
+        // before: TwoStepIndex(19) => [_1]
+        StorageDead(_4);
+        // after: TwoStepIndex(18) => [_1]
+        // before: TwoStepIndex(17) => [_1]
+        StorageLive(_6);
+        // after: TwoStepIndex(16) => [_1]
+        // before: TwoStepIndex(15) => [_1]
+        StorageLive(_7);
+        // after: TwoStepIndex(14) => [_1]
+        // before: TwoStepIndex(13) => [_1]
+        _7 = copy _1;
+        // after: TwoStepIndex(12) => [_1, _7]
+        // before: TwoStepIndex(11) => [_1, _7]
+        _6 = Shl(move _7, const 5_i32);
+        // after: TwoStepIndex(10) => [_1, _7]
+        // before: TwoStepIndex(9) => [_1]
+        StorageDead(_7);
+        // after: TwoStepIndex(8) => [_1]
+        // before: TwoStepIndex(7) => [_1]
+        _1 = BitXor(copy _1, move _6);
+        // after: TwoStepIndex(6) => [_1]
+        // before: TwoStepIndex(5) => [_1]
+        StorageDead(_6);
+        // after: TwoStepIndex(4) => [_1]
+        // before: TwoStepIndex(3) => [_1]
+        _0 = copy _1;
+        // after: TwoStepIndex(2) => [_0]
+        // before: TwoStepIndex(1) => [_0]
+        return;
+        // after: TwoStepIndex(0) => [_0]
+    }
+}

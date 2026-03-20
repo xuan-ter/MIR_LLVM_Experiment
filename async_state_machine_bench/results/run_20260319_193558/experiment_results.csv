@@ -1,0 +1,4 @@
+ConfigName,Variant,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),IR_alloca,IR_load,IR_store,IR_gep,IR_phi,IR_bb,LLVM_IR_Path,RunRepeats,TargetSeconds,Status
+EXP_000_ALL_OFF,S,1,None,All,453736,3.746868,0.110860,16,75,29,69,699,8,/mnt/fjx/Compiler_Experiment/async_state_machine_bench/target/release/deps/async_state_machine_bench-f0539b71ad4f80b4.ll,54,4.000000,Success
+EXP_000_ALL_OFF,B,1,None,All,453736,4.128426,0.110860,16,75,29,69,699,8,/mnt/fjx/Compiler_Experiment/async_state_machine_bench/target/release/deps/async_state_machine_bench-f0539b71ad4f80b4.ll,10,4.000000,Success
+EXP_000_ALL_OFF,L,1,None,All,453736,5.612170,0.110860,16,75,29,69,699,8,/mnt/fjx/Compiler_Experiment/async_state_machine_bench/target/release/deps/async_state_machine_bench-f0539b71ad4f80b4.ll,16,4.000000,Success

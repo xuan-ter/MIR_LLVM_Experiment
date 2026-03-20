@@ -1,0 +1,7 @@
+Case,Config,NsPerIter_median,NsPerIter_x_vs_Default,CompileTime_s_median,CompileTime_x_vs_Default,BinarySize_bytes_median,BinarySize_x_vs_Default
+easy_case,Default,43925.24,1.00,1.903467,1.00,1060592,1.0000
+easy_case,MIR Inline OFF,690291.40,15.72,1.311236,0.69,1060128,0.9996
+easy_case,All 20 MIR opts OFF,691247.70,15.74,1.274268,0.67,1060128,0.9996
+mir_dependent_case,Default,43914.66,1.00,1.903467,1.00,1060592,1.0000
+mir_dependent_case,MIR Inline OFF,574719.90,13.09,1.311236,0.69,1060128,0.9996
+mir_dependent_case,All 20 MIR opts OFF,575696.00,13.11,1.274268,0.67,1060128,0.9996

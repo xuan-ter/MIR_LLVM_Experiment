@@ -273,16 +273,6 @@
       }
     },
     {
-      "name": "EXP_000_DEFAULT",
-      "description": "Default compiler settings (Optimizations Enabled)",
-      "llvm": {
-        "pass": "baseline",
-        "switches": [],
-        "parameters": {}
-      },
-      "mir": null
-    },
-    {
       "name": "EXP_001_DISABLE_ALL",
       "description": "Force DISABLE all 83 optimizations",
       "llvm": {

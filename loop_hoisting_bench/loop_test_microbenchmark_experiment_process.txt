@@ -1,0 +1,112 @@
+loop_test 微基准的作用与实验流程（experiment_loop_mir_llvm_hybrid.py）
+
+1) 微基准作用（Why this microbenchmark）
+- loop_test 的目标不是覆盖真实应用的全部行为，而是构造“可控、可归因”的循环内核，用来验证 MIR 与 LLVM 两层优化开关（MIR pass / LLVM pass）对性能的影响及其交互。
+- 该微基准特别强调“可解释”：除端到端指标（运行时间/编译时间/体积）外，还会采集与循环优化强相关的中间证据（MIR CFG 规模、LLVM IR 控制流、LICM remark、hot loop 负载与常量因子外提迹象），从而把某个配置的性能变化与可观测的编译器行为关联起来。
+- 脚本默认同时在两个工作负载模式（easy 与 mir-dependent）下运行同一组配置，用来观察解释信号在不同模式下是否一致、以及不同模式是否改变 MIR/LLVM 优化收益的来源。
+
+2) Benchmark 程序与两种 Mode 的含义（What are easy / mir-dependent）
+- 运行时由可执行文件 target/release/loop_test 驱动；脚本通过运行参数控制模式和数据规模：
+  --mode <easy|mir-dependent> --len <bytes> --iters <iters> --seed <seed>
+- 两种模式对应两套内部循环内核（在证据分析里也会按函数名区分）：
+  - easy: 对应 LLVM IR 中函数名 loop_easy
+  - mir-dependent: 对应 LLVM IR 中函数名 loop_mir_dependent
+- 这两种模式用于制造不同的“编译器敏感性”：easy 更倾向产生直接、稳定的优化机会；mir-dependent 更依赖 MIR 级别的形状变化，从而更容易暴露 MIR 与 LLVM 的顺序依赖/补偿/重叠关系。
+
+3) 实验输入（Config space）
+- 配置空间来自 JSON：
+  /mnt/fjx/Compiler_Experiment/table/table_json/combined_experiment_matrix.json
+- JSON 中每个 combination 典型包含：
+  - name/Experiment_ID
+  - mir: { pass, switches, parameters }
+  - llvm: { pass, switches, parameters }
+- 脚本将其组合成 RUSTFLAGS（默认包含 -C opt-level=3）：
+  - MIR：-Z mir-enable-passes=<switches 逗号连接>
+  - LLVM：对每个 switch 添加一条 -C llvm-args=<switch>
+
+4) 实验流程（How experiment_loop_mir_llvm_hybrid.py runs）
+对每个 combination、每个 mode、重复 runs 次：
+1) 生成运行参数
+   - run_args = ["--mode", mode, "--len", LEN, "--iters", ITERS, "--seed", SEED]
+   - warmup_iters 默认由脚本自动设置：max(1, min(200, ITERS // 50))，也可通过 --warmup-iters 指定
+2) 构造环境变量
+   - env["RUSTFLAGS"] = compose_rustflags_from_combo(combo) +（可选的证据采集参数）
+   - env["CARGO_INCREMENTAL"] = "0"
+3) （可选）清理
+   - 默认每次迭代 cargo clean / 删除 target（可用 --skip-clean 关闭）
+4) 编译（Release）
+   - cargo build --release --quiet
+   - 记录 CompileTime(s)
+5) 运行基准
+   - （可选）先跑 warmup（warmup_iters 次迭代）
+   - 再跑正式 run（ITERS 次迭代）
+   - 从 stdout 中解析 "Total Time: <x> s" 作为 TotalRuntime(s)
+6) 记录二进制信息
+   - BinarySize(Bytes) = 可执行文件大小
+   - BinarySHA256 = 可执行文件哈希（用于确认不同配置确实产生了不同产物）
+
+5) 证据采集（Evidence collection / Explainability signals）
+默认开启证据采集（可用 --no-evidence 关闭）。开启时会额外：
+1) MIR dump
+   - RUSTFLAGS 追加：
+     - --emit=llvm-ir,asm,link
+     - -Z dump-mir=loop_easy 或 loop_mir_dependent（随 mode 变化）
+     - -Z dump-mir-dir=<evidence_dir>/mir_dump
+     - -Z dump-mir-exclude-pass-number=yes
+     - -Z dump-mir-exclude-alloc-bytes=yes
+   - 脚本在 mir_dump 中挑选：
+     - *.built.after.mir（或最早的 mir）作为“第一份”
+     - *.runtime-optimized.after.mir（或最后的 mir）作为“最后一份”
+   - 从 MIR 文本统计：
+     - MIR_BB_(First/Last)：基本块数量（bbN:）
+     - MIR_TermBlocks_(First/Last)：终结语句块计数（goto/switchInt/return/resume/unreachable 等）
+     - MIR_Goto_(First/Last)、MIR_SwitchInt_(First/Last)、MIR_Locals_(First/Last)
+2) LLVM IR 与 ASM
+   - 编译产物里抓取最近生成的 .ll / .s 文件（target/release/deps 下 loop_test 相关文件）
+   - 从 LLVM IR 的对应函数体统计：
+     - LLVM_BB、LLVM_br、LLVM_switch
+3) LICM remarks（解释 loop 优化活动）
+   - RUSTFLAGS 追加：
+     - -C llvm-args=-pass-remarks=licm
+     - -C llvm-args=-pass-remarks-missed=licm
+   - 从编译 stderr 抽取 remark 行并写入 licm_remarks.yaml
+   - 统计：
+     - LICM_Remarks_Passed：非 "failed to" 的 LICM remark 数
+     - LICM_Remarks_Missed：包含 "failed to" 的 LICM remark 数
+4) hot loop loads 与“常量因子外提”迹象（Explainable loop-shaping proxy）
+   - 在 LLVM IR 中对函数 CFG 做 SCC 分解，选取“最热 loop SCC”（按 load 数与 SCC 大小排序）
+   - 输出：
+     - HotLoop_SCCSize：该 SCC 的块数
+     - HotLoop_Loads：该 SCC 中 load 指令计数
+   - 进一步用常量集合扫描算术指令来构造“因子”计数：
+     - easy 模式常量集合：{7, 3}
+     - mir-dependent 模式常量集合：{13, 7, 3, 5}
+     - FactorConst_InHotLoop / OutHotLoop / Total
+     - FactorConst_Hoisted：当 Total>0 且 InHotLoop==0 且 OutHotLoop>0 时记为 1（作为“外提迹象”的布尔代理）
+5) 证据文件的保存策略
+   - 默认 keep_ir=false 时会清理中间 .ll/.s 以及多余 MIR 文件（只保留第一份与最后一份），减小磁盘占用
+   - 如需保留全部中间文件，可使用 --keep-ir
+
+6) 输出内容（What files are produced）
+默认输出目录：
+  /mnt/fjx/Compiler_Experiment/loop_test/mir_llvm_hybrid_py/<timestamp>/
+可用 --output-dir 自定义。
+
+目录下关键文件：
+- experiment_results.csv：逐次运行记录（每个 config × mode × run_id 一行）
+  主要列：
+  ConfigName, Mode, Len, Iters, Seed, WarmupIters, PinCPU, RunID,
+  LLVM_Pass, MIR_Pass,
+  BinarySize(Bytes), BinarySHA256,
+  TotalRuntime(s), CompileTime(s), Status,
+  MIR_*（first/last 的 CFG 计数）,
+  LLVM_*（BB/br/switch）,
+  LICM_Remarks_Passed/Missed,
+  HotLoop_* 与 FactorConst_* 等解释字段
+- experiment_execution.log：记录执行命令、RUSTFLAGS、toolchain 信息（rustc -Vv / cargo -V / uname -a）与错误输出
+- evidence/<ConfigName>/<mode>/run_<k>/：每次迭代的证据文件目录（MIR dump、LICM remarks 等）
+
+7) CSV 后处理（analysis）
+脚本支持直接对某次实验的 experiment_results.csv 做聚合与绘图：
+  python3 experiment_loop_mir_llvm_hybrid.py --analyze-csv <path/to/experiment_results.csv> --analysis-out <out_dir>
+分析输出会按 mode 计算 median、baseline delta、Pareto 前沿，并生成用于可解释性展示的表与图。

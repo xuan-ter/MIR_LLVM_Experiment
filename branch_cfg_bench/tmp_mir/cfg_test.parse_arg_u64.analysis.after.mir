@@ -1,0 +1,258 @@
+// MIR for `parse_arg_u64` after analysis
+
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(2:16026 ~ core[dd01]::str::{impl#0}::parse), UserArgs { args: [u64], user_self_ty: None }), max_universe: U0, var_kinds: [] }, span: src/main.rs:108:26: 108:31, inferred_ty: for<'a> fn(&'a str) -> std::result::Result<u64, <u64 as std::str::FromStr>::Err> {core::str::<impl str>::parse::<u64>}
+|
+fn parse_arg_u64(_1: &str, _2: u64) -> u64 {
+    debug flag => _1;
+    debug default => _2;
+    let mut _0: u64;
+    let mut _3: std::iter::Skip<std::env::Args>;
+    let mut _4: std::env::Args;
+    let _5: ();
+    let mut _6: ();
+    let mut _7: std::option::Option<std::string::String>;
+    let mut _8: &mut std::iter::Skip<std::env::Args>;
+    let mut _9: isize;
+    let mut _11: bool;
+    let mut _12: &std::string::String;
+    let mut _13: &&str;
+    let mut _14: std::option::Option<std::string::String>;
+    let mut _15: &mut std::iter::Skip<std::env::Args>;
+    let mut _16: isize;
+    let mut _18: !;
+    let mut _19: std::result::Result<u64, std::num::ParseIntError>;
+    let mut _20: &str;
+    let _21: &str;
+    let mut _22: &std::string::String;
+    let mut _23: u64;
+    let mut _24: !;
+    let _25: ();
+    let mut _26: !;
+    scope 1 {
+        debug args => _3;
+        scope 2 {
+            debug a => _10;
+            let _10: std::string::String;
+            scope 3 {
+                debug v => _17;
+                let _17: std::string::String;
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = args() -> [return: bb1, unwind: bb37];
+    }
+
+    bb1: {
+        _3 = <Args as Iterator>::skip(move _4, const 1_usize) -> [return: bb2, unwind: bb36];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        FakeRead(ForLet(None), _3);
+        StorageLive(_5);
+        goto -> bb3;
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb35];
+    }
+
+    bb4: {
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = &mut _3;
+        _7 = <Skip<Args> as Iterator>::next(move _8) -> [return: bb5, unwind: bb35];
+    }
+
+    bb5: {
+        StorageDead(_8);
+        PlaceMention(_7);
+        _9 = discriminant(_7);
+        switchInt(move _9) -> [1: bb6, otherwise: bb20];
+    }
+
+    bb6: {
+        falseEdge -> [real: bb7, imaginary: bb20];
+    }
+
+    bb7: {
+        StorageLive(_10);
+        _10 = move ((_7 as Some).0: std::string::String);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = &_10;
+        StorageLive(_13);
+        _13 = &_1;
+        _11 = <String as PartialEq<&str>>::eq(move _12, move _13) -> [return: bb8, unwind: bb33];
+    }
+
+    bb8: {
+        switchInt(move _11) -> [0: bb18, otherwise: bb9];
+    }
+
+    bb9: {
+        StorageDead(_13);
+        StorageDead(_12);
+        StorageLive(_14);
+        StorageLive(_15);
+        _15 = &mut _3;
+        _14 = <Skip<Args> as Iterator>::next(move _15) -> [return: bb10, unwind: bb33];
+    }
+
+    bb10: {
+        StorageDead(_15);
+        PlaceMention(_14);
+        _16 = discriminant(_14);
+        switchInt(move _16) -> [1: bb11, otherwise: bb16];
+    }
+
+    bb11: {
+        falseEdge -> [real: bb12, imaginary: bb16];
+    }
+
+    bb12: {
+        StorageLive(_17);
+        _17 = move ((_14 as Some).0: std::string::String);
+        StorageLive(_19);
+        StorageLive(_20);
+        StorageLive(_21);
+        StorageLive(_22);
+        _22 = &_17;
+        _21 = <String as Deref>::deref(move _22) -> [return: bb13, unwind: bb31];
+    }
+
+    bb13: {
+        _20 = &(*_21);
+        StorageDead(_22);
+        _19 = core::str::<impl str>::parse::<u64>(move _20) -> [return: bb14, unwind: bb31];
+    }
+
+    bb14: {
+        StorageDead(_20);
+        StorageLive(_23);
+        _23 = copy _2;
+        _0 = Result::<u64, ParseIntError>::unwrap_or(move _19, move _23) -> [return: bb15, unwind: bb31];
+    }
+
+    bb15: {
+        StorageDead(_23);
+        StorageDead(_19);
+        StorageDead(_21);
+        drop(_17) -> [return: bb25, unwind: bb32];
+    }
+
+    bb16: {
+        _6 = const ();
+        drop(_14) -> [return: bb17, unwind: bb33];
+    }
+
+    bb17: {
+        StorageDead(_14);
+        goto -> bb19;
+    }
+
+    bb18: {
+        StorageDead(_13);
+        StorageDead(_12);
+        _6 = const ();
+        goto -> bb19;
+    }
+
+    bb19: {
+        StorageDead(_11);
+        drop(_10) -> [return: bb21, unwind: bb34];
+    }
+
+    bb20: {
+        StorageLive(_25);
+        _5 = const ();
+        StorageDead(_25);
+        drop(_7) -> [return: bb23, unwind: bb35];
+    }
+
+    bb21: {
+        StorageDead(_10);
+        drop(_7) -> [return: bb22, unwind: bb35];
+    }
+
+    bb22: {
+        StorageDead(_7);
+        goto -> bb3;
+    }
+
+    bb23: {
+        StorageDead(_7);
+        StorageDead(_5);
+        _0 = copy _2;
+        drop(_3) -> [return: bb24, unwind: bb37];
+    }
+
+    bb24: {
+        StorageDead(_3);
+        goto -> bb30;
+    }
+
+    bb25: {
+        StorageDead(_17);
+        drop(_14) -> [return: bb26, unwind: bb33];
+    }
+
+    bb26: {
+        StorageDead(_14);
+        StorageDead(_11);
+        drop(_10) -> [return: bb27, unwind: bb34];
+    }
+
+    bb27: {
+        StorageDead(_10);
+        drop(_7) -> [return: bb28, unwind: bb35];
+    }
+
+    bb28: {
+        StorageDead(_7);
+        StorageDead(_5);
+        drop(_3) -> [return: bb29, unwind: bb37];
+    }
+
+    bb29: {
+        StorageDead(_3);
+        goto -> bb30;
+    }
+
+    bb30: {
+        return;
+    }
+
+    bb31 (cleanup): {
+        drop(_17) -> [return: bb32, unwind terminate(cleanup)];
+    }
+
+    bb32 (cleanup): {
+        drop(_14) -> [return: bb33, unwind terminate(cleanup)];
+    }
+
+    bb33 (cleanup): {
+        drop(_10) -> [return: bb34, unwind terminate(cleanup)];
+    }
+
+    bb34 (cleanup): {
+        drop(_7) -> [return: bb35, unwind terminate(cleanup)];
+    }
+
+    bb35 (cleanup): {
+        drop(_3) -> [return: bb37, unwind terminate(cleanup)];
+    }
+
+    bb36 (cleanup): {
+        drop(_4) -> [return: bb37, unwind terminate(cleanup)];
+    }
+
+    bb37 (cleanup): {
+        resume;
+    }
+}

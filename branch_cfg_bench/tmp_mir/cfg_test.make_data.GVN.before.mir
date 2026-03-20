@@ -1,0 +1,330 @@
+// MIR for `make_data` before GVN
+
+fn make_data(_1: usize, _2: u32) -> Vec<u32> {
+    debug n => _1;
+    debug seed => _2;
+    let mut _0: std::vec::Vec<u32>;
+    let mut _3: std::vec::Vec<u32>;
+    let mut _4: usize;
+    let mut _6: usize;
+    let mut _7: std::option::Option<usize>;
+    let mut _8: isize;
+    let mut _9: u32;
+    let mut _10: u32;
+    let mut _11: &mut std::vec::Vec<u32>;
+    let mut _12: u32;
+    let mut _15: std::alloc::Layout;
+    let mut _32: usize;
+    let mut _33: usize;
+    let mut _44: usize;
+    let mut _45: usize;
+    let mut _46: usize;
+    let mut _47: usize;
+    scope 1 {
+        debug v => _3;
+        let mut _5: u32;
+        scope 2 {
+            debug x => _5;
+            let mut _42: usize;
+            let mut _43: usize;
+            scope 3 {
+                debug ((iter: std::ops::Range<usize>).0: usize) => _42;
+                debug ((iter: std::ops::Range<usize>).1: usize) => _43;
+                scope 19 (inlined iter::range::<impl Iterator for std::ops::Range<usize>>::next) {
+                    scope 20 (inlined <std::ops::Range<usize> as iter::range::RangeIteratorImpl>::spec_next) {
+                        let mut _27: bool;
+                        let _28: usize;
+                        let mut _29: usize;
+                        scope 21 {
+                            scope 23 (inlined <usize as Step>::forward_unchecked) {
+                                scope 24 (inlined #[track_caller] core::num::<impl usize>::unchecked_add) {
+                                    let _34: ();
+                                    scope 25 (inlined core::ub_checks::check_language_ub) {
+                                        scope 26 (inlined core::ub_checks::check_language_ub::runtime) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 22 (inlined std::cmp::impls::<impl PartialOrd for usize>::lt) {
+                            let mut _30: usize;
+                            let mut _31: usize;
+                        }
+                    }
+                }
+                scope 27 (inlined xorshift32) {
+                    let mut _35: u32;
+                    let mut _36: u32;
+                    let mut _37: u32;
+                    let mut _38: u32;
+                    let mut _39: u32;
+                    let mut _40: u32;
+                }
+                scope 28 (inlined Vec::<u32>::push) {
+                    let mut _41: &mut u32;
+                    scope 29 {
+                    }
+                }
+            }
+            scope 18 (inlined <std::ops::Range<usize> as IntoIterator>::into_iter) {
+            }
+        }
+    }
+    scope 4 (inlined Vec::<u32>::with_capacity) {
+        scope 5 (inlined Vec::<u32>::with_capacity_in) {
+            let mut _13: alloc::raw_vec::RawVec<u32>;
+            scope 6 (inlined alloc::raw_vec::RawVec::<u32>::with_capacity_in) {
+                let mut _14: alloc::raw_vec::RawVecInner;
+                scope 7 (inlined alloc::raw_vec::RawVecInner::with_capacity_in) {
+                    let mut _16: std::result::Result<alloc::raw_vec::RawVecInner, std::collections::TryReserveError>;
+                    let mut _17: isize;
+                    let mut _18: bool;
+                    let mut _19: bool;
+                    let _20: std::collections::TryReserveError;
+                    let mut _21: !;
+                    scope 8 {
+                        scope 10 (inlined alloc::raw_vec::RawVecInner::needs_to_grow) {
+                            let mut _22: usize;
+                            let mut _23: usize;
+                            let mut _24: usize;
+                            scope 11 (inlined Layout::size) {
+                            }
+                            scope 12 (inlined alloc::raw_vec::RawVecInner::capacity) {
+                                let mut _25: core::num::niche_types::UsizeNoHighBit;
+                                scope 13 (inlined core::num::niche_types::UsizeNoHighBit::as_inner) {
+                                }
+                            }
+                            scope 14 (inlined core::num::<impl usize>::wrapping_sub) {
+                            }
+                        }
+                        scope 15 (inlined #[track_caller] assert_unchecked) {
+                            let _26: ();
+                            scope 16 (inlined core::ub_checks::check_language_ub) {
+                                scope 17 (inlined core::ub_checks::check_language_ub::runtime) {
+                                }
+                            }
+                        }
+                    }
+                    scope 9 {
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = copy _1;
+        StorageLive(_13);
+        StorageLive(_14);
+        StorageLive(_15);
+        _15 = const <u32 as std::mem::SizedTypeProperties>::LAYOUT;
+        StorageLive(_17);
+        StorageLive(_20);
+        StorageLive(_16);
+        _16 = alloc::raw_vec::RawVecInner::try_allocate_in(copy _4, const alloc::raw_vec::AllocInit::Uninitialized, const std::alloc::Global, copy _15) -> [return: bb7, unwind continue];
+    }
+
+    bb1: {
+        StorageLive(_7);
+        StorageLive(_28);
+        StorageLive(_27);
+        StorageLive(_30);
+        _30 = copy _42;
+        StorageLive(_31);
+        _31 = copy _43;
+        _27 = Lt(move _30, move _31);
+        StorageDead(_31);
+        StorageDead(_30);
+        switchInt(move _27) -> [0: bb16, otherwise: bb15];
+    }
+
+    bb2: {
+        unreachable;
+    }
+
+    bb3: {
+        StorageLive(_9);
+        StorageLive(_10);
+        _10 = copy _5;
+        StorageLive(_35);
+        StorageLive(_36);
+        _36 = copy _10;
+        _35 = Shl(move _36, const 13_i32);
+        StorageDead(_36);
+        _10 = BitXor(copy _10, move _35);
+        StorageDead(_35);
+        StorageLive(_37);
+        StorageLive(_38);
+        _38 = copy _10;
+        _37 = Shr(move _38, const 17_i32);
+        StorageDead(_38);
+        _10 = BitXor(copy _10, move _37);
+        StorageDead(_37);
+        StorageLive(_39);
+        StorageLive(_40);
+        _40 = copy _10;
+        _39 = Shl(move _40, const 5_i32);
+        StorageDead(_40);
+        _10 = BitXor(copy _10, move _39);
+        StorageDead(_39);
+        _9 = copy _10;
+        StorageDead(_10);
+        _5 = move _9;
+        StorageDead(_9);
+        StorageLive(_11);
+        _11 = &mut _3;
+        StorageLive(_12);
+        _12 = copy _5;
+        StorageLive(_41);
+        _41 = Vec::<u32>::push_mut(move _11, move _12) -> [return: bb20, unwind: bb5];
+    }
+
+    bb4: {
+        StorageDead(_7);
+        StorageDead(_42);
+        StorageDead(_43);
+        StorageDead(_44);
+        StorageDead(_45);
+        _0 = move _3;
+        StorageDead(_5);
+        StorageDead(_3);
+        return;
+    }
+
+    bb5 (cleanup): {
+        drop(_3) -> [return: bb6, unwind terminate(cleanup)];
+    }
+
+    bb6 (cleanup): {
+        resume;
+    }
+
+    bb7: {
+        _17 = discriminant(_16);
+        switchInt(move _17) -> [0: bb9, 1: bb8, otherwise: bb2];
+    }
+
+    bb8: {
+        _20 = move ((_16 as Err).0: std::collections::TryReserveError);
+        _21 = alloc::raw_vec::handle_error(move _20) -> unwind continue;
+    }
+
+    bb9: {
+        _14 = move ((_16 as Ok).0: alloc::raw_vec::RawVecInner);
+        StorageLive(_18);
+        StorageLive(_19);
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_24);
+        _24 = copy (_15.0: usize);
+        switchInt(copy _24) -> [0: bb11, otherwise: bb12];
+    }
+
+    bb10: {
+        StorageDead(_24);
+        _22 = Sub(copy _23, const 0_usize);
+        StorageDead(_23);
+        _19 = Gt(copy _4, move _22);
+        StorageDead(_22);
+        _18 = Not(move _19);
+        StorageDead(_19);
+        goto -> bb14;
+    }
+
+    bb11: {
+        _23 = const usize::MAX;
+        goto -> bb10;
+    }
+
+    bb12: {
+        StorageLive(_25);
+        _25 = copy (_14.1: core::num::niche_types::UsizeNoHighBit);
+        _23 = copy _25 as usize (Transmute);
+        StorageDead(_25);
+        goto -> bb10;
+    }
+
+    bb13: {
+        _26 = assert_unchecked::precondition_check(copy _18) -> [return: bb14, unwind unreachable];
+    }
+
+    bb14: {
+        assume(copy _18);
+        StorageDead(_18);
+        StorageDead(_16);
+        StorageDead(_20);
+        StorageDead(_17);
+        StorageDead(_15);
+        _13 = alloc::raw_vec::RawVec::<u32> { inner: move _14, _marker: const PhantomData::<u32> };
+        StorageDead(_14);
+        _3 = Vec::<u32> { buf: move _13, len: const 0_usize };
+        StorageDead(_13);
+        StorageDead(_4);
+        StorageLive(_5);
+        _5 = copy _2;
+        StorageLive(_44);
+        StorageLive(_45);
+        StorageLive(_46);
+        StorageLive(_47);
+        StorageLive(_6);
+        _6 = copy _1;
+        _46 = const 0_usize;
+        _47 = move _6;
+        StorageDead(_6);
+        _44 = move _46;
+        _45 = move _47;
+        StorageDead(_46);
+        StorageDead(_47);
+        StorageLive(_42);
+        StorageLive(_43);
+        _42 = move _44;
+        _43 = move _45;
+        goto -> bb1;
+    }
+
+    bb15: {
+        _28 = copy _42;
+        StorageLive(_29);
+        StorageLive(_32);
+        _32 = copy _28;
+        StorageLive(_33);
+        _33 = const 1_usize;
+        goto -> bb19;
+    }
+
+    bb16: {
+        _7 = Option::<usize>::None;
+        goto -> bb17;
+    }
+
+    bb17: {
+        StorageDead(_27);
+        StorageDead(_28);
+        _8 = discriminant(_7);
+        switchInt(move _8) -> [0: bb4, 1: bb3, otherwise: bb2];
+    }
+
+    bb18: {
+        _34 = core::num::<impl usize>::unchecked_add::precondition_check(copy _32, copy _33) -> [return: bb19, unwind unreachable];
+    }
+
+    bb19: {
+        _29 = AddUnchecked(copy _32, copy _33);
+        StorageDead(_33);
+        StorageDead(_32);
+        _42 = move _29;
+        StorageDead(_29);
+        _7 = Option::<usize>::Some(copy _28);
+        goto -> bb17;
+    }
+
+    bb20: {
+        StorageDead(_41);
+        StorageDead(_12);
+        StorageDead(_11);
+        StorageDead(_7);
+        goto -> bb1;
+    }
+}

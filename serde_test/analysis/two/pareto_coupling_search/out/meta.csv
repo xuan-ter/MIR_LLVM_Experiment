@@ -1,2 +1,0 @@
-analysis_root,edges_csv,baseline_runtime,baseline_compile_time,baseline_size,n_mir_passes,n_llvm_passes,n_edges,min_stability,budget,seed,max_pairs,extra_single_flips,n_front
-/mnt/fjx/Compiler_Experiment/analysis,/mnt/fjx/Compiler_Experiment/analysis/coupling_graph/coupling_edges.csv,16.827333333333332,14.653677666666667,627256.0,20,83,1013,0.4,50,7,10,6,11

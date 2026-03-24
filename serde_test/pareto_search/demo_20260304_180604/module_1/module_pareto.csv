@@ -1,6 +1,0 @@
-idx,MIR_Disabled,LLVM_Disabled,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Penalty,Status
-7,,mr-partial-inlining,626608,16.4068,0.3917781258933246,0.0,Success
-11,,block-placement,623344,16.6841,12.407173095270991,0.0,Success
-17,,partial-inlining,626608,16.3657,6.214904927182943,0.0,Success
-20,,adv-copy-opt,626608,16.3592,12.673203971236944,0.0,Success
-21,ReferencePropagation,,626416,16.568199999999997,13.213240721262991,0.0,Success

@@ -1,9 +1,0 @@
-idx,MIR_Disabled,LLVM_Disabled,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Penalty,Status
-1,,,626608,16.806,0.0,0.0,Success
-2,InstSimplify-after-simplifycfg,,626776,16.909399999999998,0.0,0.0,Success
-3,,branch-fold,627216,16.6571,0.0,0.0,Success
-4,,mr-partial-inlining,626608,16.645899999999997,0.0,0.0,Success
-5,GVN,,626680,17.2335,0.0,0.0,Success
-6,DeadStoreElimination-final,,626704,16.7044,0.0,0.0,Success
-7,SingleUseConsts,,626608,16.3406,0.0,0.0,Success
-8,,bitcode-version-upgrade,626608,16.4928,0.0,0.0,Success

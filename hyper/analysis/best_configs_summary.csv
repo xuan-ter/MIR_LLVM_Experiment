@@ -1,0 +1,10 @@
+Criterion,Rank,SourceCSV,ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),NsPerIter,MBps,TotalRuntime(s),CompileTime(s),Status
+Fastest TotalRuntime(s),1,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_ABL_025_disable-ifcvt-forked-diamond,1,ifcvt-forked-diamond,N/A,15721160,7943788.90,2639,3.078613,93.91005,Success
+Fastest TotalRuntime(s),2,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0110,1,ifcvt-simple-false,DataflowConstProp,15721160,8951176.50,2342,3.104937,92.305459,Success
+Fastest TotalRuntime(s),3,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_ABL_007_disable-replace-with-vec-lib,1,replace-with-vec-lib,N/A,15721160,8744825.10,2398,3.149898,101.051562,Success
+Smallest BinarySize(Bytes),1,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0349,1,block-placement,DestinationPropagation,15662160,7907564.60,2652,7.162114,105.767027,Success
+Smallest BinarySize(Bytes),2,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0017,1,block-placement,CopyProp,15663576,8128426.15,2580,7.30283,102.278898,Success
+Smallest BinarySize(Bytes),3,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0266,1,block-placement,DeadStoreElimination-initial,15663592,8325031.30,2519,7.250109,97.629879,Success
+Shortest CompileTime(s),1,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0512,1,machine-licm,EnumSizeOpt,15709880,7740272.60,2709,7.121647,73.008873,Success
+Shortest CompileTime(s),2,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0377,1,machine-cse,DestinationPropagation,15723888,8592670.30,2440,7.796204,73.011988,Success
+Shortest CompileTime(s),3,d:\MIR_LLVM\mir_-llvm\hyper\mir_llvm_hybrid_py\20260311_002430\experiment_results.csv,EXP_DBL_0527,1,ifcvt-triangle-false,EnumSizeOpt,15721160,6559390.35,3197,6.412083,73.075388,Success

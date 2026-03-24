@@ -1,0 +1,10 @@
+Criterion,Rank,SourceCSV,ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Status
+Fastest TotalRuntime(s),1,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1638,1,last-run-tracking,UnreachablePropagation,43870920,7.756657,53.99408,Success
+Fastest TotalRuntime(s),2,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1297,1,preinline,ReferencePropagation,43600296,7.791694,55.06436,Success
+Fastest TotalRuntime(s),3,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_0710,2,machine-dce,GVN,43838776,7.855385,53.751036,Success
+Smallest BinarySize(Bytes),1,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_0847,1,block-placement,Inline,42537968,8.468723,51.177343,Success
+Smallest BinarySize(Bytes),2,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1096,1,block-placement,JumpThreading,42791176,8.026516,49.154134,Success
+Smallest BinarySize(Bytes),3,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1262,1,block-placement,ReferencePropagation,42919424,8.320353,56.611834,Success
+Shortest CompileTime(s),1,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1119,2,constant-hoisting,JumpThreading,43397064,8.00269,42.583092,Success
+Shortest CompileTime(s),2,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1122,2,gep-const-evaluation,JumpThreading,43404024,8.105593,42.869985,Success
+Shortest CompileTime(s),3,d:\MIR_LLVM\mir_-llvm\regex\mir_llvm_hybrid_py\20260310_224816\experiment_results.csv,EXP_DBL_1123,1,icp,JumpThreading,43404024,7.935282,42.889058,Success

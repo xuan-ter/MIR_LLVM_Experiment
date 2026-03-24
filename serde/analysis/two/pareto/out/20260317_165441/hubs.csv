@@ -1,0 +1,13 @@
+pass,side,weighted_degree,degree
+ImpossiblePredicates,MIR,1.996750271006533,75
+Inline,MIR,1.7766023143656255,82
+InstSimplify-before-inline,MIR,1.4415574644023816,80
+JumpThreading,MIR,1.0507482392815182,80
+MatchBranchSimplification,MIR,0.896320838193956,78
+ScalarReplacementOfAggregates,MIR,0.8328298389711734,64
+InstSimplify-after-simplifycfg,MIR,0.8137315114643073,77
+UnreachableEnumBranching,MIR,0.40901672245271087,21
+ReferencePropagation,MIR,0.36815259095968805,61
+spill-fusing,LLVM,0.3366649075528916,15
+UnreachablePropagation,MIR,0.26302341966181114,56
+loop-idiom-vectorize-all,LLVM,0.24700797257738927,13

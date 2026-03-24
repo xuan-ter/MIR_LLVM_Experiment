@@ -1,2 +1,0 @@
-idx,MIR_Disabled,LLVM_Disabled,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Penalty,Status
-7,SingleUseConsts,,626608,16.3406,0.0,0.0,Success

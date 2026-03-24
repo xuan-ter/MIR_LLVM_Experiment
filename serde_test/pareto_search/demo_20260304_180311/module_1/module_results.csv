@@ -1,8 +1,0 @@
-idx,MIR_Disabled,LLVM_Disabled,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Penalty,Status
-1,,,626608,16.602800000000002,2.0744982017204165,0.0,Success
-2,SingleUseConsts,,626608,16.3581,5.288998866919428,0.0,Success
-3,,cfi-fixup,626608,16.3933,11.388445920776576,0.0,Success
-4,SingleUseConsts,cfi-fixup,626608,16.4137,12.357517475262284,0.0,Success
-5,InstSimplify-after-simplifycfg,,626776,17.1344,1.381322427187115,0.0,Success
-6,,branch-fold,627216,16.602600000000002,0.5218807151541114,0.0,Success
-7,,mr-partial-inlining,626608,16.2255,5.821688430849463,0.0,Success

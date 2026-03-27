@@ -1,4 +1,0 @@
-ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Status
-PARETO_ROW_2,1,from_pareto,from_pareto,0,0,0,BuildFailed
-PARETO_ROW_3,1,from_pareto,from_pareto,625200,17.744100,27.841743,Success
-PARETO_ROW_4,1,from_pareto,from_pareto,623888,18.292100,12.927326,Success

@@ -1,1 +1,0 @@
-ConfigName,Group,Case,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),NsPerIter,MBps,TotalRuntime(s),CompileTime(s),VectorizeRemarkCount,Vectorized,MIR_BBCount,MIR_LocalCount,LLVMIR_Vectorized,LLVMIR_VectorWidth,Status

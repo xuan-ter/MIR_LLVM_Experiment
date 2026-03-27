@@ -1,2 +1,0 @@
-mir_passes_total,llvm_passes_total,mir_low_lt200,llvm_low_lt200,pairs_total,pairs_co_lt15,pairs_co_15_29,pairs_co_ge30,co_min,co_median,co_max
-21,84,1,84,1764,1764,0,0,0,3.0,3

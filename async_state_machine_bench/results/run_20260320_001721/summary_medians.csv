@@ -1,4 +1,0 @@
-Variant,ConfigName,n,runtime_med,compile_med,size_med,alloca_med,load_med,store_med,gep_med,phi_med,bb_med
-B,EXP_000_ALL_OFF,1,3.722283,0.110395,453736,15,74,28,69,699,8
-L,EXP_000_ALL_OFF,1,3.576705,0.110395,453736,15,74,28,69,699,8
-S,EXP_000_ALL_OFF,1,3.511792,0.110395,453736,15,74,28,69,699,8

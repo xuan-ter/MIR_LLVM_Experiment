@@ -1,6 +1,0 @@
-ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Status
-PF_ROW_2_RUNTIME_FIRST,1,from_pareto,from_pareto,627136,16.949000,12.358974,Success
-PF_ROW_3_RUNTIME_FIRST,1,from_pareto,from_pareto,625200,17.231000,12.414289,Success
-PF_ROW_4_RUNTIME_FIRST,1,from_pareto,from_pareto,623888,16.684300,12.255313,Success
-PF_ROW_5_RUNTIME_FIRST,1,from_pareto,from_pareto,624104,16.821600,13.031185,Success
-PF_ROW_6_RUNTIME_FIRST,1,from_pareto,from_pareto,630480,18.448000,12.852359,Success

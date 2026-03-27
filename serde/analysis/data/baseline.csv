@@ -1,4 +1,0 @@
-ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Status
-EXP_DBL_000_BASELINE,1,baseline,baseline,627256,16.938800,14.442785,Success
-EXP_DBL_000_BASELINE,2,baseline,baseline,627256,16.850200,14.152576,Success
-EXP_DBL_000_BASELINE,3,baseline,baseline,627256,16.693000,15.365672,Success

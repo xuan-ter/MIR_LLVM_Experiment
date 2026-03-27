@@ -1,3 +1,0 @@
-Mode,runtime_med,compile_med,size_med,MIR_BB_Last,MIR_TermBlocks_Last,MIR_Goto_Last,MIR_SwitchInt_Last,MIR_Locals_Last,LLVM_BB,LLVM_br,LLVM_switch,LICM_Remarks_Passed,LICM_Remarks_Missed,HotLoop_SCCSize,HotLoop_Loads,FactorConst_InHotLoop,FactorConst_OutHotLoop,FactorConst_Total,FactorConst_Hoisted
-easy,5.858767,11.457628,417368.0,17.0,8.0,4.0,2.0,29.0,10.0,9.0,0.0,250.0,1632.0,6.0,9.0,5.0,2.0,7.0,0.0
-mir-dependent,6.048139,11.920415,417368.0,16.0,8.0,4.0,2.0,28.0,10.0,9.0,0.0,250.0,1632.0,6.0,9.0,8.0,5.0,13.0,0.0

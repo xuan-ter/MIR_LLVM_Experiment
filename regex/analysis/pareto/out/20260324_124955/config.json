@@ -1,8 +1,0 @@
-{
-  "analysis_root": "d:\\MIR_LLVM\\mir_-llvm\\regex\\analysis",
-  "out_root": "d:\\MIR_LLVM\\mir_-llvm\\regex\\analysis\\pareto\\out",
-  "seed": 7,
-  "budget": 1000,
-  "ref_budget": 8000,
-  "methods": "random"
-}

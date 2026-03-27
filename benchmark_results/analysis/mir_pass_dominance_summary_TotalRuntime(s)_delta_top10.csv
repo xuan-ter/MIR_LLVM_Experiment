@@ -1,0 +1,7 @@
+workload,top_mir_pass,top_mir_share,other_share
+serde,MatchBranchSimplification,0.081089,0.610740
+tokio,MatchBranchSimplification,0.139558,0.606087
+hyper,GVN,0.068378,0.536749
+ripgrep,DataflowConstProp,0.068378,0.472541
+rustls,MatchBranchSimplification,0.149703,0.436883
+regex,ForceInline,0.084748,0.329471

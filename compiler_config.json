@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Debug (O0)",
+        "rustflags": "-C opt-level=0"
+    },
+    {
+        "name": "Release (O3)",
+        "rustflags": "-C opt-level=3"
+    },
+    {
+        "name": "Size (Os)",
+        "rustflags": "-C opt-level=s"
+    },
+    {
+        "name": "Release with LTO",
+        "rustflags": "-C opt-level=3 -C lto=fat -C embed-bitcode=yes -Z dylib-lto"
+    },
+    {
+        "name": "Release 1 Codegen Unit",
+        "rustflags": "-C opt-level=3 -C codegen-units=1"
+    }
+]

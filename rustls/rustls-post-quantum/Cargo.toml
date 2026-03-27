@@ -1,0 +1,35 @@
+[package]
+name = "rustls-post-quantum"
+version = "0.2.4"
+edition = "2021"
+rust-version = "1.79"
+license = "Apache-2.0 OR ISC OR MIT"
+readme = "README.md"
+description = "Experimental support for post-quantum key exchange in rustls"
+homepage = "https://github.com/rustls/rustls"
+repository = "https://github.com/rustls/rustls"
+categories = ["network-programming", "cryptography"]
+autobenches = false
+
+[features]
+aws-lc-rs-unstable = ["webpki/aws-lc-rs-unstable", "aws-lc-rs/unstable", "rcgen/aws_lc_rs_unstable"]
+
+[dependencies]
+aws-lc-rs = { workspace = true }
+rustls = { version = "0.23.30", features = ["aws-lc-rs"] }
+webpki = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+env_logger = { workspace = true }
+rcgen = { workspace = true }
+rustls-test = { workspace = true, default-features = false }
+webpki-roots = { workspace = true }
+
+[[bench]]
+name = "benchmarks"
+path = "benches/benchmarks.rs"
+harness = false
+
+[lints]
+workspace = true

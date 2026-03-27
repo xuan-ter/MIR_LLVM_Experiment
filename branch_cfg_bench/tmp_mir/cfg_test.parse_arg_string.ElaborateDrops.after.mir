@@ -1,0 +1,410 @@
+// MIR for `parse_arg_string` after ElaborateDrops
+
+fn parse_arg_string(_1: &str, _2: &str) -> String {
+    debug flag => _1;
+    debug default => _2;
+    let mut _0: std::string::String;
+    let mut _3: std::iter::Skip<std::env::Args>;
+    let mut _4: std::env::Args;
+    let _5: ();
+    let mut _6: ();
+    let mut _7: std::option::Option<std::string::String>;
+    let mut _8: &mut std::iter::Skip<std::env::Args>;
+    let mut _9: isize;
+    let mut _11: bool;
+    let mut _12: &std::string::String;
+    let mut _13: &&str;
+    let mut _14: std::option::Option<std::string::String>;
+    let mut _15: &mut std::iter::Skip<std::env::Args>;
+    let mut _16: isize;
+    let mut _18: !;
+    let mut _19: !;
+    let _20: ();
+    let mut _21: !;
+    let mut _22: &str;
+    let mut _23: isize;
+    let mut _24: isize;
+    let mut _25: isize;
+    let mut _26: isize;
+    let mut _27: isize;
+    let mut _28: isize;
+    let mut _29: isize;
+    let mut _30: isize;
+    let mut _31: isize;
+    let mut _32: isize;
+    let mut _33: isize;
+    scope 1 {
+        debug args => _3;
+        scope 2 {
+            debug a => _10;
+            let _10: std::string::String;
+            scope 3 {
+                debug v => _17;
+                let _17: std::string::String;
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = args() -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _3 = <Args as Iterator>::skip(move _4, const 1_usize) -> [return: bb2, unwind: bb30];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        StorageLive(_5);
+        goto -> bb3;
+    }
+
+    bb3: {
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = &mut _3;
+        _7 = <Skip<Args> as Iterator>::next(move _8) -> [return: bb4, unwind: bb29];
+    }
+
+    bb4: {
+        StorageDead(_8);
+        PlaceMention(_7);
+        _9 = discriminant(_7);
+        switchInt(move _9) -> [1: bb5, otherwise: bb14];
+    }
+
+    bb5: {
+        StorageLive(_10);
+        _10 = move ((_7 as Some).0: std::string::String);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = &_10;
+        StorageLive(_13);
+        _13 = &_1;
+        _11 = <String as PartialEq<&str>>::eq(move _12, move _13) -> [return: bb6, unwind: bb27];
+    }
+
+    bb6: {
+        switchInt(move _11) -> [0: bb12, otherwise: bb7];
+    }
+
+    bb7: {
+        StorageDead(_13);
+        StorageDead(_12);
+        StorageLive(_14);
+        StorageLive(_15);
+        _15 = &mut _3;
+        _14 = <Skip<Args> as Iterator>::next(move _15) -> [return: bb8, unwind: bb27];
+    }
+
+    bb8: {
+        StorageDead(_15);
+        PlaceMention(_14);
+        _16 = discriminant(_14);
+        switchInt(move _16) -> [1: bb9, otherwise: bb10];
+    }
+
+    bb9: {
+        StorageLive(_17);
+        _17 = move ((_14 as Some).0: std::string::String);
+        _0 = move _17;
+        goto -> bb20;
+    }
+
+    bb10: {
+        _6 = const ();
+        goto -> bb38;
+    }
+
+    bb11: {
+        StorageDead(_14);
+        goto -> bb13;
+    }
+
+    bb12: {
+        StorageDead(_13);
+        StorageDead(_12);
+        _6 = const ();
+        goto -> bb13;
+    }
+
+    bb13: {
+        StorageDead(_11);
+        drop(_10) -> [return: bb15, unwind: bb28];
+    }
+
+    bb14: {
+        StorageLive(_20);
+        _5 = const ();
+        StorageDead(_20);
+        goto -> bb46;
+    }
+
+    bb15: {
+        StorageDead(_10);
+        goto -> bb54;
+    }
+
+    bb16: {
+        StorageDead(_7);
+        goto -> bb3;
+    }
+
+    bb17: {
+        StorageDead(_7);
+        StorageDead(_5);
+        StorageLive(_22);
+        _22 = &(*_2);
+        _0 = <str as ToString>::to_string(move _22) -> [return: bb18, unwind: bb29];
+    }
+
+    bb18: {
+        StorageDead(_22);
+        drop(_3) -> [return: bb19, unwind: bb31];
+    }
+
+    bb19: {
+        StorageDead(_3);
+        goto -> bb25;
+    }
+
+    bb20: {
+        StorageDead(_17);
+        goto -> bb62;
+    }
+
+    bb21: {
+        StorageDead(_14);
+        StorageDead(_11);
+        drop(_10) -> [return: bb22, unwind: bb28];
+    }
+
+    bb22: {
+        StorageDead(_10);
+        goto -> bb70;
+    }
+
+    bb23: {
+        StorageDead(_7);
+        StorageDead(_5);
+        drop(_3) -> [return: bb24, unwind: bb31];
+    }
+
+    bb24: {
+        StorageDead(_3);
+        goto -> bb25;
+    }
+
+    bb25: {
+        return;
+    }
+
+    bb26 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb27 (cleanup): {
+        drop(_10) -> [return: bb28, unwind terminate(cleanup)];
+    }
+
+    bb28 (cleanup): {
+        goto -> bb74;
+    }
+
+    bb29 (cleanup): {
+        drop(_3) -> [return: bb31, unwind terminate(cleanup)];
+    }
+
+    bb30 (cleanup): {
+        goto -> bb31;
+    }
+
+    bb31 (cleanup): {
+        resume;
+    }
+
+    bb32: {
+        goto -> bb11;
+    }
+
+    bb33 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb34 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb35: {
+        goto -> bb32;
+    }
+
+    bb36: {
+        goto -> bb32;
+    }
+
+    bb37 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb38: {
+        _23 = discriminant(_14);
+        switchInt(move _23) -> [1: bb35, otherwise: bb36];
+    }
+
+    bb39 (cleanup): {
+        _24 = discriminant(_14);
+        switchInt(move _24) -> [1: bb33, otherwise: bb37];
+    }
+
+    bb40: {
+        goto -> bb17;
+    }
+
+    bb41 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb42 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb43: {
+        goto -> bb40;
+    }
+
+    bb44: {
+        goto -> bb40;
+    }
+
+    bb45 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb46: {
+        _25 = discriminant(_7);
+        switchInt(move _25) -> [1: bb43, otherwise: bb44];
+    }
+
+    bb47 (cleanup): {
+        _26 = discriminant(_7);
+        switchInt(move _26) -> [1: bb41, otherwise: bb45];
+    }
+
+    bb48: {
+        goto -> bb16;
+    }
+
+    bb49 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb50 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb51: {
+        goto -> bb48;
+    }
+
+    bb52: {
+        goto -> bb48;
+    }
+
+    bb53 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb54: {
+        _27 = discriminant(_7);
+        switchInt(move _27) -> [1: bb51, otherwise: bb52];
+    }
+
+    bb55 (cleanup): {
+        _28 = discriminant(_7);
+        switchInt(move _28) -> [1: bb49, otherwise: bb53];
+    }
+
+    bb56: {
+        goto -> bb21;
+    }
+
+    bb57 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb58 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb59: {
+        goto -> bb56;
+    }
+
+    bb60: {
+        goto -> bb56;
+    }
+
+    bb61 (cleanup): {
+        goto -> bb27;
+    }
+
+    bb62: {
+        _29 = discriminant(_14);
+        switchInt(move _29) -> [1: bb59, otherwise: bb60];
+    }
+
+    bb63 (cleanup): {
+        _30 = discriminant(_14);
+        switchInt(move _30) -> [1: bb57, otherwise: bb61];
+    }
+
+    bb64: {
+        goto -> bb23;
+    }
+
+    bb65 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb66 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb67: {
+        goto -> bb64;
+    }
+
+    bb68: {
+        goto -> bb64;
+    }
+
+    bb69 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb70: {
+        _31 = discriminant(_7);
+        switchInt(move _31) -> [1: bb67, otherwise: bb68];
+    }
+
+    bb71 (cleanup): {
+        _32 = discriminant(_7);
+        switchInt(move _32) -> [1: bb65, otherwise: bb69];
+    }
+
+    bb72 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb73 (cleanup): {
+        goto -> bb29;
+    }
+
+    bb74 (cleanup): {
+        _33 = discriminant(_7);
+        switchInt(move _33) -> [1: bb72, otherwise: bb73];
+    }
+}

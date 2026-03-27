@@ -1,0 +1,239 @@
+// MIR for `make_data` after DeadStoreElimination-final
+
+fn make_data(_1: usize, _2: u32) -> Vec<u32> {
+    debug n => _1;
+    debug seed => _2;
+    let mut _0: std::vec::Vec<u32>;
+    let mut _3: std::vec::Vec<u32>;
+    let mut _5: std::option::Option<usize>;
+    let mut _6: isize;
+    let mut _7: u32;
+    let mut _8: u32;
+    let mut _9: &mut std::vec::Vec<u32>;
+    let mut _10: u32;
+    let mut _27: usize;
+    let mut _28: usize;
+    scope 1 {
+        debug v => _3;
+        let mut _4: u32;
+        scope 2 {
+            debug x => _4;
+            let mut _37: usize;
+            let mut _38: usize;
+            scope 3 {
+                debug ((iter: std::ops::Range<usize>).0: usize) => _37;
+                debug ((iter: std::ops::Range<usize>).1: usize) => _1;
+                scope 19 (inlined iter::range::<impl Iterator for std::ops::Range<usize>>::next) {
+                    scope 20 (inlined <std::ops::Range<usize> as iter::range::RangeIteratorImpl>::spec_next) {
+                        let mut _23: bool;
+                        let _24: usize;
+                        let mut _25: usize;
+                        scope 21 {
+                            scope 23 (inlined <usize as Step>::forward_unchecked) {
+                                scope 24 (inlined #[track_caller] core::num::<impl usize>::unchecked_add) {
+                                    let _29: ();
+                                    scope 25 (inlined core::ub_checks::check_language_ub) {
+                                        scope 26 (inlined core::ub_checks::check_language_ub::runtime) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 22 (inlined std::cmp::impls::<impl PartialOrd for usize>::lt) {
+                            let mut _26: usize;
+                        }
+                    }
+                }
+                scope 27 (inlined xorshift32) {
+                    let mut _30: u32;
+                    let mut _31: u32;
+                    let mut _32: u32;
+                    let mut _33: u32;
+                    let mut _34: u32;
+                    let mut _35: u32;
+                }
+                scope 28 (inlined Vec::<u32>::push) {
+                    let mut _36: &mut u32;
+                    scope 29 {
+                    }
+                }
+            }
+            scope 18 (inlined <std::ops::Range<usize> as IntoIterator>::into_iter) {
+            }
+        }
+    }
+    scope 4 (inlined Vec::<u32>::with_capacity) {
+        scope 5 (inlined Vec::<u32>::with_capacity_in) {
+            let mut _11: alloc::raw_vec::RawVec<u32>;
+            scope 6 (inlined alloc::raw_vec::RawVec::<u32>::with_capacity_in) {
+                let mut _12: alloc::raw_vec::RawVecInner;
+                scope 7 (inlined alloc::raw_vec::RawVecInner::with_capacity_in) {
+                    let mut _13: std::result::Result<alloc::raw_vec::RawVecInner, std::collections::TryReserveError>;
+                    let mut _14: isize;
+                    let mut _15: bool;
+                    let mut _16: bool;
+                    let _17: std::collections::TryReserveError;
+                    let mut _18: !;
+                    scope 8 {
+                        scope 10 (inlined alloc::raw_vec::RawVecInner::needs_to_grow) {
+                            let mut _19: usize;
+                            let mut _20: usize;
+                            scope 11 (inlined Layout::size) {
+                            }
+                            scope 12 (inlined alloc::raw_vec::RawVecInner::capacity) {
+                                let mut _21: core::num::niche_types::UsizeNoHighBit;
+                                scope 13 (inlined core::num::niche_types::UsizeNoHighBit::as_inner) {
+                                }
+                            }
+                            scope 14 (inlined core::num::<impl usize>::wrapping_sub) {
+                            }
+                        }
+                        scope 15 (inlined #[track_caller] assert_unchecked) {
+                            let _22: ();
+                            scope 16 (inlined core::ub_checks::check_language_ub) {
+                                scope 17 (inlined core::ub_checks::check_language_ub::runtime) {
+                                }
+                            }
+                        }
+                    }
+                    scope 9 {
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_11);
+        StorageLive(_12);
+        StorageLive(_14);
+        StorageLive(_17);
+        StorageLive(_13);
+        _13 = alloc::raw_vec::RawVecInner::try_allocate_in(copy _1, const alloc::raw_vec::AllocInit::Uninitialized, const std::alloc::Global, const Layout {{ size: 4_usize, align: std::ptr::Alignment {{ _inner_repr_trick: std::ptr::alignment::AlignmentEnum::_Align1Shl2 }} }}) -> [return: bb5, unwind continue];
+    }
+
+    bb1: {
+        StorageLive(_23);
+        StorageLive(_26);
+        _26 = copy _37;
+        _23 = Lt(move _26, copy _1);
+        StorageDead(_26);
+        switchInt(move _23) -> [0: bb9, otherwise: bb8];
+    }
+
+    bb2: {
+        unreachable;
+    }
+
+    bb3 (cleanup): {
+        drop(_3) -> [return: bb4, unwind terminate(cleanup)];
+    }
+
+    bb4 (cleanup): {
+        resume;
+    }
+
+    bb5: {
+        _14 = discriminant(_13);
+        switchInt(move _14) -> [0: bb7, 1: bb6, otherwise: bb2];
+    }
+
+    bb6: {
+        _17 = move ((_13 as Err).0: std::collections::TryReserveError);
+        _18 = alloc::raw_vec::handle_error(move _17) -> unwind continue;
+    }
+
+    bb7: {
+        _12 = move ((_13 as Ok).0: alloc::raw_vec::RawVecInner);
+        StorageLive(_15);
+        StorageLive(_16);
+        StorageLive(_19);
+        StorageLive(_20);
+        StorageLive(_21);
+        _21 = copy (_12.1: core::num::niche_types::UsizeNoHighBit);
+        _20 = copy _21 as usize (Transmute);
+        StorageDead(_21);
+        _19 = Sub(copy _20, const 0_usize);
+        StorageDead(_20);
+        _16 = Gt(copy _1, move _19);
+        StorageDead(_19);
+        _15 = Not(move _16);
+        StorageDead(_16);
+        assume(copy _15);
+        StorageDead(_15);
+        StorageDead(_13);
+        StorageDead(_17);
+        StorageDead(_14);
+        _11 = alloc::raw_vec::RawVec::<u32> { inner: move _12, _marker: const PhantomData::<u32> };
+        StorageDead(_12);
+        _3 = Vec::<u32> { buf: move _11, len: const 0_usize };
+        StorageDead(_11);
+        StorageLive(_4);
+        _4 = copy _2;
+        StorageLive(_37);
+        _37 = const 0_usize;
+        goto -> bb1;
+    }
+
+    bb8: {
+        _24 = copy _37;
+        StorageLive(_25);
+        _25 = AddUnchecked(copy _24, const 1_usize);
+        _37 = move _25;
+        StorageDead(_25);
+        StorageDead(_23);
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = copy _4;
+        StorageLive(_30);
+        StorageLive(_31);
+        _31 = copy _8;
+        _30 = Shl(move _31, const 13_i32);
+        StorageDead(_31);
+        _8 = BitXor(copy _8, move _30);
+        StorageDead(_30);
+        StorageLive(_32);
+        StorageLive(_33);
+        _33 = copy _8;
+        _32 = Shr(move _33, const 17_i32);
+        StorageDead(_33);
+        _8 = BitXor(copy _8, move _32);
+        StorageDead(_32);
+        StorageLive(_34);
+        StorageLive(_35);
+        _35 = copy _8;
+        _34 = Shl(move _35, const 5_i32);
+        StorageDead(_35);
+        _8 = BitXor(copy _8, move _34);
+        StorageDead(_34);
+        _7 = copy _8;
+        StorageDead(_8);
+        _4 = move _7;
+        StorageDead(_7);
+        StorageLive(_9);
+        _9 = &mut _3;
+        StorageLive(_10);
+        _10 = copy _4;
+        StorageLive(_36);
+        _36 = Vec::<u32>::push_mut(move _9, move _10) -> [return: bb10, unwind: bb3];
+    }
+
+    bb9: {
+        StorageDead(_23);
+        StorageDead(_37);
+        _0 = move _3;
+        StorageDead(_4);
+        StorageDead(_3);
+        return;
+    }
+
+    bb10: {
+        StorageDead(_36);
+        StorageDead(_10);
+        StorageDead(_9);
+        goto -> bb1;
+    }
+}
+
+alloc123 (size: 16, align: 8) { .. }

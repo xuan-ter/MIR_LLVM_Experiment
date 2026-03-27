@@ -1,0 +1,27 @@
+Implementation（1 页）
+基于目前的实验环境与脚本行为，总结如下：
+
+1) 基于哪个 Rust 版本
+- 使用 Rust nightly toolchain（见 async_test/experiment_async_expanded_mir.py 中的“cargo +nightly build --release”）
+- 项目使用 2024 edition（见 test_project/Cargo.toml）
+- 依赖 -Z mir-enable-passes 等 nightly-only 标志（见 serde_test/experiment_expanded_llvm_mir.py 中构造 RUSTFLAGS）
+
+2) 修改多少行代码
+- 0 行核心源码修改（未改动 Rust/LLVM 源码）
+- 仅通过 RUSTFLAGS/llvm-args 与 Python 编排脚本进行实验控制
+
+3) 是否修改 LLVM
+- 未修改 LLVM 源码
+- 通过 -C llvm-args=-disable-<pass> 传参禁用 LLVM Pass（serde_test/experiment_expanded_llvm_mir.py）
+
+4) 是否支持 stable channel
+- 不支持：实验依赖 -Z（nightly-only）标志与 +nightly 构建
+
+5) 是否支持 incremental compilation
+- 本实验不启用增量编译：每次运行前 cargo clean，发布模式（--release）默认关闭增量
+- 若强制开启增量会影响可比性与统计严谨性，因此当前设计下不启用
+
+工程复杂度（Reviewer 关注点）
+- 对项目零侵入：不改源码，仅参数化控制
+- 主要复杂度在实验编排与统计分析（随机配置生成、批量构建运行、数据收集与 Lasso/Bootstrap）
+- 可扩展到更大 Pass 集合与更高阶交互，但仍保持源码无修改的特性

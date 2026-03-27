@@ -1,0 +1,773 @@
+{
+  "description": "DiD validation configs generated from strong Lasso interactions",
+  "combinations": [
+    {
+      "name": "DID_001_InstSimplify-after-simplifycfg__branch-fold_BASE",
+      "description": "Baseline (both enabled) for InstSimplify-after-simplifycfg x branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_001_InstSimplify-after-simplifycfg__branch-fold_MIR_OFF",
+      "description": "Disable MIR InstSimplify-after-simplifycfg only (LLVM branch-fold enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [
+          "-InstSimplify-after-simplifycfg"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_001_InstSimplify-after-simplifycfg__branch-fold_LLVM_OFF",
+      "description": "Disable LLVM branch-fold only (MIR InstSimplify-after-simplifycfg enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_001_InstSimplify-after-simplifycfg__branch-fold_BOTH_OFF",
+      "description": "Disable both MIR InstSimplify-after-simplifycfg and LLVM branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [
+          "-InstSimplify-after-simplifycfg"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_002_GVN__branch-fold_BASE",
+      "description": "Baseline (both enabled) for GVN x branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_002_GVN__branch-fold_MIR_OFF",
+      "description": "Disable MIR GVN only (LLVM branch-fold enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_002_GVN__branch-fold_LLVM_OFF",
+      "description": "Disable LLVM branch-fold only (MIR GVN enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_002_GVN__branch-fold_BOTH_OFF",
+      "description": "Disable both MIR GVN and LLVM branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_003_Inline__peephole_BASE",
+      "description": "Baseline (both enabled) for Inline x peephole",
+      "llvm": {
+        "pass": "peephole",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "Inline",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_003_Inline__peephole_MIR_OFF",
+      "description": "Disable MIR Inline only (LLVM peephole enabled)",
+      "llvm": {
+        "pass": "peephole",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "Inline",
+        "switches": [
+          "-Inline"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_003_Inline__peephole_LLVM_OFF",
+      "description": "Disable LLVM peephole only (MIR Inline enabled)",
+      "llvm": {
+        "pass": "peephole",
+        "switches": [
+          "-disable-peephole"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "Inline",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_003_Inline__peephole_BOTH_OFF",
+      "description": "Disable both MIR Inline and LLVM peephole",
+      "llvm": {
+        "pass": "peephole",
+        "switches": [
+          "-disable-peephole"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "Inline",
+        "switches": [
+          "-Inline"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_004_GVN__bitcode-version-upgrade_BASE",
+      "description": "Baseline (both enabled) for GVN x bitcode-version-upgrade",
+      "llvm": {
+        "pass": "bitcode-version-upgrade",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_004_GVN__bitcode-version-upgrade_MIR_OFF",
+      "description": "Disable MIR GVN only (LLVM bitcode-version-upgrade enabled)",
+      "llvm": {
+        "pass": "bitcode-version-upgrade",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_004_GVN__bitcode-version-upgrade_LLVM_OFF",
+      "description": "Disable LLVM bitcode-version-upgrade only (MIR GVN enabled)",
+      "llvm": {
+        "pass": "bitcode-version-upgrade",
+        "switches": [
+          "-disable-bitcode-version-upgrade"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_004_GVN__bitcode-version-upgrade_BOTH_OFF",
+      "description": "Disable both MIR GVN and LLVM bitcode-version-upgrade",
+      "llvm": {
+        "pass": "bitcode-version-upgrade",
+        "switches": [
+          "-disable-bitcode-version-upgrade"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_005_JumpThreading__mr-partial-inlining_BASE",
+      "description": "Baseline (both enabled) for JumpThreading x mr-partial-inlining",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "JumpThreading",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_005_JumpThreading__mr-partial-inlining_MIR_OFF",
+      "description": "Disable MIR JumpThreading only (LLVM mr-partial-inlining enabled)",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "JumpThreading",
+        "switches": [
+          "-JumpThreading"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_005_JumpThreading__mr-partial-inlining_LLVM_OFF",
+      "description": "Disable LLVM mr-partial-inlining only (MIR JumpThreading enabled)",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [
+          "-disable-mr-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "JumpThreading",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_005_JumpThreading__mr-partial-inlining_BOTH_OFF",
+      "description": "Disable both MIR JumpThreading and LLVM mr-partial-inlining",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [
+          "-disable-mr-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "JumpThreading",
+        "switches": [
+          "-JumpThreading"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_006_DeadStoreElimination-final__branch-fold_BASE",
+      "description": "Baseline (both enabled) for DeadStoreElimination-final x branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-final",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_006_DeadStoreElimination-final__branch-fold_MIR_OFF",
+      "description": "Disable MIR DeadStoreElimination-final only (LLVM branch-fold enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-final",
+        "switches": [
+          "-DeadStoreElimination-final"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_006_DeadStoreElimination-final__branch-fold_LLVM_OFF",
+      "description": "Disable LLVM branch-fold only (MIR DeadStoreElimination-final enabled)",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-final",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_006_DeadStoreElimination-final__branch-fold_BOTH_OFF",
+      "description": "Disable both MIR DeadStoreElimination-final and LLVM branch-fold",
+      "llvm": {
+        "pass": "branch-fold",
+        "switches": [
+          "-disable-branch-fold"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-final",
+        "switches": [
+          "-DeadStoreElimination-final"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_007_ImpossiblePredicates__partial-libcall-inlining_BASE",
+      "description": "Baseline (both enabled) for ImpossiblePredicates x partial-libcall-inlining",
+      "llvm": {
+        "pass": "partial-libcall-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ImpossiblePredicates",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_007_ImpossiblePredicates__partial-libcall-inlining_MIR_OFF",
+      "description": "Disable MIR ImpossiblePredicates only (LLVM partial-libcall-inlining enabled)",
+      "llvm": {
+        "pass": "partial-libcall-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ImpossiblePredicates",
+        "switches": [
+          "-ImpossiblePredicates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_007_ImpossiblePredicates__partial-libcall-inlining_LLVM_OFF",
+      "description": "Disable LLVM partial-libcall-inlining only (MIR ImpossiblePredicates enabled)",
+      "llvm": {
+        "pass": "partial-libcall-inlining",
+        "switches": [
+          "-disable-partial-libcall-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ImpossiblePredicates",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_007_ImpossiblePredicates__partial-libcall-inlining_BOTH_OFF",
+      "description": "Disable both MIR ImpossiblePredicates and LLVM partial-libcall-inlining",
+      "llvm": {
+        "pass": "partial-libcall-inlining",
+        "switches": [
+          "-disable-partial-libcall-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ImpossiblePredicates",
+        "switches": [
+          "-ImpossiblePredicates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_008_ReferencePropagation__block-placement_BASE",
+      "description": "Baseline (both enabled) for ReferencePropagation x block-placement",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ReferencePropagation",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_008_ReferencePropagation__block-placement_MIR_OFF",
+      "description": "Disable MIR ReferencePropagation only (LLVM block-placement enabled)",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ReferencePropagation",
+        "switches": [
+          "-ReferencePropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_008_ReferencePropagation__block-placement_LLVM_OFF",
+      "description": "Disable LLVM block-placement only (MIR ReferencePropagation enabled)",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [
+          "-disable-block-placement"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ReferencePropagation",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_008_ReferencePropagation__block-placement_BOTH_OFF",
+      "description": "Disable both MIR ReferencePropagation and LLVM block-placement",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [
+          "-disable-block-placement"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "ReferencePropagation",
+        "switches": [
+          "-ReferencePropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_009_DeadStoreElimination-initial__constant-hoisting_BASE",
+      "description": "Baseline (both enabled) for DeadStoreElimination-initial x constant-hoisting",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-initial",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_009_DeadStoreElimination-initial__constant-hoisting_MIR_OFF",
+      "description": "Disable MIR DeadStoreElimination-initial only (LLVM constant-hoisting enabled)",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-initial",
+        "switches": [
+          "-DeadStoreElimination-initial"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_009_DeadStoreElimination-initial__constant-hoisting_LLVM_OFF",
+      "description": "Disable LLVM constant-hoisting only (MIR DeadStoreElimination-initial enabled)",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [
+          "-disable-constant-hoisting"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-initial",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_009_DeadStoreElimination-initial__constant-hoisting_BOTH_OFF",
+      "description": "Disable both MIR DeadStoreElimination-initial and LLVM constant-hoisting",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [
+          "-disable-constant-hoisting"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DeadStoreElimination-initial",
+        "switches": [
+          "-DeadStoreElimination-initial"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_010_InstSimplify-after-simplifycfg__mr-partial-inlining_BASE",
+      "description": "Baseline (both enabled) for InstSimplify-after-simplifycfg x mr-partial-inlining",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_010_InstSimplify-after-simplifycfg__mr-partial-inlining_MIR_OFF",
+      "description": "Disable MIR InstSimplify-after-simplifycfg only (LLVM mr-partial-inlining enabled)",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [
+          "-InstSimplify-after-simplifycfg"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_010_InstSimplify-after-simplifycfg__mr-partial-inlining_LLVM_OFF",
+      "description": "Disable LLVM mr-partial-inlining only (MIR InstSimplify-after-simplifycfg enabled)",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [
+          "-disable-mr-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_010_InstSimplify-after-simplifycfg__mr-partial-inlining_BOTH_OFF",
+      "description": "Disable both MIR InstSimplify-after-simplifycfg and LLVM mr-partial-inlining",
+      "llvm": {
+        "pass": "mr-partial-inlining",
+        "switches": [
+          "-disable-mr-partial-inlining"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [
+          "-InstSimplify-after-simplifycfg"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_011_GVN__block-placement_BASE",
+      "description": "Baseline (both enabled) for GVN x block-placement",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_011_GVN__block-placement_MIR_OFF",
+      "description": "Disable MIR GVN only (LLVM block-placement enabled)",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_011_GVN__block-placement_LLVM_OFF",
+      "description": "Disable LLVM block-placement only (MIR GVN enabled)",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [
+          "-disable-block-placement"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_011_GVN__block-placement_BOTH_OFF",
+      "description": "Disable both MIR GVN and LLVM block-placement",
+      "llvm": {
+        "pass": "block-placement",
+        "switches": [
+          "-disable-block-placement"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_012_DataflowConstProp__constant-hoisting_BASE",
+      "description": "Baseline (both enabled) for DataflowConstProp x constant-hoisting",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DataflowConstProp",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_012_DataflowConstProp__constant-hoisting_MIR_OFF",
+      "description": "Disable MIR DataflowConstProp only (LLVM constant-hoisting enabled)",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DataflowConstProp",
+        "switches": [
+          "-DataflowConstProp"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_012_DataflowConstProp__constant-hoisting_LLVM_OFF",
+      "description": "Disable LLVM constant-hoisting only (MIR DataflowConstProp enabled)",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [
+          "-disable-constant-hoisting"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DataflowConstProp",
+        "switches": [],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "DID_012_DataflowConstProp__constant-hoisting_BOTH_OFF",
+      "description": "Disable both MIR DataflowConstProp and LLVM constant-hoisting",
+      "llvm": {
+        "pass": "constant-hoisting",
+        "switches": [
+          "-disable-constant-hoisting"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "DataflowConstProp",
+        "switches": [
+          "-DataflowConstProp"
+        ],
+        "parameters": {}
+      }
+    }
+  ]
+}

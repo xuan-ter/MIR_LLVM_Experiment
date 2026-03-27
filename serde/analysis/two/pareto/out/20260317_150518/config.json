@@ -1,0 +1,12 @@
+{
+  "analysis_root": "/mnt/fjx/Compiler_Experiment/serde_test/analysis",
+  "out_root": "/mnt/fjx/Compiler_Experiment/serde_test/analysis/pareto/out",
+  "seed": 7,
+  "budget": 1000,
+  "ref_budget": 8000,
+  "min_stability": 0.4,
+  "topk": 12,
+  "hub_budget_ratio": 0.55,
+  "pop_size": 48,
+  "methods": "ggps,random,ga,bo,ggps_random_subspace,ggps_nonhub_subspace"
+}

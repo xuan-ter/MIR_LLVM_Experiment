@@ -1,0 +1,139 @@
+{
+  "description": "Runtime-first validation configs from Pareto front (rows 2-6)",
+  "combinations": [
+    {
+      "name": "PF_ROW_2_RUNTIME_FIRST",
+      "llvm": {
+        "pass": "from_pareto",
+        "switches": [
+          "-disable-cgp-branch-opts",
+          "-disable-early-ifcvt",
+          "-disable-early-taildup",
+          "-disable-layout-fsprofile-loader",
+          "-disable-loop-level-heuristics",
+          "-disable-promote-alloca-to-vector",
+          "-disable-tail-calls"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "from_pareto",
+        "switches": [
+          "-CopyProp",
+          "-DeadStoreElimination-final",
+          "-ImpossiblePredicates",
+          "-InstSimplify-before-inline",
+          "-ReferencePropagation",
+          "-ScalarReplacementOfAggregates",
+          "-UnreachableEnumBranching"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "PF_ROW_3_RUNTIME_FIRST",
+      "llvm": {
+        "pass": "from_pareto",
+        "switches": [
+          "-disable-binop-extract-shuffle",
+          "-disable-cgp-store-extract",
+          "-disable-early-ifcvt",
+          "-disable-lsr",
+          "-disable-nofree-inference",
+          "-disable-preheader-prot",
+          "-disable-promote-alloca-to-vector"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "from_pareto",
+        "switches": [
+          "-GVN",
+          "-ImpossiblePredicates",
+          "-ScalarReplacementOfAggregates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "PF_ROW_4_RUNTIME_FIRST",
+      "llvm": {
+        "pass": "from_pareto",
+        "switches": [
+          "-disable-2addr-hack",
+          "-disable-adv-copy-opt",
+          "-disable-binop-extract-shuffle",
+          "-disable-block-placement",
+          "-disable-cgp-select2branch",
+          "-disable-loop-idiom-vectorize-all",
+          "-disable-loop-level-heuristics"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "from_pareto",
+        "switches": [
+          "-CopyProp",
+          "-DataflowConstProp",
+          "-ImpossiblePredicates",
+          "-ScalarReplacementOfAggregates",
+          "-UnreachablePropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "PF_ROW_5_RUNTIME_FIRST",
+      "llvm": {
+        "pass": "from_pareto",
+        "switches": [
+          "-disable-block-placement",
+          "-disable-cgp-branch-opts",
+          "-disable-cgp-select2branch",
+          "-disable-early-taildup",
+          "-disable-expand-reductions",
+          "-disable-postra-machine-licm",
+          "-disable-replace-with-vec-lib"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "from_pareto",
+        "switches": [
+          "-ReferencePropagation",
+          "-ScalarReplacementOfAggregates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "PF_ROW_6_RUNTIME_FIRST",
+      "llvm": {
+        "pass": "from_pareto",
+        "switches": [
+          "-disable-adv-copy-opt",
+          "-disable-block-placement",
+          "-disable-branch-fold",
+          "-disable-cgp-branch-opts",
+          "-disable-layout-fsprofile-loader",
+          "-disable-licm-promotion",
+          "-disable-machine-dce",
+          "-disable-preheader-prot",
+          "-disable-preinline"
+        ],
+        "parameters": {}
+      },
+      "mir": {
+        "pass": "from_pareto",
+        "switches": [
+          "-EarlyOtherwiseBranch",
+          "-ImpossiblePredicates",
+          "-InstSimplify-after-simplifycfg",
+          "-ScalarReplacementOfAggregates",
+          "-UnreachableEnumBranching"
+        ],
+        "parameters": {}
+      }
+    }
+  ]
+}

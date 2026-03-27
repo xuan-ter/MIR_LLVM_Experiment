@@ -1,0 +1,7 @@
+ConfigName,RunID,LLVM_Pass,MIR_Pass,BinarySize(Bytes),TotalRuntime(s),CompileTime(s),Status
+EXP_000_ALL_OFF,1,None,All,0,0,0.000000,BuildFailed
+EXP_000_ALL_OFF,2,None,All,0,0,0.000000,BuildFailed
+EXP_000_ALL_OFF,3,None,All,0,0,0.000000,BuildFailed
+EXP_ABL_001_CopyProp,1,None,CopyProp,0,0,0.000000,BuildFailed
+EXP_ABL_001_CopyProp,2,None,CopyProp,0,0,0.000000,BuildFailed
+EXP_ABL_001_CopyProp,3,None,CopyProp,0,0,0,CleanFailed

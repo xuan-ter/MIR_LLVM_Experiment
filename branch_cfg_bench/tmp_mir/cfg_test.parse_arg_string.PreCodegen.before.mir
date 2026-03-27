@@ -1,0 +1,749 @@
+// MIR for `parse_arg_string` before PreCodegen
+
+fn parse_arg_string(_1: &str, _2: &str) -> String {
+    debug flag => _1;
+    debug default => _2;
+    let mut _0: std::string::String;
+    let mut _3: std::iter::Skip<std::env::Args>;
+    let mut _4: std::env::Args;
+    let mut _5: std::option::Option<std::string::String>;
+    let mut _6: isize;
+    let mut _8: bool;
+    let mut _9: std::option::Option<std::string::String>;
+    let mut _10: isize;
+    scope 1 {
+        debug args => _3;
+        scope 2 {
+            debug a => _7;
+            let _7: std::string::String;
+            scope 3 {
+                debug v => _0;
+                scope 55 (inlined <Skip<Args> as Iterator>::next) {
+                    let mut _41: bool;
+                    let mut _42: usize;
+                    let mut _43: &mut std::env::Args;
+                    let mut _44: usize;
+                    let mut _45: &mut std::env::Args;
+                    scope 56 (inlined std::intrinsics::unlikely) {
+                        let _46: ();
+                    }
+                    scope 57 (inlined std::mem::take::<usize>) {
+                        scope 58 (inlined std::mem::replace::<usize>) {
+                            scope 59 {
+                            }
+                        }
+                        scope 60 (inlined <usize as Default>::default) {
+                        }
+                    }
+                    scope 61 (inlined <Args as Iterator>::nth) {
+                        let mut _47: std::option::Option<std::convert::Infallible>;
+                        scope 62 {
+                            scope 63 {
+                                scope 70 (inlined <Option<String> as FromResidual<Option<Infallible>>>::from_residual) {
+                                    let mut _48: isize;
+                                    let mut _49: bool;
+                                }
+                            }
+                        }
+                        scope 64 {
+                            scope 65 {
+                            }
+                        }
+                        scope 66 (inlined Result::<(), NonZero<usize>>::ok) {
+                            scope 67 {
+                            }
+                        }
+                        scope 68 (inlined <Option<()> as Try>::branch) {
+                            scope 69 {
+                            }
+                        }
+                        scope 71 (inlined <Args as Iterator>::advance_by) {
+                            scope 72 (inlined <Args as advance_by::SpecAdvanceBy>::spec_advance_by) {
+                                let _50: std::num::NonZero<usize>;
+                                let mut _51: std::option::Option<std::num::NonZero<usize>>;
+                                let mut _52: isize;
+                                let mut _54: isize;
+                                scope 73 {
+                                    let _53: std::option::Option<std::num::NonZero<usize>>;
+                                    scope 74 {
+                                        scope 75 {
+                                        }
+                                    }
+                                }
+                                scope 76 (inlined NonZero::<usize>::new) {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            scope 6 (inlined <Skip<Args> as Iterator>::next) {
+                let mut _11: bool;
+                let mut _12: usize;
+                let mut _13: &mut std::env::Args;
+                let mut _14: usize;
+                let mut _15: &mut std::env::Args;
+                scope 7 (inlined std::intrinsics::unlikely) {
+                    let _16: ();
+                }
+                scope 8 (inlined std::mem::take::<usize>) {
+                    scope 9 (inlined std::mem::replace::<usize>) {
+                        scope 10 {
+                        }
+                    }
+                    scope 11 (inlined <usize as Default>::default) {
+                    }
+                }
+                scope 12 (inlined <Args as Iterator>::nth) {
+                    let mut _17: std::option::Option<std::convert::Infallible>;
+                    scope 13 {
+                        scope 14 {
+                            scope 21 (inlined <Option<String> as FromResidual<Option<Infallible>>>::from_residual) {
+                                let mut _18: isize;
+                                let mut _19: bool;
+                            }
+                        }
+                    }
+                    scope 15 {
+                        scope 16 {
+                        }
+                    }
+                    scope 17 (inlined Result::<(), NonZero<usize>>::ok) {
+                        scope 18 {
+                        }
+                    }
+                    scope 19 (inlined <Option<()> as Try>::branch) {
+                        scope 20 {
+                        }
+                    }
+                    scope 22 (inlined <Args as Iterator>::advance_by) {
+                        scope 23 (inlined <Args as advance_by::SpecAdvanceBy>::spec_advance_by) {
+                            let _20: std::num::NonZero<usize>;
+                            let mut _21: std::option::Option<std::num::NonZero<usize>>;
+                            let mut _22: isize;
+                            let mut _24: isize;
+                            scope 24 {
+                                let _23: std::option::Option<std::num::NonZero<usize>>;
+                                scope 25 {
+                                    scope 26 {
+                                    }
+                                }
+                            }
+                            scope 27 (inlined NonZero::<usize>::new) {
+                            }
+                        }
+                    }
+                }
+            }
+            scope 28 (inlined <String as PartialEq<&str>>::eq) {
+                scope 29 (inlined #[track_caller] <String as Index<RangeFull>>::index) {
+                    let _25: &str;
+                    scope 30 (inlined String::as_str) {
+                        let _26: &[u8];
+                        scope 31 (inlined Vec::<u8>::as_slice) {
+                            let _27: *const [u8];
+                            let mut _28: *const u8;
+                            let mut _29: usize;
+                            scope 32 (inlined Vec::<u8>::as_ptr) {
+                                scope 33 (inlined alloc::raw_vec::RawVec::<u8>::ptr) {
+                                    scope 34 (inlined alloc::raw_vec::RawVecInner::ptr::<u8>) {
+                                        scope 35 (inlined alloc::raw_vec::RawVecInner::non_null::<u8>) {
+                                            let mut _30: std::ptr::NonNull<u8>;
+                                            scope 36 (inlined std::ptr::Unique::<u8>::cast::<u8>) {
+                                                scope 37 (inlined NonNull::<u8>::cast::<u8>) {
+                                                    scope 38 (inlined NonNull::<u8>::as_ptr) {
+                                                    }
+                                                }
+                                            }
+                                            scope 39 (inlined std::ptr::Unique::<u8>::as_non_null_ptr) {
+                                            }
+                                        }
+                                        scope 40 (inlined NonNull::<u8>::as_ptr) {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        scope 41 (inlined from_utf8_unchecked) {
+                        }
+                    }
+                    scope 42 (inlined #[track_caller] core::str::traits::<impl SliceIndex<str> for RangeFull>::index) {
+                    }
+                }
+                scope 43 (inlined #[track_caller] core::str::traits::<impl Index<RangeFull> for str>::index) {
+                    scope 44 (inlined #[track_caller] core::str::traits::<impl SliceIndex<str> for RangeFull>::index) {
+                    }
+                }
+                scope 45 (inlined core::str::traits::<impl PartialEq for str>::eq) {
+                    let _31: &[u8];
+                    let _32: &[u8];
+                    scope 46 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                    scope 47 (inlined core::str::<impl str>::as_bytes) {
+                    }
+                    scope 48 (inlined std::cmp::impls::<impl PartialEq for &[u8]>::eq) {
+                        scope 49 (inlined core::slice::cmp::<impl PartialEq for [u8]>::eq) {
+                            let _33: usize;
+                            let mut _34: bool;
+                            let mut _35: usize;
+                            let mut _36: *const u8;
+                            let mut _37: *const u8;
+                            scope 50 {
+                                scope 51 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                    let mut _38: *const [u8];
+                                }
+                                scope 52 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                    let mut _39: *const [u8];
+                                }
+                                scope 53 (inlined <u8 as core::slice::cmp::SlicePartialEq<u8>>::equal_same_length) {
+                                    let mut _40: i32;
+                                    scope 54 {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        scope 77 (inlined <str as ToString>::to_string) {
+            scope 78 (inlined <str as string::SpecToString>::spec_to_string) {
+                scope 79 {
+                    scope 80 (inlined <String as From<&str>>::from) {
+                        scope 81 (inlined str::<impl ToOwned for str>::to_owned) {
+                            let mut _55: std::vec::Vec<u8>;
+                            let _56: &[u8];
+                            scope 82 (inlined core::str::<impl str>::as_bytes) {
+                            }
+                            scope 83 (inlined slice::<impl ToOwned for [u8]>::to_owned) {
+                                scope 84 (inlined slice::<impl [u8]>::to_vec) {
+                                    scope 85 (inlined slice::<impl [u8]>::to_vec_in::<std::alloc::Global>) {
+                                        scope 87 (inlined <u8 as slice::<impl [T]>::to_vec_in::ConvertVec>::to_vec::<std::alloc::Global>) {
+                                            let _57: usize;
+                                            let mut _58: bool;
+                                            let mut _59: *const u8;
+                                            let mut _60: *mut u8;
+                                            scope 88 {
+                                                scope 89 {
+                                                    scope 92 (inlined core::slice::<impl [u8]>::as_ptr) {
+                                                        let mut _63: *const [u8];
+                                                    }
+                                                    scope 93 (inlined Vec::<u8>::as_mut_ptr) {
+                                                        scope 94 (inlined alloc::raw_vec::RawVec::<u8>::ptr) {
+                                                            scope 95 (inlined alloc::raw_vec::RawVecInner::ptr::<u8>) {
+                                                                scope 96 (inlined alloc::raw_vec::RawVecInner::non_null::<u8>) {
+                                                                    let mut _64: std::ptr::NonNull<u8>;
+                                                                    scope 97 (inlined std::ptr::Unique::<u8>::cast::<u8>) {
+                                                                        scope 98 (inlined NonNull::<u8>::cast::<u8>) {
+                                                                            scope 99 (inlined NonNull::<u8>::as_ptr) {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    scope 100 (inlined std::ptr::Unique::<u8>::as_non_null_ptr) {
+                                                                    }
+                                                                }
+                                                                scope 101 (inlined NonNull::<u8>::as_ptr) {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    scope 102 (inlined #[track_caller] std::ptr::const_ptr::<impl *const u8>::copy_to_nonoverlapping) {
+                                                        scope 103 (inlined std::ptr::copy_nonoverlapping::<u8>) {
+                                                            scope 104 (inlined core::ub_checks::check_language_ub) {
+                                                                scope 105 (inlined core::ub_checks::check_language_ub::runtime) {
+                                                                }
+                                                            }
+                                                            scope 106 (inlined std::mem::size_of::<u8>) {
+                                                            }
+                                                            scope 107 (inlined std::mem::align_of::<u8>) {
+                                                            }
+                                                        }
+                                                    }
+                                                    scope 108 (inlined Vec::<u8>::set_len) {
+                                                        scope 109 (inlined Vec::<u8>::capacity) {
+                                                            scope 110 (inlined alloc::raw_vec::RawVec::<u8>::capacity) {
+                                                                scope 111 (inlined std::mem::size_of::<u8>) {
+                                                                }
+                                                                scope 112 (inlined alloc::raw_vec::RawVecInner::capacity) {
+                                                                    scope 113 (inlined core::num::niche_types::UsizeNoHighBit::as_inner) {
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                scope 90 (inlined Vec::<u8>::with_capacity_in) {
+                                                    let mut _61: alloc::raw_vec::RawVec<u8>;
+                                                    scope 91 (inlined alloc::raw_vec::RawVec::<u8>::with_capacity_in) {
+                                                        let mut _62: alloc::raw_vec::RawVecInner;
+                                                        scope 114 (inlined alloc::raw_vec::RawVecInner::with_capacity_in) {
+                                                            let mut _65: std::result::Result<alloc::raw_vec::RawVecInner, std::collections::TryReserveError>;
+                                                            let mut _66: isize;
+                                                            let mut _67: bool;
+                                                            let mut _68: bool;
+                                                            let _69: std::collections::TryReserveError;
+                                                            let mut _70: !;
+                                                            scope 115 {
+                                                                scope 117 (inlined alloc::raw_vec::RawVecInner::needs_to_grow) {
+                                                                    let mut _71: usize;
+                                                                    let mut _72: usize;
+                                                                    scope 118 (inlined Layout::size) {
+                                                                    }
+                                                                    scope 119 (inlined alloc::raw_vec::RawVecInner::capacity) {
+                                                                        let mut _73: core::num::niche_types::UsizeNoHighBit;
+                                                                        scope 120 (inlined core::num::niche_types::UsizeNoHighBit::as_inner) {
+                                                                        }
+                                                                    }
+                                                                    scope 121 (inlined core::num::<impl usize>::wrapping_sub) {
+                                                                    }
+                                                                }
+                                                                scope 122 (inlined #[track_caller] assert_unchecked) {
+                                                                    scope 123 (inlined core::ub_checks::check_language_ub) {
+                                                                        scope 124 (inlined core::ub_checks::check_language_ub::runtime) {
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            scope 116 {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            scope 86 (inlined String::from_utf8_unchecked) {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    scope 4 (inlined <Args as Iterator>::skip) {
+        scope 5 (inlined Skip::<Args>::new) {
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = args() -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _3 = Skip::<Args> { iter: copy _4, n: const 1_usize };
+        StorageDead(_4);
+        goto -> bb2;
+    }
+
+    bb2: {
+        StorageLive(_5);
+        StorageLive(_11);
+        StorageLive(_12);
+        _12 = copy (_3.1: usize);
+        _11 = Gt(move _12, const 0_usize);
+        StorageDead(_12);
+        switchInt(copy _11) -> [0: bb21, otherwise: bb19];
+    }
+
+    bb3: {
+        StorageLive(_7);
+        _7 = move ((_5 as Some).0: std::string::String);
+        StorageLive(_8);
+        StorageLive(_25);
+        StorageLive(_26);
+        StorageLive(_27);
+        StorageLive(_28);
+        StorageLive(_30);
+        _30 = copy (((((_7.0: std::vec::Vec<u8>).0: alloc::raw_vec::RawVec<u8>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _28 = copy _30 as *const u8 (Transmute);
+        StorageDead(_30);
+        StorageLive(_29);
+        _29 = copy ((_7.0: std::vec::Vec<u8>).1: usize);
+        _27 = *const [u8] from (copy _28, move _29);
+        StorageDead(_29);
+        StorageDead(_28);
+        _26 = &(*_27);
+        StorageDead(_27);
+        _25 = copy _26 as &str (Transmute);
+        StorageDead(_26);
+        StorageLive(_31);
+        StorageLive(_32);
+        StorageLive(_33);
+        StorageLive(_36);
+        StorageLive(_37);
+        _31 = copy _25 as &[u8] (Transmute);
+        _32 = copy _1 as &[u8] (Transmute);
+        _33 = PtrMetadata(copy _31);
+        StorageLive(_34);
+        StorageLive(_35);
+        _35 = PtrMetadata(copy _32);
+        _34 = Eq(copy _33, move _35);
+        switchInt(move _34) -> [0: bb30, otherwise: bb29];
+    }
+
+    bb4: {
+        StorageLive(_9);
+        StorageLive(_41);
+        StorageLive(_42);
+        _42 = copy (_3.1: usize);
+        _41 = Gt(move _42, const 0_usize);
+        StorageDead(_42);
+        switchInt(copy _41) -> [0: bb36, otherwise: bb34];
+    }
+
+    bb5: {
+        _0 = move ((_9 as Some).0: std::string::String);
+        StorageDead(_9);
+        StorageDead(_8);
+        drop(_7) -> [return: bb11, unwind: bb15];
+    }
+
+    bb6: {
+        StorageDead(_9);
+        goto -> bb7;
+    }
+
+    bb7: {
+        StorageDead(_8);
+        drop(_7) -> [return: bb9, unwind: bb15];
+    }
+
+    bb8: {
+        StorageDead(_5);
+        StorageLive(_56);
+        StorageLive(_55);
+        _56 = copy _2 as &[u8] (Transmute);
+        StorageLive(_63);
+        StorageLive(_64);
+        _57 = PtrMetadata(copy _56);
+        StorageLive(_61);
+        StorageLive(_62);
+        StorageLive(_66);
+        StorageLive(_69);
+        StorageLive(_65);
+        _65 = alloc::raw_vec::RawVecInner::try_allocate_in(copy _57, const alloc::raw_vec::AllocInit::Uninitialized, const std::alloc::Global, const Layout {{ size: 1_usize, align: std::ptr::Alignment {{ _inner_repr_trick: std::ptr::alignment::AlignmentEnum::_Align1Shl0 }} }}) -> [return: bb45, unwind: bb15];
+    }
+
+    bb9: {
+        StorageDead(_7);
+        StorageDead(_5);
+        goto -> bb2;
+    }
+
+    bb10: {
+        StorageDead(_3);
+        goto -> bb13;
+    }
+
+    bb11: {
+        StorageDead(_7);
+        StorageDead(_5);
+        drop(_3) -> [return: bb12, unwind continue];
+    }
+
+    bb12: {
+        StorageDead(_3);
+        goto -> bb13;
+    }
+
+    bb13: {
+        return;
+    }
+
+    bb14 (cleanup): {
+        drop(_7) -> [return: bb15, unwind terminate(cleanup)];
+    }
+
+    bb15 (cleanup): {
+        drop(_3) -> [return: bb16, unwind terminate(cleanup)];
+    }
+
+    bb16 (cleanup): {
+        resume;
+    }
+
+    bb17: {
+        _6 = discriminant(_5);
+        switchInt(move _6) -> [1: bb3, 0: bb8, otherwise: bb22];
+    }
+
+    bb18: {
+        StorageDead(_15);
+        goto -> bb17;
+    }
+
+    bb19: {
+        _16 = std::intrinsics::cold_path() -> [return: bb20, unwind unreachable];
+    }
+
+    bb20: {
+        StorageDead(_11);
+        _13 = &mut (_3.0: std::env::Args);
+        StorageLive(_14);
+        _14 = copy (_3.1: usize);
+        (_3.1: usize) = const 0_usize;
+        StorageLive(_20);
+        StorageLive(_22);
+        StorageLive(_24);
+        StorageLive(_21);
+        _21 = copy _14 as std::option::Option<std::num::NonZero<usize>> (Transmute);
+        _22 = discriminant(_21);
+        switchInt(move _22) -> [1: bb24, 0: bb25, otherwise: bb22];
+    }
+
+    bb21: {
+        StorageDead(_11);
+        StorageLive(_15);
+        _15 = &mut (_3.0: std::env::Args);
+        _5 = <Args as Iterator>::next(move _15) -> [return: bb18, unwind: bb15];
+    }
+
+    bb22: {
+        unreachable;
+    }
+
+    bb23: {
+        StorageDead(_14);
+        goto -> bb17;
+    }
+
+    bb24: {
+        _20 = copy ((_21 as Some).0: std::num::NonZero<usize>);
+        StorageDead(_21);
+        StorageLive(_23);
+        _23 = <Args as Iterator>::try_fold::<NonZero<usize>, {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}, Option<NonZero<usize>>>(copy _13, move _20, const ZeroSized: {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}) -> [return: bb26, unwind: bb15];
+    }
+
+    bb25: {
+        StorageDead(_21);
+        goto -> bb48;
+    }
+
+    bb26: {
+        _24 = discriminant(_23);
+        switchInt(move _24) -> [0: bb28, 1: bb27, otherwise: bb22];
+    }
+
+    bb27: {
+        StorageDead(_23);
+        StorageDead(_24);
+        StorageDead(_22);
+        StorageDead(_20);
+        StorageLive(_18);
+        StorageLive(_19);
+        _18 = discriminant(_17);
+        _19 = Eq(copy _18, const 0_isize);
+        assume(move _19);
+        StorageDead(_19);
+        StorageDead(_18);
+        StorageDead(_14);
+        goto -> bb8;
+    }
+
+    bb28: {
+        StorageDead(_23);
+        goto -> bb48;
+    }
+
+    bb29: {
+        StorageDead(_35);
+        StorageLive(_38);
+        _38 = &raw const (*_31);
+        _36 = copy _38 as *const u8 (PtrToPtr);
+        StorageDead(_38);
+        StorageLive(_39);
+        _39 = &raw const (*_32);
+        _37 = copy _39 as *const u8 (PtrToPtr);
+        StorageDead(_39);
+        StorageLive(_40);
+        _40 = compare_bytes(move _36, move _37, move _33) -> [return: bb31, unwind unreachable];
+    }
+
+    bb30: {
+        StorageDead(_35);
+        StorageDead(_34);
+        StorageDead(_37);
+        StorageDead(_36);
+        StorageDead(_33);
+        StorageDead(_32);
+        StorageDead(_31);
+        StorageDead(_25);
+        goto -> bb7;
+    }
+
+    bb31: {
+        _8 = Eq(move _40, const 0_i32);
+        StorageDead(_40);
+        StorageDead(_34);
+        StorageDead(_37);
+        StorageDead(_36);
+        StorageDead(_33);
+        StorageDead(_32);
+        StorageDead(_31);
+        StorageDead(_25);
+        switchInt(move _8) -> [0: bb7, otherwise: bb4];
+    }
+
+    bb32: {
+        _10 = discriminant(_9);
+        switchInt(move _10) -> [1: bb5, 0: bb6, otherwise: bb22];
+    }
+
+    bb33: {
+        StorageDead(_45);
+        goto -> bb32;
+    }
+
+    bb34: {
+        _46 = std::intrinsics::cold_path() -> [return: bb35, unwind unreachable];
+    }
+
+    bb35: {
+        StorageDead(_41);
+        _43 = &mut (_3.0: std::env::Args);
+        StorageLive(_44);
+        _44 = copy (_3.1: usize);
+        (_3.1: usize) = const 0_usize;
+        StorageLive(_50);
+        StorageLive(_52);
+        StorageLive(_54);
+        StorageLive(_51);
+        _51 = copy _44 as std::option::Option<std::num::NonZero<usize>> (Transmute);
+        _52 = discriminant(_51);
+        switchInt(move _52) -> [1: bb38, 0: bb39, otherwise: bb22];
+    }
+
+    bb36: {
+        StorageDead(_41);
+        StorageLive(_45);
+        _45 = &mut (_3.0: std::env::Args);
+        _9 = <Args as Iterator>::next(move _45) -> [return: bb33, unwind: bb14];
+    }
+
+    bb37: {
+        StorageDead(_44);
+        goto -> bb32;
+    }
+
+    bb38: {
+        _50 = copy ((_51 as Some).0: std::num::NonZero<usize>);
+        StorageDead(_51);
+        StorageLive(_53);
+        _53 = <Args as Iterator>::try_fold::<NonZero<usize>, {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}, Option<NonZero<usize>>>(copy _43, move _50, const ZeroSized: {closure@<Args as advance_by::SpecAdvanceBy>::spec_advance_by::{closure#0}}) -> [return: bb40, unwind: bb14];
+    }
+
+    bb39: {
+        StorageDead(_51);
+        goto -> bb49;
+    }
+
+    bb40: {
+        _54 = discriminant(_53);
+        switchInt(move _54) -> [0: bb42, 1: bb41, otherwise: bb22];
+    }
+
+    bb41: {
+        StorageDead(_53);
+        StorageDead(_54);
+        StorageDead(_52);
+        StorageDead(_50);
+        StorageLive(_48);
+        StorageLive(_49);
+        _48 = discriminant(_47);
+        _49 = Eq(copy _48, const 0_isize);
+        assume(move _49);
+        StorageDead(_49);
+        StorageDead(_48);
+        StorageDead(_44);
+        goto -> bb6;
+    }
+
+    bb42: {
+        StorageDead(_53);
+        goto -> bb49;
+    }
+
+    bb43: {
+        StorageLive(_59);
+        _63 = &raw const (*_56);
+        _59 = copy _63 as *const u8 (PtrToPtr);
+        StorageLive(_60);
+        _64 = copy ((((_55.0: alloc::raw_vec::RawVec<u8>).0: alloc::raw_vec::RawVecInner).0: std::ptr::Unique<u8>).0: std::ptr::NonNull<u8>);
+        _60 = copy _64 as *mut u8 (Transmute);
+        copy_nonoverlapping(dst = copy _60, src = copy _59, count = copy _57);
+        StorageDead(_60);
+        StorageDead(_59);
+        (_55.1: usize) = copy _57;
+        goto -> bb44;
+    }
+
+    bb44: {
+        StorageDead(_58);
+        StorageDead(_64);
+        StorageDead(_63);
+        _0 = String { vec: copy _55 };
+        StorageDead(_55);
+        StorageDead(_56);
+        drop(_3) -> [return: bb10, unwind continue];
+    }
+
+    bb45: {
+        _66 = discriminant(_65);
+        switchInt(move _66) -> [0: bb47, 1: bb46, otherwise: bb22];
+    }
+
+    bb46: {
+        _69 = move ((_65 as Err).0: std::collections::TryReserveError);
+        _70 = alloc::raw_vec::handle_error(move _69) -> bb15;
+    }
+
+    bb47: {
+        _62 = move ((_65 as Ok).0: alloc::raw_vec::RawVecInner);
+        StorageLive(_67);
+        StorageLive(_68);
+        StorageLive(_71);
+        StorageLive(_72);
+        StorageLive(_73);
+        _73 = copy (_62.1: core::num::niche_types::UsizeNoHighBit);
+        _72 = copy _73 as usize (Transmute);
+        StorageDead(_73);
+        _71 = Sub(copy _72, const 0_usize);
+        StorageDead(_72);
+        _68 = Gt(copy _57, move _71);
+        StorageDead(_71);
+        _67 = Not(move _68);
+        StorageDead(_68);
+        assume(copy _67);
+        StorageDead(_67);
+        StorageDead(_65);
+        StorageDead(_69);
+        StorageDead(_66);
+        _61 = alloc::raw_vec::RawVec::<u8> { inner: move _62, _marker: const PhantomData::<u8> };
+        StorageDead(_62);
+        _55 = Vec::<u8> { buf: move _61, len: const 0_usize };
+        StorageDead(_61);
+        StorageLive(_58);
+        _58 = Gt(copy _57, const 0_usize);
+        switchInt(move _58) -> [0: bb44, otherwise: bb43];
+    }
+
+    bb48: {
+        StorageDead(_24);
+        StorageDead(_22);
+        StorageDead(_20);
+        _5 = <Args as Iterator>::next(move _13) -> [return: bb23, unwind: bb15];
+    }
+
+    bb49: {
+        StorageDead(_54);
+        StorageDead(_52);
+        StorageDead(_50);
+        _9 = <Args as Iterator>::next(move _43) -> [return: bb37, unwind: bb14];
+    }
+}
+
+alloc114 (size: 16, align: 8) { .. }

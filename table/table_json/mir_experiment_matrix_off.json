@@ -1,0 +1,276 @@
+{
+  "description": "MIR Experiment Matrix (OFF Only)",
+  "combinations": [
+    {
+      "name": "EXP_000_ALL_OFF",
+      "description": "Force disable all 20 tunable optimizations",
+      "llvm": null,
+      "mir": {
+        "pass": "All",
+        "switches": [
+          "-CopyProp",
+          "-DataflowConstProp",
+          "-DeadStoreElimination-final",
+          "-DeadStoreElimination-initial",
+          "-DestinationPropagation",
+          "-EarlyOtherwiseBranch",
+          "-EnumSizeOpt",
+          "-ForceInline",
+          "-GVN",
+          "-ImpossiblePredicates",
+          "-Inline",
+          "-InstSimplify-after-simplifycfg",
+          "-InstSimplify-before-inline",
+          "-JumpThreading",
+          "-MatchBranchSimplification",
+          "-ReferencePropagation",
+          "-ScalarReplacementOfAggregates",
+          "-SingleUseConsts",
+          "-UnreachableEnumBranching",
+          "-UnreachablePropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_001_CopyProp",
+      "description": "All ON except CopyProp is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "CopyProp",
+        "switches": [
+          "-CopyProp"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_002_DataflowConstProp",
+      "description": "All ON except DataflowConstProp is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "DataflowConstProp",
+        "switches": [
+          "-DataflowConstProp"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_003_DeadStoreElimination-final",
+      "description": "All ON except DeadStoreElimination-final is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "DeadStoreElimination-final",
+        "switches": [
+          "-DeadStoreElimination-final"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_004_DeadStoreElimination-initial",
+      "description": "All ON except DeadStoreElimination-initial is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "DeadStoreElimination-initial",
+        "switches": [
+          "-DeadStoreElimination-initial"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_005_DestinationPropagation",
+      "description": "All ON except DestinationPropagation is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "DestinationPropagation",
+        "switches": [
+          "-DestinationPropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_006_EarlyOtherwiseBranch",
+      "description": "All ON except EarlyOtherwiseBranch is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "EarlyOtherwiseBranch",
+        "switches": [
+          "-EarlyOtherwiseBranch"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_007_EnumSizeOpt",
+      "description": "All ON except EnumSizeOpt is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "EnumSizeOpt",
+        "switches": [
+          "-EnumSizeOpt"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_008_ForceInline",
+      "description": "All ON except ForceInline is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "ForceInline",
+        "switches": [
+          "-ForceInline"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_009_GVN",
+      "description": "All ON except GVN is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "GVN",
+        "switches": [
+          "-GVN"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_010_ImpossiblePredicates",
+      "description": "All ON except ImpossiblePredicates is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "ImpossiblePredicates",
+        "switches": [
+          "-ImpossiblePredicates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_011_Inline",
+      "description": "All ON except Inline is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "Inline",
+        "switches": [
+          "-Inline"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_012_InstSimplify-after-simplifycfg",
+      "description": "All ON except InstSimplify-after-simplifycfg is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "InstSimplify-after-simplifycfg",
+        "switches": [
+          "-InstSimplify-after-simplifycfg"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_013_InstSimplify-before-inline",
+      "description": "All ON except InstSimplify-before-inline is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "InstSimplify-before-inline",
+        "switches": [
+          "-InstSimplify-before-inline"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_014_JumpThreading",
+      "description": "All ON except JumpThreading is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "JumpThreading",
+        "switches": [
+          "-JumpThreading"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_015_MatchBranchSimplification",
+      "description": "All ON except MatchBranchSimplification is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "MatchBranchSimplification",
+        "switches": [
+          "-MatchBranchSimplification"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_016_ReferencePropagation",
+      "description": "All ON except ReferencePropagation is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "ReferencePropagation",
+        "switches": [
+          "-ReferencePropagation"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_017_ScalarReplacementOfAggregates",
+      "description": "All ON except ScalarReplacementOfAggregates is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "ScalarReplacementOfAggregates",
+        "switches": [
+          "-ScalarReplacementOfAggregates"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_018_SingleUseConsts",
+      "description": "All ON except SingleUseConsts is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "SingleUseConsts",
+        "switches": [
+          "-SingleUseConsts"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_019_UnreachableEnumBranching",
+      "description": "All ON except UnreachableEnumBranching is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "UnreachableEnumBranching",
+        "switches": [
+          "-UnreachableEnumBranching"
+        ],
+        "parameters": {}
+      }
+    },
+    {
+      "name": "EXP_ABL_020_UnreachablePropagation",
+      "description": "All ON except UnreachablePropagation is OFF",
+      "llvm": null,
+      "mir": {
+        "pass": "UnreachablePropagation",
+        "switches": [
+          "-UnreachablePropagation"
+        ],
+        "parameters": {}
+      }
+    }
+  ]
+}

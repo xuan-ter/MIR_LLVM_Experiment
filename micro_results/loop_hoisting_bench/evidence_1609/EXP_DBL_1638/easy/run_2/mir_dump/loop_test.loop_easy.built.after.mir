@@ -1,0 +1,314 @@
+// MIR for `loop_easy` after built
+
+| User Type Annotations
+| 0: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/main.rs:24:18: 24:21, inferred_ty: u64
+| 1: user_ty: Canonical { value: Ty(u64), max_universe: U0, var_kinds: [] }, span: src/main.rs:24:18: 24:21, inferred_ty: u64
+|
+fn loop_easy(_1: &[u32], _2: u32, _3: u32) -> u64 {
+    debug data => _1;
+    debug iters => _2;
+    debug seed => _3;
+    let mut _0: u64;
+    let mut _4: u64 as UserTypeProjection { base: UserType(0), projs: [] };
+    let _5: ();
+    let mut _6: std::ops::Range<u32>;
+    let mut _7: std::ops::Range<u32>;
+    let mut _8: u32;
+    let mut _10: ();
+    let _11: ();
+    let mut _12: std::option::Option<u32>;
+    let mut _13: &mut std::ops::Range<u32>;
+    let mut _14: &mut std::ops::Range<u32>;
+    let mut _15: isize;
+    let mut _16: !;
+    let mut _17: std::slice::Iter<'_, u32>;
+    let mut _18: &[u32];
+    let _20: ();
+    let mut _21: std::option::Option<&u32>;
+    let mut _22: &mut std::slice::Iter<'_, u32>;
+    let mut _23: &mut std::slice::Iter<'_, u32>;
+    let mut _24: isize;
+    let mut _25: !;
+    let mut _28: u32;
+    let mut _29: u32;
+    let mut _30: u64;
+    let mut _31: u64;
+    let mut _32: u64;
+    let mut _33: u32;
+    let mut _34: u32;
+    let mut _35: u32;
+    let mut _36: u64;
+    scope 1 {
+        debug sum => _4;
+        let mut _9: std::ops::Range<u32>;
+        scope 2 {
+            debug iter => _9;
+            let mut _19: std::slice::Iter<'_, u32>;
+            scope 3 {
+                debug iter => _19;
+                let _26: u32;
+                scope 4 {
+                    debug x => _26;
+                    let _27: u32;
+                    scope 5 {
+                        debug factor => _27;
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_4);
+        _4 = const 0_u64;
+        FakeRead(ForLet(None), _4);
+        AscribeUserType(_4, o, UserTypeProjection { base: UserType(1), projs: [] });
+        StorageLive(_5);
+        StorageLive(_6);
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = copy _2;
+        _7 = std::ops::Range::<u32> { start: const 0_u32, end: move _8 };
+        StorageDead(_8);
+        _6 = <std::ops::Range<u32> as IntoIterator>::into_iter(move _7) -> [return: bb1, unwind: bb38];
+    }
+
+    bb1: {
+        StorageDead(_7);
+        PlaceMention(_6);
+        StorageLive(_9);
+        _9 = move _6;
+        goto -> bb3;
+    }
+
+    bb2: {
+        FakeRead(ForMatchedPlace(None), _6);
+        unreachable;
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb38];
+    }
+
+    bb4: {
+        StorageLive(_11);
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        _14 = &mut _9;
+        _13 = &mut (*_14);
+        _12 = <std::ops::Range<u32> as Iterator>::next(move _13) -> [return: bb5, unwind: bb38];
+    }
+
+    bb5: {
+        StorageDead(_13);
+        PlaceMention(_12);
+        _15 = discriminant(_12);
+        switchInt(move _15) -> [0: bb7, 1: bb9, otherwise: bb6];
+    }
+
+    bb6: {
+        FakeRead(ForMatchedPlace(None), _12);
+        unreachable;
+    }
+
+    bb7: {
+        falseEdge -> [real: bb11, imaginary: bb9];
+    }
+
+    bb8: {
+        goto -> bb6;
+    }
+
+    bb9: {
+        StorageLive(_17);
+        StorageLive(_18);
+        _18 = copy _1;
+        _17 = <&[u32] as IntoIterator>::into_iter(move _18) -> [return: bb14, unwind: bb38];
+    }
+
+    bb10: {
+        goto -> bb6;
+    }
+
+    bb11: {
+        _5 = const ();
+        goto -> bb35;
+    }
+
+    bb12: {
+        unreachable;
+    }
+
+    bb13: {
+        goto -> bb34;
+    }
+
+    bb14: {
+        StorageDead(_18);
+        PlaceMention(_17);
+        StorageLive(_19);
+        _19 = move _17;
+        goto -> bb16;
+    }
+
+    bb15: {
+        FakeRead(ForMatchedPlace(None), _17);
+        unreachable;
+    }
+
+    bb16: {
+        falseUnwind -> [real: bb17, unwind: bb38];
+    }
+
+    bb17: {
+        StorageLive(_20);
+        StorageLive(_21);
+        StorageLive(_22);
+        StorageLive(_23);
+        _23 = &mut _19;
+        _22 = &mut (*_23);
+        _21 = <std::slice::Iter<'_, u32> as Iterator>::next(move _22) -> [return: bb18, unwind: bb38];
+    }
+
+    bb18: {
+        StorageDead(_22);
+        PlaceMention(_21);
+        _24 = discriminant(_21);
+        switchInt(move _24) -> [0: bb20, 1: bb22, otherwise: bb19];
+    }
+
+    bb19: {
+        FakeRead(ForMatchedPlace(None), _21);
+        unreachable;
+    }
+
+    bb20: {
+        falseEdge -> [real: bb24, imaginary: bb22];
+    }
+
+    bb21: {
+        goto -> bb19;
+    }
+
+    bb22: {
+        StorageLive(_26);
+        _26 = copy (*((_21 as Some).0: &u32));
+        StorageLive(_27);
+        StorageLive(_28);
+        StorageLive(_29);
+        _29 = copy _3;
+        _28 = core::num::<impl u32>::wrapping_mul(move _29, const 7_u32) -> [return: bb27, unwind: bb38];
+    }
+
+    bb23: {
+        goto -> bb19;
+    }
+
+    bb24: {
+        _11 = const ();
+        goto -> bb32;
+    }
+
+    bb25: {
+        unreachable;
+    }
+
+    bb26: {
+        goto -> bb31;
+    }
+
+    bb27: {
+        StorageDead(_29);
+        _27 = core::num::<impl u32>::wrapping_add(move _28, const 3_u32) -> [return: bb28, unwind: bb38];
+    }
+
+    bb28: {
+        StorageDead(_28);
+        FakeRead(ForLet(None), _27);
+        StorageLive(_30);
+        StorageLive(_31);
+        _31 = copy _4;
+        StorageLive(_32);
+        StorageLive(_33);
+        StorageLive(_34);
+        _34 = copy _26;
+        StorageLive(_35);
+        _35 = copy _27;
+        _33 = core::num::<impl u32>::wrapping_mul(move _34, move _35) -> [return: bb29, unwind: bb38];
+    }
+
+    bb29: {
+        StorageDead(_35);
+        StorageDead(_34);
+        _32 = move _33 as u64 (IntToInt);
+        StorageDead(_33);
+        _30 = core::num::<impl u64>::wrapping_add(move _31, move _32) -> [return: bb30, unwind: bb38];
+    }
+
+    bb30: {
+        StorageDead(_32);
+        StorageDead(_31);
+        _4 = move _30;
+        StorageDead(_30);
+        _20 = const ();
+        StorageDead(_27);
+        StorageDead(_26);
+        goto -> bb31;
+    }
+
+    bb31: {
+        StorageDead(_23);
+        StorageDead(_21);
+        StorageDead(_20);
+        _10 = const ();
+        goto -> bb16;
+    }
+
+    bb32: {
+        StorageDead(_23);
+        StorageDead(_21);
+        StorageDead(_20);
+        StorageDead(_19);
+        goto -> bb33;
+    }
+
+    bb33: {
+        StorageDead(_17);
+        goto -> bb34;
+    }
+
+    bb34: {
+        StorageDead(_14);
+        StorageDead(_12);
+        StorageDead(_11);
+        _10 = const ();
+        goto -> bb3;
+    }
+
+    bb35: {
+        StorageDead(_14);
+        StorageDead(_12);
+        StorageDead(_11);
+        StorageDead(_9);
+        goto -> bb36;
+    }
+
+    bb36: {
+        StorageDead(_6);
+        StorageDead(_5);
+        StorageLive(_36);
+        _36 = copy _4;
+        _0 = std::hint::black_box::<u64>(move _36) -> [return: bb37, unwind: bb38];
+    }
+
+    bb37: {
+        StorageDead(_36);
+        StorageDead(_4);
+        return;
+    }
+
+    bb38 (cleanup): {
+        resume;
+    }
+}

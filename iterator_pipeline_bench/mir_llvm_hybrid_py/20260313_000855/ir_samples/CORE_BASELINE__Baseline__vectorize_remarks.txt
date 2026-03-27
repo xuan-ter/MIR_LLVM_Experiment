@@ -1,0 +1,20 @@
+remark: <unknown>:0:0: vectorized loop (vectorization width: 4, interleaved count: 2)
+remark: <unknown>:0:0: vectorized loop (vectorization width: 4, interleaved count: 2)
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized
+remark: <unknown>:0:0: loop not vectorized

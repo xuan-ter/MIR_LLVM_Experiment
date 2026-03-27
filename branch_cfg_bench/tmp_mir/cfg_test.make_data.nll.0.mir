@@ -1,0 +1,212 @@
+// MIR for `make_data` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=3], bb1[0..=12], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=3], bb9[0..=9], bb10[0..=8], bb11[0..=8], bb12[0..=1], bb13[0], bb14[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=3], bb1[0..=12], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=3], bb9[0..=9], bb10[0..=8], bb11[0..=8], bb12[0..=1], bb13[0], bb14[0], '?1}
+| '?2 | U0 | {bb4[4..=6]}
+| '?3 | U0 | {bb4[5..=6]}
+| '?4 | U0 | {bb10[5..=8]}
+| '?5 | U0 | {bb4[6]}
+| '?6 | U0 | {bb4[5..=6]}
+| '?7 | U0 | {bb10[6..=8]}
+| '?8 | U0 | {bb4[6]}
+| '?9 | U0 | {bb10[8]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=3], bb1[0..=12], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=3], bb9[0..=9], bb10[0..=8], bb11[0..=8], bb12[0..=1], bb13[0], bb14[0]}
+| '?1 live at {bb0[0..=3], bb1[0..=12], bb2[0..=4], bb3[0], bb4[0..=6], bb5[0..=3], bb6[0..=1], bb7[0], bb8[0..=3], bb9[0..=9], bb10[0..=8], bb11[0..=8], bb12[0..=1], bb13[0], bb14[0]}
+| '?2 live at {bb4[4]}
+| '?3 live at {bb4[5]}
+| '?4 live at {bb10[5]}
+| '?5 live at {bb4[6]}
+| '?6 live at {bb4[5]}
+| '?7 live at {bb10[6..=8]}
+| '?8 live at {bb4[6]}
+| '?9 live at {bb10[8]}
+| '?2: '?6 due to Boring at Single(bb4[4]) (src/main.rs:14:14: 14:18 (#19)
+| '?3: '?5 due to Boring at Single(bb4[5]) (src/main.rs:14:14: 14:18 (#19)
+| '?4: '?7 due to Boring at Single(bb10[5]) (src/main.rs:16:9: 16:10 (#0)
+| '?5: '?8 due to CallArgument(Some(FnDef(DefId(2:9950 ~ core[dd01]::iter::traits::iterator::Iterator::next), [std::ops::Range<usize>]))) at Single(bb4[6]) (src/main.rs:14:14: 14:18 (#19)
+| '?6: '?3 due to Boring at Single(bb4[5]) (src/main.rs:14:14: 14:18 (#19)
+| '?7: '?9 due to CallArgument(Some(FnDef(DefId(3:9761 ~ alloc[a794]::vec::{impl#43}::push), [u32, std::alloc::Global]))) at Single(bb10[8]) (src/main.rs:16:9: 16:18 (#0)
+|
+| Borrows
+| bw0: issued at bb4[4] in '?2
+| bw1: issued at bb4[5] in '?3
+| bw2: issued at bb10[5] in '?4
+|
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(3:8524 ~ alloc[a794]::vec::{impl#0}::with_capacity), UserArgs { args: [^c_0], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(3:8521 ~ alloc[a794]::vec::{impl#0}), self_ty: std::vec::Vec<^c_1, ^c_2> }) }), max_universe: U0, var_kinds: [Ty { ui: U0, sub_root: 0 }, Ty { ui: U0, sub_root: 1 }, Ty { ui: U0, sub_root: 2 }] }, span: src/main.rs:12:17: 12:35, inferred_ty: fn(usize) -> std::vec::Vec<u32> {std::vec::Vec::<u32>::with_capacity}
+|
+fn make_data(_1: usize, _2: u32) -> Vec<u32> {
+    debug n => _1;                       // in scope 0 at src/main.rs:11:14: 11:15
+    debug seed => _2;                    // in scope 0 at src/main.rs:11:24: 11:28
+    let mut _0: std::vec::Vec<u32>;      // return place in scope 0 at src/main.rs:11:38: 11:46
+    let mut _3: std::vec::Vec<u32>;      // in scope 0 at src/main.rs:12:9: 12:14
+    let mut _4: usize;                   // in scope 0 at src/main.rs:12:36: 12:37
+    let _6: ();                          // in scope 0 at src/main.rs:14:5: 17:6
+    let mut _7: std::ops::Range<usize>;  // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _8: std::ops::Range<usize>;  // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _9: usize;                   // in scope 0 at src/main.rs:14:17: 14:18
+    let mut _11: ();                     // in scope 0 at src/main.rs:11:1: 19:2
+    let _12: ();                         // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _13: std::option::Option<usize>; // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _14: &mut std::ops::Range<usize>; // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _15: &mut std::ops::Range<usize>; // in scope 0 at src/main.rs:14:14: 14:18
+    let mut _16: isize;                  // in scope 0 at src/main.rs:14:5: 17:6
+    let mut _17: !;                      // in scope 0 at src/main.rs:14:5: 17:6
+    let mut _18: u32;                    // in scope 0 at src/main.rs:15:13: 15:26
+    let mut _19: u32;                    // in scope 0 at src/main.rs:15:24: 15:25
+    let _20: ();                         // in scope 0 at src/main.rs:16:9: 16:18
+    let mut _21: &mut std::vec::Vec<u32>; // in scope 0 at src/main.rs:16:9: 16:10
+    let mut _22: u32;                    // in scope 0 at src/main.rs:16:16: 16:17
+    scope 1 {
+        debug v => _3;                   // in scope 1 at src/main.rs:12:9: 12:14
+        let mut _5: u32;                 // in scope 1 at src/main.rs:13:9: 13:14
+        scope 2 {
+            debug x => _5;               // in scope 2 at src/main.rs:13:9: 13:14
+            let mut _10: std::ops::Range<usize>; // in scope 2 at src/main.rs:14:14: 14:18
+            scope 3 {
+                debug iter => _10;       // in scope 3 at src/main.rs:14:14: 14:18
+            }
+        }
+    }
+
+    bb0: {
+        StorageLive(_3);                 // scope 0 at src/main.rs:12:9: 12:14
+        StorageLive(_4);                 // scope 0 at src/main.rs:12:36: 12:37
+        _4 = copy _1;                    // scope 0 at src/main.rs:12:36: 12:37
+        _3 = Vec::<u32>::with_capacity(move _4) -> [return: bb1, unwind: bb14]; // scope 0 at src/main.rs:12:17: 12:38
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:12:17: 12:35
+                                         // + user_ty: UserType(0)
+                                         // + const_: Const { ty: fn(usize) -> Vec<u32> {Vec::<u32>::with_capacity}, val: Value(Vec::<u32>::with_capacity) }
+    }
+
+    bb1: {
+        StorageDead(_4);                 // scope 0 at src/main.rs:12:37: 12:38
+        FakeRead(ForLet(None), _3);      // scope 0 at src/main.rs:12:9: 12:14
+        StorageLive(_5);                 // scope 1 at src/main.rs:13:9: 13:14
+        _5 = copy _2;                    // scope 1 at src/main.rs:13:17: 13:21
+        FakeRead(ForLet(None), _5);      // scope 1 at src/main.rs:13:9: 13:14
+        StorageLive(_6);                 // scope 2 at src/main.rs:14:5: 17:6
+        StorageLive(_7);                 // scope 2 at src/main.rs:14:14: 14:18
+        StorageLive(_8);                 // scope 2 at src/main.rs:14:14: 14:18
+        StorageLive(_9);                 // scope 2 at src/main.rs:14:17: 14:18
+        _9 = copy _1;                    // scope 2 at src/main.rs:14:17: 14:18
+        _8 = std::ops::Range::<usize> { start: const 0_usize, end: move _9 }; // scope 2 at src/main.rs:14:14: 14:18
+        StorageDead(_9);                 // scope 2 at src/main.rs:14:17: 14:18
+        _7 = <std::ops::Range<usize> as IntoIterator>::into_iter(move _8) -> [return: bb2, unwind: bb13]; // scope 2 at src/main.rs:14:14: 14:18
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:14:14: 14:18
+                                         // + const_: Const { ty: fn(std::ops::Range<usize>) -> <std::ops::Range<usize> as IntoIterator>::IntoIter {<std::ops::Range<usize> as IntoIterator>::into_iter}, val: Value(<std::ops::Range<usize> as IntoIterator>::into_iter) }
+    }
+
+    bb2: {
+        StorageDead(_8);                 // scope 2 at src/main.rs:14:17: 14:18
+        PlaceMention(_7);                // scope 2 at src/main.rs:14:14: 14:18
+        StorageLive(_10);                // scope 2 at src/main.rs:14:14: 14:18
+        _10 = move _7;                   // scope 2 at src/main.rs:14:14: 14:18
+        goto -> bb3;                     // scope 3 at src/main.rs:14:5: 17:6
+    }
+
+    bb3: {
+        falseUnwind -> [real: bb4, unwind: bb13]; // scope 3 at src/main.rs:14:5: 17:6
+    }
+
+    bb4: {
+        StorageLive(_12);                // scope 3 at src/main.rs:14:14: 14:18
+        StorageLive(_13);                // scope 3 at src/main.rs:14:14: 14:18
+        StorageLive(_14);                // scope 3 at src/main.rs:14:14: 14:18
+        StorageLive(_15);                // scope 3 at src/main.rs:14:14: 14:18
+        _15 = &mut _10;                  // scope 3 at src/main.rs:14:14: 14:18
+        _14 = &mut (*_15);               // scope 3 at src/main.rs:14:14: 14:18
+        _13 = <std::ops::Range<usize> as Iterator>::next(move _14) -> [return: bb5, unwind: bb13]; // scope 3 at src/main.rs:14:14: 14:18
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:14:14: 14:18
+                                         // + const_: Const { ty: for<'a> fn(&'a mut std::ops::Range<usize>) -> Option<<std::ops::Range<usize> as Iterator>::Item> {<std::ops::Range<usize> as Iterator>::next}, val: Value(<std::ops::Range<usize> as Iterator>::next) }
+    }
+
+    bb5: {
+        StorageDead(_14);                // scope 3 at src/main.rs:14:17: 14:18
+        PlaceMention(_13);               // scope 3 at src/main.rs:14:14: 14:18
+        _16 = discriminant(_13);         // scope 3 at src/main.rs:14:14: 14:18
+        switchInt(move _16) -> [0: bb7, 1: bb8, otherwise: bb6]; // scope 3 at src/main.rs:14:14: 14:18
+    }
+
+    bb6: {
+        FakeRead(ForMatchedPlace(None), _13); // scope 3 at src/main.rs:14:14: 14:18
+        unreachable;                     // scope 3 at src/main.rs:14:14: 14:18
+    }
+
+    bb7: {
+        falseEdge -> [real: bb9, imaginary: bb8]; // scope 3 at src/main.rs:14:5: 17:6
+    }
+
+    bb8: {
+        StorageLive(_18);                // scope 3 at src/main.rs:15:13: 15:26
+        StorageLive(_19);                // scope 3 at src/main.rs:15:24: 15:25
+        _19 = copy _5;                   // scope 3 at src/main.rs:15:24: 15:25
+        _18 = xorshift32(move _19) -> [return: bb10, unwind: bb13]; // scope 3 at src/main.rs:15:13: 15:26
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:15:13: 15:23
+                                         // + const_: Const { ty: fn(u32) -> u32 {xorshift32}, val: Value(xorshift32) }
+    }
+
+    bb9: {
+        _6 = const ();                   // scope 3 at src/main.rs:14:5: 17:6
+        StorageDead(_15);                // scope 3 at src/main.rs:17:5: 17:6
+        StorageDead(_13);                // scope 3 at src/main.rs:17:5: 17:6
+        StorageDead(_12);                // scope 3 at src/main.rs:17:5: 17:6
+        StorageDead(_10);                // scope 2 at src/main.rs:17:5: 17:6
+        StorageDead(_7);                 // scope 2 at src/main.rs:17:5: 17:6
+        StorageDead(_6);                 // scope 2 at src/main.rs:17:5: 17:6
+        _0 = move _3;                    // scope 2 at src/main.rs:18:5: 18:6
+        StorageDead(_5);                 // scope 1 at src/main.rs:19:1: 19:2
+        drop(_3) -> [return: bb12, unwind: bb14]; // scope 0 at src/main.rs:19:1: 19:2
+    }
+
+    bb10: {
+        StorageDead(_19);                // scope 3 at src/main.rs:15:25: 15:26
+        _5 = move _18;                   // scope 3 at src/main.rs:15:9: 15:26
+        StorageDead(_18);                // scope 3 at src/main.rs:15:25: 15:26
+        StorageLive(_20);                // scope 3 at src/main.rs:16:9: 16:18
+        StorageLive(_21);                // scope 3 at src/main.rs:16:9: 16:10
+        _21 = &mut _3;                   // scope 3 at src/main.rs:16:9: 16:10
+        StorageLive(_22);                // scope 3 at src/main.rs:16:16: 16:17
+        _22 = copy _5;                   // scope 3 at src/main.rs:16:16: 16:17
+        _20 = Vec::<u32>::push(move _21, move _22) -> [return: bb11, unwind: bb13]; // scope 3 at src/main.rs:16:9: 16:18
+                                         // mir::ConstOperand
+                                         // + span: src/main.rs:16:11: 16:15
+                                         // + const_: Const { ty: for<'a> fn(&'a mut Vec<u32>, u32) {Vec::<u32>::push}, val: Value(Vec::<u32>::push) }
+    }
+
+    bb11: {
+        StorageDead(_22);                // scope 3 at src/main.rs:16:17: 16:18
+        StorageDead(_21);                // scope 3 at src/main.rs:16:17: 16:18
+        StorageDead(_20);                // scope 3 at src/main.rs:16:18: 16:19
+        _12 = const ();                  // scope 3 at src/main.rs:14:19: 17:6
+        StorageDead(_15);                // scope 3 at src/main.rs:17:5: 17:6
+        StorageDead(_13);                // scope 3 at src/main.rs:17:5: 17:6
+        StorageDead(_12);                // scope 3 at src/main.rs:17:5: 17:6
+        _11 = const ();                  // scope 3 at src/main.rs:14:5: 17:6
+        goto -> bb3;                     // scope 3 at src/main.rs:14:5: 17:6
+    }
+
+    bb12: {
+        StorageDead(_3);                 // scope 0 at src/main.rs:19:1: 19:2
+        return;                          // scope 0 at src/main.rs:19:2: 19:2
+    }
+
+    bb13 (cleanup): {
+        drop(_3) -> [return: bb14, unwind terminate(cleanup)]; // scope 0 at src/main.rs:19:1: 19:2
+    }
+
+    bb14 (cleanup): {
+        resume;                          // scope 0 at src/main.rs:11:1: 19:2
+    }
+}
